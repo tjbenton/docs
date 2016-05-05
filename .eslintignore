@@ -1,0 +1,6 @@
+scripts
+node_modules
+packages/*/tools
+packages/*/test
+packages/*/dist
+vendor
