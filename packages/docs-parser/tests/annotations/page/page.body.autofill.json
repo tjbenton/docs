@@ -1,0 +1,26 @@
+{
+  "header": {},
+  "body": [
+    {
+      "description": "<p>This block shouldn&#39;t have a page annotation because page doesn&#39;t autofill body comments</p>\n",
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs-parser/tests/annotations/page/page.body.autofill.js",
+          "start": 1,
+          "end": 2
+        }
+      },
+      "access": "public",
+      "inline": []
+    }
+  ]
+}

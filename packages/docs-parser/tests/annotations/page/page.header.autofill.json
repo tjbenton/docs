@@ -1,0 +1,26 @@
+{
+  "header": {
+    "name": "page autofill test",
+    "page": [
+      "general"
+    ],
+    "blockinfo": {
+      "comment": {
+        "start": 1,
+        "end": 3,
+        "type": "header"
+      },
+      "code": {
+        "start": -1,
+        "end": -1
+      },
+      "file": {
+        "path": "docs-parser/tests/annotations/page/page.header.autofill.js",
+        "start": 1,
+        "end": 4
+      }
+    },
+    "access": "public"
+  },
+  "body": []
+}

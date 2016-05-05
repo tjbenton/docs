@@ -1,0 +1,12 @@
+language: node_js
+
+node_js:
+  - "iojs"
+  - "0.12"
+  - "4.0"
+  - "4"
+  - "5.0"
+  - "5"
+sudo: false
+install: npm i
+script: npm test

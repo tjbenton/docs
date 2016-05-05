@@ -1,0 +1,20 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "@name single line slash"
+      ],
+      "start": 1,
+      "end": 1
+    },
+    "code": {
+      "contents": [
+        ".foo {",
+        "  background: blue;",
+        "}"
+      ],
+      "start": 2,
+      "end": 4
+    }
+  }
+]

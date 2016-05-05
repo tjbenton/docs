@@ -1,0 +1,239 @@
+////
+/// @name All the things test
+/// @author Tyler Benton
+/// @page components/buttons
+////
+
+
+/// @name Buttons
+/// @description Your standard form button.
+///
+/// @state {:hover} - @state inline
+///
+/// @markup EXAMPLE 1
+/// <div class="c-btn-group">
+///   <a href="#" class="c-btn ${@state}">Button (a.button)</a>
+///   <button class="c-btn ${@state}">Button (button)</button>
+///   <input class="c-btn ${@state}" type="button" value="Button (input.button)">
+/// </div>
+///
+/// @markup ***************************** EXAMPLE 2 *****************************
+/// <p> THIS IS SOME COMPLETELY DIFFERENT EXAMPLE ;)</p>
+/// <div class="c-btn-group">
+///   <a href="#" class="c-btn ${@state}">Button (a.button)</a>
+///   <button class="c-btn ${@state}">Button (button)</button>
+///   <input class="c-btn ${@state}" type="button" value="Button (input.button)">
+/// </div>
+.c-btn {
+  background: color(a);
+  border: none;
+  border-radius: get($config, 'border-radius');
+  color: #fff;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1em;
+  padding: em(13px) 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.25s ease-out, color 0.25s ease-out;
+  vertical-align: middle;
+  width: auto; // this resets the input style of 100%
+
+  &:hover, &:active, &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:hover { ///# @state (1) {:hover}
+    background: color(a, -2);
+  }
+
+  ///# @state {:active}
+  ///# @state (0) {:focus}
+  &:active, &:focus {
+    background: color(a, 2);
+  }
+}
+
+// @name Alerts
+// @author Tyler Benton
+// @page components/alerts
+//
+// @description
+// Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+//
+// @markup **Example:** Basic
+//  <div class="c-alert" role="alert"><strong>Pretty boring huh</strong> Nothing to see here with this alert</div>
+//  <div class="c-alert c-alert--success" role="alert"><strong>Well done!</strong> You successfully read this important alert message.</div>
+//  <div class="c-alert c-alert--info" role="alert"><strong>Heads up!</strong> This alert needs your attention, but it's not super important.</div>
+//  <div class="c-alert c-alert--warning" role="alert"><strong>Warning!</strong> Better check yourself, you're not looking too good.</div>
+//  <div class="c-alert c-alert--danger" role="alert"><strong>Oh snap!</strong> Change a few things up and try submitting again.</div>
+//
+// @markup **Example:** With simple swipe-dismiss
+//  <div class="c-alert js-swipe-dismiss" role="alert"><strong>Pretty boring huh</strong> Nothing to see here with this alert</div>
+//  <div class="c-alert js-swipe-dismiss c-alert--success" role="alert"><strong>Well done!</strong> You successfully read this important alert message.</div>
+//  <div class="c-alert js-swipe-dismiss c-alert--info" role="alert"><strong>Heads up!</strong> This alert needs your attention, but it's not super important.</div>
+//  <div class="c-alert js-swipe-dismiss c-alert--warning" role="alert"><strong>Warning!</strong> Better check yourself, you're not looking too good.</div>
+//  <div class="c-alert js-swipe-dismiss c-alert--danger" role="alert"><strong>Oh snap!</strong> Change a few things up and try submitting again.</div>
+
+//
+// @markup **Example:** With custom simple closing action
+//  <div class="c-alert c-alert--success js-mf-dismissible js-mf-swipeable" role="alert">
+//    <p class="c-alert__content"><strong>Success</strong> message with a <em>single action</em></p>
+//    <button class="c-alert__actions" type="button">
+//      <span class="c-btn c-btn--text u-icon--close o-icon-pos--middle js-mf-dismiss">close</span>
+//    </button>
+//  </div>
+//
+// @markup **Example:** With custom actions
+//  <div class="c-alert c-alert--success" role="alert">
+//    <p class="c-alert__content"><strong>Success</strong> message with <em>multiple actions</em></p>
+//    <div class="c-alert__actions">
+//      <button class="c-btn c-btn--secondary js-deny" type="button">Deny</button>
+//      <button class="c-btn c-btn--primary js-confirm" type="button">Confirm</button>
+//    </div>
+//  </div>
+.c-alert {
+  @include owl('off');
+  align-items: center;
+  background-color: color(white);
+  border-radius: get($config, 'border-radius');
+  border: 1px solid rgba(black, 0);
+  display: flex;
+  @include ie(9, 10) { // come onnnn ie! :unhappyjessica:
+    display: table;
+  }
+  flex-flow: row nowrap;
+  padding: get($config, 'spacing');
+  position: relative;
+  overflow: hidden;
+  &:before{
+    @include icon-styles;
+    bottom: -0.22em;
+    font-size: 7em;
+    left: -0.1em;
+    opacity: 0.2;
+
+    // oh boy does this look terrible in ie 9/10 without these styles
+    @include ie(9, 10) {
+      font-size: 18px;
+      top: 0;
+      left: 0;
+      position: relative;
+      margin-right: .2em;
+    }
+  }
+
+  @each $alert in map-keys($alert-settings) {
+    &--#{$alert} {
+      background: color($alert, -5, $namespace: 'messaging');
+      color: color($alert, $namespace: 'messaging');
+      &:before{
+        @include icon-get(get($alert-settings, $alert, 'icon'));
+        @if $alert == 'success' {
+          background: color($alert, $namespace: 'messaging');
+          border-radius: 50%;
+          color: color($alert, -5, $namespace: 'messaging');
+        }
+      }
+    }
+
+    @include media('print') {
+      &--#{$alert} {
+        // adds a border around the alert boxes so they're visible on print
+        border: 1px solid color($alert, -5, $namespace: 'messaging');
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+    @include ie(9, 10) { // come onnnn ie! :unhappyjessica:
+      display: table-cell;
+      width: 100%;
+    }
+  }
+
+  &__actions {
+    @include owl('off');
+    @include ie(9, 10) { // come onnnn ie! :unhappyjessica:
+      display: table-cell;
+      width: 100%;
+    }
+    flex: 0 0 auto;
+
+    * {
+      margin-top: 0;
+    }
+
+    * ~ * {
+      margin-left: (get($config, 'spacing') / 2);
+    }
+  }
+
+  // @name Dismissible Alerts (Depricated)
+  // @author Tyler Benton
+  // @page components/alerts
+  //
+  // @description
+  // Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+  //
+  // @markup **Example:** Basic (DEPRICATED)
+  //  <div class="c-alert c-alert--dismissible" role="alert"><strong>Pretty boring huh</strong> Nothing to see here with this alert</div>
+  //  <div class="c-alert c-alert--success c-alert--dismissible" role="alert"><strong>Well done!</strong> You successfully read this important alert message.</div>
+  //  <div class="c-alert c-alert--info c-alert--dismissible" role="alert"><strong>Heads up!</strong> This alert needs your attention, but it's not super important.</div>
+  //  <div class="c-alert c-alert--warning c-alert--dismissible" role="alert"><strong>Warning!</strong> Better check yourself, you're not looking too good.</div>
+  //  <div class="c-alert c-alert--danger c-alert--dismissible" role="alert"><strong>Oh snap!</strong> Change a few things up and try submitting again.</div>
+  //
+  // @note {!!!} - Requires Javascript
+  // @depricated `c-alert--dismissible` is Depricated! Use `js-mf-dismissible` instead.
+  &--dismissible {
+    $padding: 20px;
+    position: relative;
+    padding-right: em($padding * 2) + get($config, 'spacing');
+    cursor: pointer;
+    .u-icon--close, .c-alert__actions {
+      position: absolute;
+      top: 0;
+      margin: 0;
+      right: 0;
+      padding: $padding;
+      color: inherit;
+      background: transparent;
+      @include icon-styles();
+    }
+  }
+}
+
+// @name Slide left/right
+// @author Jessica Kennedy
+// @page components/alerts
+//
+// @description
+// Slides an item left or right with a swipe delete effect. This is used to make dismissibles & popups hide.
+// There is site-level javascript to handle this for developers, but developers can also choose to
+// add these classes to anything to make them slide to the left or right.
+//
+// @markup **Example:** Slide Left
+//  <div class="c-alert u-slide u-slide--left" role="alert"><strong>Pretty boring huh</strong> Nothing to see here with this alert</div>
+//
+// @markup **Example:** Slide Right
+//  <div class="c-alert u-slide u-slide--right" role="alert"><strong>Pretty boring huh</strong> Nothing to see here with this alert</div>
+.u-slide {
+  transition: transform 0.2s;
+  &--left {
+    transform: translateX(-30em) scale(.2) !important; // "!important" is necessary as this overrides styles applied directly to the element in question (using javascript)
+  }
+  &--right {
+    transform: translateX(20em) scale(.2) !important; // "!important" is necessary as this overrides styles applied directly to the element in question (using javascript)
+  }
+}
+
+html,
+body,
+canvas {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}

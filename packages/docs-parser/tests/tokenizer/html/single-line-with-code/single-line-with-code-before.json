@@ -1,0 +1,20 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "some awesome comment"
+      ],
+      "start": 1,
+      "end": 1
+    },
+    "code": {
+      "contents": [
+        "<ul>",
+        "  <li>List Item 1</li>",
+        "</ul>"
+      ],
+      "start": 1,
+      "end": 3
+    }
+  }
+]

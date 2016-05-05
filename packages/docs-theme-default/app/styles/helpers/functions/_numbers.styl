@@ -1,0 +1,36 @@
+/// @author Tyler Benton
+/// @page helpers/functions
+/// @description
+/// Restricts a number between min and max values
+/// If the value is greater than the max then the max number will be returned.
+/// If the value is less than the min then the min number will be returned.
+/// If the number is the same as the min or max or is between min and max then that number will be returned.
+///
+/// @arg {number} - value to clamp
+/// @arg {number} - minimal value
+/// @arg {number} - maximum value
+///
+/// @returns {number} - clamped number
+/// @markup {styl} (example="false")
+/// clamp(2000) // 100
+/// clamp(2000, 0, 100); // -> 100
+/// clamp(-2000, 0, 100); // -> 0
+/// clamp(-2000, -1000, 1000); // -> -1000
+/// clamp(50, -1000, 1000); // -> 50
+clamp($value, $min = 0, $max = 100) {
+  require-unit($value)
+  require-unit($min)
+  require-unit($max)
+  return $value > $max ? $max : $value < $min ? $min : $value
+}
+
+/// @author Tyler Benton
+/// @page helpers/functions
+/// @description All arguments must be numbers for `neg`
+///
+/// @arg {number} - Number that returns a negative value
+///
+/// @returns {number} - Returns a the same number as a negative
+neg($num) {
+  return abs($num) * -1
+}

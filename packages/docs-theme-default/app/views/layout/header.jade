@@ -1,0 +1,17 @@
+header(class="#{prefix}-s-header #{prefix}-o-container")
+  h1 Site header
+  fieldset(class="#{prefix}-c-settings #{prefix}-js-settings")
+    label(class="#{prefix}-c-settings__state")
+      | state
+      input(class="#{prefix}-js-settings__setting", type="checkbox", value="state")
+    label(class="#{prefix}-c-settings__designer")
+      | designer
+      input(class="#{prefix}-js-settings__setting", type="checkbox", value="designer")
+    label(class="#{prefix}-c-settings__developer")
+      | developer
+      input(class="#{prefix}-js-settings__setting", type="checkbox", value="developer")
+
+  fieldset(class="#{prefix}-c-search #{prefix}-js-search")
+    input(class="#{prefix}-c-search #{prefix}-js-search__input", placeholder="search this shit")
+    //- ul(class="#{prefix}-c-search__list #{prefix}-js-search__list")
+      

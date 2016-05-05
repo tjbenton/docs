@@ -1,0 +1,68 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "Block 1",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      ],
+      "start": 1,
+      "end": 4
+    },
+    "code": {
+      "contents": [
+        "<ul>",
+        "  <li>List Item 1</li>",
+        "  <li>List Item 2</li>",
+        "  <li>List Item 3</li>",
+        "  <li>List Item 4</li>",
+        "</ul>"
+      ],
+      "start": 5,
+      "end": 10
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "Block 2",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      ],
+      "start": 12,
+      "end": 15
+    },
+    "code": {
+      "contents": [
+        "<ul>",
+        "  <li>List Item 1</li>",
+        "  <li>List Item 2</li>",
+        "  <li>List Item 3</li>",
+        "  <li>List Item 4</li>",
+        "</ul>"
+      ],
+      "start": 16,
+      "end": 21
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "Block 3",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      ],
+      "start": 23,
+      "end": 26
+    },
+    "code": {
+      "contents": [
+        "<ul>",
+        "  <li>List Item 1</li>",
+        "  <li>List Item 2</li>",
+        "  <li>List Item 3</li>",
+        "  <li>List Item 4</li>",
+        "</ul>"
+      ],
+      "start": 27,
+      "end": 32
+    }
+  }
+]

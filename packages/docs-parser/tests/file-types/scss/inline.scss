@@ -1,0 +1,15 @@
+////
+/// @author Tyler Benton
+/// @page tests/scss-file
+////
+
+/// @name $colors
+/// @type {map}
+///
+/// @description what up
+/// shoot
+$colors: (
+  'a': #fff, ///# @property {color} a - description
+  'b': #ccc, ///# @property {color} b - description
+  'c': #000, ///# @property {color} c - description
+);

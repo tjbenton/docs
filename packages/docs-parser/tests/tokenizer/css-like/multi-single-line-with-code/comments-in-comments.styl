@@ -1,0 +1,20 @@
+annotations = {}
+
+/// @name @author
+/// @alias @authors
+/// @description Author of the documented item
+/// @returns {string}
+/// @markup Usage
+/// /// @author Author's name
+///
+/// /// @author Author One, Author Two
+///
+/// /// @author Author One
+/// /// @author Author Two
+annotations.author = {
+  alias: [ 'authors' ],
+  parse: @(annotation) {
+    return multiple(annotation)
+  }
+}
+

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "name": "autofill access",
+    "page": [
+      "general"
+    ],
+    "blockinfo": {
+      "comment": {
+        "start": 1,
+        "end": 3,
+        "type": "header"
+      },
+      "code": {
+        "start": -1,
+        "end": -1
+      },
+      "file": {
+        "path": "docs-parser/tests/annotations/access/access.autofill.header.js",
+        "start": 1,
+        "end": 4
+      }
+    },
+    "access": "public"
+  },
+  "body": []
+}

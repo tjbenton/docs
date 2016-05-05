@@ -1,0 +1,125 @@
+include ../helpers/index.jade
+//-
+  /// @name view.layout.index
+  /// @type view
+  /// @author Aaron Benton
+  /// @description Main site layout
+doctype html
+<!--[if lte IE 9]><html lang="en" class="no-js t-ie t-ie9" xmlns:og="http://ogp.me/ns##"><![endif]-->
+<!--[if IEMobile 7]><html lang="en" class="no-js t-iem t-iem7" xmlns:og="http://ogp.me/ns##"><![endif]-->
+<!--[if (gt IE 9)|!(IE)|(gt IEMobile 7)|!(IEMobile)]><!--><html lang="en" class="no-js" xmlns:og="http://ogp.me/ns##"><!--<![endif]-->
+head
+  script.
+    // Adds detection for IE browsers since they still lack
+    // standard support for virtually everything
+    ;(function(ua, doc){
+      if (ua.match(/MSIE 10/i)) { // is IE10
+        doc.className += ' t-ie t-ie10'
+      } else if (ua.match(/rv:11/i)) { // is IE11
+        doc.className += ' t-ie t-ie11'
+      } else if (/Edge\/12./i.test(ua)) { // is Edge
+        doc.className += ' t-ie t-ie12'
+      }
+    })(navigator.userAgent, document.documentElement);
+    
+  - var data = 'var documentation = ' + JSON.stringify({ data: documentation }) + ';'
+  - data += 'documentation = documentation.data'
+  script!=data
+
+  //- these 2 meta tags need to be in the first 1024 bytes
+  meta(charset="utf-8")
+  meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+  
+  //- Base info about the site
+  title #{site_title}
+  meta(name="description" content="")
+  
+  //- additional meta tags
+  block meta
+    //- Allows IE mobile to smooth fonts
+    meta(http-equiv="cleartype" content="on") 
+  
+  //- alternate domains
+  link(rel="alternate" hreflang="x-default" href="http://ontrack.fit/")
+  
+  //- social media and open graph 
+  link(rel="publisher" href="")
+  //- block opengraph
+  //-   meta(property="fb:app_id" content="#{seo.facebook.app_id}")
+  //-   meta(property="fb:admins" content="#{seo.facebook.admins}")
+  //-   meta(property="og:locale" content="en-US")
+  //-   meta(property="og:site_name" content="#{seo.facebook.site_name}")
+    
+  //- verification
+  //- block verification
+  //-   meta(name="google-site-verification" content="#{seo.google_verification}")
+  //-   meta(name="msvalidate.01" content="#{seo.bing}")
+  //-   meta(name="alexaVerifyId" content="#{seo.alexa}")
+  //-   meta(name="p:domain_verify" content="#{seo.pinterest}")
+  
+  //- dns pre-fetch
+  block prefetch
+    - each link in prefetch
+      link(rel="dns-prefetch" href="{link}")
+      
+  //- mobile specific
+  //- used by older palm & blackberry devices
+  meta(name="HandheldFriendly" content="True")
+  //- used by microsoft
+  meta(name="MobileOptimized" content="320")
+  //- supported by most modern smartphones, lists different settings for displaying the page on the phone
+  meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui")
+  //- this tells browsers to NOT autodetect telephone numbers and turn them in to links. (they think distIDs are phone numbers, for example)
+  meta(name="format-detection" content="telephone=no")
+  //- this tells browsers to NOT autodetect addresses and turn them in to links.
+  meta(name="format-detection" content="address=no")
+  
+  //- manifest file for icons, etc.
+  //-link(rel="manifest" href="/manifest.webmanifest")
+  //- icons for now until manifest file is figured out
+  include icons
+
+  //- css 
+  block css
+    - each file in css
+      link(rel="stylesheet" href="#{paths.css}/#{file}")
+
+  //- js
+  block js_top
+    - each file in js_top
+      script(src="#{utils.path.join(paths.js, file)}")
+  
+  //- script(type='text/javascript').
+  //-   var globals = !{JSON.stringify(locals)};
+  //- - var data = global
+  //- script(type='text/javascript').
+    //- var whatTheFuck = !{fuck}
+    
+  != LRScript
+  
+  script.
+    System.import('site')
+    //- script.
+      //- System.import('site/combined.js');
+      //- System.import('site');
+
+body(itemscope itemtype="http://schema.org/WebPage")
+  p(class="#{prefix}-c-browser-upgrade #{prefix}c-alert #{prefix}c-alert--warning") You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/?locale=en">upgrade your browser</a> to improve your experience.
+
+  div(class="#{prefix}-s-documentation")
+    include nav
+    
+    div(class="#{prefix}-s-documentation__body")
+      //- header
+      include header
+      
+      //- main content
+      include content
+      
+      //- footer
+      include footer
+
+    block js_bottom
+      - each file in js_bottom
+        script(src="#{paths.js}/#{file}")
+</html>

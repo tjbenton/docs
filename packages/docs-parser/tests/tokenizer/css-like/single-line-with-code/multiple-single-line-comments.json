@@ -1,0 +1,56 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "one"
+      ],
+      "start": 1,
+      "end": 1
+    },
+    "code": {
+      "contents": [
+        ".foo {",
+        "  background: blue;",
+        "}"
+      ],
+      "start": 2,
+      "end": 4
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "two"
+      ],
+      "start": 6,
+      "end": 6
+    },
+    "code": {
+      "contents": [
+        ".foo {",
+        "  background: blue;",
+        "}"
+      ],
+      "start": 7,
+      "end": 9
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "three"
+      ],
+      "start": 11,
+      "end": 11
+    },
+    "code": {
+      "contents": [
+        ".foo {",
+        "  background: blue;",
+        "}"
+      ],
+      "start": 12,
+      "end": 14
+    }
+  }
+]

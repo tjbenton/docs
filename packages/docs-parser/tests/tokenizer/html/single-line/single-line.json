@@ -1,0 +1,16 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "some awesome comment"
+      ],
+      "start": 1,
+      "end": 1
+    },
+    "code": {
+      "contents": [],
+      "start": -1,
+      "end": -1
+    }
+  }
+]

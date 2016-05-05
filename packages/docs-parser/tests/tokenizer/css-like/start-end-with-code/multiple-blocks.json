@@ -1,0 +1,59 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "Block 1",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      ],
+      "start": 1,
+      "end": 4
+    },
+    "code": {
+      "contents": [
+        ".foo {",
+        "  background: blue;",
+        "}"
+      ],
+      "start": 5,
+      "end": 7
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "Block 2",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      ],
+      "start": 9,
+      "end": 12
+    },
+    "code": {
+      "contents": [
+        ".foo {",
+        "  background: blue;",
+        "}"
+      ],
+      "start": 13,
+      "end": 15
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "Block 3",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      ],
+      "start": 17,
+      "end": 20
+    },
+    "code": {
+      "contents": [
+        ".foo {",
+        "  background: blue;",
+        "}"
+      ],
+      "start": 21,
+      "end": 23
+    }
+  }
+]

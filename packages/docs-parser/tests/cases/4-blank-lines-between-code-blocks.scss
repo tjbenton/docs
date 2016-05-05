@@ -1,0 +1,33 @@
+/// @name moz-only
+/// @page 4-blank-lines-between-code-blocks
+/// @raw-code
+@mixin moz-only() {
+  $selector: &;
+  @at-root {
+    @-moz-document url-prefix() {
+      #{$selector} {
+        @content;
+      }
+    }
+  }
+}
+
+
+
+
+.nav {
+  height: 40px;
+  width: 100%;
+  background: #455868;
+  border-bottom: 2px solid #283744;
+
+  li {
+    width: 600px;
+    height: 40px;
+    a {
+      color: #fff;
+      line-height: 40px;
+      text-shadow: 1px 1px 0px #283744;
+    }
+  }
+}

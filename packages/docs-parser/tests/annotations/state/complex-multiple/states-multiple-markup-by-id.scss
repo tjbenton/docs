@@ -1,0 +1,59 @@
+/// @state (foo)
+/// {.something-super-awesome--modifier} Modifier state for example 1, state 1
+/// {:hover} Hover state for example 1, state 1
+///
+/// @state (foo)
+/// {.something-super-awesome--modifier} Modifier state for example 1, state 2
+/// {:focus} Focus state for example 1, state 2
+///
+/// @state (foo)
+/// {.something-super-awesome--modifier} Modifier state for example 1, state 3
+/// {:active} Active state for example 1, state 3
+///
+/// @markup (foo) {html} Example 1
+/// <div class="something-super-awesome ${@state[0]}">
+///   <h3>${@state[0].description}</h3>
+///   <ul>
+///     <li class="something-super-awesome__item ${@state[1].state}">${@state[1].description}</li>
+///   </ul>
+/// </div>
+///
+///
+/// @state (bar)
+/// {.something-super-awesome--modifier} Modifier state for example 2, state 1
+/// {:hover} Hover state for example 2, state 1
+///
+/// @state (bar)
+/// {.something-super-awesome--modifier} Modifier state for example 2, state 2
+/// {:focus} Focus state for example 2, state 2
+///
+/// @state (bar)
+/// {.something-super-awesome--modifier} Modifier state for example 2, state 3
+/// {:active} Active state for example 2, state 3
+///
+/// @markup (bar) {html} Example 2
+/// <div class="something-super-awesome ${@state[0]}">
+///   <h3>Example 2 ${@state[0].description}</h3>
+///   <ul>
+///     <li class="something-super-awesome__item ${@state[1].state}">${@state[1].description}</li>
+///   </ul>
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+
+  &--modifier {
+    &:hover {
+      background: blue;
+    }
+  }
+
+  &__item {
+    &:hover {
+      background: orange;
+    }
+  }
+}

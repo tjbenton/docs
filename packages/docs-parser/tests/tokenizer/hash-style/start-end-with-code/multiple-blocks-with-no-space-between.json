@@ -1,0 +1,62 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "Block 1"
+      ],
+      "start": 1,
+      "end": 3
+    },
+    "code": {
+      "contents": [
+        "outer = 1",
+        "changeNumbers = ->",
+        "  inner = -1",
+        "  outer = 10",
+        "inner = changeNumbers()"
+      ],
+      "start": 4,
+      "end": 8
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "Block 2"
+      ],
+      "start": 9,
+      "end": 11
+    },
+    "code": {
+      "contents": [
+        "outer = 1",
+        "changeNumbers = ->",
+        "  inner = -1",
+        "  outer = 10",
+        "inner = changeNumbers()"
+      ],
+      "start": 12,
+      "end": 16
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "Block 3"
+      ],
+      "start": 17,
+      "end": 19
+    },
+    "code": {
+      "contents": [
+        "outer = 1",
+        "changeNumbers = ->",
+        "  inner = -1",
+        "  outer = 10",
+        "inner = changeNumbers()"
+      ],
+      "start": 20,
+      "end": 24
+    }
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "foo",
+        "bar",
+        "baz"
+      ],
+      "start": 1,
+      "end": 3
+    },
+    "code": {
+      "contents": [
+        ".foo {",
+        "  background: blue;",
+        "}"
+      ],
+      "start": 4,
+      "end": 6
+    }
+  }
+]

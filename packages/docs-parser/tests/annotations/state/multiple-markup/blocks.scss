@@ -1,0 +1,23 @@
+/// @state {:hover} Some super awesome description for the hover state
+/// @state {:focus} - Some super awesome description for the focus state
+///
+/// @markup {html} Example 1
+/// <div class="something-super-awesome ${@state}">
+///   This is the only block that will get states applied to it.
+/// </div>
+///
+/// @markup {html} Example 2
+/// <div class="something-super-awesome">
+///   There are no states created with this markup because it is the
+///   second markup annotation in the comment block and there was no
+///   id set so the id is 1 by default. If you are looking for an example
+///   of multiple markup blocks with seperate states see
+///   `state-multiple-markup-blocks-with-different-states.scss`
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+}

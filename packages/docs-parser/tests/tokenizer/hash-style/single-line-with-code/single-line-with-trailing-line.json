@@ -1,0 +1,22 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "@name single line slash"
+      ],
+      "start": 1,
+      "end": 1
+    },
+    "code": {
+      "contents": [
+        "outer = 1",
+        "changeNumbers = ->",
+        "  inner = -1",
+        "  outer = 10",
+        "inner = changeNumbers()"
+      ],
+      "start": 2,
+      "end": 6
+    }
+  }
+]

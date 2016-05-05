@@ -1,0 +1,58 @@
+////
+/// @author Tyler Benton
+/// @page tests/less-test
+////
+
+/// @name One
+/// @type {color}
+/// @markup
+/// \@name
+@name: #2d5e8b;
+
+main {
+  background-color: @name;
+}
+
+/// @name Two
+/// @description
+/// A simple nav component, used to help with navigation
+/// @markup
+/// <nav>
+///   <a href="">One</a>
+///   <a href="">Two</a>
+///   <a href="">Three</a>
+/// </nav>
+.nav {
+  height: 40px;
+  width: 100%;
+  background: #455868;
+  border-bottom: 2px solid #283744;
+
+  li {
+    width: 600px;
+    height: 40px;
+
+    a {
+      color: #fff;
+      line-height: 40px;
+      text-shadow: 1px 1px 0px #283744;
+    }
+  }
+}
+
+/// @name Three
+/// @description
+/// A mixin to help with opacity fallbacks
+/// @arg {number} - The opacity you to use, between 0.0 - 1.0
+/// @markup {less}
+/// .foo {
+///   .opacity(.3);
+/// }
+.opacity(@opacity: 0.5){
+ -webkit-opacity: @opacity;
+ -moz-opacity: @opacity;
+ opacity: @opacity;
+ @opperc: @opacity * 100;
+ -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+ filter: ~"alpha(opacity=@{opperc})";
+}

@@ -1,0 +1,191 @@
+{
+  "tests/cases/allthethings-scss.scss": {
+    "header": {
+      "name": "All the things test",
+      "author": [
+        "Tyler Benton"
+      ],
+      "page": [
+        "components/buttons"
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 5,
+          "type": "header"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "tests/cases/allthethings-scss.scss",
+          "start": 1,
+          "end": 239
+        }
+      },
+      "access": "public"
+    },
+    "body": [
+      {
+        "name": "Buttons",
+        "description": "<p>Your standard form button.</p>\n",
+        "states": {
+          "0": [
+            {
+              "state": {
+                "0": {
+                  "state": ":hover",
+                  "description": "<p>@state inline</p>\n"
+                }
+              },
+              "markup": {
+                "id": "0",
+                "language": "scss",
+                "settings": {},
+                "description": "<p>EXAMPLE 1</p>\n",
+                "raw": "<div class=\"c-btn-group\">\n  <a href=\"#\" class=\"c-btn :hover\">Button (a.button)</a>\n  <button class=\"c-btn :hover\">Button (button)</button>\n  <input class=\"c-btn :hover\" type=\"button\" value=\"Button (input.button)\">\n</div>",
+                "escaped": "&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn :hover&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn :hover&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn :hover&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
+              }
+            }
+          ]
+        },
+        "markup": [
+          {
+            "id": "0",
+            "language": "scss",
+            "settings": {},
+            "description": "<p>EXAMPLE 1</p>\n",
+            "raw": "<div class=\"c-btn-group\">\n  <a href=\"#\" class=\"c-btn ${@state}\">Button (a.button)</a>\n  <button class=\"c-btn ${@state}\">Button (button)</button>\n  <input class=\"c-btn ${@state}\" type=\"button\" value=\"Button (input.button)\">\n</div>",
+            "escaped": "&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn ${@state}&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn ${@state}&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn ${@state}&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;",
+            "raw_stateless": "<div class=\"c-btn-group\">\n  <a href=\"#\" class=\"c-btn\">Button (a.button)</a>\n  <button class=\"c-btn\">Button (button)</button>\n  <input class=\"c-btn\" type=\"button\" value=\"Button (input.button)\">\n</div>",
+            "escaped_stateless": "&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
+          },
+          {
+            "id": "1",
+            "language": "scss",
+            "settings": {},
+            "description": "<p><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong> EXAMPLE 2 <strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></p>\n",
+            "raw": "<p> THIS IS SOME COMPLETELY DIFFERENT EXAMPLE ;)</p>\n<div class=\"c-btn-group\">\n  <a href=\"#\" class=\"c-btn ${@state}\">Button (a.button)</a>\n  <button class=\"c-btn ${@state}\">Button (button)</button>\n  <input class=\"c-btn ${@state}\" type=\"button\" value=\"Button (input.button)\">\n</div>",
+            "escaped": "&lt;p&gt; THIS IS SOME COMPLETELY DIFFERENT EXAMPLE ;)&lt;/p&gt;\n&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn ${@state}&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn ${@state}&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn ${@state}&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;",
+            "raw_stateless": "<p> THIS IS SOME COMPLETELY DIFFERENT EXAMPLE ;)</p>\n<div class=\"c-btn-group\">\n  <a href=\"#\" class=\"c-btn\">Button (a.button)</a>\n  <button class=\"c-btn\">Button (button)</button>\n  <input class=\"c-btn\" type=\"button\" value=\"Button (input.button)\">\n</div>",
+            "escaped_stateless": "&lt;p&gt; THIS IS SOME COMPLETELY DIFFERENT EXAMPLE ;)&lt;/p&gt;\n&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
+          }
+        ],
+        "blockinfo": {
+          "comment": {
+            "start": 8,
+            "end": 26,
+            "type": "body"
+          },
+          "code": {
+            "start": 27,
+            "end": 239
+          },
+          "file": {
+            "path": "tests/cases/allthethings-scss.scss",
+            "start": 1,
+            "end": 239
+          }
+        },
+        "access": "public",
+        "inline": [
+          {
+            "states": {
+              "1": [
+                {
+                  "state": {
+                    "0": {
+                      "state": ":hover",
+                      "description": ""
+                    }
+                  },
+                  "markup": {
+                    "id": "1",
+                    "language": "scss",
+                    "settings": {},
+                    "description": "<p><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong> EXAMPLE 2 <strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></p>\n",
+                    "raw": "<p> THIS IS SOME COMPLETELY DIFFERENT EXAMPLE ;)</p>\n<div class=\"c-btn-group\">\n  <a href=\"#\" class=\"c-btn :hover\">Button (a.button)</a>\n  <button class=\"c-btn :hover\">Button (button)</button>\n  <input class=\"c-btn :hover\" type=\"button\" value=\"Button (input.button)\">\n</div>",
+                    "escaped": "&lt;p&gt; THIS IS SOME COMPLETELY DIFFERENT EXAMPLE ;)&lt;/p&gt;\n&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn :hover&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn :hover&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn :hover&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
+                  }
+                }
+              ]
+            },
+            "blockinfo": {
+              "comment": {
+                "start": 48,
+                "end": 48,
+                "type": "inline"
+              },
+              "code": {
+                "start": 48,
+                "end": 50
+              },
+              "file": {
+                "path": "tests/cases/allthethings-scss.scss",
+                "start": 1,
+                "end": 239
+              }
+            },
+            "access": "public"
+          },
+          {
+            "states": {
+              "0": [
+                {
+                  "state": {
+                    "0": {
+                      "state": ":active",
+                      "description": ""
+                    }
+                  },
+                  "markup": {
+                    "id": "0",
+                    "language": "scss",
+                    "settings": {},
+                    "description": "<p>EXAMPLE 1</p>\n",
+                    "raw": "<div class=\"c-btn-group\">\n  <a href=\"#\" class=\"c-btn :active\">Button (a.button)</a>\n  <button class=\"c-btn :active\">Button (button)</button>\n  <input class=\"c-btn :active\" type=\"button\" value=\"Button (input.button)\">\n</div>",
+                    "escaped": "&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn :active&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn :active&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn :active&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
+                  }
+                },
+                {
+                  "state": {
+                    "0": {
+                      "state": ":focus",
+                      "description": ""
+                    }
+                  },
+                  "markup": {
+                    "id": "0",
+                    "language": "scss",
+                    "settings": {},
+                    "description": "<p>EXAMPLE 1</p>\n",
+                    "raw": "<div class=\"c-btn-group\">\n  <a href=\"#\" class=\"c-btn :focus\">Button (a.button)</a>\n  <button class=\"c-btn :focus\">Button (button)</button>\n  <input class=\"c-btn :focus\" type=\"button\" value=\"Button (input.button)\">\n</div>",
+                    "escaped": "&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn :focus&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn :focus&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn :focus&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
+                  }
+                }
+              ]
+            },
+            "blockinfo": {
+              "comment": {
+                "start": 52,
+                "end": 53,
+                "type": "inline"
+              },
+              "code": {
+                "start": 54,
+                "end": 56
+              },
+              "file": {
+                "path": "tests/cases/allthethings-scss.scss",
+                "start": 1,
+                "end": 239
+              }
+            },
+            "access": "public"
+          }
+        ]
+      }
+    ]
+  }
+}

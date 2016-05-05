@@ -1,0 +1,50 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "block 1"
+      ],
+      "start": 2,
+      "end": 2
+    },
+    "code": {
+      "contents": [
+        "<li>List Item 1</li>"
+      ],
+      "start": 2,
+      "end": 2
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "block 2"
+      ],
+      "start": 3,
+      "end": 3
+    },
+    "code": {
+      "contents": [
+        "<li>List Item 2</li>"
+      ],
+      "start": 3,
+      "end": 3
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "block 3"
+      ],
+      "start": 4,
+      "end": 4
+    },
+    "code": {
+      "contents": [
+        "<li>List Item 3</li>"
+      ],
+      "start": 4,
+      "end": 4
+    }
+  }
+]

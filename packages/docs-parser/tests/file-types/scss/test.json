@@ -1,0 +1,145 @@
+{
+  "nav": [
+    {
+      "title": "Tests",
+      "href": "/tests",
+      "body": [],
+      "subpages": [
+        {
+          "title": "Scss File",
+          "href": "/tests/scss-file",
+          "body": [
+            {
+              "title": "One",
+              "href": "/tests/scss-file#one"
+            },
+            {
+              "title": "moz-only",
+              "href": "/tests/scss-file#moz-only"
+            }
+          ],
+          "subpages": []
+        }
+      ]
+    }
+  ],
+  "pages": {
+    "tests": {
+      "page": {
+        "header": {},
+        "body": []
+      },
+      "scss-file": {
+        "page": {
+          "header": {
+            "author": [
+              "Tyler Benton"
+            ],
+            "blockinfo": {
+              "comment": {
+                "start": 1,
+                "end": 4,
+                "type": "header"
+              },
+              "code": {
+                "start": -1,
+                "end": -1
+              },
+              "file": {
+                "path": "docs-parser/tests/file-types/scss/test.scss",
+                "start": 1,
+                "end": 39
+              }
+            },
+            "access": "public"
+          },
+          "body": [
+            {
+              "name": "One",
+              "type": {
+                "type": "color",
+                "description": ""
+              },
+              "blockinfo": {
+                "comment": {
+                  "start": 6,
+                  "end": 7,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 8,
+                  "end": 8
+                },
+                "file": {
+                  "path": "docs-parser/tests/file-types/scss/test.scss",
+                  "start": 1,
+                  "end": 39
+                }
+              },
+              "access": "public",
+              "inline": []
+            },
+            {
+              "name": "moz-only",
+              "author": [
+                "Tyler Benton"
+              ],
+              "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
+              "arg": [
+                {
+                  "types": [
+                    "function",
+                    "object"
+                  ],
+                  "name": "callbacks",
+                  "value": "something super sweet",
+                  "description": "<p>Functions</p>\n"
+                },
+                {
+                  "types": [
+                    "type"
+                  ],
+                  "name": "name-of-variable",
+                  "value": "default value",
+                  "description": "<p>description\n@content</p>\n"
+                }
+              ],
+              "markup": [
+                {
+                  "id": "0",
+                  "language": "scss",
+                  "settings": {
+                    "example": "false"
+                  },
+                  "description": "<p><strong>Example:</strong></p>\n",
+                  "raw": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: '';\n}",
+                  "escaped": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: &#39;&#39;;\n}",
+                  "raw_stateless": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: '';\n}",
+                  "escaped_stateless": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: &#39;&#39;;\n}"
+                }
+              ],
+              "blockinfo": {
+                "comment": {
+                  "start": 12,
+                  "end": 28,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 29,
+                  "end": 38
+                },
+                "file": {
+                  "path": "docs-parser/tests/file-types/scss/test.scss",
+                  "start": 1,
+                  "end": 39
+                }
+              },
+              "access": "public",
+              "inline": []
+            }
+          ]
+        }
+      }
+    }
+  }
+}

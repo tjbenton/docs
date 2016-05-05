@@ -1,0 +1,1 @@
+The files in the folder are for scripts that help out with managing this mono project

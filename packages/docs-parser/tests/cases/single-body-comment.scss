@@ -1,0 +1,26 @@
+/// @author Tyler Benton
+/// @page single-body-comment
+/// @name moz-only
+/// @description This allows you to write specific styles for mozilla firefox only
+/// @markup {scss} [example='false'] **Example:**
+/// @include moz-only() {
+///   // removes the weird styling in firefox
+///   -moz-appearance: none;
+///   padding: {
+///     top: nth-val(get($form-config, padding), 1) - .2em;
+///     bottom: nth-val(get($form-config, padding), 3) - .2em;
+///   };
+///   text-indent: 0.01px;
+///   text-overflow: '';
+/// }
+@mixin moz-only() {
+  $selector: &;
+
+  @at-root {
+    @-moz-document url-prefix() {
+      #{$selector} {
+        @content;
+      }
+    }
+  }
+}

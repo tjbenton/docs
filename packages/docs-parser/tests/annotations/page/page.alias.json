@@ -1,0 +1,75 @@
+{
+  "header": {},
+  "body": [
+    {
+      "page": [
+        "level 1"
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs-parser/tests/annotations/page/page.alias.js",
+          "start": 1,
+          "end": 7
+        }
+      },
+      "access": "public",
+      "inline": []
+    },
+    {
+      "page": [
+        "level 1/level 2"
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 3,
+          "end": 3,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs-parser/tests/annotations/page/page.alias.js",
+          "start": 1,
+          "end": 7
+        }
+      },
+      "access": "public",
+      "inline": []
+    },
+    {
+      "page": [
+        "page 1/level 2",
+        "page 2/level 2"
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 5,
+          "end": 6,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs-parser/tests/annotations/page/page.alias.js",
+          "start": 1,
+          "end": 7
+        }
+      },
+      "access": "public",
+      "inline": []
+    }
+  ]
+}

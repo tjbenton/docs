@@ -1,0 +1,318 @@
+/// If `$___defined-colors` doesn't exist then this creates it.
+/// This variable is to store the different namespaces and colors as they're defined.
+$___defined-colors ?= {}
+
+/// This should never change. If you want to change them just define your
+/// own variable `$color-settings` to overwrite one or more of these settings.
+$___color-settings ?= {
+  'namespace': 'default',
+  'base': 0, // defines the base color to look for in the maps
+  'increment': 5%, // this is a fall back increment if the color functions that are defined are lists and not maps
+  'colors': {}, // placeholder for defined colors, these will always be defined in $color-settings colors
+  'map': 'integers', // determins if you're using integers to get your light and dark values or words.(@feature - this hasn't been added yet)
+  'smart-color': 0.25, // determins how far you go back if the color is #fff or #000 (example if you called color(#ccc, 25) that will be black but if smart color is set then it will be #060606)
+  'functions': { // holds the light and dark functions to use for the different variations. (only light, and dark can be the keys of this map)
+    // 'light': { 'lighten': 11.85% }, // holds the light functions that will run if the variation is less than 0
+    'light': { 'lighten': 11.85% }, // holds the light functions that will run if the variation is less than 0
+    'dark': { 'darken': 5% } // holds the dark functions that will run if the variation is less than 0
+  }
+}
+
+$color-set-settings ?= {}
+
+color-set($settings = {}, $merge-defaults = true) {
+  // This merges the default color settings(`$color-settings`) with the default settings.
+  $default-settings = $merge-defaults ? extend({}, $___color-settings, $color-settings, true) : $___color-settings
+  // Merges $settings with default color settings
+  $settings = $settings is a 'object' ? extend({}, $default-settings, $settings, true) : $default-settings
+
+  unless $settings.base is a 'literal' {
+    $settings.base = s('%s', $settings.base)
+  }
+
+
+  $colors = $settings.colors
+
+  for $theme, $base in $settings.colors {
+    if $base is a 'object' && $base.color-name == null {
+      $base['color-name'] = $theme
+    }
+
+    $colors[$theme] = $base
+  }
+
+  $settings.colors = $colors
+
+  $defined-namespace = $___defined-colors[$settings.namespace];
+
+  unless $defined-namespace {
+    $defined-namespace = {
+      'settings': {},
+      'defined-colors': {}
+    }
+  }
+
+  $namespace = {}
+  $namespace[$settings.namespace] = extend($defined-namespace, { 'settings': $settings }, true)
+
+  extend($___defined-colors, $namespace, true)
+
+  return null
+}
+
+
+_color($this, $variation = 0, $namespace = 'default', $force = false, $save = true) {
+  if $force {
+    $save = false
+  }
+
+  // helper variables
+  $this-type = type-of($this) // stores the type of this so it doesn't have to be called multiple times.
+  $this-base-color = false // placeholder for the base color
+  $result = false // placeholder for result
+  $name-of-color = null // placeholder for the actual name of the color
+  $theme-of-color = null // placeholder for the key name
+  $str-variation = s('%s', $variation)
+  $this-namespace = $___defined-colors[$namespace]
+  $defined-colors = $this-namespace.defined-colors
+  $settings = $this-namespace.settings
+
+
+  // ```styl
+  // $color-settings = {
+  //   'colors': {
+  //     'a': #ccc,
+  //     'b': {
+  //       '0': #aaa
+  //     }
+  //   }
+  // }
+  // color(a, 3); // #b2b2b2
+  // ```
+  if $this-type == 'ident' || $this-type == 'string' {
+    // stores the name of this theme
+    $theme-of-color = $this
+    // try to find $this in the settings colors map
+    $this = $settings.colors[$this]
+
+    // reset $this-type to be the new type of this.
+    $this-type = type-of($this)
+
+    if $this == 'inherit' {
+      return $this
+    }
+
+    // log($shadow, { foo: 'foo' }, #fff, shoot)
+    if $this == null {
+      error("Couldn't find $theme-of-color(" + -string($theme-of-color) + ') in $settings.colors(' + -string($settings.colors) + ')')
+      return false
+    }
+  }
+
+  // ```styl
+  // color(#fff, 2);
+  // ```
+  if $this-type == 'rgba' {
+    $this-base-color = $this
+
+    if $variation == $settings.base {
+      // ```styl
+      // color(#ccc, 0); // #ccc
+      // color(#ccc); // #ccc
+      // ```
+      $result = $this-base-color
+    }
+  }
+
+
+  /// ```styl
+  /// $messaging-settings = {
+  ///   name-space: 'messaging',
+  ///   colors: {
+  ///     info: {
+  ///       '-1': #cbe8f5,
+  ///       '0': #457da6
+  ///     },
+  ///     ...
+  ///   }
+  /// };
+  ///
+  /// messaging-color($type, $variation = 0)
+  ///   return color($type, $variation, $settings = $messaging-settings)
+  ///
+  /// .docs-c-alert {
+  ///   &--info {
+  ///     color messaging-color(info, -1) // #cbe8f5
+  ///   }
+  /// }
+  /// ```
+  if !$result && $this-type == 'object' {
+    // defineds base color
+    $this-base-color = $this[$settings.base]
+
+    $name-of-color = $this.name
+
+    // if there isn't a base color defined then throw this error.
+    if !$this-base-color {
+      error("If you are going to use a map of colors, you have to specify a base color (aka. `0`)")
+    }
+
+    // try to find the local variation
+    if !$force {
+      $local-attempt = $this[$str-variation]
+
+      if $local-attempt {
+        $result = $local-attempt
+      }
+    }
+  }
+
+  // Ensures that the base color is infact a color
+  if type-of($this-base-color) != 'rgba' {
+    error('$this-base-color(' + -string($this-base-color) + ") isn't a base color")
+    return false
+  }
+
+  // try to find the color variation in storage (`$___defined-colors`)
+  if !$result && !$force {
+    $stored-attempt = $this-namespace.defined-colors[$this-base-color]
+    if $stored-attempt {
+      // since the color is already defined it doens't need to be defined again so just return the color
+      $result = $stored-attempt[$str-variation]
+    }
+  }
+
+
+
+
+  // Finds the color variation programatically if the color variation
+  // isn't found locally, and isn't found in storage
+  if !$result {
+    // This determins wether or not to use the light or dark function set
+    // $function-type =
+    $functions = $settings.functions[$variation > 0 ? 'dark' : 'light']
+
+    // if it's a list then make it into a map using the settings default values
+    if type-of($functions) == 'ident' {
+      $temp = {}
+      for $function in $functions {
+        $func = {}
+        $func[$function] = $settings.increment
+        $temp = extend($temp, $func, true)
+      }
+      $functions = $temp;
+    }
+
+    // store the absolute value of the variation as a variable
+    $variation-floor = floor(abs($variation))
+    $variation-remander = abs($variation) - $variation-floor
+
+    // reset the $result to be the base color because that's what's going to get modified.
+    $result = $this-base-color
+
+    // Reverse for loop so you can wrap the color functions correctly in reverse order.
+    // Where the last function in the map is the first function to get called.
+    // Example: (lighten: 5%, tint: 5%) ==> lighten(tint([base color], 5%), 5%);
+    for $i in ((length($functions) - 1)..0) {
+      // gets the color function name from $function-set
+      $function = keys($functions)[$i]
+
+      // the value of the function is the incrementor
+      $incrementor = $functions[$function]
+
+      // gets the current increment
+      $increment = $variation-floor * $incrementor
+
+      // this handles the decimal values for variations
+      if $variation-remander > 0 {
+        $increment += ($incrementor * $variation-remander)
+      }
+
+
+      // this is a temp fix because `{$function}($result, $incrementor)`
+      // doesn't work correctly yet but it is on the road map for stylus
+      if $function == 'lighten' {
+        $result = lighten($result, $increment);
+      } else if $function == 'darken' {
+        $result = darken($result, $increment);
+      }
+    }
+
+
+    // if the smart color is greater than 0
+    $smart-color = abs($settings.smart-color) /// the abs is to ensure it's using positive numbers since it has to be manipulated to work for both white and black values.
+    if $smart-color > 0 && ($result in (white #fff #ffffff black #000 #000000)) { // i went with a index of the color values just incase sass changes what it returns in a later release.
+
+      $result = _color(
+                  $this,
+                  $variation + ( $smart-color * ($result == white ? 1 : -1) ), // new variation based off of the smart color
+                  $namespace, // pass in the namespace
+                  $force, // force is same as what was passed because the previous variation could already bed defined.
+                  false, // it's false because it's shouldn't be saved.
+                )
+    }
+  }
+
+  // return the result
+  if $result is a 'rgba' {
+    if $save == true {
+      // get the current color set to work with
+      $this-base-color-string = s('%s', $this-base-color)
+
+      // the map of this colors variations
+      $this-color = $defined-colors[$this-base-color-string]
+
+
+      // if this-color doesn't already exist then create it and set the base color
+      if $this-color == null {
+        $temp = {}
+        $temp[$this-base-color-string] = {
+          '0': $this-base-color
+        }
+        extend($this-namespace.defined-colors, $defined-colors, $temp, true)
+
+        $defined-colors = $this-namespace.defined-colors
+        $this-color = $defined-colors[$this-base-color-string]
+      }
+
+      // attempt to get the variation, if there's a defined variation already
+      // then return this attempt and skip everything below
+      if $this-color[$str-variation] {
+        return $this-color[$str-variation]
+      }
+
+      // add the new color variation to this color
+      $temp = {}
+      $temp[$str-variation] = $result
+
+      $this-color = extend($this-color, $temp, true)
+
+      $temp = {}
+      $temp[$this-base-color-string] = $this-color
+
+      extend($this-namespace.defined-colors, $defined-colors, $temp, true)
+
+      $temp = {}
+      $temp[$namespace] = $this-namespace
+
+      extend($___defined-colors, $temp, true)
+
+      $temp = {}
+    }
+
+    return $result;
+  }
+
+  return $result unquote("/* @error " + -string($result) + " isn't a color */")
+}
+
+color($this, $variation = 0, $namespace = 'default', $force = false, $save = true) {
+  $result = $this == 'inherit' ? $this : _color($this, $variation, $namespace, $force, $save)
+
+  if mixin {
+    $prop = current-property ? current-property[0] : 'color'
+    add-property($prop, unquote(replace('__CALL__', 'bitch', s('%s', $result))))
+  } else {
+    return $result;
+  }
+}

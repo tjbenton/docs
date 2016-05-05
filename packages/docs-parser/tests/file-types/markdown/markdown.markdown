@@ -1,0 +1,20 @@
+<!----
+ @name markdown
+ @page tests/markdown
+ @markdown
+---->
+
+## Default Annotations
+### @name
+Attribute      | Value
+---------------|----------------------------------------------------------
+Description    | Name of the documented item
+Multiple       | false
+Default        | -
+Aliases        | -
+Autofilled     | -
+
+###### Example
+```scss
+/// @name Name
+```

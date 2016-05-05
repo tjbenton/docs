@@ -1,0 +1,75 @@
+/// @author Tyler Benton
+/// @page helpers/mixins
+///
+/// @description Everything you need to add `text-overflow` styling.
+///
+/// @arg {ident, string} - `clip`, `ellipsis`, `inherit`, `initial`
+///
+/// @note {!!!} Requires inline-block or block for proper styling
+text-overflow($type = ellipsis) {
+  overflow: hidden;
+  text-overflow: $type;
+  white-space: nowrap;
+}
+
+/// @name hide-text
+/// @author Tyler Benton
+/// @description
+/// This is a technique used to replace text with images with CSS.
+/// This was found on [html5bp](https:///github.com/h5bp/html5-boilerplate/commit/aa0396eae757)
+/// @markup {styl}
+/// .foo
+///   hide-text()
+hide-text() {
+  background-color: transparent;
+  border: 0;
+  color: transparent;
+  font: 0/0 a; /// this is a font hack
+  text-shadow: none;
+}
+
+
+/// @author Tyler Benton
+/// @description
+/// This allows you to add a gradient to text.
+///
+/// This one is using a little bit of trickery to apply a gradient on the text.
+/// It only works in with the -webkit- prefix so there are fallbacks inplace to
+/// ensure it looks correct on all browsers.
+///
+///  1. These are the gradients that will be applied ot the text
+///  2. This clips the background so that the background only shows behind the text.
+///  3. Fall back color for non -wekbit- browsers
+///  4. This cancels out the fallback text color for -webkit- browsers so you can
+///     see through the text to the background that is being applied.
+///
+/// @arg {color, null} - This is the color you want it to be in the browsers that don't support this trickery
+/// @arg {string} - Must be how you would normally write a gradient
+///
+/// @note {!!} - This only works in webkit based browsers
+text-gradient($fallback-color, $gradient...) {
+  background: -webkit-linear-gradient(unquote($gradient)); /// 1
+  background: -o-linear-gradient(unquote($gradient)); /// 1
+  -webkit-background-clip: text; /// 2
+  color: $fallback-color ? $fallback-color : null; /// 3
+  -webkit-text-fill-color: transparent; /// 4
+  if !$fallback-color || $gradient {
+    warn("Since this mixin is only using the -webkit-, and -o- prefix we can extending it to use as many stop points and colors as you want. Example of a rainbow text gradient @include text-gradient(#000, #ff0000 14.28%, #ff7f00 28.56%, #ffff00 42.84%, #00ff00 57.12%, #0000ff 71.4%, #4b0082 85.68%, #8f00ff 100%)");
+  }
+}
+
+/// @author Tyler Benton
+/// @description - This allows us to have more than one line and still have an ellipsis on the last line.
+///
+/// @arg {number} - The total lines you want to display
+/// @arg {font-unit} - size of the font
+/// @arg {font-unit} - line-height
+multiline-ellipsis($lines = 3, $font-size = $config.font-size, $line-height = $config.line-height) {
+  display: -webkit-box;
+  max-height: (($font-size * $line-height) * $lines);
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+}

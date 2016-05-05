@@ -1,0 +1,31 @@
+/***
+ * @author Tyler Benton
+ * @page test/css-file
+ ***/
+
+/**
+ * @name Base Styles
+ * @description
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ **/
+html{
+ font-family: sans-serif;
+ -webkit-text-size-adjust: 100%;
+ -ms-text-size-adjust: 100%;
+}
+
+
+/**
+ * @name Input
+ * @description
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ **/
+input[type="search"]{
+ -webkit-appearance: textfield;
+ -webkit-box-sizing: content-box;
+ box-sizing: content-box;
+}

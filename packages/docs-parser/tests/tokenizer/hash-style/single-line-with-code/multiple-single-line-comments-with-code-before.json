@@ -1,0 +1,50 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "one"
+      ],
+      "start": 2,
+      "end": 2
+    },
+    "code": {
+      "contents": [
+        "'bar': 'prop value 1',"
+      ],
+      "start": 2,
+      "end": 2
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "two"
+      ],
+      "start": 3,
+      "end": 3
+    },
+    "code": {
+      "contents": [
+        "'baz': 'prop value 2',"
+      ],
+      "start": 3,
+      "end": 3
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "three"
+      ],
+      "start": 4,
+      "end": 4
+    },
+    "code": {
+      "contents": [
+        "'qux': 'prop value 3',"
+      ],
+      "start": 4,
+      "end": 4
+    }
+  }
+]

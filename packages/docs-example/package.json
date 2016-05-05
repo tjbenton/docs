@@ -1,0 +1,12 @@
+{
+  "name": "docs-example",
+  "version": "1.0.0",
+  "description": "This project is used to show how you can use docs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
+  "license": "ISC",
+  "private": true
+}

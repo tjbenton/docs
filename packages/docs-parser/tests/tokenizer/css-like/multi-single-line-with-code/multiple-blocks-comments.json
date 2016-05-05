@@ -1,0 +1,68 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "Block 1",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ratione,",
+        "voluptatum dolorem cumque facere sapiente necessitatibus ad nobis, commodi",
+        "molestias ipsum officiis vel culpa pariatur corrupti nulla, maxime",
+        "hic! Repellendus."
+      ],
+      "start": 1,
+      "end": 5
+    },
+    "code": {
+      "contents": [
+        ".foo {",
+        "  background: blue;",
+        "}"
+      ],
+      "start": 6,
+      "end": 8
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "Block 2",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ratione,",
+        "voluptatum dolorem cumque facere sapiente necessitatibus ad nobis, commodi",
+        "molestias ipsum officiis vel culpa pariatur corrupti nulla, maxime",
+        "hic! Repellendus."
+      ],
+      "start": 10,
+      "end": 14
+    },
+    "code": {
+      "contents": [
+        ".foo {",
+        "  background: blue;",
+        "}"
+      ],
+      "start": 15,
+      "end": 17
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "Block 3",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ratione,",
+        "voluptatum dolorem cumque facere sapiente necessitatibus ad nobis, commodi",
+        "molestias ipsum officiis vel culpa pariatur corrupti nulla, maxime",
+        "hic! Repellendus."
+      ],
+      "start": 19,
+      "end": 23
+    },
+    "code": {
+      "contents": [
+        ".foo {",
+        "  background: blue;",
+        "}"
+      ],
+      "start": 24,
+      "end": 26
+    }
+  }
+]

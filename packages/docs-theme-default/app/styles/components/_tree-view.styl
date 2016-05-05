@@ -1,0 +1,12 @@
+.docs-c-tree-view
+  reset()
+  display none
+  &.is-open
+    display block
+  &.has-selected > &__child:not(.is-selected)
+    display none
+
+  &__title
+    &.is-active
+      color lighten(blue, 40%)
+

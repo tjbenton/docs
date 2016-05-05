@@ -1,0 +1,9 @@
+//- mixin menu(tree)
+//-   ul
+//-     for node in tree
+//-       li= node.title
+//-       if node.sub
+//-         +menu(node.sub)
+
+nav(class="#{prefix}-s-documentation__nav")
+  +json(nav)

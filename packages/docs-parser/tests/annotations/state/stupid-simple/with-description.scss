@@ -1,0 +1,42 @@
+/// @state {:hover} Some super awesome description
+///
+/// @markup {html}
+/// <div class="something-super-awesome ${@state}">
+///   ${@state.description}
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+}
+
+
+/// @state {:hover} Some super awesome description
+///
+/// @markup {html}
+/// <div class="something-super-awesome ${@state.state}">
+///   ${@state.description}
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+}
+
+/// @state {:hover} - Some super awesome description
+///
+/// @markup {html}
+/// <div class="something-super-awesome ${@state}">
+///   ${@state[description]}
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+}

@@ -1,0 +1,35 @@
+// @name Wrapper
+// @author Tyler Benton
+// @page objects/site-wrapper
+//
+// @markup
+// <!-- Don't write inline styles like this it's for example purposes only -->
+// <div style="background: black; min-height: 20px;"> <!-- prentend it's the body -->
+//   <div class="o-site-wrapper__inverted" style="background: gray; min-height: 20px;">
+//     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, saepe, cupiditate, culpa, error magnam nihil totam quo amet molestias fuga expedita quibusdam aut aperiam pariatur dignissimos. Facilis laborum ullam eaque.</p>
+//     <p class="o-site-wrapper__inverted" style="background: red;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, saepe, cupiditate, culpa, error magnam nihil totam quo amet molestias fuga expedita quibusdam aut aperiam pariatur dignissimos. Facilis laborum ullam eaque.</p>
+//   </div>
+// </div>
+.docs-o-site-wrapper
+  margin: 0 $o-site-wrapper.base
+
+  +media('>=md')
+    margin: 0 $o-site-wrapper.md
+
+  +media('>=lg')
+    margin: 0 $o-site-wrapper.lg
+
+  &__inverted
+    padding: 0 $o-site-wrapper.base
+    margin-left: -($o-site-wrapper.base)
+    margin-right: -($o-site-wrapper.base)
+
+    +media('>=md')
+      padding: 0 $o-site-wrapper.md
+      margin-left: -($o-site-wrapper.md)
+      margin-right: -($o-site-wrapper.md)
+
+    +media('>=lg')
+      padding: 0 $o-site-wrapper.lg
+      margin-left: -($o-site-wrapper.lg)
+      margin-right: -($o-site-wrapper.lg)

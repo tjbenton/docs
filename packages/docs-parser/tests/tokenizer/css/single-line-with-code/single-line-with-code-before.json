@@ -1,0 +1,18 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "bock 1"
+      ],
+      "start": 2,
+      "end": 2
+    },
+    "code": {
+      "contents": [
+        "'bar': 'baz'"
+      ],
+      "start": 2,
+      "end": 2
+    }
+  }
+]

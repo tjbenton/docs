@@ -1,0 +1,44 @@
+[
+  {
+    "comment": {
+      "contents": [
+        "Block 1"
+      ],
+      "start": 1,
+      "end": 3
+    },
+    "code": {
+      "contents": [],
+      "start": -1,
+      "end": -1
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "Block 2"
+      ],
+      "start": 4,
+      "end": 6
+    },
+    "code": {
+      "contents": [],
+      "start": -1,
+      "end": -1
+    }
+  },
+  {
+    "comment": {
+      "contents": [
+        "Block 3"
+      ],
+      "start": 7,
+      "end": 9
+    },
+    "code": {
+      "contents": [],
+      "start": -1,
+      "end": -1
+    }
+  }
+]

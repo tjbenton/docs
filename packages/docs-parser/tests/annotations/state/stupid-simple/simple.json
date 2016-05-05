@@ -1,0 +1,57 @@
+{
+  "header": {},
+  "body": [
+    {
+      "states": {
+        "0": [
+          {
+            "state": {
+              "0": {
+                "state": ":hover",
+                "description": ""
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :hover\">\n  Mind blown\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :hover&quot;&gt;\n  Mind blown\n&lt;/div&gt;"
+            }
+          }
+        ]
+      },
+      "markup": [
+        {
+          "id": "0",
+          "language": "html",
+          "settings": {},
+          "description": "",
+          "raw": "<div class=\"something-super-awesome ${@state}\">\n  Mind blown\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state}&quot;&gt;\n  Mind blown\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\">\n  Mind blown\n</div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  Mind blown\n&lt;/div&gt;"
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 6,
+          "type": "body"
+        },
+        "code": {
+          "start": 7,
+          "end": 13
+        },
+        "file": {
+          "path": "docs-parser/tests/annotations/state/stupid-simple/simple.scss",
+          "start": 1,
+          "end": 14
+        }
+      },
+      "access": "public",
+      "inline": []
+    }
+  ]
+}

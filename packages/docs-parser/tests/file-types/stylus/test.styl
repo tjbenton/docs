@@ -1,0 +1,36 @@
+////
+/// @author Tyler Benton
+/// @page tests/styl-file
+////
+
+/// @name One
+/// @description
+/// Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+/// sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+/// Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+a = 0
+b = 1
+
+!a and !b
+
+/// @name Two
+/// @description
+/// Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+/// Quasi omnis facilis vero architecto perferendis, debitis dignissimos tempore
+/// dolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis
+/// iste nostrum vel, culpa iure. Adipisci.
+add(a, b)
+  a + b
+body
+  padding add(10px, 5)
+
+/// @name Three
+/// @description
+/// This is another normal multi-line comment.
+ add(a, b)
+   if a is a 'unit' and b is a 'unit'
+     a + b
+   else
+     (error 'a and b must be units!')
+
+// This is a normal single-line comment.

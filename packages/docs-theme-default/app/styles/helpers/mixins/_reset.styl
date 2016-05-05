@@ -1,0 +1,29 @@
+/// @author Tyler Benton
+/// @page helpers/mixins
+///
+/// @description
+/// This is to reset the margin, padding, and list-style to be none
+///
+/// @arg {boolean} $extend [true]
+///
+/// @markup {styl} (example=false) **Example:**
+/// .foo {
+///   reset(); // This will be extended onto %reset
+/// }
+/// .bar {
+///   reset(false);
+/// }
+reset($extend = true)
+  list-style none outside none unless @list-style
+  margin-left 0 unless @margin-left
+  margin-right 0 unless @margin-right
+  padding 0 unless @padding
+  // if $extend
+  //   p('$media in reset' $media)
+  //   +cache('reset' + $media || '')
+  //     reset(false)
+  // else
+  //   list-style none outside none unless @list-style
+  //   margin-left 0 unless @margin-left
+  //   margin-right 0 unless @margin-right
+  //   padding 0 unless @padding
