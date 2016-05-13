@@ -3,7 +3,7 @@
   no-undef: 0,
   prefer-arrow-callback: 0
  */
-var docs = require('./docs.js')
+var docsParser = require('./docs-parser.js')
 
 // Module exports
 // a) export module
@@ -11,11 +11,11 @@ var docs = require('./docs.js')
 // c) add docs to the root
 if (typeof exports !== 'undefined') {
   if (typeof module !== 'undefined' && module.exports) {
-    exports = module.exports = docs
+    exports = module.exports = docsParser
   }
-  exports.docs = docs
+  exports.docsParser = docsParser
 } else if (typeof define === 'function' && define.amd) { // AMD definition
-  define(() => docs)
+  define(() => docsParser)
 } else {
-  root.docs = docs
+  root.docsParser = docsParser
 }

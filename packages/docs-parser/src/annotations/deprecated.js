@@ -1,5 +1,5 @@
 import { regex } from './annotation-utils'
-import { to } from '../utils'
+import to from 'to-js'
 /// @name @deprecated
 /// @page annotations
 /// @description Lets you know that a mixin/function has been depricated

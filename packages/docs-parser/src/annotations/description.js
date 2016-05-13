@@ -1,5 +1,4 @@
-import { to } from '../utils'
-
+import to from 'to-js'
 /// @name @description
 /// @page annotations
 /// @alias @desc, @definition, @explanation, @writeup, @summary, @summarization

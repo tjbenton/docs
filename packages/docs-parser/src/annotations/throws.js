@@ -1,5 +1,5 @@
 import { regex, list } from './annotation-utils'
-import { to } from '../utils'
+import to from 'to-js'
 /// @name @throws
 /// @page annotations
 /// @alias @throw, @exception, @error, @catch

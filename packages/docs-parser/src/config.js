@@ -1,5 +1,7 @@
 /* eslint-disable guard-for-in */
-import { fs, is, to, Logger } from './utils'
+import { Logger } from './utils'
+import fs from 'fs-extra-promisify'
+import to, { is } from 'to-js'
 import path from 'path'
 import * as annotations from './annotations'
 import clor from 'clor'
@@ -211,6 +213,7 @@ export function parseLanguages(languages) {
 
   return parsed
 }
+
 
 let valid_options = to.keys(default_options)
 let valid_language_options = to.keys(default_options.languages.default)

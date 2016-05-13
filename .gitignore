@@ -1,9 +1,13 @@
 node_modules
 jspm_packages
 dist
+*-dist
 .tmp
 .DS_Store
 .sass-cache
 npm-debug.log
 coverage
 .nyc_output
+packages/do*/docs
+!packages/docs-example/docs
+test

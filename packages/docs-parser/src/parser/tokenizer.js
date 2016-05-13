@@ -1,5 +1,6 @@
 /* eslint-disable complexity, max-statements, max-depth */
-import { is, to, debug as _debug } from '../utils'
+import { debug as _debug } from '../utils'
+import to, { is } from 'to-js'
 import { default_options } from '../config'
 import clor from 'clor'
 

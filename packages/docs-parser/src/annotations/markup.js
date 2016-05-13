@@ -1,5 +1,6 @@
-import { is, to } from '../utils'
+import to, { is } from 'to-js'
 import { regex, list, escape } from './annotation-utils'
+
 /// @name @markup
 /// @page annotations
 /// @alias @code, @example, @output, @outputs

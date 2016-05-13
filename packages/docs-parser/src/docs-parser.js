@@ -1,30 +1,24 @@
 'use strict'
 
 import path from 'path'
-import {
-  fs,
-  to,
-  glob,
-} from './utils'
+import fs from 'fs-extra-promisify'
+import to, { is } from 'to-js'
 import Parser from './parser'
 import sorter from './sorter'
 import getConfig from './config'
 import array, { map } from 'async-array-methods'
 import chokidar from 'chokidar'
 import clor from 'clor'
+import globby from 'globby'
 
-export {
-  fs,
-  glob,
-  is,
-  to,
-  debug
-} from './utils'
+export { debug } from './utils'
 
 export {
   Parser,
   getConfig,
-  array
+  array,
+  to,
+  is
 }
 
 ////
@@ -34,7 +28,7 @@ export {
 /// This is used to parse any filetype that you want to and gets the
 /// documentation for it  and returns an `{}` of the document data
 ////
-export default async function docs(options = {}, callback) {
+export default async function docsParser(options = {}, callback) {
   options = await getConfig(options)
 
   /* eslint-disable no-unused-vars */
@@ -60,7 +54,7 @@ export default async function docs(options = {}, callback) {
 
   let json = {}
   let parsers = {}
-  const ignored = await glob(ignore)
+
   const root = process.cwd()
 
   let walk = async (files) => {
@@ -69,7 +63,7 @@ export default async function docs(options = {}, callback) {
     log.emit('start', 'total')
     try {
       log.emit('start', 'paths')
-      files = await glob(files, ignored)
+      files = await globby(files, { ignore, nodir: true })
 
       let paths_message = `%s completed ${to.map(files, (file) => clor.bold(file.replace(process.cwd() + '/', ''))).join(', ')} after %dms`
       if (files.length > 3) {
@@ -131,18 +125,16 @@ export default async function docs(options = {}, callback) {
   }
 
 
-
-
   let result = await walk(initial_files)
 
-  initial_files = initial_files.map((_glob) => !path.isAbsolute(_glob) ? path.join(root, _glob) : _glob)
-  initial_files = await glob(initial_files, ignored)
+  initial_files = await globby(initial_files, { ignore, nodir: true })
+  initial_files = initial_files.map((file) => !path.isAbsolute(file) ? path.join(root, file) : file)
 
   if (!watch) {
     return result
   }
 
-  let watcher = chokidar.watch(initial_files, { ignored, persistent: true, ignoreInitial: true })
+  let watcher = chokidar.watch(initial_files, { persistent: true, ignoreInitial: true })
 
   log.space()
   log.print('Watching', to.map(initial_files, (file) => clor.bold(file.replace(`${root}/`, ''))).join(', '))

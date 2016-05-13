@@ -1,5 +1,5 @@
 // Load modules
-import to from './to'
+import to from 'to-js'
 import clor from 'clor'
 
 export default class Purdy {

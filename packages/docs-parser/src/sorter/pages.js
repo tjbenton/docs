@@ -1,5 +1,5 @@
 /* eslint-disable complexity, max-depth */
-import { is, to } from '../utils'
+import to, { is } from 'to-js'
 import clor from 'clor'
 
 /// @name pages

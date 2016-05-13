@@ -2,7 +2,8 @@
 import path from 'path'
 import docs from '../dist/index.js'
 import Tokenizer from '../dist/parser/tokenizer.js'
-import { fs, glob } from '../dist/utils'
+import fs from 'fs-extra-promisify'
+import globby from 'globby'
 import assert from 'core-assert'
 import { map } from 'async-array-methods'
 import asyncSuite from '../tools/async-suite'
@@ -107,7 +108,10 @@ function addSuite(name, folder, callback) {
     name,
     async () => {
       folder = path.join(__dirname, folder)
-      const paths = await glob(path.join(folder, '**', '*'), [ path.join(folder, '**', '*.json') ])
+      const paths = await globby(path.join(folder, '**', '*'), {
+        ignore: [ path.join(folder, '**', '*.json') ],
+        nodir: true
+      })
       return {
         paths,
         expected: await map(paths, (file) => fs.readJson(file.replace(path.extname(file), '.json')))

@@ -1,4 +1,4 @@
-import { is, to } from '../utils'
+import to, { is } from 'to-js'
 import clor from 'clor'
 
 // holds all the base regex expressions for the annotations
@@ -40,7 +40,7 @@ let regexes
 }
 
 export function regex(name, str) {
-  return regexes[name].exec(`${str}`).slice(1)
+  return (regexes[name].exec(`${str}`) || []).slice(1)
 }
 
 function list(arg) {
@@ -114,14 +114,13 @@ export function logAnnotationError(obj, expected) {
     let index = i - comment.start
     let line = temp_contents[index]
     let line_number = i + 1
-    let is_in_comment = is.between(index, 0, total_comment_lines)
-    // let
+    let is_in_comment = to.clamp(index, 0, total_comment_lines) === index
 
     if (getSpaces(line_number) === modifier) {
       modifier = modifier.slice(1)
     }
 
-    if (is.between(index, annotation.start, annotation.end)) {
+    if (to.clamp(index, annotation.start, annotation.end) === index) {
       let expected_line = expected[index - annotation.start]
 
       if (expected_line) {

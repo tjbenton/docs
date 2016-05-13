@@ -4,7 +4,7 @@ import asyncSuite from '../../tools/async-suite.js'
 import getConfig, {
   parseLanguages,
   default_options,
-} from '../../app/config'
+} from '../../src/config'
 
 asyncSuite('config', () => {
   return () => {

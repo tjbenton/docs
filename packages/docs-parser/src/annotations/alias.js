@@ -1,4 +1,4 @@
-import { is } from '../utils'
+import { is } from 'to-js'
 import { list, logAnnotationError } from './annotation-utils'
 
 /// @name @alias

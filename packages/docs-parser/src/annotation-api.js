@@ -1,5 +1,5 @@
 'use strict'
-import { is, to } from './utils'
+import to, { is } from 'to-js'
 
 export default class AnnotationApi {
   constructor({ annotations, file, type }) {
@@ -135,10 +135,10 @@ export default class AnnotationApi {
     // d) throw an error
     if (is.array(config)) {
       config = { alias: config }
-    } else if (is.fn(config)) {
+    } else if (is.function(config)) {
       config = { parse: config }
     } else if (
-      is.plainObject(config) &&
+      to.type(config) === 'object' &&
       !is.empty(config) &&
       !is.any.in(config, ...this.annotation_base_keys)
     ) {
@@ -152,7 +152,7 @@ export default class AnnotationApi {
         }
       }
       return
-    } else if (!is.plainObject(config)) {
+    } else if (to.type(config) !== 'object') {
       throw new Error('config must be a function or object and you passed')
       this.log.error(initial_config)
       return
@@ -260,8 +260,12 @@ export default class AnnotationApi {
         details = copyInvisible(options.parsed[options.annotation.name], options)
       }
 
-
-      let result = is.function(fn) ? fn.call(details) : fn
+      let result
+      try {
+        result = is.function(fn) ? fn.call(details) : fn
+      } catch (e) {
+        throw e
+      }
 
       if (type === 'parse' && !is.any.undefined(details, result)) {
         // copy the details that were used to call the parse function command onto the result
@@ -275,7 +279,7 @@ export default class AnnotationApi {
 
       return result
     } catch (e) {
-      throw new Error(e)
+      throw e
     }
 
 

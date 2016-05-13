@@ -1,4 +1,6 @@
-import { fs, is, to, Logger } from '../utils'
+import { Logger } from '../utils'
+import fs from 'fs-extra-promisify'
+import to, { is } from 'to-js'
 import AnnotationApi from '../annotation-api'
 import path from 'path'
 import Tokenizer from './tokenizer'
@@ -69,7 +71,7 @@ export default class Parser {
   }
 
   async parse(file = {}) {
-    file = is.plainObject(file) ? file : { path: file }
+    file = to.type(file) === 'object' ? file : { path: file }
     file.type = file.type || path.extname(file.path).replace('.', '')
     file.contents = file.contents || to.string(await fs.readFile(file.path))
     file.name = path.basename(file.path, `.${file.type}`) // name of the file
@@ -221,7 +223,7 @@ export default class Parser {
     const { sort } = this.options
     let resolve_list = to.keys(this.api.annotations.resolve)
     // sort the parsed object before the annotations are resolved
-    if (is.fn(sort)) {
+    if (is.function(sort)) {
       resolve_list = to.sort(resolve_list, sort)
     }
 

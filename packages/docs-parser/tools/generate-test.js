@@ -7,11 +7,12 @@ var docs = require('..').default
 var Tokenizer = require('../dist/parser/tokenizer.js').default
 var path = require('path')
 var clor = require('clor')
-var utils = require('../dist/utils')
+var fs = require('fs-extra-promisify')
+var glob = require('globby')
 var argv = process.argv.slice(2)
 const root = process.cwd()
 
-utils.glob(argv, [ 'tests/**/*.json' ])
+glob(argv, { ignore: 'tests/**/*.json', nodir: true })
   .then(function(files) {
     var promises = []
     for (var i = 0; i < files.length; i++) {
@@ -45,7 +46,7 @@ function sortTest(file) {
 }
 
 function output(file, data) {
-  return utils.fs.outputJson(
+  return fs.outputJson(
     file.replace(path.extname(file), '.json'),
     data,
     { spaces: 2 }

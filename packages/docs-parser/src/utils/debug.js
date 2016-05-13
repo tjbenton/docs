@@ -1,4 +1,5 @@
-import { is, to, Logger } from './'
+import { Logger } from './'
+import to, { is } from 'to-js'
 import clor from 'clor'
 
 /// @name debug
@@ -95,7 +96,7 @@ export default function debug(default_name = 'DEBUG', default_should_debug = fal
 
 
     function Debugger(name = 'Define a Name', should_debug = default_should_debug, options = {}) {
-      if (is.plainObject(should_debug)) {
+      if (to.type(should_debug) === 'object') {
         options = should_debug
         should_debug = options.should_debug || options.condition || default_should_debug
       }
@@ -170,7 +171,7 @@ export default function debug(default_name = 'DEBUG', default_should_debug = fal
     }
 
     dp.debugSet = dp.set = function debugSet(name = 'define a name silly', should_debug, options = {}) {
-      if (is.plainObject(should_debug)) {
+      if (to.type(should_debug) === 'object') {
         options = should_debug
         should_debug = undefined
       } if (is.number(should_debug)) {

@@ -1,5 +1,5 @@
 import { escape } from './annotation-utils'
-import { to } from '../utils'
+import to from 'to-js'
 /// @name @raw-code
 /// @page annotations
 /// @description

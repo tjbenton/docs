@@ -1,0 +1,5 @@
+export {
+  plugins: [
+    'scss',
+  ]
+}

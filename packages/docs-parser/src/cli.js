@@ -1,6 +1,7 @@
 /* eslint-disable no-bitwise */
 import pkg from '../package.json'
-import { fs, to } from './utils'
+import fs from 'fs-extra-promisify'
+import to from 'to-js'
 import program from 'commander'
 import docs from './docs'
 import { default_options } from './config'

@@ -1,5 +1,5 @@
 import { regex } from './annotation-utils'
-import { to } from '../utils'
+import to from 'to-js'
 /// @name @note
 /// @page annotations
 /// @alias @notes

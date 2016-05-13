@@ -1,4 +1,4 @@
-import { is, to } from '../utils'
+import to, { is } from 'to-js'
 import { regex } from './annotation-utils'
 
 /// @name @states
@@ -140,7 +140,7 @@ function replaceStates(str, states) {
 
     let result = states[clean(match)]
 
-    if (is.plainObject(result)) {
+    if (to.type(result) === 'object') {
       return result.state
     }
 

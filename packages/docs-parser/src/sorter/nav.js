@@ -1,4 +1,4 @@
-import { is, to } from '../utils'
+import to, { is } from 'to-js'
 
 /// @name nav
 /// @description

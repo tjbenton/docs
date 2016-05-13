@@ -1,6 +1,6 @@
 import Purdy from './purdy'
 import clor from 'clor'
-import to from './to'
+import to from 'to-js'
 
 let icon = {
   chevron: '\xBB ',

@@ -1,5 +1,5 @@
 import { regex } from './annotation-utils'
-import { to } from '../utils'
+import to from 'to-js'
 /// @name @since
 /// @page annotations
 /// @description Let's you know what version of the project a something was added

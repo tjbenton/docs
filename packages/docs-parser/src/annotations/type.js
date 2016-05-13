@@ -1,5 +1,5 @@
 import { regex, logAnnotationError } from './annotation-utils'
-import { to } from '../utils'
+import to from 'to-js'
 import clor from 'clor'
 
 /// @name @type

@@ -1,13 +1,11 @@
-tests/
+test/
+test-src/
 tools/
-app/
+src/
 coverage/
 .coveralls.yml
 .travis.yml
 .gitignore
-.jscsrc
-.jshintrc
-.eslintrc
 .babelrc
 **/.DS_Store
 .DS_Store
