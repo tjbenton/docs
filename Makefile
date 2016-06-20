@@ -19,3 +19,6 @@ watch:
 bootstrap:
 	npm i
 	lerna bootstrap
+
+test:
+	cd packages/docs-parser; npm test

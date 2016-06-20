@@ -7,6 +7,8 @@ node_js:
   - "4"
   - "5.0"
   - "5"
+  - "6.0"
+  - "6"
 sudo: false
-install: npm i
-script: npm test
+install: make boostrap
+script: make test
