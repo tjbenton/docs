@@ -10,8 +10,6 @@ async function asyncSuite(name, ...callbacks) {
       callback = callback(result)
 
       result = await (callback && callback.then ? callback : Promise.resolve(callback)) // eslint-disable-line
-      // if (callback) {
-      // } else {}
     }
   } catch (err) {
     console.log(err)
