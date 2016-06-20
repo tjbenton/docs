@@ -8,13 +8,22 @@ export NODE_ENV = test
 .PHONY: clean build bootstrap
 
 clean:
-	rm -rf -- packages/*/dest packages/*/node_modules
+	rm -rf -- packages/*/*dist/
+
+deep-clean:
+	make clean
+	rm -rf node_modules/ packages/*/node_modules
+
+rebuild:
+	make deep-clean
+	make bootstrap
+	make build
 
 build:
-	gulp build
+	fly
 
 watch:
-	gulp watch
+	fly watch
 
 bootstrap:
 	npm i
