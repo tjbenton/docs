@@ -1,6 +1,5 @@
-/* eslint-disable */
+/* eslint-disable no-invalid-this */
 import path from 'path'
-import glob from 'globby'
 const packages = (folder) => path.join('packages', '*', folder, '**', '*.js')
 function modify(dir, name) {
   dir = dir.split(path.sep)
@@ -29,7 +28,7 @@ const mocha = {
 }
 
 
-export default async function build() {
+async function build() {
   await this
     .source(packages('{app,src}'))
     .babel(babel)
@@ -40,8 +39,16 @@ export default async function build() {
     .target('packages')
 }
 
+export { build }
+export default build
+
+export async function watch() {
+  await this.watch(packages('{app,src}'), 'build')
+  await this.watch(packages('{scripts,tools,tests}'), 'tools')
+  await this.watch(packages('{app,src}'), 'test')
+}
+
 export async function tools() {
-  const promises = []
   await this
     .source(path.join('{scripts,tools,tests}', '**', '*.js'))
     .babel(babel)
@@ -52,7 +59,7 @@ export async function tools() {
     .target('./')
 
   await this
-    .source(packages(`{scripts,tools,tests}`))
+    .source(packages('{scripts,tools,tests}'))
     .babel(babel)
     .filter((data, opts) => {
       opts.file.dir = modify(opts.file.dir, opts.file.dir.split(path.sep)[2] + '-dist')
@@ -62,7 +69,10 @@ export async function tools() {
 }
 
 export async function test() {
-  await this.start([ 'testUnit', 'testMock' ])
+  await this
+    .source('packages/docs-parser/tests/compair/index.js')
+    .ava()
+  // await this.start([ 'testUnit', 'testMock' ])
 }
 
 export async function testUnit() {

@@ -1,12 +1,12 @@
 /* eslint-disable no-loop-func */
 import path from 'path'
-import docs from '../dist/index.js'
-import Tokenizer from '../dist/parser/tokenizer.js'
+import docs from '../../dist/index.js'
+import Tokenizer from '../../dist/parser/tokenizer.js'
 import fs from 'fs-extra-promisify'
 import globby from 'globby'
 import assert from 'core-assert'
 import { map } from 'async-array-methods'
-import asyncSuite from '../tools/async-suite'
+import asyncSuite from '../../tools/async-suite'
 
 const test_defaults = {
   debug: false,
@@ -63,7 +63,7 @@ addSuite('annotations', async ({ paths, expected }) => {
 })
 
 
-import tokenizerHelper from '../tools/tokenizer-helper.js'
+import tokenizerHelper from '../../tools/tokenizer-helper.js'
 addSuite('Tokenizer', async ({ paths, expected }) => {
   const actual = await map(paths, async (file) => {
     try {
@@ -85,18 +85,6 @@ addSuite('Tokenizer', async ({ paths, expected }) => {
     }
   }
 })
-
-
-const mochaAsync = (fn) => { // eslint-disable-line
-  return async (done) => {
-    try {
-      await fn()
-      done()
-    } catch (err) {
-      done(err)
-    }
-  }
-}
 
 function addSuite(name, folder, callback) {
   if (arguments.length === 2) {

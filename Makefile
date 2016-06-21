@@ -29,5 +29,10 @@ bootstrap:
 	npm i
 	lerna bootstrap
 
+# test:
+# 	cd packages/docs-parser; npm test
 test:
-	cd packages/docs-parser; npm test
+	ava args
+
+ci-test:
+	fly; ava

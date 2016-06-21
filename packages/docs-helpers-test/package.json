@@ -1,15 +1,15 @@
 {
-  "name": "docs-helpers-test-runner",
+  "name": "docs-helpers-test",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
   "license": "ISC",
-  "dependencies": {
-    "babel-register": "^6.9.0",
-    "tape": "^4.6.0"
+  "dependencies": {},
+  "devDependencies": {
+    "power-assert": "^1.4.1"
   }
 }
