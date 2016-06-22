@@ -45,7 +45,7 @@ export default build
 export async function watch() {
   await this.watch(packages('{app,src}'), 'build')
   await this.watch(packages('{scripts,tools,tests}'), 'tools')
-  await this.watch(packages('{app,src}'), 'test')
+  // await this.watch(packages('{app,src}'), 'test')
 }
 
 export async function tools() {

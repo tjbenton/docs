@@ -19,6 +19,7 @@
   "homepage": "https://github.com/tjbenton/docs#readme",
   "devDependencies": {
     "ava": "^0.15.2",
+    "ava-spec": "^1.0.1",
     "babel-eslint": "^6.0.4",
     "babel-plugin-syntax-async-functions": "^6.5.0",
     "babel-plugin-transform-async-to-generator": "^6.7.0",
@@ -51,7 +52,8 @@
       "packages/*/dist/**/*.js"
     ],
     "match": [],
-    "concurrency": 5
+    "concurrency": 5,
+    "timeout": "1m"
   },
   "babel": {
     "presets": [

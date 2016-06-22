@@ -1,16 +1,14 @@
 import { map } from 'async-array-methods'
-
 import assert from 'power-assert'
-// import test from 'ava'
 import path from 'path'
 import globby from 'globby'
 import fs from 'fs-extra-promisify'
+import json from 'jsondiffpatch'
 
 export default class Tests {
   constructor(folder) {
-    this.base = folder
     this.folder = path.join(process.cwd(), folder)
-    this.results = this.tests = new Promise((resolve, reject) => {
+    this.result = this.tests = new Promise((resolve, reject) => {
       this.resolve = resolve
       this.reject = reject
     })
@@ -31,46 +29,47 @@ export default class Tests {
   }
 
   async actual(callback) {
-    const result = await map(await this.expected(), async (test) => {
+    let result = await map(await this.expected(), async (test) => {
       test.actual = await callback(test)
       return test
     })
 
     this.resolve(result)
+
     return result
   }
 
-  async test(t) {
+  async test(t, log = true) {
     this.result = this.tests = await this.tests
-
+    const pass = []
+    const fail = []
     for (let i = 0; i < this.tests.length; i++) {
       let { file, actual, expected } = this.tests[i]
 
       try {
         assert.deepStrictEqual(actual, expected, file)
+        pass.push(file)
       } catch (e) {
-        let json = require('jsondiffpatch')
-        console.log('')
-        console.log('')
-        console.log('')
-        console.log('')
-        console.log('')
-        console.log('')
-        console.log(file)
-        console.log('')
-
         const delta = json.diff(actual, expected)
-        const output = json.formatters.console.format(delta)
-        console.log(output);
-        // console.log(e)
+        const diff = json.formatters.console.format(delta)
+        fail.push({ file, diff })
       }
-      // if (i > 10) {
-      //   t.fail(file)
-      // } else {
-      //   t.pass(file)
-      // }
     }
 
+    if (fail.length) {
+      if (log) {
+        const spaces = '  '
+        fail.forEach((item) => {
+          console.log('')
+          console.log(spaces + item.file)
+          console.log(item.diff.split('\n').map((line) => spaces + spaces + line).join('\n'))
+          console.log('')
+        })
+      }
+      t.fail(`${fail.length} file${fail.length > 1 ? 's' : ''} failed`)
+    } else {
+      t.pass(`${pass.length} file${pass.length > 1 ? 's' : ''} passed`)
+    }
 
     return this.result
   }

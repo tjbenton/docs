@@ -27,8 +27,6 @@ import path from 'path'
 ///   }
 /// }
 /// ```
-const root = process.cwd()
-const root_dir = root.split(path.sep).pop()
 export default {
   autofill() {
     let obj = to.clone(this)
@@ -43,7 +41,7 @@ export default {
     // this ensures that the path that's displayed is always relative
     file.path = path.normalize(file.path)
     if (path.isAbsolute(file.path)) {
-      file.path = path.join(root_dir, file.path.replace(root, ''))
+      file.path = file.path.replace(process.env.PWD.split(path.sep).slice(0, -1).join(path.sep) + path.sep, '')
     }
 
     return { comment, code, file }
