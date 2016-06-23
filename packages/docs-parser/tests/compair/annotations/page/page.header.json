@@ -1,8 +1,6 @@
 {
   "header": {
-    "page": [
-      "level 1/level 2"
-    ],
+    "access": "public",
     "blockinfo": {
       "comment": {
         "start": 1,
@@ -14,12 +12,14 @@
         "end": -1
       },
       "file": {
-        "path": "docs-parser/tests/annotations/page/page.header.js",
+        "path": "docs/packages/docs-parser/tests/compair/annotations/page/page.header.js",
         "start": 1,
         "end": 4
       }
     },
-    "access": "public"
+    "page": [
+      "level 1/level 2"
+    ]
   },
   "body": []
 }

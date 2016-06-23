@@ -2,6 +2,46 @@
   "header": {},
   "body": [
     {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 16,
+          "type": "body"
+        },
+        "code": {
+          "start": 17,
+          "end": 23
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/state/multiple-markup/blocks.scss",
+          "start": 1,
+          "end": 24
+        }
+      },
+      "inline": [],
+      "markup": [
+        {
+          "id": "0",
+          "language": "html",
+          "settings": {},
+          "description": "<p>Example 1</p>\n",
+          "raw": "<div class=\"something-super-awesome ${@state}\">\n  This is the only block that will get states applied to it.\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state}&quot;&gt;\n  This is the only block that will get states applied to it.\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\">\n  This is the only block that will get states applied to it.\n</div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  This is the only block that will get states applied to it.\n&lt;/div&gt;"
+        },
+        {
+          "id": "1",
+          "language": "html",
+          "settings": {},
+          "description": "<p>Example 2</p>\n",
+          "raw": "<div class=\"something-super-awesome\">\n  There are no states created with this markup because it is the\n  second markup annotation in the comment block and there was no\n  id set so the id is 1 by default. If you are looking for an example\n  of multiple markup blocks with seperate states see\n  `state-multiple-markup-blocks-with-different-states.scss`\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  There are no states created with this markup because it is the\n  second markup annotation in the comment block and there was no\n  id set so the id is 1 by default. If you are looking for an example\n  of multiple markup blocks with seperate states see\n  `state-multiple-markup-blocks-with-different-states.scss`\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\">\n  There are no states created with this markup because it is the\n  second markup annotation in the comment block and there was no\n  id set so the id is 1 by default. If you are looking for an example\n  of multiple markup blocks with seperate states see\n  `state-multiple-markup-blocks-with-different-states.scss`\n</div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  There are no states created with this markup because it is the\n  second markup annotation in the comment block and there was no\n  id set so the id is 1 by default. If you are looking for an example\n  of multiple markup blocks with seperate states see\n  `state-multiple-markup-blocks-with-different-states.scss`\n&lt;/div&gt;"
+        }
+      ],
       "states": {
         "0": [
           {
@@ -37,47 +77,7 @@
             }
           }
         ]
-      },
-      "markup": [
-        {
-          "id": "0",
-          "language": "html",
-          "settings": {},
-          "description": "<p>Example 1</p>\n",
-          "raw": "<div class=\"something-super-awesome ${@state}\">\n  This is the only block that will get states applied to it.\n</div>",
-          "escaped": "&lt;div class=&quot;something-super-awesome ${@state}&quot;&gt;\n  This is the only block that will get states applied to it.\n&lt;/div&gt;",
-          "raw_stateless": "<div class=\"something-super-awesome\">\n  This is the only block that will get states applied to it.\n</div>",
-          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  This is the only block that will get states applied to it.\n&lt;/div&gt;"
-        },
-        {
-          "id": "1",
-          "language": "html",
-          "settings": {},
-          "description": "<p>Example 2</p>\n",
-          "raw": "<div class=\"something-super-awesome\">\n  There are no states created with this markup because it is the\n  second markup annotation in the comment block and there was no\n  id set so the id is 1 by default. If you are looking for an example\n  of multiple markup blocks with seperate states see\n  `state-multiple-markup-blocks-with-different-states.scss`\n</div>",
-          "escaped": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  There are no states created with this markup because it is the\n  second markup annotation in the comment block and there was no\n  id set so the id is 1 by default. If you are looking for an example\n  of multiple markup blocks with seperate states see\n  `state-multiple-markup-blocks-with-different-states.scss`\n&lt;/div&gt;",
-          "raw_stateless": "<div class=\"something-super-awesome\">\n  There are no states created with this markup because it is the\n  second markup annotation in the comment block and there was no\n  id set so the id is 1 by default. If you are looking for an example\n  of multiple markup blocks with seperate states see\n  `state-multiple-markup-blocks-with-different-states.scss`\n</div>",
-          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  There are no states created with this markup because it is the\n  second markup annotation in the comment block and there was no\n  id set so the id is 1 by default. If you are looking for an example\n  of multiple markup blocks with seperate states see\n  `state-multiple-markup-blocks-with-different-states.scss`\n&lt;/div&gt;"
-        }
-      ],
-      "blockinfo": {
-        "comment": {
-          "start": 1,
-          "end": 16,
-          "type": "body"
-        },
-        "code": {
-          "start": 17,
-          "end": 23
-        },
-        "file": {
-          "path": "docs-parser/tests/annotations/state/multiple-markup/blocks.scss",
-          "start": 1,
-          "end": 24
-        }
-      },
-      "access": "public",
-      "inline": []
+      }
     }
   ]
 }

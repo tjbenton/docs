@@ -2,7 +2,7 @@
   "header": {},
   "body": [
     {
-      "readonly": true,
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -14,16 +14,16 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/readonly/readonly.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/readonly/readonly.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "readonly": true
     },
     {
-      "readonly": true,
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -35,16 +35,16 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/readonly/readonly.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/readonly/readonly.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "readonly": true
     },
     {
-      "readonly": false,
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -56,13 +56,13 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/readonly/readonly.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/readonly/readonly.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "readonly": false
     }
   ]
 }

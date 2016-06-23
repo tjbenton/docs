@@ -40,10 +40,10 @@
           "header": {},
           "body": [
             {
+              "access": "public",
               "author": [
                 "Tyler Benton"
               ],
-              "description": "<p>Your standard form button.</p>\n",
               "blockinfo": {
                 "comment": {
                   "start": 1,
@@ -55,12 +55,12 @@
                   "end": -1
                 },
                 "file": {
-                  "path": "docs-parser/tests/cases/only-body-comments.scss",
+                  "path": "docs/packages/docs-parser/tests/compair/cases/only-body-comments.scss",
                   "start": 1,
                   "end": 19
                 }
               },
-              "access": "public",
+              "description": "<p>Your standard form button.</p>\n",
               "inline": []
             }
           ]
@@ -72,8 +72,7 @@
         "header": {},
         "body": [
           {
-            "name": "Button group",
-            "description": "<p>Used when there&#39;s a group of buttons that need to be on the same line.</p>\n",
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 6,
@@ -85,15 +84,35 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/cases/only-body-comments.scss",
+                "path": "docs/packages/docs-parser/tests/compair/cases/only-body-comments.scss",
                 "start": 1,
                 "end": 19
               }
             },
-            "access": "public",
-            "inline": []
+            "description": "<p>Used when there&#39;s a group of buttons that need to be on the same line.</p>\n",
+            "inline": [],
+            "name": "Button group"
           },
           {
+            "access": "public",
+            "blockinfo": {
+              "comment": {
+                "start": 10,
+                "end": 18,
+                "type": "body"
+              },
+              "code": {
+                "start": -1,
+                "end": -1
+              },
+              "file": {
+                "path": "docs/packages/docs-parser/tests/compair/cases/only-body-comments.scss",
+                "start": 1,
+                "end": 19
+              }
+            },
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
+            "inline": [],
             "name": "Test",
             "states": {
               "null": [
@@ -125,26 +144,7 @@
                   "markup": {}
                 }
               ]
-            },
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
-            "blockinfo": {
-              "comment": {
-                "start": 10,
-                "end": 18,
-                "type": "body"
-              },
-              "code": {
-                "start": -1,
-                "end": -1
-              },
-              "file": {
-                "path": "docs-parser/tests/cases/only-body-comments.scss",
-                "start": 1,
-                "end": 19
-              }
-            },
-            "access": "public",
-            "inline": []
+            }
           }
         ]
       }

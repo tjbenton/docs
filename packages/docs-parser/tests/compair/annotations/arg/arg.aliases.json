@@ -2,6 +2,7 @@
   "header": {},
   "body": [
     {
+      "access": "public",
       "arg": [
         {
           "types": [
@@ -23,15 +24,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/arg/arg.aliases.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/arg/arg.aliases.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
       "inline": []
     },
     {
+      "access": "public",
       "arg": [
         {
           "types": [
@@ -53,15 +54,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/arg/arg.aliases.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/arg/arg.aliases.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
       "inline": []
     },
     {
+      "access": "public",
       "arg": [
         {
           "types": [
@@ -83,12 +84,11 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/arg/arg.aliases.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/arg/arg.aliases.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
       "inline": []
     }
   ]

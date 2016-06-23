@@ -2,7 +2,7 @@
   "header": {},
   "body": [
     {
-      "name": "Title",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -14,16 +14,16 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/name/name.aliases.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/name/name.aliases.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "name": "Title"
     },
     {
-      "name": "Heading",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -35,16 +35,16 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/name/name.aliases.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/name/name.aliases.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "name": "Heading"
     },
     {
-      "name": "Header",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -56,13 +56,13 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/name/name.aliases.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/name/name.aliases.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "name": "Header"
     }
   ]
 }

@@ -28,7 +28,7 @@
       "buttons": {
         "page": {
           "header": {
-            "name": "All the things test",
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
@@ -43,37 +43,33 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/cases/allthethings-scss.scss",
+                "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-scss.scss",
                 "start": 1,
                 "end": 239
               }
             },
-            "access": "public"
+            "name": "All the things test"
           },
           "body": [
             {
-              "name": "Buttons",
-              "description": "<p>Your standard form button.</p>\n",
-              "states": {
-                "0": [
-                  {
-                    "state": {
-                      "0": {
-                        "state": ":hover",
-                        "description": "<p>@state inline</p>\n"
-                      }
-                    },
-                    "markup": {
-                      "id": "0",
-                      "language": "scss",
-                      "settings": {},
-                      "description": "<p>EXAMPLE 1</p>\n",
-                      "raw": "<div class=\"c-btn-group\">\n  <a href=\"#\" class=\"c-btn :hover\">Button (a.button)</a>\n  <button class=\"c-btn :hover\">Button (button)</button>\n  <input class=\"c-btn :hover\" type=\"button\" value=\"Button (input.button)\">\n</div>",
-                      "escaped": "&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn :hover&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn :hover&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn :hover&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
-                    }
-                  }
-                ]
+              "access": "public",
+              "blockinfo": {
+                "comment": {
+                  "start": 8,
+                  "end": 26,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 27,
+                  "end": 239
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-scss.scss",
+                  "start": 1,
+                  "end": 239
+                }
               },
+              "description": "<p>Your standard form button.</p>\n",
               "markup": [
                 {
                   "id": "0",
@@ -96,25 +92,46 @@
                   "escaped_stateless": "&lt;p&gt; THIS IS SOME COMPLETELY DIFFERENT EXAMPLE ;)&lt;/p&gt;\n&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
                 }
               ],
-              "blockinfo": {
-                "comment": {
-                  "start": 8,
-                  "end": 26,
-                  "type": "body"
-                },
-                "code": {
-                  "start": 27,
-                  "end": 239
-                },
-                "file": {
-                  "path": "docs-parser/tests/cases/allthethings-scss.scss",
-                  "start": 1,
-                  "end": 239
-                }
+              "name": "Buttons",
+              "states": {
+                "0": [
+                  {
+                    "state": {
+                      "0": {
+                        "state": ":hover",
+                        "description": "<p>@state inline</p>\n"
+                      }
+                    },
+                    "markup": {
+                      "id": "0",
+                      "language": "scss",
+                      "settings": {},
+                      "description": "<p>EXAMPLE 1</p>\n",
+                      "raw": "<div class=\"c-btn-group\">\n  <a href=\"#\" class=\"c-btn :hover\">Button (a.button)</a>\n  <button class=\"c-btn :hover\">Button (button)</button>\n  <input class=\"c-btn :hover\" type=\"button\" value=\"Button (input.button)\">\n</div>",
+                      "escaped": "&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn :hover&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn :hover&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn :hover&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
+                    }
+                  }
+                ]
               },
-              "access": "public",
               "inline": [
                 {
+                  "access": "public",
+                  "blockinfo": {
+                    "comment": {
+                      "start": 48,
+                      "end": 48,
+                      "type": "inline"
+                    },
+                    "code": {
+                      "start": 48,
+                      "end": 50
+                    },
+                    "file": {
+                      "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-scss.scss",
+                      "start": 1,
+                      "end": 239
+                    }
+                  },
                   "states": {
                     "1": [
                       {
@@ -134,26 +151,26 @@
                         }
                       }
                     ]
-                  },
+                  }
+                },
+                {
+                  "access": "public",
                   "blockinfo": {
                     "comment": {
-                      "start": 48,
-                      "end": 48,
+                      "start": 52,
+                      "end": 53,
                       "type": "inline"
                     },
                     "code": {
-                      "start": 48,
-                      "end": 50
+                      "start": 54,
+                      "end": 56
                     },
                     "file": {
-                      "path": "docs-parser/tests/cases/allthethings-scss.scss",
+                      "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-scss.scss",
                       "start": 1,
                       "end": 239
                     }
                   },
-                  "access": "public"
-                },
-                {
                   "states": {
                     "0": [
                       {
@@ -189,24 +206,7 @@
                         }
                       }
                     ]
-                  },
-                  "blockinfo": {
-                    "comment": {
-                      "start": 52,
-                      "end": 53,
-                      "type": "inline"
-                    },
-                    "code": {
-                      "start": 54,
-                      "end": 56
-                    },
-                    "file": {
-                      "path": "docs-parser/tests/cases/allthethings-scss.scss",
-                      "start": 1,
-                      "end": 239
-                    }
-                  },
-                  "access": "public"
+                  }
                 }
               ]
             }

@@ -2,6 +2,36 @@
   "header": {},
   "body": [
     {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 11,
+          "type": "body"
+        },
+        "code": {
+          "start": 12,
+          "end": 30
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/state/complex/single-markup.scss",
+          "start": 1,
+          "end": 31
+        }
+      },
+      "inline": [],
+      "markup": [
+        {
+          "id": "0",
+          "language": "html",
+          "settings": {},
+          "description": "<p>Example 1</p>\n",
+          "raw": "<div class=\"something-super-awesome ${@state[0]}\">\n  <h3>${@state[0].description}</h3>\n  <ul>\n    <li class=\"something-super-awesome__item ${@state[1].state}\">${@state[1].description}</li>\n  </ul>\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state[0]}&quot;&gt;\n  &lt;h3&gt;${@state[0].description}&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item ${@state[1].state}&quot;&gt;${@state[1].description}&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\">\n  <h3></h3>\n  <ul>\n    <li class=\"something-super-awesome__item\"></li>\n  </ul>\n</div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  &lt;h3&gt;&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item&quot;&gt;&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;"
+        }
+      ],
       "states": {
         "0": [
           {
@@ -25,37 +55,7 @@
             }
           }
         ]
-      },
-      "markup": [
-        {
-          "id": "0",
-          "language": "html",
-          "settings": {},
-          "description": "<p>Example 1</p>\n",
-          "raw": "<div class=\"something-super-awesome ${@state[0]}\">\n  <h3>${@state[0].description}</h3>\n  <ul>\n    <li class=\"something-super-awesome__item ${@state[1].state}\">${@state[1].description}</li>\n  </ul>\n</div>",
-          "escaped": "&lt;div class=&quot;something-super-awesome ${@state[0]}&quot;&gt;\n  &lt;h3&gt;${@state[0].description}&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item ${@state[1].state}&quot;&gt;${@state[1].description}&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;",
-          "raw_stateless": "<div class=\"something-super-awesome\">\n  <h3></h3>\n  <ul>\n    <li class=\"something-super-awesome__item\"></li>\n  </ul>\n</div>",
-          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  &lt;h3&gt;&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item&quot;&gt;&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;"
-        }
-      ],
-      "blockinfo": {
-        "comment": {
-          "start": 1,
-          "end": 11,
-          "type": "body"
-        },
-        "code": {
-          "start": 12,
-          "end": 30
-        },
-        "file": {
-          "path": "docs-parser/tests/annotations/state/complex/single-markup.scss",
-          "start": 1,
-          "end": 31
-        }
-      },
-      "access": "public",
-      "inline": []
+      }
     }
   ]
 }

@@ -16,7 +16,7 @@
     "components": {
       "page": {
         "header": {
-          "name": "All the things test",
+          "access": "public",
           "author": [
             "Tyler Benton"
           ],
@@ -31,17 +31,16 @@
               "end": -1
             },
             "file": {
-              "path": "docs-parser/tests/cases/allthethings-js.js",
+              "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-js.js",
               "start": 1,
               "end": 23
             }
           },
-          "access": "public"
+          "name": "All the things test"
         },
         "body": [
           {
-            "name": "Beards",
-            "description": "<p>This is an awesome class about beards</p>\n",
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 8,
@@ -53,15 +52,16 @@
                 "end": 23
               },
               "file": {
-                "path": "docs-parser/tests/cases/allthethings-js.js",
+                "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-js.js",
                 "start": 1,
                 "end": 23
               }
             },
-            "access": "public",
+            "description": "<p>This is an awesome class about beards</p>\n",
+            "name": "Beards",
             "inline": [
               {
-                "name": "constructor",
+                "access": "public",
                 "arg": [
                   {
                     "types": [
@@ -83,15 +83,15 @@
                     "end": 16
                   },
                   "file": {
-                    "path": "docs-parser/tests/cases/allthethings-js.js",
+                    "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-js.js",
                     "start": 1,
                     "end": 23
                   }
                 },
-                "access": "public"
+                "name": "constructor"
               },
               {
-                "name": "beard",
+                "access": "public",
                 "arg": [
                   {
                     "types": [
@@ -113,12 +113,12 @@
                     "end": 22
                   },
                   "file": {
-                    "path": "docs-parser/tests/cases/allthethings-js.js",
+                    "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-js.js",
                     "start": 1,
                     "end": 23
                   }
                 },
-                "access": "public"
+                "name": "beard"
               }
             ]
           }

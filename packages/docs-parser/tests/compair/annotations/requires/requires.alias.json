@@ -2,13 +2,7 @@
   "header": {},
   "body": [
     {
-      "requires": [
-        {
-          "types": [],
-          "name": "node",
-          "description": ""
-        }
-      ],
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -20,13 +14,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/requires/requires.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/requires/requires.alias.js",
           "start": 1,
           "end": 2
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "requires": [
+        {
+          "types": [],
+          "name": "node",
+          "description": ""
+        }
+      ]
     }
   ]
 }

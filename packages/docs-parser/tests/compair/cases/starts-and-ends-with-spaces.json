@@ -18,11 +18,28 @@
         "header": {},
         "body": [
           {
-            "name": "Only block in body",
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
+            "blockinfo": {
+              "comment": {
+                "start": 7,
+                "end": 22,
+                "type": "body"
+              },
+              "code": {
+                "start": 23,
+                "end": 32
+              },
+              "file": {
+                "path": "docs/packages/docs-parser/tests/compair/cases/starts-and-ends-with-spaces.scss",
+                "start": 1,
+                "end": 38
+              }
+            },
             "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
+            "inline": [],
             "markup": [
               {
                 "id": "0",
@@ -37,24 +54,7 @@
                 "escaped_stateless": "@include moz-only(){\n // removes the weird styling in firefox\n -moz-appearance: none;\n padding: {\n  top: nth-val(get($form-config, padding), 1) - .2em;\n  bottom: nth-val(get($form-config, padding), 3) - .2em;\n };\n text-indent: 0.01px;\n text-overflow: &quot;&quot;;\n}"
               }
             ],
-            "blockinfo": {
-              "comment": {
-                "start": 7,
-                "end": 22,
-                "type": "body"
-              },
-              "code": {
-                "start": 23,
-                "end": 32
-              },
-              "file": {
-                "path": "docs-parser/tests/cases/starts-and-ends-with-spaces.scss",
-                "start": 1,
-                "end": 38
-              }
-            },
-            "access": "public",
-            "inline": []
+            "name": "Only block in body"
           }
         ]
       }

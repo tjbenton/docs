@@ -16,6 +16,7 @@
     "no-space-between-header-and-body-comment": {
       "page": {
         "header": {
+          "access": "public",
           "author": [
             "Tyler Benton"
           ],
@@ -30,17 +31,33 @@
               "end": -1
             },
             "file": {
-              "path": "docs-parser/tests/cases/no-space-between-header-and-body-comments.scss",
+              "path": "docs/packages/docs-parser/tests/compair/cases/no-space-between-header-and-body-comments.scss",
               "start": 1,
               "end": 28
             }
-          },
-          "access": "public"
+          }
         },
         "body": [
           {
-            "name": "moz-only",
+            "access": "public",
+            "blockinfo": {
+              "comment": {
+                "start": 5,
+                "end": 17,
+                "type": "body"
+              },
+              "code": {
+                "start": 18,
+                "end": 27
+              },
+              "file": {
+                "path": "docs/packages/docs-parser/tests/compair/cases/no-space-between-header-and-body-comments.scss",
+                "start": 1,
+                "end": 28
+              }
+            },
             "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
+            "inline": [],
             "markup": [
               {
                 "id": "0",
@@ -55,24 +72,7 @@
                 "escaped_stateless": "@include moz-only(){\n // removes the weird styling in firefox\n -moz-appearance: none;\n padding: {\n  top: nth-val(get($form-config, padding), 1) - .2em;\n  bottom: nth-val(get($form-config, padding), 3) - .2em;\n };\n text-indent: 0.01px;\n text-overflow: &quot;&quot;;\n}"
               }
             ],
-            "blockinfo": {
-              "comment": {
-                "start": 5,
-                "end": 17,
-                "type": "body"
-              },
-              "code": {
-                "start": 18,
-                "end": 27
-              },
-              "file": {
-                "path": "docs-parser/tests/cases/no-space-between-header-and-body-comments.scss",
-                "start": 1,
-                "end": 28
-              }
-            },
-            "access": "public",
-            "inline": []
+            "name": "moz-only"
           }
         ]
       }

@@ -1,11 +1,9 @@
 {
   "header": {
+    "access": "public",
     "author": [
       "Author One",
       "Author Two"
-    ],
-    "page": [
-      "general"
     ],
     "blockinfo": {
       "comment": {
@@ -18,15 +16,18 @@
         "end": -1
       },
       "file": {
-        "path": "docs-parser/tests/annotations/author/author.multiple.js",
+        "path": "docs/packages/docs-parser/tests/compair/annotations/author/author.multiple.js",
         "start": 1,
         "end": 14
       }
     },
-    "access": "public"
+    "page": [
+      "general"
+    ]
   },
   "body": [
     {
+      "access": "public",
       "author": [
         "Author One",
         "Author Two"
@@ -42,15 +43,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/author/author.multiple.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/author/author.multiple.js",
           "start": 1,
           "end": 14
         }
       },
-      "access": "public",
       "inline": []
     },
     {
+      "access": "public",
       "author": [
         "Author One",
         "Author Two"
@@ -66,15 +67,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/author/author.multiple.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/author/author.multiple.js",
           "start": 1,
           "end": 14
         }
       },
-      "access": "public",
       "inline": []
     },
     {
+      "access": "public",
       "author": [
         "Author One",
         "Author Two"
@@ -90,12 +91,11 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/author/author.multiple.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/author/author.multiple.js",
           "start": 1,
           "end": 14
         }
       },
-      "access": "public",
       "inline": []
     }
   ]

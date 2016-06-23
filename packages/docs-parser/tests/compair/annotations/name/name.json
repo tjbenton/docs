@@ -2,7 +2,7 @@
   "header": {},
   "body": [
     {
-      "name": "Foo",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -14,13 +14,13 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/name/name.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/name/name.js",
           "start": 1,
           "end": 2
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "name": "Foo"
     }
   ]
 }

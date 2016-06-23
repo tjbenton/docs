@@ -2,13 +2,7 @@
   "header": {},
   "body": [
     {
-      "todo": [
-        {
-          "importance": "0",
-          "assignees": [],
-          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-        }
-      ],
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -20,22 +14,22 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/todo/todo.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/todo/todo.body.js",
           "start": 1,
           "end": 15
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "todo": [
         {
-          "importance": "5",
+          "importance": "0",
           "assignees": [],
           "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
         }
-      ],
+      ]
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -47,22 +41,22 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/todo/todo.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/todo/todo.body.js",
           "start": 1,
           "end": 15
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "todo": [
         {
           "importance": "5",
           "assignees": [],
           "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
         }
-      ],
+      ]
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -74,24 +68,22 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/todo/todo.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/todo/todo.body.js",
           "start": 1,
           "end": 15
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "todo": [
         {
-          "importance": "10",
-          "assignees": [
-            "Assignee One"
-          ],
+          "importance": "5",
+          "assignees": [],
           "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
         }
-      ],
+      ]
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 7,
@@ -103,25 +95,24 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/todo/todo.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/todo/todo.body.js",
           "start": 1,
           "end": 15
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "todo": [
         {
           "importance": "10",
           "assignees": [
-            "Assignee One",
-            "Assignee Two"
+            "Assignee One"
           ],
           "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
         }
-      ],
+      ]
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 9,
@@ -133,25 +124,25 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/todo/todo.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/todo/todo.body.js",
           "start": 1,
           "end": 15
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "todo": [
         {
-          "importance": "8",
+          "importance": "10",
           "assignees": [
             "Assignee One",
             "Assignee Two"
           ],
-          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem sed distinctio,\nneque molestiae numquam cumque incidunt magni et provident temporibus. Illum, ullam\nquidem nulla architecto, numquam hic voluptate provident sit!</p>\n"
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
         }
-      ],
+      ]
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 11,
@@ -163,13 +154,22 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/todo/todo.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/todo/todo.body.js",
           "start": 1,
           "end": 15
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "todo": [
+        {
+          "importance": "8",
+          "assignees": [
+            "Assignee One",
+            "Assignee Two"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem sed distinctio,\nneque molestiae numquam cumque incidunt magni et provident temporibus. Illum, ullam\nquidem nulla architecto, numquam hic voluptate provident sit!</p>\n"
+        }
+      ]
     }
   ]
 }

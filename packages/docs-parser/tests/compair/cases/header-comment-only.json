@@ -11,11 +11,10 @@
     "header-comment-only": {
       "page": {
         "header": {
-          "name": "Header",
+          "access": "public",
           "author": [
             "Tyler Benton"
           ],
-          "description": "<p>This test is for a file that only has a header comment.</p>\n",
           "blockinfo": {
             "comment": {
               "start": 1,
@@ -27,12 +26,13 @@
               "end": -1
             },
             "file": {
-              "path": "docs-parser/tests/cases/header-comment-only.scss",
+              "path": "docs/packages/docs-parser/tests/compair/cases/header-comment-only.scss",
               "start": 1,
               "end": 8
             }
           },
-          "access": "public"
+          "description": "<p>This test is for a file that only has a header comment.</p>\n",
+          "name": "Header"
         },
         "body": []
       }

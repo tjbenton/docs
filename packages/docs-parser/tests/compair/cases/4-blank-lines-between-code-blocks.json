@@ -18,11 +18,7 @@
         "header": {},
         "body": [
           {
-            "name": "moz-only",
-            "raw-code": {
-              "raw": "@mixin moz-only() {\n  $selector: &;\n  @at-root {\n    @-moz-document url-prefix() {\n      #{$selector} {\n        @content;\n      }\n    }\n  }\n}",
-              "escaped": "@mixin moz-only() {\n  $selector: &amp;;\n  @at-root {\n    @-moz-document url-prefix() {\n      #{$selector} {\n        @content;\n      }\n    }\n  }\n}"
-            },
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -34,13 +30,17 @@
                 "end": 13
               },
               "file": {
-                "path": "docs-parser/tests/cases/4-blank-lines-between-code-blocks.scss",
+                "path": "docs/packages/docs-parser/tests/compair/cases/4-blank-lines-between-code-blocks.scss",
                 "start": 1,
                 "end": 34
               }
             },
-            "access": "public",
-            "inline": []
+            "inline": [],
+            "name": "moz-only",
+            "raw-code": {
+              "raw": "@mixin moz-only() {\n  $selector: &;\n  @at-root {\n    @-moz-document url-prefix() {\n      #{$selector} {\n        @content;\n      }\n    }\n  }\n}",
+              "escaped": "@mixin moz-only() {\n  $selector: &amp;;\n  @at-root {\n    @-moz-document url-prefix() {\n      #{$selector} {\n        @content;\n      }\n    }\n  }\n}"
+            }
           }
         ]
       }

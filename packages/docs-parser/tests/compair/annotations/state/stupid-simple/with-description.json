@@ -2,26 +2,24 @@
   "header": {},
   "body": [
     {
-      "states": {
-        "0": [
-          {
-            "state": {
-              "0": {
-                "state": ":hover",
-                "description": "<p>Some super awesome description</p>\n"
-              }
-            },
-            "markup": {
-              "id": "0",
-              "language": "html",
-              "settings": {},
-              "description": "",
-              "raw": "<div class=\"something-super-awesome :hover\">\n  <p>Some super awesome description</p>\n\n</div>",
-              "escaped": "&lt;div class=&quot;something-super-awesome :hover&quot;&gt;\n  <p>Some super awesome description</p>\n\n&lt;/div&gt;"
-            }
-          }
-        ]
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 6,
+          "type": "body"
+        },
+        "code": {
+          "start": 7,
+          "end": 13
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/state/stupid-simple/with-description.scss",
+          "start": 1,
+          "end": 43
+        }
       },
+      "inline": [],
       "markup": [
         {
           "id": "0",
@@ -34,26 +32,6 @@
           "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;&lt;/div&gt;"
         }
       ],
-      "blockinfo": {
-        "comment": {
-          "start": 1,
-          "end": 6,
-          "type": "body"
-        },
-        "code": {
-          "start": 7,
-          "end": 13
-        },
-        "file": {
-          "path": "docs-parser/tests/annotations/state/stupid-simple/with-description.scss",
-          "start": 1,
-          "end": 43
-        }
-      },
-      "access": "public",
-      "inline": []
-    },
-    {
       "states": {
         "0": [
           {
@@ -73,7 +51,27 @@
             }
           }
         ]
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 16,
+          "end": 21,
+          "type": "body"
+        },
+        "code": {
+          "start": 22,
+          "end": 28
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/state/stupid-simple/with-description.scss",
+          "start": 1,
+          "end": 43
+        }
       },
+      "inline": [],
       "markup": [
         {
           "id": "0",
@@ -86,26 +84,6 @@
           "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;&lt;/div&gt;"
         }
       ],
-      "blockinfo": {
-        "comment": {
-          "start": 16,
-          "end": 21,
-          "type": "body"
-        },
-        "code": {
-          "start": 22,
-          "end": 28
-        },
-        "file": {
-          "path": "docs-parser/tests/annotations/state/stupid-simple/with-description.scss",
-          "start": 1,
-          "end": 43
-        }
-      },
-      "access": "public",
-      "inline": []
-    },
-    {
       "states": {
         "0": [
           {
@@ -125,7 +103,27 @@
             }
           }
         ]
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 30,
+          "end": 35,
+          "type": "body"
+        },
+        "code": {
+          "start": 36,
+          "end": 42
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/state/stupid-simple/with-description.scss",
+          "start": 1,
+          "end": 43
+        }
       },
+      "inline": [],
       "markup": [
         {
           "id": "0",
@@ -138,24 +136,26 @@
           "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;&lt;/div&gt;"
         }
       ],
-      "blockinfo": {
-        "comment": {
-          "start": 30,
-          "end": 35,
-          "type": "body"
-        },
-        "code": {
-          "start": 36,
-          "end": 42
-        },
-        "file": {
-          "path": "docs-parser/tests/annotations/state/stupid-simple/with-description.scss",
-          "start": 1,
-          "end": 43
-        }
-      },
-      "access": "public",
-      "inline": []
+      "states": {
+        "0": [
+          {
+            "state": {
+              "0": {
+                "state": ":hover",
+                "description": "<p>Some super awesome description</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :hover\">\n  <p>Some super awesome description</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :hover&quot;&gt;\n  <p>Some super awesome description</p>\n\n&lt;/div&gt;"
+            }
+          }
+        ]
+      }
     }
   ]
 }

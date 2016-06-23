@@ -1,9 +1,6 @@
 {
   "header": {
     "access": "private",
-    "page": [
-      "general"
-    ],
     "blockinfo": {
       "comment": {
         "start": 1,
@@ -15,11 +12,14 @@
         "end": -1
       },
       "file": {
-        "path": "docs-parser/tests/annotations/access/access.header.js",
+        "path": "docs/packages/docs-parser/tests/compair/annotations/access/access.header.js",
         "start": 1,
         "end": 4
       }
-    }
+    },
+    "page": [
+      "general"
+    ]
   },
   "body": []
 }

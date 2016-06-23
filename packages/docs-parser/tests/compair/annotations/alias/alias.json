@@ -2,6 +2,7 @@
   "header": {},
   "body": [
     {
+      "access": "public",
       "alias": [
         "foo"
       ],
@@ -16,15 +17,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/alias/alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/alias/alias.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
       "inline": []
     },
     {
+      "access": "public",
       "alias": [
         "foo",
         "bar"
@@ -40,15 +41,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/alias/alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/alias/alias.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
       "inline": []
     },
     {
+      "access": "public",
       "alias": [
         "foo",
         "bar"
@@ -64,12 +65,11 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/alias/alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/alias/alias.js",
           "start": 1,
           "end": 6
         }
       },
-      "access": "public",
       "inline": []
     }
   ]

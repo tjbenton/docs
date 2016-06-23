@@ -2,12 +2,7 @@
   "header": {},
   "body": [
     {
-      "throws": [
-        {
-          "types": [],
-          "description": ""
-        }
-      ],
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -19,23 +14,21 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/throws/throws.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/throws/throws.js",
           "start": 1,
           "end": 16
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "throws": [
         {
-          "types": [
-            "fileNotFound"
-          ],
+          "types": [],
           "description": ""
         }
-      ],
+      ]
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -47,23 +40,23 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/throws/throws.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/throws/throws.js",
           "start": 1,
           "end": 16
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "throws": [
         {
           "types": [
             "fileNotFound"
           ],
-          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+          "description": ""
         }
-      ],
+      ]
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -75,15 +68,12 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/throws/throws.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/throws/throws.js",
           "start": 1,
           "end": 16
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "throws": [
         {
           "types": [
@@ -91,7 +81,10 @@
           ],
           "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
         }
-      ],
+      ]
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 7,
@@ -103,23 +96,23 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/throws/throws.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/throws/throws.js",
           "start": 1,
           "end": 16
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "throws": [
         {
           "types": [
             "fileNotFound"
           ],
-          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod sequi adipisci illum.\nAtque itaque sequi, qui ratione aliquid debitis dolorem alias blanditiis, impedit\nnecessitatibus quidem at non, earum a esse.</p>\n"
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
         }
-      ],
+      ]
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 9,
@@ -131,15 +124,40 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/throws/throws.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/throws/throws.js",
           "start": 1,
           "end": 16
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "throws": [
+        {
+          "types": [
+            "fileNotFound"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod sequi adipisci illum.\nAtque itaque sequi, qui ratione aliquid debitis dolorem alias blanditiis, impedit\nnecessitatibus quidem at non, earum a esse.</p>\n"
+        }
+      ]
     },
     {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 14,
+          "end": 15,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/throws/throws.js",
+          "start": 1,
+          "end": 16
+        }
+      },
+      "inline": [],
       "throws": [
         {
           "types": [
@@ -153,25 +171,7 @@
           ],
           "description": "<p>when something goes wrong</p>\n"
         }
-      ],
-      "blockinfo": {
-        "comment": {
-          "start": 14,
-          "end": 15,
-          "type": "body"
-        },
-        "code": {
-          "start": -1,
-          "end": -1
-        },
-        "file": {
-          "path": "docs-parser/tests/annotations/throws/throws.js",
-          "start": 1,
-          "end": 16
-        }
-      },
-      "access": "public",
-      "inline": []
+      ]
     }
   ]
 }

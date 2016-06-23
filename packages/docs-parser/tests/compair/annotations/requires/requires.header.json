@@ -1,17 +1,6 @@
 {
   "header": {
-    "requires": [
-      {
-        "types": [
-          "function"
-        ],
-        "name": "path",
-        "description": "<p>the path function from node</p>\n"
-      }
-    ],
-    "page": [
-      "general"
-    ],
+    "access": "public",
     "blockinfo": {
       "comment": {
         "start": 1,
@@ -23,12 +12,23 @@
         "end": -1
       },
       "file": {
-        "path": "docs-parser/tests/annotations/requires/requires.header.js",
+        "path": "docs/packages/docs-parser/tests/compair/annotations/requires/requires.header.js",
         "start": 1,
         "end": 4
       }
     },
-    "access": "public"
+    "page": [
+      "general"
+    ],
+    "requires": [
+      {
+        "types": [
+          "function"
+        ],
+        "name": "path",
+        "description": "<p>the path function from node</p>\n"
+      }
+    ]
   },
   "body": []
 }

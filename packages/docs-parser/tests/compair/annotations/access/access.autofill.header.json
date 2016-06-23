@@ -1,9 +1,6 @@
 {
   "header": {
-    "name": "autofill access",
-    "page": [
-      "general"
-    ],
+    "access": "public",
     "blockinfo": {
       "comment": {
         "start": 1,
@@ -15,12 +12,15 @@
         "end": -1
       },
       "file": {
-        "path": "docs-parser/tests/annotations/access/access.autofill.header.js",
+        "path": "docs/packages/docs-parser/tests/compair/annotations/access/access.autofill.header.js",
         "start": 1,
         "end": 4
       }
     },
-    "access": "public"
+    "name": "autofill access",
+    "page": [
+      "general"
+    ]
   },
   "body": []
 }

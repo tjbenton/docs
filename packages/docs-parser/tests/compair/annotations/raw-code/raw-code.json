@@ -2,10 +2,7 @@
   "header": {},
   "body": [
     {
-      "raw-code": {
-        "raw": "function rawCode() {\n\n}",
-        "escaped": "function rawCode() {\n\n}"
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -17,13 +14,16 @@
           "end": 4
         },
         "file": {
-          "path": "docs-parser/tests/annotations/raw-code/raw-code.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/raw-code/raw-code.js",
           "start": 1,
           "end": 4
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "raw-code": {
+        "raw": "function rawCode() {\n\n}",
+        "escaped": "function rawCode() {\n\n}"
+      }
     }
   ]
 }

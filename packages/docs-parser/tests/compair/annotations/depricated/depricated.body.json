@@ -2,10 +2,7 @@
   "header": {},
   "body": [
     {
-      "deprecated": {
-        "version": "0",
-        "description": ""
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -17,19 +14,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/depricated/depricated.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/depricated/depricated.body.js",
           "start": 1,
           "end": 11
         }
       },
-      "access": "public",
+      "deprecated": {
+        "version": "0",
+        "description": ""
+      },
       "inline": []
     },
     {
-      "deprecated": {
-        "version": "0.0.1",
-        "description": "<p>Lorem</p>\n"
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -41,19 +38,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/depricated/depricated.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/depricated/depricated.body.js",
           "start": 1,
           "end": 11
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
       "deprecated": {
         "version": "0.0.1",
         "description": "<p>Lorem</p>\n"
       },
+      "inline": []
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -65,19 +62,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/depricated/depricated.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/depricated/depricated.body.js",
           "start": 1,
           "end": 11
         }
       },
-      "access": "public",
+      "deprecated": {
+        "version": "0.0.1",
+        "description": "<p>Lorem</p>\n"
+      },
       "inline": []
     },
     {
-      "deprecated": {
-        "version": "^0.0.1",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis maiores veritatis,\nsed repellat voluptatibus, eaque nihil assumenda odit at, ea consequatur provident\naccusamus fugit magnam et adipisci eum, saepe incidunt.</p>\n"
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 7,
@@ -89,12 +86,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/depricated/depricated.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/depricated/depricated.body.js",
           "start": 1,
           "end": 11
         }
       },
-      "access": "public",
+      "deprecated": {
+        "version": "^0.0.1",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis maiores veritatis,\nsed repellat voluptatibus, eaque nihil assumenda odit at, ea consequatur provident\naccusamus fugit magnam et adipisci eum, saepe incidunt.</p>\n"
+      },
       "inline": []
     }
   ]

@@ -1,12 +1,5 @@
-
-/* eslint-disable prefer-arrow-callback, func-names, no-shadow, babel/object-shorthand */
 'use strict'
 require('babel-register')
-
-// var docs = require('..').default
-// var Tokenizer = require('../dist/parser/tokenizer.js').default
-// var path = require('path')
-// var clor = require('clor')
 
 import fs from 'fs-extra-promisify'
 import globby from 'globby'
@@ -64,7 +57,7 @@ export default async function createTest() { // eslint-disable-line
 
   async function run(file) {
     let name = file.match(/(?:tests\/compair\/)([a-z\-]*)/)[1]
-    let fn = create[name]
+    let fn = create[to.camelCase(name)]
     let log_file = file.replace(path.join(_root, ''), 'docs')
     let result = { file, log_file }
     if (typeof fn !== 'function') {
@@ -126,97 +119,6 @@ export default async function createTest() { // eslint-disable-line
   }
 }
 
-//
-// glob(argv, { ignore: 'tests/**/*.json', nodir: true })
-//   .then(function(files) {
-//     var promises = []
-//     for (var i = 0; i < files.length; i++) {
-//       promises.push(sortTest(path.join(root, files[i])))
-//     }
-//
-//     return Promise.all(promises)
-//   })
-//   .then(function(parsed) {
-//     for (var i = 0; i < parsed.length; i++) {
-//       console.log('   ', (i + 1) + ':', parsed[i])
-//     }
-//   })
-//
-//
-//
-// function sortTest(file) {
-//   var type = file.match(/(?:tests\/)([a-z\-]*)/)[1]
-//
-//   switch (type) {
-//     case 'cases':
-//     case 'file-types':
-//       return caseTest(file)
-//     case 'tokenizer':
-//       return tokenizerTest(file)
-//     case 'annotations':
-//       return annotationTest(file)
-//     default:
-//       return Promise.resolve(clor.yellow(file + " isn't a test"))
-//   }
-// }
-//
-// function output(file, data) {
-//   return fs.outputJson(
-//     file.replace(path.extname(file), '.json'),
-//     data,
-//     { spaces: 2 }
-//   )
-// }
-//
-//
-// function annotationTest(file) {
-//   return new Promise(function(resolve) {
-//     docs({
-//       files: file,
-//       warning: false,
-//       debug: false,
-//       timestamps: false,
-//       raw: true,
-//       ignore: '.*'
-//     })
-//     .then(function(parsed) {
-//       return output(file, parsed[file])
-//     })
-//     .then(function() {
-//       resolve(clor.green(file) + '')
-//     })
-//     .catch(function(err) {
-//       console.trace(err)
-//       resolve(clor.red(file) + '')
-//     })
-//   })
-// }
-//
-//
-//
-// function caseTest(file) {
-//   return new Promise(function(resolve) {
-//     docs({
-//       files: file,
-//       warning: false,
-//       debug: false,
-//       timestamps: false,
-//       ignore: '.*'
-//     })
-//     .then(function(parsed) {
-//       return output(file, parsed)
-//     })
-//     .then(function() {
-//       resolve(clor.green(file) + '')
-//     })
-//     .catch(function(err) {
-//       console.trace(err)
-//       resolve(clor.red(file) + '')
-//     })
-//   })
-// }
-//
-//
 // var tokenizerHelper = require('../tools/tokenizer-helper.js')
 // function tokenizerTest(file) {
 //   return new Promise(function(resolve) {

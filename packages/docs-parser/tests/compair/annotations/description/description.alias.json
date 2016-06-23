@@ -2,8 +2,7 @@
   "header": {},
   "body": [
     {
-      "name": "single-line `desc`",
-      "description": "<p>Lorem ipsum</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -15,17 +14,17 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum</p>\n",
+      "inline": [],
+      "name": "single-line `desc`"
     },
     {
-      "name": "multi-line `desc`",
-      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 4,
@@ -37,17 +36,17 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "inline": [],
+      "name": "multi-line `desc`"
     },
     {
-      "name": "single-line `definition`",
-      "description": "<p>Lorem ipsum</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 11,
@@ -59,17 +58,17 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum</p>\n",
+      "inline": [],
+      "name": "single-line `definition`"
     },
     {
-      "name": "multi-line `definition`",
-      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 14,
@@ -81,17 +80,17 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "inline": [],
+      "name": "multi-line `definition`"
     },
     {
-      "name": "single-line `explanation`",
-      "description": "<p>Lorem ipsum</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 21,
@@ -103,17 +102,17 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum</p>\n",
+      "inline": [],
+      "name": "single-line `explanation`"
     },
     {
-      "name": "multi-line `explanation`",
-      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 24,
@@ -125,17 +124,17 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "inline": [],
+      "name": "multi-line `explanation`"
     },
     {
-      "name": "single-line `writeup`",
-      "description": "<p>Lorem ipsum</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 31,
@@ -147,17 +146,17 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum</p>\n",
+      "inline": [],
+      "name": "single-line `writeup`"
     },
     {
-      "name": "multi-line `writeup`",
-      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 34,
@@ -169,17 +168,17 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "inline": [],
+      "name": "multi-line `writeup`"
     },
     {
-      "name": "single-line `summary`",
-      "description": "<p>Lorem ipsum</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 41,
@@ -191,17 +190,17 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum</p>\n",
+      "inline": [],
+      "name": "single-line `summary`"
     },
     {
-      "name": "multi-line `summary`",
-      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 44,
@@ -213,17 +212,17 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "inline": [],
+      "name": "multi-line `summary`"
     },
     {
-      "name": "single-line `summarization`",
-      "description": "<p>Lorem ipsum</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 51,
@@ -235,17 +234,17 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum</p>\n",
+      "inline": [],
+      "name": "single-line `summarization`"
     },
     {
-      "name": "multi-line `summarization`",
-      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 54,
@@ -257,13 +256,14 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.alias.js",
           "start": 1,
           "end": 58
         }
       },
-      "access": "public",
-      "inline": []
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nDelectus eaque nesciunt explicabo doloremque temporibus cumque</p>\n",
+      "inline": [],
+      "name": "multi-line `summarization`"
     }
   ]
 }

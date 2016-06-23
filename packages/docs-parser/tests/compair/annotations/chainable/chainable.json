@@ -2,7 +2,7 @@
   "header": {},
   "body": [
     {
-      "chainable": true,
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -14,16 +14,16 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/chainable/chainable.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
+      "chainable": true,
       "inline": []
     },
     {
-      "chainable": true,
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -35,16 +35,16 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/chainable/chainable.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
+      "chainable": true,
       "inline": []
     },
     {
-      "chainable": false,
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -56,18 +56,16 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/chainable/chainable.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
+      "chainable": false,
       "inline": []
     },
     {
-      "chainable": [
-        "Object.prototype"
-      ],
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 7,
@@ -79,19 +77,18 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/chainable/chainable.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
+      "chainable": [
+        "Object.prototype"
+      ],
       "inline": []
     },
     {
-      "chainable": [
-        "One",
-        "Two"
-      ],
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 9,
@@ -103,19 +100,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/chainable/chainable.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
       "chainable": [
         "One",
         "Two"
       ],
+      "inline": []
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 11,
@@ -127,19 +124,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/chainable/chainable.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
       "chainable": [
         "One",
         "Two"
       ],
+      "inline": []
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 15,
@@ -151,12 +148,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/chainable/chainable.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
+      "chainable": [
+        "One",
+        "Two"
+      ],
       "inline": []
     }
   ]

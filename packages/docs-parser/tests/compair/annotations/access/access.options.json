@@ -14,7 +14,7 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/access/access.options.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/access/access.options.js",
           "start": 1,
           "end": 6
         }
@@ -34,7 +34,7 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/access/access.options.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/access/access.options.js",
           "start": 1,
           "end": 6
         }
@@ -54,7 +54,7 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/access/access.options.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/access/access.options.js",
           "start": 1,
           "end": 6
         }

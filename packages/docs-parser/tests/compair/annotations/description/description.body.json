@@ -2,7 +2,7 @@
   "header": {},
   "body": [
     {
-      "description": "<p>Lorem ipsum dolor sit amet</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 2,
@@ -14,16 +14,16 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.body.js",
           "start": 1,
           "end": 15
         }
       },
-      "access": "public",
+      "description": "<p>Lorem ipsum dolor sit amet</p>\n",
       "inline": []
     },
     {
-      "description": "<p>Line one\nOther\nlines\nbelow\nit</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 4,
@@ -35,16 +35,16 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.body.js",
           "start": 1,
           "end": 15
         }
       },
-      "access": "public",
+      "description": "<p>Line one\nOther\nlines\nbelow\nit</p>\n",
       "inline": []
     },
     {
-      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nAccusantium vel, eveniet, architecto saepe, modi dolore incidunt\nquisquam eaque cum porro explicabo velit sunt illo praesentium\nfacere. Sit consequuntur illo nihil.</p>\n",
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 10,
@@ -56,12 +56,12 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/description/description.body.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.body.js",
           "start": 1,
           "end": 15
         }
       },
-      "access": "public",
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nAccusantium vel, eveniet, architecto saepe, modi dolore incidunt\nquisquam eaque cum porro explicabo velit sunt illo praesentium\nfacere. Sit consequuntur illo nihil.</p>\n",
       "inline": []
     }
   ]

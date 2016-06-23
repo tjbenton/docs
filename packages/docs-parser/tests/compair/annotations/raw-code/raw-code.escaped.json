@@ -2,10 +2,7 @@
   "header": {},
   "body": [
     {
-      "raw-code": {
-        "raw": "<nav>\n  <ul>\n    <li>Item 1</li>\n    <li>Item 2</li>\n    <li>Item 3</li>\n  </ul>\n</nav>",
-        "escaped": "&lt;nav&gt;\n  &lt;ul&gt;\n    &lt;li&gt;Item 1&lt;/li&gt;\n    &lt;li&gt;Item 2&lt;/li&gt;\n    &lt;li&gt;Item 3&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/nav&gt;"
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -17,13 +14,16 @@
           "end": 10
         },
         "file": {
-          "path": "docs-parser/tests/annotations/raw-code/raw-code.escaped.html",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/raw-code/raw-code.escaped.html",
           "start": 1,
           "end": 10
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "raw-code": {
+        "raw": "<nav>\n  <ul>\n    <li>Item 1</li>\n    <li>Item 2</li>\n    <li>Item 3</li>\n  </ul>\n</nav>",
+        "escaped": "&lt;nav&gt;\n  &lt;ul&gt;\n    &lt;li&gt;Item 1&lt;/li&gt;\n    &lt;li&gt;Item 2&lt;/li&gt;\n    &lt;li&gt;Item 3&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/nav&gt;"
+      }
     }
   ]
 }

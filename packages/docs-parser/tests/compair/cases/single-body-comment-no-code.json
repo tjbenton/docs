@@ -18,8 +18,7 @@
         "header": {},
         "body": [
           {
-            "name": "Single body comment",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -31,13 +30,14 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/cases/single-body-comment-no-code.scss",
+                "path": "docs/packages/docs-parser/tests/compair/cases/single-body-comment-no-code.scss",
                 "start": 1,
                 "end": 8
               }
             },
-            "access": "public",
-            "inline": []
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
+            "inline": [],
+            "name": "Single body comment"
           }
         ]
       }

@@ -2,6 +2,7 @@
   "header": {},
   "body": [
     {
+      "access": "public",
       "arg": [
         {
           "types": [],
@@ -21,15 +22,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/arg/arg.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/arg/arg.js",
           "start": 1,
           "end": 17
         }
       },
-      "access": "public",
       "inline": []
     },
     {
+      "access": "public",
       "arg": [
         {
           "types": [
@@ -51,15 +52,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/arg/arg.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/arg/arg.js",
           "start": 1,
           "end": 17
         }
       },
-      "access": "public",
       "inline": []
     },
     {
+      "access": "public",
       "arg": [
         {
           "types": [
@@ -82,15 +83,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/arg/arg.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/arg/arg.js",
           "start": 1,
           "end": 17
         }
       },
-      "access": "public",
       "inline": []
     },
     {
+      "access": "public",
       "arg": [
         {
           "types": [
@@ -112,15 +113,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/arg/arg.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/arg/arg.js",
           "start": 1,
           "end": 17
         }
       },
-      "access": "public",
       "inline": []
     },
     {
+      "access": "public",
       "arg": [
         {
           "types": [
@@ -142,15 +143,15 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/arg/arg.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/arg/arg.js",
           "start": 1,
           "end": 17
         }
       },
-      "access": "public",
       "inline": []
     },
     {
+      "access": "public",
       "arg": [
         {
           "types": [
@@ -172,12 +173,11 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/arg/arg.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/arg/arg.js",
           "start": 1,
           "end": 17
         }
       },
-      "access": "public",
       "inline": []
     }
   ]

@@ -2,11 +2,7 @@
   "header": {},
   "body": [
     {
-      "name": "one",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 4,
@@ -18,22 +14,19 @@
           "end": 8
         },
         "file": {
-          "path": "docs-parser/tests/annotations/property/property.inline.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
           "start": 1,
           "end": 45
         }
       },
-      "access": "public",
+      "name": "one",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "inline": [
         {
-          "property": [
-            {
-              "types": [],
-              "name": "",
-              "value": "",
-              "description": ""
-            }
-          ],
+          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 7,
@@ -45,21 +38,24 @@
               "end": 7
             },
             "file": {
-              "path": "docs-parser/tests/annotations/property/property.inline.js",
+              "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
               "start": 1,
               "end": 45
             }
           },
-          "access": "public"
+          "property": [
+            {
+              "types": [],
+              "name": "",
+              "value": "",
+              "description": ""
+            }
+          ]
         }
       ]
     },
     {
-      "name": "two",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 10,
@@ -71,24 +67,19 @@
           "end": 14
         },
         "file": {
-          "path": "docs-parser/tests/annotations/property/property.inline.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
           "start": 1,
           "end": 45
         }
       },
-      "access": "public",
+      "name": "two",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "inline": [
         {
-          "property": [
-            {
-              "types": [
-                "number"
-              ],
-              "name": "bar.value",
-              "value": "",
-              "description": ""
-            }
-          ],
+          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 13,
@@ -100,21 +91,26 @@
               "end": 13
             },
             "file": {
-              "path": "docs-parser/tests/annotations/property/property.inline.js",
+              "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
               "start": 1,
               "end": 45
             }
           },
-          "access": "public"
+          "property": [
+            {
+              "types": [
+                "number"
+              ],
+              "name": "bar.value",
+              "value": "",
+              "description": ""
+            }
+          ]
         }
       ]
     },
     {
-      "name": "three",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 16,
@@ -126,25 +122,19 @@
           "end": 20
         },
         "file": {
-          "path": "docs-parser/tests/annotations/property/property.inline.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
           "start": 1,
           "end": 45
         }
       },
-      "access": "public",
+      "name": "three",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "inline": [
         {
-          "property": [
-            {
-              "types": [
-                "number",
-                "array"
-              ],
-              "name": "baz.value",
-              "value": "",
-              "description": ""
-            }
-          ],
+          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 19,
@@ -156,21 +146,27 @@
               "end": 19
             },
             "file": {
-              "path": "docs-parser/tests/annotations/property/property.inline.js",
+              "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
               "start": 1,
               "end": 45
             }
           },
-          "access": "public"
+          "property": [
+            {
+              "types": [
+                "number",
+                "array"
+              ],
+              "name": "baz.value",
+              "value": "",
+              "description": ""
+            }
+          ]
         }
       ]
     },
     {
-      "name": "four",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 22,
@@ -182,24 +178,19 @@
           "end": 28
         },
         "file": {
-          "path": "docs-parser/tests/annotations/property/property.inline.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
           "start": 1,
           "end": 45
         }
       },
-      "access": "public",
+      "name": "four",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "inline": [
         {
-          "property": [
-            {
-              "types": [
-                "function"
-              ],
-              "name": "qux.value",
-              "value": "",
-              "description": "<p>description</p>\n"
-            }
-          ],
+          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 25,
@@ -211,21 +202,26 @@
               "end": 27
             },
             "file": {
-              "path": "docs-parser/tests/annotations/property/property.inline.js",
+              "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
               "start": 1,
               "end": 45
             }
           },
-          "access": "public"
+          "property": [
+            {
+              "types": [
+                "function"
+              ],
+              "name": "qux.value",
+              "value": "",
+              "description": "<p>description</p>\n"
+            }
+          ]
         }
       ]
     },
     {
-      "name": "five",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 30,
@@ -237,24 +233,19 @@
           "end": 34
         },
         "file": {
-          "path": "docs-parser/tests/annotations/property/property.inline.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
           "start": 1,
           "end": 45
         }
       },
-      "access": "public",
+      "name": "five",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "inline": [
         {
-          "property": [
-            {
-              "types": [
-                "number"
-              ],
-              "name": "corge.value",
-              "value": "5",
-              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>\n"
-            }
-          ],
+          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 33,
@@ -266,21 +257,26 @@
               "end": 33
             },
             "file": {
-              "path": "docs-parser/tests/annotations/property/property.inline.js",
+              "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
               "start": 1,
               "end": 45
             }
           },
-          "access": "public"
+          "property": [
+            {
+              "types": [
+                "number"
+              ],
+              "name": "corge.value",
+              "value": "5",
+              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>\n"
+            }
+          ]
         }
       ]
     },
     {
-      "name": "five",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 37,
@@ -292,24 +288,19 @@
           "end": 44
         },
         "file": {
-          "path": "docs-parser/tests/annotations/property/property.inline.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
           "start": 1,
           "end": 45
         }
       },
-      "access": "public",
+      "name": "five",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "inline": [
         {
-          "property": [
-            {
-              "types": [
-                "function"
-              ],
-              "name": "quux.value",
-              "value": "'whatup'",
-              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>\n"
-            }
-          ],
+          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 40,
@@ -321,12 +312,21 @@
               "end": 43
             },
             "file": {
-              "path": "docs-parser/tests/annotations/property/property.inline.js",
+              "path": "docs/packages/docs-parser/tests/compair/annotations/property/property.inline.js",
               "start": 1,
               "end": 45
             }
           },
-          "access": "public"
+          "property": [
+            {
+              "types": [
+                "function"
+              ],
+              "name": "quux.value",
+              "value": "'whatup'",
+              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>\n"
+            }
+          ]
         }
       ]
     }

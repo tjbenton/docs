@@ -2,12 +2,7 @@
   "header": {},
   "body": [
     {
-      "note": [
-        {
-          "importance": "0",
-          "description": "<ul>\n<li>note 1</li>\n<li>note 2</li>\n<li>note 3</li>\n</ul>\n"
-        }
-      ],
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -19,21 +14,21 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/note/note.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/note/note.alias.js",
           "start": 1,
           "end": 10
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "note": [
         {
-          "importance": "10",
+          "importance": "0",
           "description": "<ul>\n<li>note 1</li>\n<li>note 2</li>\n<li>note 3</li>\n</ul>\n"
         }
-      ],
+      ]
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 6,
@@ -45,13 +40,18 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/note/note.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/note/note.alias.js",
           "start": 1,
           "end": 10
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "note": [
+        {
+          "importance": "10",
+          "description": "<ul>\n<li>note 1</li>\n<li>note 2</li>\n<li>note 3</li>\n</ul>\n"
+        }
+      ]
     }
   ]
 }

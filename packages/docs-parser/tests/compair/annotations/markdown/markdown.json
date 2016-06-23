@@ -1,9 +1,6 @@
 {
   "header": {
-    "markdown": "<h1 id=\"h1-tag\">H1 Tag</h1>\n<pre><code class=\"lang-scss\">.foo {\n  .bar {\n    background: blue;\n  }\n}\n</code></pre>\n",
-    "page": [
-      "general"
-    ],
+    "access": "public",
     "blockinfo": {
       "comment": {
         "start": 1,
@@ -15,12 +12,15 @@
         "end": -1
       },
       "file": {
-        "path": "docs-parser/tests/annotations/markdown/markdown.markdown",
+        "path": "docs/packages/docs-parser/tests/compair/annotations/markdown/markdown.markdown",
         "start": 1,
         "end": 13
       }
     },
-    "access": "public"
+    "markdown": "<h1 id=\"h1-tag\">H1 Tag</h1>\n<pre><code class=\"lang-scss\">.foo {\n  .bar {\n    background: blue;\n  }\n}\n</code></pre>\n",
+    "page": [
+      "general"
+    ]
   },
   "body": []
 }

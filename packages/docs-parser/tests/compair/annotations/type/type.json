@@ -2,10 +2,7 @@
   "header": {},
   "body": [
     {
-      "type": {
-        "type": "undefined",
-        "description": ""
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -17,19 +14,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/type/type.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "type": {
+        "type": "undefined",
+        "description": ""
+      }
     },
     {
-      "type": {
-        "type": "object",
-        "description": ""
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -41,19 +38,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/type/type.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "type": {
+        "type": "object",
+        "description": ""
+      }
     },
     {
-      "type": {
-        "type": "undefined",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -65,19 +62,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/type/type.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "type": {
         "type": "undefined",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-      },
+      }
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 7,
@@ -89,19 +86,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/type/type.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "type": {
+        "type": "undefined",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+      }
     },
     {
-      "type": {
-        "type": "array",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-      },
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 9,
@@ -113,19 +110,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/type/type.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "type": {
         "type": "array",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-      },
+      }
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 11,
@@ -137,19 +134,19 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/type/type.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
-      "inline": []
-    },
-    {
+      "inline": [],
       "type": {
         "type": "array",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, quod\nlibero tenetur rerum odio harum perferendis repellat sunt, soluta expedita\niure. Provident, debitis, cupiditate. Quae magnam ipsa modi,\naspernatur eligendi.</p>\n"
-      },
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+      }
+    },
+    {
+      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 13,
@@ -161,13 +158,16 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/type/type.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
           "start": 1,
           "end": 18
         }
       },
-      "access": "public",
-      "inline": []
+      "inline": [],
+      "type": {
+        "type": "array",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, quod\nlibero tenetur rerum odio harum perferendis repellat sunt, soluta expedita\niure. Provident, debitis, cupiditate. Quae magnam ipsa modi,\naspernatur eligendi.</p>\n"
+      }
     }
   ]
 }

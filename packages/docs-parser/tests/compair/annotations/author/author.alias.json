@@ -2,6 +2,7 @@
   "header": {},
   "body": [
     {
+      "access": "public",
       "author": [
         "Author One",
         "Author Two",
@@ -18,12 +19,11 @@
           "end": -1
         },
         "file": {
-          "path": "docs-parser/tests/annotations/author/author.alias.js",
+          "path": "docs/packages/docs-parser/tests/compair/annotations/author/author.alias.js",
           "start": 1,
           "end": 2
         }
       },
-      "access": "public",
       "inline": []
     }
   ]

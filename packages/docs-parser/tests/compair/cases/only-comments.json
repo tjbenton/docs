@@ -20,6 +20,7 @@
     "only-comments": {
       "page": {
         "header": {
+          "access": "public",
           "author": [
             "Tyler Benton"
           ],
@@ -34,20 +35,36 @@
               "end": -1
             },
             "file": {
-              "path": "docs-parser/tests/cases/only-comments.scss",
+              "path": "docs/packages/docs-parser/tests/compair/cases/only-comments.scss",
               "start": 1,
               "end": 27
             }
-          },
-          "access": "public"
+          }
         },
         "body": [
           {
-            "name": "moz-only",
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
+            "blockinfo": {
+              "comment": {
+                "start": 6,
+                "end": 19,
+                "type": "body"
+              },
+              "code": {
+                "start": -1,
+                "end": -1
+              },
+              "file": {
+                "path": "docs/packages/docs-parser/tests/compair/cases/only-comments.scss",
+                "start": 1,
+                "end": 27
+              }
+            },
             "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
+            "inline": [],
             "markup": [
               {
                 "id": "0",
@@ -62,28 +79,10 @@
                 "escaped_stateless": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: &quot;&quot;;\n}"
               }
             ],
-            "blockinfo": {
-              "comment": {
-                "start": 6,
-                "end": 19,
-                "type": "body"
-              },
-              "code": {
-                "start": -1,
-                "end": -1
-              },
-              "file": {
-                "path": "docs-parser/tests/cases/only-comments.scss",
-                "start": 1,
-                "end": 27
-              }
-            },
-            "access": "public",
-            "inline": []
+            "name": "moz-only"
           },
           {
-            "name": "Test one",
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 21,
@@ -95,13 +94,14 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/cases/only-comments.scss",
+                "path": "docs/packages/docs-parser/tests/compair/cases/only-comments.scss",
                 "start": 1,
                 "end": 27
               }
             },
-            "access": "public",
-            "inline": []
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
+            "inline": [],
+            "name": "Test one"
           }
         ]
       }

@@ -42,11 +42,13 @@
     "globby": "^5.0.0",
     "jsondiffpatch": "^0.1.43",
     "lerna": "^1.1.2",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "power-assert": "^1.4.1"
   },
   "ava": {
     "files": [
-      "packages/docs-parser/tests/compair/index.js"
+      "packages/docs-parser/tests/compair/*.test.js",
+      "packages/docs-parser/tests/unit/**/*.test.js"
     ],
     "source": [
       "packages/*/dist/**/*.js"
