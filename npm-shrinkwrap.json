@@ -117,6 +117,11 @@
       "from": "async@>=1.5.2 <2.0.0",
       "resolved": "https://registry.npmjs.org/async/-/async-1.5.2.tgz"
     },
+    "async-array-methods": {
+      "version": "2.1.0",
+      "from": "async-array-methods@latest",
+      "resolved": "https://registry.npmjs.org/async-array-methods/-/async-array-methods-2.1.0.tgz"
+    },
     "async-each": {
       "version": "1.0.0",
       "from": "async-each@>=1.0.0 <2.0.0",
@@ -632,7 +637,8 @@
       "dependencies": {
         "repeating": {
           "version": "2.0.1",
-          "from": "repeating@>=2.0.0 <3.0.0"
+          "from": "repeating@2.0.1",
+          "resolved": "https://registry.npmjs.org/repeating/-/repeating-2.0.1.tgz"
         }
       }
     },
@@ -675,6 +681,11 @@
       "version": "0.0.2",
       "from": "call-signature@0.0.2",
       "resolved": "https://registry.npmjs.org/call-signature/-/call-signature-0.0.2.tgz"
+    },
+    "callback-sequence": {
+      "version": "3.2.0",
+      "from": "callback-sequence@>=3.2.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/callback-sequence/-/callback-sequence-3.2.0.tgz"
     },
     "caller-path": {
       "version": "0.1.0",
@@ -2158,7 +2169,8 @@
       "dependencies": {
         "repeating": {
           "version": "2.0.1",
-          "from": "repeating@>=2.0.0 <3.0.0"
+          "from": "repeating@2.0.1",
+          "resolved": "https://registry.npmjs.org/repeating/-/repeating-2.0.1.tgz"
         }
       }
     },
@@ -3250,6 +3262,18 @@
       "from": "run-async@>=0.1.0 <0.2.0",
       "resolved": "https://registry.npmjs.org/run-async/-/run-async-0.1.0.tgz"
     },
+    "run-callback": {
+      "version": "3.1.0",
+      "from": "run-callback@>=3.1.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/run-callback/-/run-callback-3.1.0.tgz",
+      "dependencies": {
+        "end-of-stream": {
+          "version": "1.1.0",
+          "from": "end-of-stream@>=1.1.0 <2.0.0",
+          "resolved": "https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.1.0.tgz"
+        }
+      }
+    },
     "rx-lite": {
       "version": "3.1.2",
       "from": "rx-lite@>=3.1.2 <4.0.0",
@@ -3373,6 +3397,11 @@
       "version": "0.4.0",
       "from": "stack-utils@>=0.4.0 <0.5.0",
       "resolved": "https://registry.npmjs.org/stack-utils/-/stack-utils-0.4.0.tgz"
+    },
+    "stream-consume": {
+      "version": "0.1.0",
+      "from": "stream-consume@>=0.1.0 <0.2.0",
+      "resolved": "https://registry.npmjs.org/stream-consume/-/stream-consume-0.1.0.tgz"
     },
     "string_decoder": {
       "version": "0.10.31",

@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 import test from 'ava-spec'
-import Tests from 'docs-helpers-test'
+import Tests from '../../../docs-helpers-test/dist/index.js'
 import docsParser from '../../dist/index.js'
 
 test.group(() => {
