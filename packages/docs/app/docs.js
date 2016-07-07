@@ -1,4 +1,4 @@
-// /* eslint-disable unused*/
+/* eslint-disable */
 import express from 'express'
 import docsParser from 'docs-parser'
 import to from 'to-js'

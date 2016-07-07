@@ -222,7 +222,7 @@ let valid_language_options = to.keys(default_options.languages.default)
 /// @description
 /// Ensures that the user set's a valid config
 /// @access private
-function ensureValidConfig(user_config) {
+function ensureValidConfig(user_config) { // eslint-disable-line
   for (let key in user_config) {
     if (!is.in(valid_options, key)) {
       log.emit('warning', `'${key}' is not a valid option, see docs options for more details`) ///# @todo add link to the doc options

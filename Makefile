@@ -29,10 +29,13 @@ bootstrap:
 	npm i
 	lerna bootstrap
 
-# test:
-# 	cd packages/docs-parser; npm test
 test:
 	ava args
 
+lint:
+	eslint '**/*.js'
+
 ci-test:
-	fly; ava
+	fly
+	make lint
+	ava
