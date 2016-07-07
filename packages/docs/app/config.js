@@ -109,7 +109,7 @@ export const default_options = {
   }
 }
 
-export default async function config(options = {}) {
+export default async function config(options = {}) { // eslint-disable-line
   let config_file = (options.docsfile ? options : default_options).config
 
   // try to get the `docsfile.js` so the user config can be merged

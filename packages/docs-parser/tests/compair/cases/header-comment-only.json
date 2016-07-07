@@ -1,0 +1,41 @@
+{
+  "nav": [
+    {
+      "title": "Header Comment Only",
+      "href": "/header-comment-only",
+      "body": [],
+      "subpages": []
+    }
+  ],
+  "pages": {
+    "header-comment-only": {
+      "page": {
+        "header": {
+          "access": "public",
+          "author": [
+            "Tyler Benton"
+          ],
+          "blockinfo": {
+            "comment": {
+              "start": 1,
+              "end": 7,
+              "type": "header"
+            },
+            "code": {
+              "start": -1,
+              "end": -1
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compair/cases/header-comment-only.scss",
+              "start": 1,
+              "end": 8
+            }
+          },
+          "description": "<p>This test is for a file that only has a header comment.</p>\n",
+          "name": "Header"
+        },
+        "body": []
+      }
+    }
+  }
+}

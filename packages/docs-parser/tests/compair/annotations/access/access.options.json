@@ -1,0 +1,65 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/access/access.options.js",
+          "start": 1,
+          "end": 6
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 3,
+          "end": 3,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/access/access.options.js",
+          "start": 1,
+          "end": 6
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "private",
+      "blockinfo": {
+        "comment": {
+          "start": 5,
+          "end": 5,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/access/access.options.js",
+          "start": 1,
+          "end": 6
+        }
+      },
+      "inline": []
+    }
+  ]
+}

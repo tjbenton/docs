@@ -1,0 +1,25 @@
+{
+  "header": {
+    "access": "public",
+    "blockinfo": {
+      "comment": {
+        "start": 1,
+        "end": 3,
+        "type": "header"
+      },
+      "code": {
+        "start": -1,
+        "end": -1
+      },
+      "file": {
+        "path": "docs/packages/docs-parser/tests/compair/annotations/page/page.header.js",
+        "start": 1,
+        "end": 4
+      }
+    },
+    "page": [
+      "level 1/level 2"
+    ]
+  },
+  "body": []
+}

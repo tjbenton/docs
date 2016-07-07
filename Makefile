@@ -30,4 +30,12 @@ bootstrap:
 	lerna bootstrap
 
 test:
-	cd packages/docs-parser; npm test
+	ava args
+
+lint:
+	eslint '**/*.js'
+
+ci-test:
+	fly
+	make lint
+	ava

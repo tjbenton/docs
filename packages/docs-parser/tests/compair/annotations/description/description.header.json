@@ -1,0 +1,26 @@
+{
+  "header": {
+    "access": "public",
+    "blockinfo": {
+      "comment": {
+        "start": 1,
+        "end": 7,
+        "type": "header"
+      },
+      "code": {
+        "start": -1,
+        "end": -1
+      },
+      "file": {
+        "path": "docs/packages/docs-parser/tests/compair/annotations/description/description.header.js",
+        "start": 1,
+        "end": 8
+      }
+    },
+    "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem,\ninventore modi ratione. Ipsum natus odio inventore quibusdam error dolores\nnumquam sapiente dicta, perferendis quos quo provident,\nvoluptate, alias deserunt?</p>\n",
+    "page": [
+      "general"
+    ]
+  },
+  "body": []
+}

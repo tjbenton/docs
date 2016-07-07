@@ -1,0 +1,173 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "inline": [],
+      "type": {
+        "type": "undefined",
+        "description": ""
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 3,
+          "end": 3,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "inline": [],
+      "type": {
+        "type": "object",
+        "description": ""
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 5,
+          "end": 5,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "inline": [],
+      "type": {
+        "type": "undefined",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 7,
+          "end": 7,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "inline": [],
+      "type": {
+        "type": "undefined",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 9,
+          "end": 9,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "inline": [],
+      "type": {
+        "type": "array",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 11,
+          "end": 11,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "inline": [],
+      "type": {
+        "type": "array",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 13,
+          "end": 17,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/type/type.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "inline": [],
+      "type": {
+        "type": "array",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, quod\nlibero tenetur rerum odio harum perferendis repellat sunt, soluta expedita\niure. Provident, debitis, cupiditate. Quae magnam ipsa modi,\naspernatur eligendi.</p>\n"
+      }
+    }
+  ]
+}

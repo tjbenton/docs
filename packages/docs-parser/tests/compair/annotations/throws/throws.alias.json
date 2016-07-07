@@ -1,0 +1,117 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/throws/throws.alias.js",
+          "start": 1,
+          "end": 8
+        }
+      },
+      "inline": [],
+      "throws": [
+        {
+          "types": [
+            "throw"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+        }
+      ]
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 3,
+          "end": 3,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/throws/throws.alias.js",
+          "start": 1,
+          "end": 8
+        }
+      },
+      "inline": [],
+      "throws": [
+        {
+          "types": [
+            "exception"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+        }
+      ]
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 5,
+          "end": 5,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/throws/throws.alias.js",
+          "start": 1,
+          "end": 8
+        }
+      },
+      "inline": [],
+      "throws": [
+        {
+          "types": [
+            "error"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+        }
+      ]
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 7,
+          "end": 7,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/throws/throws.alias.js",
+          "start": 1,
+          "end": 8
+        }
+      },
+      "inline": [],
+      "throws": [
+        {
+          "types": [
+            "catch"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+        }
+      ]
+    }
+  ]
+}

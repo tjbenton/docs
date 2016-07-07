@@ -1,0 +1,163 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "chainable": true,
+      "inline": []
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 3,
+          "end": 3,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "chainable": true,
+      "inline": []
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 5,
+          "end": 5,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "chainable": false,
+      "inline": []
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 7,
+          "end": 7,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "chainable": [
+        "Object.prototype"
+      ],
+      "inline": []
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 9,
+          "end": 9,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "chainable": [
+        "One",
+        "Two"
+      ],
+      "inline": []
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 11,
+          "end": 13,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "chainable": [
+        "One",
+        "Two"
+      ],
+      "inline": []
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 15,
+          "end": 17,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/chainable/chainable.js",
+          "start": 1,
+          "end": 18
+        }
+      },
+      "chainable": [
+        "One",
+        "Two"
+      ],
+      "inline": []
+    }
+  ]
+}

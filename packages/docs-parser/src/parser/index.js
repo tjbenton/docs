@@ -250,7 +250,7 @@ export default class Parser {
     // option a
     // return
     return this.map(tokens, ({ parsed, inline }) => {
-      return to.object(to.json({ ...parsed, inline }))
+      return to.sort(to.object(to.json({ ...parsed, inline })))
     })
 
     // option b

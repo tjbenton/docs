@@ -1,0 +1,191 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/returns/returns.alias.js",
+          "start": 1,
+          "end": 23
+        }
+      },
+      "inline": [],
+      "returns": {
+        "types": [
+          "undefined"
+        ],
+        "description": ""
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 3,
+          "end": 3,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/returns/returns.alias.js",
+          "start": 1,
+          "end": 23
+        }
+      },
+      "inline": [],
+      "returns": {
+        "types": [
+          "undefined"
+        ],
+        "description": ""
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 5,
+          "end": 5,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/returns/returns.alias.js",
+          "start": 1,
+          "end": 23
+        }
+      },
+      "inline": [],
+      "returns": {
+        "types": [
+          "array",
+          "string",
+          "boolean"
+        ],
+        "description": ""
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 7,
+          "end": 7,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/returns/returns.alias.js",
+          "start": 1,
+          "end": 23
+        }
+      },
+      "inline": [],
+      "returns": {
+        "types": [
+          "array",
+          "string",
+          "boolean"
+        ],
+        "description": ""
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 9,
+          "end": 9,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/returns/returns.alias.js",
+          "start": 1,
+          "end": 23
+        }
+      },
+      "inline": [],
+      "returns": {
+        "types": [
+          "object"
+        ],
+        "description": "<p>Lorem ipsum dolor sit amet</p>\n"
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 11,
+          "end": 11,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/returns/returns.alias.js",
+          "start": 1,
+          "end": 23
+        }
+      },
+      "inline": [],
+      "returns": {
+        "types": [
+          "array"
+        ],
+        "description": "<p>Lorem ipsum dolor sit amet</p>\n"
+      }
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 13,
+          "end": 22,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/returns/returns.alias.js",
+          "start": 1,
+          "end": 23
+        }
+      },
+      "inline": [],
+      "returns": {
+        "types": [
+          "object"
+        ],
+        "description": "<p>This super awesome object</p>\n<pre><code class=\"lang-js\">{\n  i: {\n    found: {\n      waldo: &#39;Shoot, you found me&#39;\n    }\n  }\n}\n</code></pre>\n"
+      }
+    }
+  ]
+}
