@@ -14,14 +14,14 @@ Docs fixes all these issues by giving you the ability to generate documentation 
 
 ## Options
 
-*files*: file globs to be parsed to get the documentation
+**files**: file globs to be parsed to get the documentation
 default
 ```js
 [ 'app/**/*', 'src/**/*', '*.md' ]
 ```
 
 
-*ignore*: files globs to be ignored
+**ignore**: files globs to be ignored
 default
 ```js
 [
@@ -32,7 +32,7 @@ default
 ]
 ```
 
-*watch*: when true it will watch files for changes
+**watch**: when true it will watch files for changes
 default `false`
 
 *raw*: Will return the raw data by file, aka data won't be sorted
@@ -41,7 +41,7 @@ default `false`
 
 
 
-*languages*: This is an object of comment styles for various languages.
+**languages**: This is an object of comment styles for various languages.
 default
 
 ```js
@@ -197,9 +197,23 @@ docs.annotation("arg", {
 See more on the [default annotations](ANNOTATIONS.md)
 
 ## Documenting your items
-There are 2 different types of comment blocks **block level**, and **file level**.
+There are 3 different types of comment blocks **block level**, and **file level**.
 
-### Block level comment
+**Note:** the comments below are using the comment defaults which are slashes please see [defined languages](https://github.com/tjbenton/docs/blob/master/packages/docs-parser/src/config.js#L58) for other language specific comment styles
+
+
+### Header comment
+This type of comment can only occur **once** per file. Any annotations that are found inside of the file level comment will become the default value for the block level comments. It is very useful when you have a whole file sharing some annotations (@author, @page and so on).
+
+```scss
+////
+/// @author Tyler Benton
+/// @page functions/numbers
+/// @description Useful number functions
+////
+```
+
+### Body comment block
 This type of comment is used multiple times per file.
 
 ```scss
@@ -212,155 +226,24 @@ This type of comment is used multiple times per file.
 }
 ```
 
-
-### File level comment
-This type of comment can only occur **once** per file. Any annotations that are found inside of the file level comment will become the default value for the block level comments. It is very useful when you have a whole file sharing some annotations (@author, @page and so on).
+### Inline comment
+This type of comment is used to extend a body comment block
 
 ```scss
-////
-/// @author Tyler Benton
-/// @page functions/numbers
-/// @description Useful number functions
-////
-
-/// @description
-/// This item will have: `@page functions/numbers` and `@author Tyler Benton`
-/// inherited from the file level comment, but not `@description`
-@function some-function(){
-  // ...
-}
-
-/// @author John Doe
-/// @description
-/// This item overrides the `@author` annotation
-@mixin some-mixin{
-  // ...
+/// @name happypanda
+/// @type {object}
+const happypanda = {
+  smile() { ///# @property {function} happypanda.smile - This makes the panda smile
+    return 'smile'
+  },
 }
 ```
 
 
 # Todo
- - Add the ability to add aliases
-   - Take into account the ability to specify alias and file types. For example being able to extend something onto the `name` but use the `scss` specific filetype callback.
- - Double check to make sure that if a user specifies the same name and page for a comment block that it gets merged properly
-    ```scss
-    /// @name Beards
-    /// @page beards
-    /// @description
-    /// An awesome collection of beards in css
-    /// @markup
-    /// <div class="c-beard"></div>
-    .c-beard {
-      ...
-    }
-    ```
-
-    ```js
-    /// @name Beards
-    /// @page beards
-    /// @markup
-    /// <div class="c-beard js-beardme"></div>
-    /// @markup
-    /// beard_me('.js-beardme')
-    function beard_me(selector) {
-      document.body.addEventListener('click', function(e) {
-        if ((e.target || {}).classList.contains(selector.replace('.', ''))) {
-          e.target.classList.toggle('is-bearded')
-        }
-      })
-    }
-    ```
- - Ability to add single line notations, or allow the user to define how many lines they want to return. The way it would work is to have a special identifier after the opening comments(eg `/**#{2} @remove */`) for laguages that use them, or after the single line comment(`///#{5}`). If you didn't want to return multiple lines, then you could just write `///#` and it would return everything before the comment. Note that `///#` is different that `///#{1}` because the `{2}` telling the parser to return the next 2 lines. There couldn't be any spaces inbetween the specified comment style and the special character that's used to identify this type of comment. Having this ability would allow you to do things like the following.
-
-   ###### Returning a single line example
-
-   ```css
-    .foo{
-     background: blue;
-     outline: 1px solid red; /**# @remove #*/
-     margin: 10px; /**# @todo {10} - fix spacing */
-    }
-    .foo--bar{ /**# @state */
-      background: black;
-    }
-   ```
-
-   ```scss
-   .foo{
-    background: blue;
-    outline: 1px solid red; ///# @remove
-    margin: $bar; ///# @todo {10} - fix spacing
-
-    &--bar{ ///# @state
-     background: black;
-    }
-   }
-   ```
-
-   ```js
-    function foo(){
-     console.log(arguments); ///# @remove
-    }
-   ```
-
-   ###### Returning a specified number of lines.<br>
-
-   ```css
-    .foo{
-     margin: 10px;
-
-     /**#{2} @remove #*/
-     background: cyan;
-     outline: 1px solid red;
-    }
-   ```
-
-   ```scss
-   .foo{
-     margin: 10px;
-
-     ///#{2} @remove
-     background: cyan;
-     outline: 1px solid red;
-    }
-   ```
-
-   ```js
-    function foo(){
-     ///#{2} @remove
-     console.log(arguments);
-     console.log(arguments[0]);
-    }
-   ```
-
-   These types of comments are fairly common throughout any development procces for temp code that's for debugging or notes to come back and fix the issue. The number that is passed to `#{2}` is referring to the number of lines after the comment.
-
- - Figure out a way to have nested comment blocks so the nested comment blocks can be tied to the initial comment block.
-
-   ```js
-   /// @name parseBlocks
-   /// @description Parses each block in blocks
-   /// @returns {array}
-   parseBlocks = function(){
-     /// @name this.merge
-     /// @description Used as a helper function because this action is performed in two spots
-     /// @arg {object} annotation - information of the current annotation block
-     /// @arg {object} info - information about the current comment block, the code after the comment block and the full file contents
-     /// @returns {object}
-     this.merge = (annotation, info) => {
-       ...
-     };
-   };
-   ```
   - Look into adding a callback function that runs after the block has been completely parsed this would be run after the single line comments are parsed. I'm not sure how useful this would be but it's a thought.
     - This could allow you to create your own data structure.
   - Come up with a name for the project
-  - Auto generate the site's navigation based off of `@page`.
-  - Create a styleguide site based off the JSON output. This will be in a seperate repo to keep the parser functionality seperate from the themes. As of now It will be written in angular because to my knowledge it's the easiest to implement. The parser and the theme will probably not come packaged together because it would make it harder to add themes.
-    - Navigation
-    - Search
-    - Include language parsing
-    - Include `@state` replacement.
  - Look into being able to reference a different language comment style withing the existing language.
    For example this would allow you to write JS documentation inside of an HTML document
    ```html
@@ -372,17 +255,6 @@ This type of comment can only occur **once** per file. Any annotations that are 
    ---->
    </script>
    ```
-    ###### Need to figure out
-    - Treat the block as it's own file and re-run `get_blocks`
-    - How to store the information?
-      - Does it go along with the HTML it was found in? If so does it go under other?
-        ```
-        {
-         header,
-         body,
-         other
-        }
-        ```
 
 <!-- Document Generators -->
 [sass-doc]: https://github.com/SassDoc/sassdoc
