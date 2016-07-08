@@ -1,0 +1,34 @@
+{
+  "header": {
+    "access": "public",
+    "blockinfo": {
+      "comment": {
+        "start": 1,
+        "end": 3,
+        "type": "header"
+      },
+      "code": {
+        "start": -1,
+        "end": -1
+      },
+      "file": {
+        "path": "docs/packages/docs-parser/tests/compair/annotations/requires/requires.header.js",
+        "start": 1,
+        "end": 4
+      }
+    },
+    "page": [
+      "general"
+    ],
+    "requires": [
+      {
+        "types": [
+          "function"
+        ],
+        "name": "path",
+        "description": "<p>the path function from node</p>\n"
+      }
+    ]
+  },
+  "body": []
+}

@@ -11,7 +11,6 @@ export default function cli() {
   const to_list = (str) => str.replace(/\s/g, '').split(',').filter(Boolean)
   const to_boolean = () => false
   const to_number = (str) => ~~str
-  const root = process.cwd()
 
   program
     .version(pkg.version)

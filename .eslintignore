@@ -1,6 +1,10 @@
 scripts
 node_modules
-packages/*/tools
-packages/*/test
-packages/*/dist
+packages/*/node_modules/**/*.js
+packages/*/tools*/**/*.js
+packages/*/test*/**/*.js
+packages/*/dist/**/*.js
+packages/*/dist/**/*.js
+packages/*/public/jspm_packages/**/*.js
+packages/docs-theme-default/**/*.js
 vendor

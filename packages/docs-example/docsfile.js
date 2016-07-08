@@ -1,1 +1,1 @@
-import docs from 'docs'
+// import docs from 'docs'

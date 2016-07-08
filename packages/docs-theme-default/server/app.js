@@ -12,10 +12,10 @@ console.log('')
 console.log('')
 import express from 'express'
 import path from 'path'
-import logger from 'morgan'
+// import logger from 'morgan'
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
-import responseTime from 'response-time'
+// import responseTime from 'response-time'
 import highlight from './highlight.js'
 import config from '../config.json'
 import docsTwo from '../docs2.json'

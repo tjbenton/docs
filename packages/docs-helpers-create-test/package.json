@@ -1,0 +1,20 @@
+{
+  "name": "docs-helpers-create-test",
+  "version": "0.0.0",
+  "description": "**NOTE:** This is an internal Babel module and may not work outside. Use at your own risk.",
+  "main": "index.js",
+  "bin": {
+    "create-test": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
+  "license": "ISC",
+  "dependencies": {
+    "clor": "^2.0.2",
+    "fs-extra-promisify": "^0.0.2",
+    "globby": "^5.0.0",
+    "to-js": "^0.0.4"
+  }
+}

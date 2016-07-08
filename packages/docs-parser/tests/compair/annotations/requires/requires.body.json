@@ -1,0 +1,208 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/requires/requires.body.js",
+          "start": 1,
+          "end": 15
+        }
+      },
+      "inline": [],
+      "requires": [
+        {
+          "types": [],
+          "name": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 3,
+          "end": 3,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/requires/requires.body.js",
+          "start": 1,
+          "end": 15
+        }
+      },
+      "inline": [],
+      "requires": [
+        {
+          "types": [
+            "*"
+          ],
+          "name": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 5,
+          "end": 5,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/requires/requires.body.js",
+          "start": 1,
+          "end": 15
+        }
+      },
+      "inline": [],
+      "requires": [
+        {
+          "types": [
+            "object",
+            "array",
+            "function",
+            "string"
+          ],
+          "name": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 7,
+          "end": 7,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/requires/requires.body.js",
+          "start": 1,
+          "end": 15
+        }
+      },
+      "inline": [],
+      "requires": [
+        {
+          "types": [],
+          "name": "path",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 9,
+          "end": 9,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/requires/requires.body.js",
+          "start": 1,
+          "end": 15
+        }
+      },
+      "inline": [],
+      "requires": [
+        {
+          "types": [],
+          "name": "path",
+          "description": "<p>the path function from node</p>\n"
+        }
+      ]
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 11,
+          "end": 11,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/requires/requires.body.js",
+          "start": 1,
+          "end": 15
+        }
+      },
+      "inline": [],
+      "requires": [
+        {
+          "types": [
+            "function"
+          ],
+          "name": "path",
+          "description": "<p>the path function from node</p>\n"
+        }
+      ]
+    },
+    {
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 13,
+          "end": 14,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/requires/requires.body.js",
+          "start": 1,
+          "end": 15
+        }
+      },
+      "inline": [],
+      "requires": [
+        {
+          "types": [],
+          "name": "node",
+          "description": ""
+        },
+        {
+          "types": [],
+          "name": "npm",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}
