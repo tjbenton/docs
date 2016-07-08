@@ -4,7 +4,7 @@ import to from 'to-js'
 /// @page annotations
 /// @alias @throw, @exception, @error, @catch
 /// @description
-/// The error that happends if something goes wrong
+/// The error that happens if something goes wrong
 /// @returns {hashmap}
 /// @markup Usage
 /// /// @throws {type}

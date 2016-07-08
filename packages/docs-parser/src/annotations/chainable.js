@@ -9,13 +9,22 @@ import { toBoolean, list } from './annotation-utils'
 /// // this will return true
 /// /// @chainable
 ///
-/// /// @chainable false
-///
 /// /// @chainable true
 ///
-/// /// @chainable jQuery
+/// /// @chainable false
 ///
-/// /// @chainable Something, Something else
+/// /// @chainable Object.prototype
+///
+/// /// @chainable One, Two
+///
+/// /// @chainable
+/// /// One,
+/// /// Two
+///
+/// /// @chainable
+/// /// One
+/// /// Two
+
 export default {
   alias: [ 'chain' ],
   parse() {

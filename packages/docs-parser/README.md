@@ -11,87 +11,85 @@ Where there is development there is a need for documentation. There are several 
 
 Docs fixes all these issues by giving you the ability to generate documentation for all your files. While giving you control over what annotations you want to use in each file type.
 
-## Table of contents
- - [Settings](#settings)
- - [Parse files](#parse-files)
- - [Adding a annotation](#adding-a-annotation)
- - [Default Annotations](#default-annotations)
- - [Documenting your items](#documenting-your-items)
 
-## Settings
-There're 3 different settings that are available to change on a per file basis. When you define out new settings for a specific filetype it will be merged with the default settings.
+## Options
+
+*files*: file globs to be parsed to get the documentation
+default
+```js
+[ 'app/**/*', 'src/**/*', '*.md' ]
+```
+
+
+*ignore*: files globs to be ignored
+default
+```js
+[
+  '.*', // all dot files
+  'node_modules/', 'bower_components/', 'jspm_packages/', // package managers
+  'dist/', 'build/', 'docs/', // normal folders
+  'tests/', 'coverage/' // unit tests and coverage results
+]
+```
+
+*watch*: when true it will watch files for changes
+default `false`
+
+*raw*: Will return the raw data by file, aka data won't be sorted
+default `false`
+
+
+
+
+*languages*: This is an object of comment styles for various languages.
+default
+
+```js
+{
+  // annotation identifier that can be change on a file specific basis if needed.
+  // While this is a setting, it probably should probably never be changed. If it does
+  // need to be changed it should be changed to be a special character.
+  prefix: '@',
+
+  // header comment style
+  // @note {10} only 1 of these can be used per file
+  header: { start: '////', line: '///', end: '////', type: 'header' },
+
+  // body comment style
+  body: { start: '', line: '///', end: '', type: 'body' },
+
+  // inline comments for body comments
+  inline: { start: '', line: '///#', end: '', type: 'inline' },
+
+  // this is used for any interpolations that might occur in annotations.
+  // I don't see this needing to change but just incase I'm making it a setting.
+  // @note {10} This setting is used to create a RegExp so certain characters need to be escaped
+  interpolation: {
+    start: '\\${',
+    end: '}'
+  },
+}
+```
+
+for other predefined languages see the [defined languages](https://github.com/tjbenton/docs/blob/master/packages/docs-parser/src/config.js#L58)
 
 
 ## Usage
 
-Install:
-
-```bash
-npm i tjbenton/docs --save-dev
-```
-
-
-#### Options
-`file_comment`:
-  - **Description:** File level comment block identifier
-  - **Type:** Object
-  - **Default:**
-    - `file_comment.start`
-      - **Description:** Start of a file level comment block
-      - **Default**: `"////"`
-    - `file_comment.line`
-      - **Description:** Start of each line in a file level comment block
-      - **Default**: `"///"`
-    - `file_comment.end`
-      - **Description:** Last line of a file level the comment block
-      - **Default**: `"////"`
-
-`block_comment`:
-  - **Description:** block level comment block identifier
-  - **Type:** Object
-  - **Default:**
-    - `block_comment.start`
-      - **Description:** Start of a comment block
-      - **Default**: `""`
-    - `block_comment.line`
-      - **Description:** Start of each line in a comment block
-      - **Default**: `"///"`
-    - `block_comment.end`
-      - **Description:** Last line of a file level the comment block
-      - **Default**: `""`
-
-`annotation_prefix`
-  - **Description:** The prefix of the annotation(not recommended to change)
-  - **Default:** `"@"`
-
-#### Example
-Defining file specific settings.
-
 ```js
-// first param is the filetype you want to target, the second is the settings you want to add
-docs.setting("css", {
- file_comment: {
-  start: "/***",
-  line: "*",
-  end: "***/"
- },
- block_comment: {
-  start: "/**",
-  line: "*",
-  end: "**/"
- }
-});
-```
+import parser from 'docs-parser'
+import fs from 'fs-extra-promisify'
 
+parser({ files: 'app/**/*' })
+  .then((data) => fs.outputJson('docs/docs.json', data))
+```
 
 
 ## Adding a annotation
 
-#### `docs.annotation(name, obj)`
+documentation for it is coming soon (if your curious just look at `src/annotations/*`)
 
-`docs.annotation` expects the name of the variable you're looking for and a callback function to manipulate the contents. Whatever is returned by that callback function is what is used in generate JSON for that comment block.
-
-##### Callback `this`:
+<!-- ##### Callback `this`:
 
 - `this.annotation`: Information about the annotation
   - `this.annotation.name`: Name of this annotation
@@ -114,9 +112,9 @@ docs.setting("css", {
   - `this.file.start`: start of the file(aka `0`)
   - `this.file.end`: Total lines in the file
 - `this.add`: Allows you to add other annotations based off of the information in the current annotation callback(see example below)
-- `this.default`: This allows you to call the default annotation callback if you specific a specific filetype callback for an annotation. **Note** This is only avaiable on specific filetype callbacks.
+- `this.default`: This allows you to call the default annotation callback if you specific a specific filetype callback for an annotation. **Note** This is only avaiable on specific filetype callbacks. -->
 
-#### Annotation Examples:
+<!-- #### Annotation Examples:
 ###### Defining a basic annotation with only a default callback function
 
 ```js
@@ -193,87 +191,10 @@ docs.annotation("arg", {
   }
  }
 });
-```
-
-
-## Parse files
-#### docs.parse(files)
-Docs supports globbing so it makes it easy to parse all of your files.
-
-Returns an object
-
- - `data`: The data that is returned after the files have been parsed
- - `write`: A function to write the data out to a file
-   - `function(location, spacing){ ... }`
-   - `location`:
-     - **Description:** The location to write the file to
-     - **Type:** String
-   - `spacing`
-     - **Description:** The spacing you want the file to have.
-     - **Default:** 1
-     - **Type:** Number,`\t`,`\s`
- - `then`: Helper function to allow you to do something with the data after it's parsed before it's written to a file
-  - `function(callback){ ... }`
-   - `callback`
-     - **Description:** It's the callback function you want to run. `this` is applied to the callback`
-     - **Default:** 1
-     - **Type:** Function
- - `documentize`: Auto documents the files(Hasn't been implemented)
-  - `function(location){ ... }`
-   - `location`:
-     - **Description:** The location to write the documentation to
-     - **Type:** String
-
-###### Examples
-
-Write out the data to file **without** adjusting it first.
-
-```js
-docs
- .parse("lib/**/*.*")
- .write("docs.json");
-```
-
-Manipulate the data before it's written out to a file.
-
-```js
-docs
- .parse("lib/**/*.*")
- .then(function(){
-  // Change `this.data` to adjust the output
-  this.data = "customized data";
- })
- .write("docs.json");
-```
-
-The output file will look something like the following. For each filetype that is parsed a new key will be added and the value of that key will be an array of objects for that filetype.
-
-```js
-{
- "css": [],
- "scss": [],
- "js": []
-}
-```
-
-**Note:** To see a more detailed example of the output see `tests/tests.json`.
+``` -->
 
 ## Default Annotations
 See more on the [default annotations](ANNOTATIONS.md)
- - [name](ANNOTATIONS.md#name)
- - [page](ANNOTATIONS.md#page)
- - [author](ANNOTATIONS.md#author)
- - [description](ANNOTATIONS.md#description)
- - [note](ANNOTATIONS.md#note)
- - [access](ANNOTATIONS.md#access)
- - [alias](ANNOTATIONS.md#alias)
- - [returns](ANNOTATIONS.md#returns)
- - [arg](ANNOTATIONS.md#arg)
- - [type](ANNOTATIONS.md#type)
- - [todo](ANNOTATIONS.md#todo)
- - [requires](ANNOTATIONS.md#requires)
- - [state](ANNOTATIONS.md#state)
- - [markup](ANNOTATIONS.md#markup)
 
 ## Documenting your items
 There are 2 different types of comment blocks **block level**, and **file level**.
