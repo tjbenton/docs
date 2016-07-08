@@ -25,3 +25,4 @@ Get the main docs package setup to play nice with other themes and plugins
 
   - Very low priority is to update most of the things to use an event emitter.
 
+  - Figure out why Travis CI is failing for node v4* and v0.12 when it works just fine when I use nvm to switch to those versions.
