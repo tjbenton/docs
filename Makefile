@@ -16,7 +16,7 @@ deep-clean:
 
 rebuild:
 	make deep-clean
-	make bootstrap
+	npm install
 	make build
 
 build:
@@ -26,7 +26,6 @@ watch:
 	fly watch
 
 bootstrap:
-	npm i
 	lerna bootstrap
 
 test:
@@ -36,6 +35,6 @@ lint:
 	eslint '**/*.js'
 
 ci-test:
-	fly
 	make lint
+	make build
 	ava
