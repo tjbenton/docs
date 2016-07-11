@@ -1,0 +1,141 @@
+{
+  "name": "docs",
+  "version": "0.0.1-beta",
+  "dependencies": {
+    "async-array-methods": {
+      "version": "2.1.0",
+      "from": "async-array-methods@>=2.1.0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/async-array-methods/-/async-array-methods-2.1.0.tgz"
+    },
+    "ava": {
+      "version": "0.15.2",
+      "from": "ava@>=0.15.2 <0.16.0",
+      "resolved": "https://registry.npmjs.org/ava/-/ava-0.15.2.tgz"
+    },
+    "ava-spec": {
+      "version": "1.0.1",
+      "from": "ava-spec@>=1.0.1 <2.0.0",
+      "resolved": "https://registry.npmjs.org/ava-spec/-/ava-spec-1.0.1.tgz"
+    },
+    "babel-eslint": {
+      "version": "6.1.2",
+      "from": "babel-eslint@>=6.0.4 <7.0.0",
+      "resolved": "https://registry.npmjs.org/babel-eslint/-/babel-eslint-6.1.2.tgz"
+    },
+    "babel-plugin-syntax-async-functions": {
+      "version": "6.8.0",
+      "from": "babel-plugin-syntax-async-functions@>=6.5.0 <7.0.0",
+      "resolved": "https://registry.npmjs.org/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.8.0.tgz"
+    },
+    "babel-plugin-transform-async-to-generator": {
+      "version": "6.8.0",
+      "from": "babel-plugin-transform-async-to-generator@>=6.7.0 <7.0.0",
+      "resolved": "https://registry.npmjs.org/babel-plugin-transform-async-to-generator/-/babel-plugin-transform-async-to-generator-6.8.0.tgz"
+    },
+    "babel-plugin-transform-decorators-legacy": {
+      "version": "1.3.4",
+      "from": "babel-plugin-transform-decorators-legacy@>=1.3.4 <2.0.0",
+      "resolved": "https://registry.npmjs.org/babel-plugin-transform-decorators-legacy/-/babel-plugin-transform-decorators-legacy-1.3.4.tgz"
+    },
+    "babel-plugin-transform-regenerator": {
+      "version": "6.9.0",
+      "from": "babel-plugin-transform-regenerator@>=6.6.5 <7.0.0",
+      "resolved": "https://registry.npmjs.org/babel-plugin-transform-regenerator/-/babel-plugin-transform-regenerator-6.9.0.tgz"
+    },
+    "babel-plugin-transform-runtime": {
+      "version": "6.9.0",
+      "from": "babel-plugin-transform-runtime@>=6.8.0 <7.0.0",
+      "resolved": "https://registry.npmjs.org/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.9.0.tgz"
+    },
+    "babel-preset-es2015": {
+      "version": "6.9.0",
+      "from": "babel-preset-es2015@>=6.6.0 <7.0.0",
+      "resolved": "https://registry.npmjs.org/babel-preset-es2015/-/babel-preset-es2015-6.9.0.tgz"
+    },
+    "babel-preset-stage-0": {
+      "version": "6.5.0",
+      "from": "babel-preset-stage-0@>=6.5.0 <7.0.0",
+      "resolved": "https://registry.npmjs.org/babel-preset-stage-0/-/babel-preset-stage-0-6.5.0.tgz"
+    },
+    "babel-register": {
+      "version": "6.9.0",
+      "from": "babel-register@>=6.8.0 <7.0.0",
+      "resolved": "https://registry.npmjs.org/babel-register/-/babel-register-6.9.0.tgz"
+    },
+    "babel-runtime": {
+      "version": "6.9.2",
+      "from": "babel-runtime@>=6.9.2 <7.0.0",
+      "resolved": "https://registry.npmjs.org/babel-runtime/-/babel-runtime-6.9.2.tgz"
+    },
+    "chalk": {
+      "version": "1.1.3",
+      "from": "chalk@>=1.1.3 <2.0.0",
+      "resolved": "https://registry.npmjs.org/chalk/-/chalk-1.1.3.tgz"
+    },
+    "coveralls": {
+      "version": "2.11.9",
+      "from": "coveralls@>=2.11.8 <3.0.0",
+      "resolved": "https://registry.npmjs.org/coveralls/-/coveralls-2.11.9.tgz"
+    },
+    "eslint": {
+      "version": "2.13.1",
+      "from": "eslint@>=2.13.1 <3.0.0",
+      "resolved": "https://registry.npmjs.org/eslint/-/eslint-2.13.1.tgz"
+    },
+    "eslint-plugin-babel": {
+      "version": "3.3.0",
+      "from": "eslint-plugin-babel@>=3.3.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-babel/-/eslint-plugin-babel-3.3.0.tgz"
+    },
+    "fly": {
+      "version": "1.3.1",
+      "from": "fly@>=1.3.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/fly/-/fly-1.3.1.tgz"
+    },
+    "fly-ava": {
+      "version": "0.11.0",
+      "from": "fly-ava@>=0.11.0 <0.12.0",
+      "resolved": "https://registry.npmjs.org/fly-ava/-/fly-ava-0.11.0.tgz"
+    },
+    "fly-babel": {
+      "version": "0.8.0",
+      "from": "fly-babel@>=0.8.0 <0.9.0",
+      "resolved": "https://registry.npmjs.org/fly-babel/-/fly-babel-0.8.0.tgz"
+    },
+    "fly-esnext": {
+      "version": "1.0.0",
+      "from": "tjbenton/fly-esnext",
+      "resolved": "git://github.com/tjbenton/fly-esnext.git#d54c628aa7da74214a4f99e5eecab859ea35f81b"
+    },
+    "fly-mocha": {
+      "version": "0.4.3",
+      "from": "fly-mocha@>=0.4.3 <0.5.0",
+      "resolved": "https://registry.npmjs.org/fly-mocha/-/fly-mocha-0.4.3.tgz"
+    },
+    "fs-extra-promisify": {
+      "version": "0.0.2",
+      "from": "fs-extra-promisify@0.0.2",
+      "resolved": "https://registry.npmjs.org/fs-extra-promisify/-/fs-extra-promisify-0.0.2.tgz"
+    },
+    "globby": {
+      "version": "5.0.0",
+      "from": "globby@>=5.0.0 <6.0.0",
+      "resolved": "https://registry.npmjs.org/globby/-/globby-5.0.0.tgz"
+    },
+    "jsondiffpatch": {
+      "version": "0.1.43",
+      "from": "jsondiffpatch@>=0.1.43 <0.2.0",
+      "resolved": "https://registry.npmjs.org/jsondiffpatch/-/jsondiffpatch-0.1.43.tgz"
+    },
+    "lerna": {
+      "version": "2.0.0-beta.24",
+      "from": "lerna@2.0.0-beta.24",
+      "resolved": "https://registry.npmjs.org/lerna/-/lerna-2.0.0-beta.24.tgz"
+    },
+    "power-assert": {
+      "version": "1.4.1",
+      "from": "power-assert@>=1.4.1 <2.0.0",
+      "resolved": "https://registry.npmjs.org/power-assert/-/power-assert-1.4.1.tgz"
+    }
+  }
+}
