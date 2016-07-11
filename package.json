@@ -43,7 +43,8 @@
     "globby": "^5.0.0",
     "jsondiffpatch": "^0.1.43",
     "lerna": "2.0.0-beta.24",
-    "power-assert": "^1.4.1"
+    "power-assert": "^1.4.1",
+    "babel-runtime": "^6.9.2"
   },
   "ava": {
     "files": [
