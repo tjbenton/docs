@@ -35,7 +35,7 @@ default
 **watch**: when true it will watch files for changes
 default `false`
 
-**raw**: Will return the raw data by file, aka data won't be sorted
+*raw*: Will return the raw data by file, aka data won't be sorted
 default `false`
 
 
