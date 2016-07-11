@@ -1,17 +1,18 @@
 {
-  "name": "docs",
-  "version": "0.0.1-beta",
+  "name": "docs-core",
+  "version": "0.0.0-alpha1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "async-array-methods": "^2.1.0",
     "commander": "^2.9.0",
+    "docs-parser": "file:../docs-parser",
+    "express": "^4.14.0",
     "fs-extra-promisify": "0.0.2",
-    "to-js": "0.0.4",
-    "winston": "^2.2.0"
+    "to-js": "0.0.4"
   },
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
   "repository": {
