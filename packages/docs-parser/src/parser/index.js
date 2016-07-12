@@ -1,4 +1,5 @@
-import { Logger } from '../utils'
+// @todo update import link
+import logger from '../../../docs-helpers-logger'
 import fs from 'fs-extra-promisify'
 import to, { is } from 'to-js'
 import AnnotationApi from '../annotation-api'
@@ -35,7 +36,7 @@ export default class Parser {
       indent: true,
       annotations: {},
       sort: (a, b) => a.localeCompare(b), // same as the default sort function
-      log: new Logger()
+      log: logger
     }, arguments)
 
     let { annotations, type, log, ...rest } = options

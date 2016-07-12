@@ -11,6 +11,9 @@ import chokidar from 'chokidar'
 import clor from 'clor'
 import globby from 'globby'
 
+// @todo update import link
+import logger from '../../docs-helpers-logger'
+
 export { debug } from './utils'
 
 export {
@@ -48,9 +51,11 @@ export default async function docsParser(options = {}, callback) {
     annotations,
     watch,
     languages,
-    log,
   } = options
   /* eslint-enable no-unused-vars */
+  logger.options.debug = debug
+  logger.options.warning = warning
+  logger.options.timestamps = timestamps
 
   let json = {}
   let parsers = {}
@@ -60,9 +65,9 @@ export default async function docsParser(options = {}, callback) {
   let walk = async (files) => {
     files = to.array(files)
 
-    log.emit('start', 'total')
+    logger.emit('start', 'total')
     try {
-      log.emit('start', 'paths')
+      logger.emit('start', 'paths')
       files = await globby(files, { ignore, nodir: true })
 
       let paths_message = `%s completed ${to.map(files, (file) => clor.bold(file.replace(process.cwd() + '/', ''))).join(', ')} after %dms`
@@ -70,9 +75,9 @@ export default async function docsParser(options = {}, callback) {
         let s = files.length > 1 ? 's' : '' // eslint-disable-line
         paths_message = `%s completed after %dms with ${files.length} file${s} to parse`
       }
-      log.emit('complete', 'paths', paths_message)
+      logger.emit('complete', 'paths', paths_message)
 
-      log.emit('start', 'parser')
+      logger.emit('start', 'parser')
       options.annotationsApi = annotations
 
       const parse = async ({ file, type }) => {
@@ -82,7 +87,7 @@ export default async function docsParser(options = {}, callback) {
       }
 
 
-      const parser_options = { page_fallback, blank_lines, indent, annotations, sort, log }
+      const parser_options = { page_fallback, blank_lines, indent, annotations, sort, log: logger }
       const parsed_files = await map(files, (file) => {
         const type = path.extname(file).replace('.', '')
         if (!parsers[type]) {
@@ -92,7 +97,7 @@ export default async function docsParser(options = {}, callback) {
         return parse({ file, type })
       })
 
-      log.emit('complete', 'parser')
+      logger.emit('complete', 'parser')
 
       // Loop through the parsed files and update the
       // json data that was stored.
@@ -103,13 +108,15 @@ export default async function docsParser(options = {}, callback) {
       let result = json
 
       if (!raw) {
-        log.emit('start', 'sorter')
-        result = sorter({ json, page_fallback, log })
-        log.emit('complete', 'sorter')
+        logger.emit('start', 'sorter')
+        result = sorter({ json, page_fallback, log: logger })
+        logger.emit('complete', 'sorter')
       }
 
-      log.emit('complete', 'total')
-      timestamps && log.space()
+      logger.emit('complete', 'total')
+      timestamps && logger.space()
+
+      logger.emit('parsed', result, files)
 
       if (typeof callback === 'function') {
         callback(result, files)
@@ -120,26 +127,26 @@ export default async function docsParser(options = {}, callback) {
 
       return result
     } catch (err) {
-      log.error(err.stack)
+      logger.error(err.stack)
     }
   }
 
 
   let result = await walk(initial_files)
 
-  initial_files = await globby(initial_files, { ignore, nodir: true })
-  initial_files = initial_files.map((file) => !path.isAbsolute(file) ? path.join(root, file) : file)
-
   if (!watch) {
     return result
   }
 
+  initial_files = await globby(initial_files, { ignore, nodir: true })
+  initial_files = initial_files.map((file) => !path.isAbsolute(file) ? path.join(root, file) : file)
+
   let watcher = chokidar.watch(initial_files, { persistent: true, ignoreInitial: true })
 
-  log.space()
-  log.print('Watching', to.map(initial_files, (file) => clor.bold(file.replace(`${root}/`, ''))).join(', '))
-  log.print('Excluding', to.map(ignore, (file) => clor.bold(file.replace(`${root}/`, ''))).join(', '))
-  log.space()
+  logger.space()
+  logger.print('Watching', to.map(initial_files, (file) => clor.bold(file.replace(`${root}/`, ''))).join(', '))
+  logger.print('Excluding', to.map(ignore, (file) => clor.bold(file.replace(`${root}/`, ''))).join(', '))
+  logger.space()
 
   watcher.on('all', async (type, file) => {
     if (
@@ -150,7 +157,7 @@ export default async function docsParser(options = {}, callback) {
       try {
         await walk(file)
       } catch (err) {
-        log.emit('error', file, 'was not updated', err)
+        logger.emit('error', file, 'was not updated', err)
       }
     }
   })

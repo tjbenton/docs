@@ -1,4 +1,5 @@
-import { Logger } from './'
+// @todo update import link
+import logger from '../../../docs-helpers-logger'
 import to, { is } from 'to-js'
 import clor from 'clor'
 
@@ -88,7 +89,7 @@ export default function debug(default_name = 'DEBUG', default_should_debug = fal
 
     color_list = color_list.filter((color_name) => color_name !== default_options.color)
 
-    const log = new Logger()
+    const log = new logger.Logger({ report: false })
 
     const icon_chevron = '\xBB '
 

@@ -14,8 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tjbenton/docs-theme-default.git"
+    "url": "git+https://github.com/tjbenton/docs.git"
   },
+  "private": true,
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
   "license": "ISC",
   "bugs": {

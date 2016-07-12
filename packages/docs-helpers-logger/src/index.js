@@ -18,13 +18,20 @@ const messaging = {
 
 const purdy = new Purdy()
 
-export default class Logger {
+class Logger {
   constructor(options = {}) {
     this.events = []
     this.times = {}
-    this.options = options
+    this.options = to.extend({
+      debug: true,
+      warning: true,
+      timestamps: true,
+      report: true
+    }, options)
 
-    this.report()
+    if (this.options.report) {
+      this.report()
+    }
   }
 
   /// @description
@@ -41,6 +48,12 @@ export default class Logger {
   /// @arg {object} data to send
   emit(name, ...args) {
     (this.events[name] || []).forEach((event) => event.call(this, ...args))
+    return this
+  }
+
+  // alias for emit
+  log(name, ...args) {
+    this.emit(name, ...args)
     return this
   }
 
@@ -73,44 +86,54 @@ export default class Logger {
   }
 
   report() {
-    let {
-      debug = true,
-      warning = true,
-      timestamps = true
-    } = this.options
+    this
+      .on('start', (name) => this.options.timestamps && this.time(name))
+      .on('complete', (name, format = '%s finished after %dms') => this.options.timestamps && this.timeEnd(name, format))
 
-    this.on('annotation_error', ({ annotation, error_message }) =>
-      this.error(`with ${annotation}`, error_message))
+    this
+      .on('debug', (...args) => {
+        if (this.options.debug) {
+          console.log('')
+          this.print(`${messaging.debug}`)
+          this.print(...args)
+        }
+      })
+      .on('file', (file, ...args) => {
+        if (this.options.debug) {
+          console.log('')
+          this.print(`${messaging.file} ${file}`)
+          this.print(...args)
+        }
+      })
 
-    if (timestamps) {
-      this
-        .on('start', (name) => this.time(name))
-        .on('complete', (name, format = '%s finished after %dms') =>
-          this.timeEnd(name, format))
-    }
 
-    if (debug) {
-      this
-        .on('debug', this.debug)
-        .on('file', this.file)
-    }
+    this.on('warning', (...args) => {
+      if (this.options.warning) {
+        console.log('')
+        this.print(`${messaging.warning}`)
+        this.print(...args)
+      }
+    })
 
-    if (warning) this.on('warning', this.warn)
+    this.on('error', (...args) => {
+      console.log('')
+      this.print(`${messaging.error}`)
+      this.print(...args)
+    })
 
-    this.on('success', this.success)
+
+    this.on('success', (...args) => {
+      this.print(`${clor.green(icon.check)}`, ...args)
+    })
   }
 
-  warn(...args) {
-    console.log('')
-    this.print(`${messaging.warning}`)
-    this.print(...args)
+  warning(...args) {
+    this.emit('warning', ...args)
     return this
   }
 
   error(...args) {
-    console.log('')
-    this.print(`${messaging.error}`)
-    this.print(...args)
+    this.emit('error', ...args)
     return this
   }
 
@@ -136,20 +159,24 @@ export default class Logger {
   }
 
   debug(...args) {
-    console.log('')
-    this.print(`${messaging.debug}`)
-    this.print(...args)
+    this.emit('debug', ...args)
     return this
   }
 
   success(...args) {
-    this.print(`${clor.green(icon.check)}`, ...args)
+    this.emit('success', ...args)
+    return this
   }
 
   file(file, ...args) {
-    console.log('')
-    this.print(`${messaging.file} ${file}`)
-    this.print(...args)
+    this.emit('file', ...args)
     return this
   }
 }
+
+
+let defaultLogger
+defaultLogger = global.docsLogger = global.docsLogger || new Logger()
+
+defaultLogger.Logger = Logger
+export default defaultLogger
