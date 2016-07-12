@@ -53,6 +53,9 @@ export default async function docsParser(options = {}, callback) {
     languages,
   } = options
   /* eslint-enable no-unused-vars */
+  logger.options.debug = debug
+  logger.options.warning = warning
+  logger.options.timestamps = timestamps
 
   let json = {}
   let parsers = {}

@@ -1,11 +1,10 @@
 /* eslint-disable guard-for-in */
-import { Logger } from './utils'
 import fs from 'fs-extra-promisify'
 import to, { is } from 'to-js'
 import path from 'path'
 import * as annotations from './annotations'
 import clor from 'clor'
-let log = new Logger()
+import logger from '../../docs-helpers-logger'
 
 // changed by `options` key
 export const default_options = {
@@ -157,17 +156,10 @@ export default async function config(options = {}) {
 
   options.languages = parseLanguages(options.languages)
 
-  options.log = new Logger({
-    debug: options.debug,
-    warning: options.warning,
-    timestamps: options.timestamps
-  })
-
-
   {
     const { inline } = options.annotations
     if (inline) {
-      options.log.error(`you can't have an ${clor.bold.red('@inline')} annotation because it's reserved`)
+      logger.emit('error', `you can't have an ${clor.bold.red('@inline')} annotation because it's reserved`)
     }
   }
 
@@ -212,35 +204,4 @@ export function parseLanguages(languages) {
   }
 
   return parsed
-}
-
-
-let valid_options = to.keys(default_options)
-let valid_language_options = to.keys(default_options.languages.default)
-
-/// @name ensureValidConfig
-/// @description
-/// Ensures that the user set's a valid config
-/// @access private
-function ensureValidConfig(user_config) { // eslint-disable-line
-  for (let key in user_config) {
-    if (!is.in(valid_options, key)) {
-      log.emit('warning', `'${key}' is not a valid option, see docs options for more details`) ///# @todo add link to the doc options
-    }
-  }
-
-  // ensures the newly added language has the correct comment format
-  if (user_config.languages) {
-    for (let [ lang, options ] of to.entries(user_config.languages)) {
-      for (let [ key ] of to.entries(options)) {
-        if (!is.in(valid_language_options, key)) {
-          log.emit(
-            'warning',
-            `'${key}' is not a valid comment option in '${lang}'. Here's the default language config`,
-            default_options.languages.default
-          )
-        }
-      }
-    }
-  }
 }
