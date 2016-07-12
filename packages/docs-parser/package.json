@@ -2,7 +2,7 @@
   "name": "docs-parser",
   "description": "Documentation chameleon, adapts to any language and will help you document all the things.",
   "author": "Tyler Benton <tjbenton21@gmail.com>",
-  "version": "0.0.0-alpha1",
+  "version": "0.0.0-alpha.2",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf ./dist",

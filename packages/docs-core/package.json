@@ -1,6 +1,6 @@
 {
   "name": "docs-core",
-  "version": "0.0.0-alpha1",
+  "version": "0.0.0-alpha.2",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "dependencies": {
     "async-array-methods": "^2.1.0",
     "commander": "^2.9.0",
-    "docs-parser": "^0.0.0-alpha1",
+    "docs-parser": "^0.0.0-alpha.2",
     "docs-helpers-logger": "^0.0.0-alpha1",
     "express": "^4.14.0",
     "fs-extra-promisify": "0.0.2",
