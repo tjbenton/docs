@@ -10,9 +10,7 @@ import array, { map } from 'async-array-methods'
 import chokidar from 'chokidar'
 import clor from 'clor'
 import globby from 'globby'
-
-// @todo update import link
-import logger from '../../docs-helpers-logger'
+import logger from 'docs-helpers-logger'
 
 export { debug } from './utils'
 

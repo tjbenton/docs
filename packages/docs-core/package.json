@@ -9,7 +9,8 @@
   "dependencies": {
     "async-array-methods": "^2.1.0",
     "commander": "^2.9.0",
-    "docs-parser": "file:../docs-parser",
+    "docs-parser": "^0.0.0-alpha.1",
+    "docs-helpers-logger": "^0.0.0-alpha.1",
     "express": "^4.14.0",
     "fs-extra-promisify": "0.0.2",
     "to-js": "0.0.4"

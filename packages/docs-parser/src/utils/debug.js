@@ -1,5 +1,4 @@
-// @todo update import link
-import logger from '../../../docs-helpers-logger'
+import logger from 'docs-helpers-logger'
 import to, { is } from 'to-js'
 import clor from 'clor'
 

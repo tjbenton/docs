@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 import test from 'ava-spec'
-import Tests from '../../../docs-helpers-test/dist/index.js'
+import Tests from 'docs-helpers-test'
 import tokenizerHelper from '../../tools/tokenizer-helper.js'
 import Tokenizer from '../../dist/parser/tokenizer.js'
 

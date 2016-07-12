@@ -1,9 +1,7 @@
 /* eslint-disable */
 import express from 'express'
-// @todo update import link
-import docsParser from '../../docs-parser'
-// @todo update import link
-import logger from '../../docs-helpers-logger'
+import docsParser from 'docs-parser'
+import logger from 'docs-helpers-logger'
 import to from 'to-js'
 import config from './config'
 

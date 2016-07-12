@@ -52,7 +52,8 @@
     "commander": "^2.9.0",
     "fs-extra-promisify": "^0.0.2",
     "globby": "^4.0.0",
-    "to-js": "^0.0.4"
+    "to-js": "^0.0.4",
+    "docs-helpers-logger": "^0.0.0-alpha.1"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",

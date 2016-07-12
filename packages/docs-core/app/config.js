@@ -2,10 +2,8 @@
 import fs from 'fs-extra-promisify'
 import to, { is } from 'to-js'
 import path from 'path'
+import logger from 'docs-helpers-logger'
 const root = process.cwd()
-
-// @todo update import link
-import logger from '../../docs-helpers-logger'
 
 // changed by `options` key
 export const default_options = {

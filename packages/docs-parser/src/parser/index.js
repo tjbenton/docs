@@ -1,5 +1,4 @@
-// @todo update import link
-import logger from '../../../docs-helpers-logger'
+import logger from 'docs-helpers-logger'
 import fs from 'fs-extra-promisify'
 import to, { is } from 'to-js'
 import AnnotationApi from '../annotation-api'

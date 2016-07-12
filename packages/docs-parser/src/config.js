@@ -4,7 +4,7 @@ import to, { is } from 'to-js'
 import path from 'path'
 import * as annotations from './annotations'
 import clor from 'clor'
-import logger from '../../docs-helpers-logger'
+import logger from 'docs-helpers-logger'
 
 // changed by `options` key
 export const default_options = {
