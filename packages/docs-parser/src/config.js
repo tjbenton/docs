@@ -35,9 +35,9 @@ export const default_options = {
   // this stops the current block from adding lines if there're `n`
   // blank line lines between code, and starts a new block.
   blank_lines: 4,
-  debug: true,
-  warning: true,
-  timestamps: true,
+  debug: false,
+  warning: false,
+  timestamps: false,
 
   // stop adding code to the token.code.contents if the indent is less than the starting line indent
   indent: true,
@@ -149,7 +149,7 @@ export default async function config(options = {}) {
   }
 
   // always ignore json files because they don't support comments
-  options.ignore.push('*.json')
+  options.ignore.push('**/*.json')
 
   // ensures blank_lines is a number to avoid errors
   options.blank_lines = to.number(options.blank_lines)
@@ -162,6 +162,10 @@ export default async function config(options = {}) {
       logger.emit('error', `you can't have an ${clor.bold.red('@inline')} annotation because it's reserved`)
     }
   }
+
+  logger.options.debug = options.debug
+  logger.options.warning = options.warning
+  logger.options.timestamps = options.timestamps
 
   return options
 }

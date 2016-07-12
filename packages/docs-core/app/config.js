@@ -15,8 +15,8 @@ export const default_options = {
 
   // debugging levels
   debug: false,
-  warning: true,
-  timestamps: true,
+  warning: false,
+  timestamps: false,
 }
 
 export default function config(options = {}) { // eslint-disable-line
@@ -38,13 +38,12 @@ export default function config(options = {}) { // eslint-disable-line
   // merge the config file with passed options
   options = to.extend(config_file, options)
 
-  // ensures `files`, `ignore` is always an array this way no
-  // more checks have to happen for it
-  if (options.files) options.files = to.array(options.files)
-  if (options.ignore) options.ignore = to.array(options.ignore)
-
   // merge options with default_options so there's a complete list of settings
   options = to.extend(to.clone(default_options), options)
+
+  logger.options.debug = options.debug
+  logger.options.warning = options.warning
+  logger.options.timestamps = options.timestamps
 
   return options
 }
