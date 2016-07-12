@@ -2,7 +2,7 @@
   "name": "docs-parser",
   "description": "Documentation chameleon, adapts to any language and will help you document all the things.",
   "author": "Tyler Benton <tjbenton21@gmail.com>",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha1",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf ./dist",
@@ -53,7 +53,7 @@
     "fs-extra-promisify": "^0.0.2",
     "globby": "^4.0.0",
     "to-js": "^0.0.4",
-    "docs-helpers-logger": "^0.0.0-alpha.1"
+    "docs-helpers-logger": "^0.0.0-alpha1"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",

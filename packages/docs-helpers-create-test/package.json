@@ -1,6 +1,6 @@
 {
   "name": "docs-helpers-create-test",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha1",
   "description": "**NOTE:** This is an internal Babel module and may not work outside. Use at your own risk.",
   "main": "index.js",
   "bin": {
