@@ -29,7 +29,7 @@ export {
 /// This is used to parse any filetype that you want to and gets the
 /// documentation for it  and returns an `{}` of the document data
 ////
-export default async function docsParser(options = {}, callback) {
+async function docsParser(options = {}, callback) {
   options = await getConfig(options)
 
   /* eslint-disable no-unused-vars */
@@ -162,6 +162,12 @@ export default async function docsParser(options = {}, callback) {
 
   return watcher
 }
+
+
+docsParser.on = (name, ...args) => logger.on(name, ...args)
+docsParser.emit = (name, ...args) => logger.emit(name, ...args)
+
+export default docsParser
 
 // Catch uncaught exceptions
 process.on('uncaughtException', (err) => {

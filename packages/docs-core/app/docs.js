@@ -15,8 +15,7 @@ function docs(options = {}) {
   }
 }
 
-docs.on = logger.on
-docs.emit = logger.emit
-
+docs.on = (name, ...args) => logger.on(name, ...args)
+docs.emit = (name, ...args) => logger.emit(name, ...args)
 
 export default docs
