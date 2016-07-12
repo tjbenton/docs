@@ -1,5 +1,5 @@
 MAKEFLAGS = -j1
-PATH := ./node_modules/.bin:$(PATH)
+PATH := $(npm bin):$(PATH)
 SHELL := /bin/bash
 args = $(filter-out $@, $(MAKECMDGOALS))
 
@@ -38,3 +38,6 @@ ci-test:
 	make lint
 	make build
 	ava
+
+publish:
+	lerna publish --npm-tag=prerelease --force-publish=*

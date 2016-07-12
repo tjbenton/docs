@@ -3,14 +3,18 @@
   "version": "0.0.0-alpha.2",
   "description": "",
   "main": "dist/index.js",
+  "bin": {
+    "docs": "bin/docs"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "async-array-methods": "^2.1.0",
+    "babel-register": "^6.9.0",
     "commander": "^2.9.0",
-    "docs-parser": "^0.0.0-alpha.2",
     "docs-helpers-logger": "^0.0.0-alpha1",
+    "docs-parser": "^0.0.0-alpha.2",
     "express": "^4.14.0",
     "fs-extra-promisify": "0.0.2",
     "to-js": "0.0.4"

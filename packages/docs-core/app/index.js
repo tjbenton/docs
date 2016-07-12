@@ -4,7 +4,7 @@
   prefer-arrow-callback: 0
  */
 var docs = require('./docs.js')
-
+require('babel-register')
 // Module exports
 // a) export module
 // b) define amd
