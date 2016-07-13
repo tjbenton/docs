@@ -13,6 +13,8 @@ export const default_options = {
 
   plugins: [],
 
+  watch: true,
+
   // debugging levels
   debug: false,
   warning: false,
@@ -21,6 +23,10 @@ export const default_options = {
 
 export default function config(options = {}) { // eslint-disable-line
   let config_file = (options.docsfile ? options : default_options).config
+
+  if (!!options.plugins) {
+    options = to.extend(options, getPlugins(options.plugins))
+  }
 
   if (!!options.plugins) {
     options = to.extend(options, getPlugins(options.plugins))
@@ -78,4 +84,3 @@ function getPlugin(plugin) {
 
   return plugin
 }
-

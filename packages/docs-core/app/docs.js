@@ -1,9 +1,12 @@
+'use strict'
+
 /* eslint-disable */
 import express from 'express'
 import docsParser from 'docs-parser'
 import logger from 'docs-helpers-logger'
 import to from 'to-js'
 import config from './config'
+import server from './server'
 
 function docs(options = {}) {
   options = config(options)
@@ -15,6 +18,9 @@ function docs(options = {}) {
   }
 }
 
+docs.server = server
+
+docs.logger = logger
 docs.on = (name, ...args) => logger.on(name, ...args)
 docs.emit = (name, ...args) => logger.emit(name, ...args)
 

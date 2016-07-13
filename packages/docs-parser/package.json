@@ -1,8 +1,16 @@
 {
   "name": "docs-parser",
-  "description": "Documentation chameleon, adapts to any language and will help you document all the things.",
-  "author": "Tyler Benton <tjbenton21@gmail.com>",
   "version": "0.0.0-alpha.2",
+  "description": "Documentation chameleon, adapts to any language and will help you document all the things.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjbenton/docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tjbenton/docs/issues"
+  },
+  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
+  "license": "ISC",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf ./dist",
@@ -29,14 +37,6 @@
     "bin/",
     "LICENSE"
   ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tjbenton/docs.git"
-  },
-  "bugs": {
-    "url": "https://github.com/tjbenton/docs/issues"
-  },
   "bin": {
     "docs-parser": "bin/docs-parser"
   },

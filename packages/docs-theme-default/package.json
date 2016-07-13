@@ -1,72 +1,18 @@
 {
   "name": "docs-theme-default",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Default theme for docs",
-  "main": "server/index.js",
-  "scripts": {
-    "start": "NODE_ENV=development & DEBUG=docs-theme-default:* & nodemon --watch server server/index.js",
-    "refresh": "rm -rf node_modules/ public/jspm_packages/ public/styles/; npm i",
-    "inspector": "NODE_ENV=development & DEBUG=docs-theme-default:* & node-inspector --web-port=6543 --debug-port=4567 & nodemon --debug=4567 app.js",
-    "preinstall-no-run": "node-gyp",
-    "copy": "rm -rf public/js public/images; cp -rf app/js public; cp -rf app/images public",
-    "postinstall-no-run": "jspm install; rename -d '.css' -a '.styl' node_modules/highlight.js/styles/*.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tjbenton/docs.git"
   },
-  "private": true,
+  "bugs": {
+    "url": "https://github.com/tjbenton/docs/issues"
+  },
   "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tjbenton/docs-theme-default/issues"
-  },
-  "homepage": "https://github.com/tjbenton/docs-theme-default#readme",
-  "dependencies-no-run": {
-    "autoprefixer": "^6.3.5",
-    "babel-plugin-transform-runtime": "^6.7.5",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "babel-register": "^6.7.2",
-    "body-parser": "^1.15.0",
-    "cli-table": "^0.3.1",
-    "clone": "^1.0.2",
-    "cookie-parser": "^1.4.1",
-    "css-mqpacker": "^4.0.1",
-    "express": "^4.13.3",
-    "highlight.js": "^9.2.0",
-    "jade": "^1.11.0",
-    "jade-babel": "^5.0.0",
-    "jspm": "^0.16.33",
-    "jstransformer-highlight": "^1.0.1",
-    "livereload-js": "^2.2.2",
-    "livereload-server": "^0.2.3",
-    "lunr": "^0.7.0",
-    "morgan": "^1.7.0",
-    "node-gyp": "^3.3.1",
-    "nodemon": "^1.9.1",
-    "poststylus": "^0.2.3",
-    "purdy": "^1.6.0",
-    "request": "^2.72.0",
-    "response-time": "^2.3.1",
-    "stylus": "^0.54.5"
-  },
-  "jspm": {
-    "directories": {
-      "baseURL": "public"
-    },
-    "dependencies": {
-      "cash": "github:tjbenton/cash@^1.2.1",
-      "fetch": "npm:whatwg-fetch@^0.11.0",
-      "jquery/PEP": "github:jquery/PEP@^0.4.1",
-      "lunr": "github:olivernn/lunr.js@^0.7.0",
-      "pointer-events": "github:jquery/PEP@^0.4.1"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
-    }
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

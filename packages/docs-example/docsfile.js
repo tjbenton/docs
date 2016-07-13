@@ -1,12 +1,6 @@
-var docs = require('../docs-core').default
-import express from 'express'
-// var express = require('express')
-var app = express()
+'use strict'
 
-
-app.listen(9999, () => {
-  console.log('Example app listening at http://localhost:9999')
-})
+import docs from 'docs-core'
 
 try {
   docs({
@@ -14,6 +8,13 @@ try {
       '../docs-plugin-scss-content'
     ]
   })
+
+  docs.logger.on('parsed', (data, files) => {
+    // console.log('parsed:', files)
+  })
+
+  console.log(docs.server)
+  // docs.server('../docs-theme-default')
 } catch (e) {
   console.log(e)
 }

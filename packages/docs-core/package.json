@@ -2,6 +2,15 @@
   "name": "docs-core",
   "version": "0.0.0-alpha.2",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjbenton/docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tjbenton/docs/issues"
+  },
+  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
+  "license": "ISC",
   "main": "dist/index.js",
   "bin": {
     "docs": "bin/docs"
@@ -19,12 +28,6 @@
     "fs-extra-promisify": "0.0.2",
     "to-js": "0.0.4"
   },
-  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tjbenton/docs.git"
-  },
-  "license": "ISC",
   "keywords": [
     "css",
     "sass",

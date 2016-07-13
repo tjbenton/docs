@@ -6,5 +6,5 @@ packages/*/test*/**/*.js
 packages/*/dist/**/*.js
 packages/*/dist/**/*.js
 packages/*/public/jspm_packages/**/*.js
-packages/docs-theme-default/**/*.js
+packages/*/public/config.js
 vendor

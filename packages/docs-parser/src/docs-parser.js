@@ -1,7 +1,6 @@
 'use strict'
 
 import path from 'path'
-import fs from 'fs-extra-promisify'
 import to, { is } from 'to-js'
 import Parser from './parser'
 import sorter from './sorter'
@@ -118,9 +117,6 @@ async function docsParser(options = {}, callback) {
 
       if (typeof callback === 'function') {
         callback(result, files)
-      } else if (watch) {
-        console.log('updated: ', dest)
-        await fs.outputJson(dest, result)
       }
 
       return result

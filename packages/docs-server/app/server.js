@@ -1,13 +1,4 @@
-/*
-  eslint
-  no-unused-vars: 0,
-  no-var: 0,
-  no-magic-numbers: 0,
-  prefer-arrow-callback: 0,
-  prefer-template: 0,
-  object-shorthand: 0,
-  no-underscore-dangle: 0
-*/
+/* eslint-disable */
 
 console.log('')
 console.log('')
@@ -64,18 +55,18 @@ const base_options = {
 //   "js_bottom": []
 // }
 
-
-function getOrigin() {
-  let parent = module.parent
-  let limit = 10
-  let count = 0
-  while (!!parent) {
-    count++
-    if (parent.filename.indexOf('docs-theme-default/server/index.js') > -1) {
-      return parent.parent.filename
-    }
-    if (count >= limit) {
-      return 'well shit'
-    }
-  }
-}
+//
+// function getOrigin() {
+//   let parent = module.parent
+//   let limit = 10
+//   let count = 0
+//   while (!!parent) {
+//     count++
+//     if (parent.filename.indexOf('docs-theme-default/server/index.js') > -1) {
+//       return parent.parent.filename
+//     }
+//     if (count >= limit) {
+//       return 'well shit'
+//     }
+//   }
+// }
