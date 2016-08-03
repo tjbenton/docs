@@ -51,7 +51,10 @@ export default class AnnotationApi {
       // and let's you resolve them here in the data instead of resolving
       // the issues on the client side. It's also useful if you want want
       // to ensure the data always returns an `array`.
-      resolve: false
+      resolve: false,
+      render(arg) {
+        return arg
+      }
     }
 
     this.annotation_base_keys = to.keys(this.annotation_base)

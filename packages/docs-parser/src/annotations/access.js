@@ -32,5 +32,8 @@ export default {
     }
 
     return 'public'
+  },
+  render(access) {
+    return `<div class="c-annotation c-access">${access}</div>`
   }
 }

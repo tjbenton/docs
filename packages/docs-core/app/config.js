@@ -7,13 +7,14 @@ const root = process.cwd()
 
 // changed by `options` key
 export const default_options = {
-  docsfile: `${process.cwd()}/.docsfile.js`,
-
-  dest: `${process.cwd()}/docs/docs.json`,
-
   plugins: [],
 
+  assets: [],
+
   watch: true,
+  raw: false,
+
+  theme: '',
 
   // debugging levels
   debug: false,
@@ -22,30 +23,39 @@ export const default_options = {
 }
 
 export default function config(options = {}) { // eslint-disable-line
-  let config_file = (options.docsfile ? options : default_options).config
+  const config_files = [ 'package.json', '.docsfile', 'docsfile.js' ]
+    .map((file) => {
+      try {
+        return require(path.join(root, file))
+      } catch (e) {
+        return {}
+      }
+    })
+  config_files[0] = config_files[0].docs || {}
 
-  if (!!options.plugins) {
-    options = to.extend(options, getPlugins(options.plugins))
-  }
-
-  if (!!options.plugins) {
-    options = to.extend(options, getPlugins(options.plugins))
-  }
-
-  // try to get the `docsfile.js` so the user config can be merged
-  try {
-    // merge the default options with the user options
-    config_file = require(config_file)
-    console.log('config_file:', config_file)
-  } catch (err) {
-    config_file = {}
-  }
+  const user_options = Object.assign(...config_files)
 
   // merge the config file with passed options
-  options = to.extend(config_file, options)
+  options = to.extend(user_options, options)
+
+  if (!!options.plugins) {
+    options = to.extend(options, getPlugins(options.plugins))
+  }
+
+  if (!options.theme) {
+    logger.error('You must specificy a theme')
+  } else {
+    const theme = getPlugin(options.theme, 'theme',
+      `docs-theme-${options.theme.replace('docs-theme-', '')}  could not be found try installing docs-theme-default`)
+    options = to.merge(options, theme)
+  }
+
+  options.assets = to.array(options.assets)
 
   // merge options with default_options so there's a complete list of settings
   options = to.extend(to.clone(default_options), options)
+
+  options.assets.push(path.join(root, 'docs'))
 
   logger.options.debug = options.debug
   logger.options.warning = options.warning
@@ -55,30 +65,36 @@ export default function config(options = {}) { // eslint-disable-line
 }
 
 
-function getPlugins(plugins) {
-  return to.reduce(plugins, (prev, next) => to.extend(prev, getPlugin(next)), {})
+function getPlugins(plugins, prefix = 'plugin') {
+  return to.reduce(plugins, (prev, next) => to.merge(prev, getPlugin(next, prefix)), {})
 }
 
-function getPlugin(plugin) {
+function getPlugin(plugin, prefix, message = '') {
+  prefix = `docs-${prefix}-`
   try {
     // if the plugin path isn't relative then add the docs-plugin- prefix to it.
     if (!/^\./.test(plugin)) {
-      plugin = 'docs-plugin-' + plugin.replace('docs-plugin-', '')
+      plugin = prefix + plugin.replace(prefix, '')
     } else {
       plugin = path.resolve(root, plugin)
     }
-    plugin = require(plugin)
+    try {
+      plugin = require(plugin)
+    } catch (e) {
+      // @todo REMOVE THIS AFTER docs-theme-default is added to npm
+      plugin = require(path.join(process.cwd(), '..', plugin))
+    }
 
     if (plugin.default) {
       plugin = plugin.default
     }
 
     if (plugin.plugins) {
-      return to.extend(plugin, getPlugin(plugin.plugins))
+      return to.merge(plugin, getPlugin(plugin.plugins, prefix))
     }
   } catch (e) {
-    console.log(e)
-    logger.emit('error', e)
+    logger.error(e)
+    // logger.error(!!message ? message : e)
     return {}
   }
 
