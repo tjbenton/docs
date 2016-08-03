@@ -1,11 +1,6 @@
 {
   "lerna": "2.0.0-beta.24",
   "version": "0.0.0-alpha-5.1",
-  "bootstrapConfig": {
-    "ignore": [
-      "docs-example"
-    ]
-  },
   "publishConfig": {
     "ignore": [
       "*.md",
