@@ -1,0 +1,22 @@
+{
+  "name": "docs-plugin-default-annotations",
+  "version": "0.0.0",
+  "description": "Default annotations for docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjbenton/docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tjbenton/docs/issues"
+  },
+  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "clor": "^2.0.2",
+    "to-js": "0.0.4"
+  }
+}
