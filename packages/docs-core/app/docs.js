@@ -30,7 +30,8 @@ export default class Docs {
   }
 
   async assetsList() {
-    let assets = await reduce(this.options.assets.reverse(), async (list, folder) => {
+    let assets = [].concat(this.options.assets).reverse()
+    assets = await reduce(assets, async (list, folder) => {
       let files = await globby(path.join(folder, '**', '*'), { dot: true, nodir: true })
 
       files.forEach((from) => {
@@ -47,8 +48,6 @@ export default class Docs {
 
     assets.from.reverse()
     assets.to.reverse()
-
-    // await forEach(assets, ({ from, to }) => fs.copy(from, to, { clobber: true }))
 
     return assets
   }

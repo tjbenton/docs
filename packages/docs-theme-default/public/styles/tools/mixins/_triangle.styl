@@ -1,0 +1,28 @@
+/// @description - This is for creating css-triangles with psuedo elements.
+triangle($direction, $color = #fff, $size = {}) {
+  $opposite-direction = opposite-position($direction)
+
+  $size = extend($size, {
+    height: 1em,
+    width: 1em
+  })
+
+  $size = match('top|bottom', $direction) ? $size.width : $size.height
+
+  if !match('top|right|bottom|left', $direction) {
+    error("Direction must be one of `top`, `right`, `bottom` or `left`; currently `{$direction}`.");
+  } else {
+    border $size solid transparent
+    border-{$direction}-width 0
+    if $width == 1em and $height == 1em {
+      border-{$opposite-direction}-color $color
+    } else {
+      border-{$opposite-direction} $size solid $color
+    }
+  }
+  content ''
+  height 0
+  position absolute
+  width 0
+  z-index 2
+}

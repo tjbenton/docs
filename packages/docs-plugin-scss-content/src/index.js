@@ -1,5 +1,6 @@
 // @todo update import link
 import { toBoolean, list } from '../../docs-parser/dist/annotations/annotation-utils'
+import path from 'path'
 
 export default {
   annotations: {
@@ -12,7 +13,7 @@ export default {
         }
         return list(contents)
       }
-
     }
-  }
+  },
+  assets: path.join(__dirname, '..', 'public')
 }

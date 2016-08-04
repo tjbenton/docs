@@ -1,0 +1,50 @@
+/// @author Tyler Benton
+/// @page helpers/mixins
+///
+/// @description
+/// Clear fix to help with floats. If this isn't applied to a pseudo
+/// selector then `:after` will be appended to the selector.
+///
+/// @arg {boolean}
+///
+/// @markup {styl} **Example:**
+/// .extend-true {
+///   background: #fff;
+///   clear(); // This is the same thing as &:after { clear(); }
+///   &:before {
+///     clear();
+///   }
+/// }
+///
+/// .extend-false {
+///   clear(false);
+///   &:before {
+///     background: #000;
+///     clear(false);
+///   }
+/// }
+clear($extend = true)
+  if has-pseudo('before', 'after') {
+    clear both
+    content ''
+    display table
+    position relative
+  } else {
+    &:after {
+      clear($extend)
+    }
+  }
+  //
+  // /{$selector}
+  //   clear both
+  //   content ''
+  //   display table
+  //   position relative
+    // if $extend
+    //   +cache('clear')
+    //     clear(false)
+    // else
+    //   clear both
+    //   content ''
+    //   display table
+    //   position relative

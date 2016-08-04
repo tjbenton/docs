@@ -1,0 +1,52 @@
+//-/ @todo add the browser js here
+
+//- - var data = 'var documentation = ' + JSON.stringify({ data: documentation }) + ';'
+//- - data += 'documentation = documentation.data'
+//- script!=data
+
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+
+//- Base info about the site
+title Docs
+meta(name="description" content="")
+
+//- additional meta tags
+block meta
+  //- Allows IE mobile to smooth fonts
+  meta(http-equiv="cleartype" content="on")
+
+//- dns pre-fetch
+block prefetch
+  each link in prefetch || []
+    link(rel="dns-prefetch" href="#{link}")
+    
+//- mobile specific
+//- used by older palm & blackberry devices
+meta(name="HandheldFriendly" content="True")
+//- used by microsoft
+meta(name="MobileOptimized" content="320")
+//- supported by most modern smartphones, lists different settings for displaying the page on the phone
+meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui")
+//- this tells browsers to NOT autodetect telephone numbers and turn them in to links.
+meta(name="format-detection" content="telephone=no")
+//- this tells browsers to NOT autodetect addresses and turn them in to links.
+meta(name="format-detection" content="address=no")
+
+//- css 
+block css
+  each file in public.styles._contents
+    link(rel="stylesheet" href="styles/#{file}")
+
+//- js
+block js
+  each file in public.js._contents
+    script(src="js/#{file}")
+  
+//- != LRScript
+
+//- script.
+//-   System.import('site')
+//-   //- script.
+//-     //- System.import('site/combined.js');
+//-     //- System.import('site');

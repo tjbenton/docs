@@ -24,11 +24,12 @@
     "chokidar": "^1.6.0",
     "commander": "^2.9.0",
     "docs-helpers-logger": "^0.0.0-alpha-5.1",
-    "docs-plugin-default-annotations": "^0.0.0-alpha-5.1",
     "docs-parser": "^0.0.0-alpha-5.1",
+    "docs-plugin-default-annotations": "^0.0.0-alpha-5.1",
     "fs-extra-promisify": "0.0.2",
     "globby": "^6.0.0",
     "harp": "github:sintaxi/harp#v0.21.0-pre",
+    "terraform": "github:tjbenton/terraform",
     "to-js": "0.0.4"
   },
   "keywords": [

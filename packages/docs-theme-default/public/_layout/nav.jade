@@ -1,0 +1,10 @@
+//- mixin menu(tree)
+//-   ul
+//-     for node in tree
+//-       li= node.title
+//-       if node.sub
+//-         +menu(node.sub)
+
+nav(class="s-documentation__nav" role="navigation")
+  h1 Nav
+  != partial('../_helpers/json', { json: nav })

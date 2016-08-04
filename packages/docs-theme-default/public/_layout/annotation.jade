@@ -1,0 +1,35 @@
+
+h4 Annotation loop
+
+!= partial('../_helpers/json', { json: _.extend({ header: header }, { body: body })})
+
+mixin annotations(type, token)
+  if Array.isArray(token)
+    each item in token
+      +annotations(type, item)
+  else
+    - var elem, klass
+    if type === 'header'
+      - elem = type
+      - klass = 'c-token-header'
+    else 
+      - elem = 'section'
+      - klass = 'c-token-' + type
+    #{elem}(class="#{klass}")
+      h2 #{type} comment
+      each data, name in token
+        if name === 'inline'
+          +annotations('inline', token.inline)
+        else
+          +annotation(name, data, token)
+
+mixin annotation(name, data, token)
+  if name !== 'blockinfo' && name !== 'inline'
+    != partial('../_annotations/' + name, { data: data, token: token })
+
+article.docs-o-container
+  if header
+    +annotations('header', header)
+  
+  if body
+    +annotations('body', body)

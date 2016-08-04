@@ -1,4 +1,10 @@
-h1 WHATUP IT WORKS!!!!!
+
+//- block content
+  //- include layout/page.jade
+
+h1 Home page
+
+//- != partial('_helpers/json', { json: public._data.pages.general.page })
 
 
-pre: code!= JSON.stringify(public._data, null, 2)
+!= partial('_layout/annotation', public._data.pages.general.page)

@@ -1,3 +1,5 @@
+import path from 'path'
+
 // annotations
 const annotations = [
   'access',
@@ -24,9 +26,13 @@ const annotations = [
   'todo',
   'type',
   'version',
-]
+].reduce((prev, annotation) => {
+  prev[annotation] = require(`./annotations/${annotation}.js`).default
+  return prev
+}, {})
 
 
-for (let annotation of annotations) {
-  module.exports[annotation] = require(`./${annotation}.js`)
+module.exports = {
+  annotations,
+  assets: path.join(__dirname, '..', 'public')
 }

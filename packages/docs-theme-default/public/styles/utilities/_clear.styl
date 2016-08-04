@@ -1,0 +1,25 @@
+for $breakpoint in $media-breakpoints-list
+  +media($breakpoint)
+    /// @name clear
+    /// @author Tyler Benton
+    /// @page utilities/clear
+    /// @description A helper class to clear floated elements
+    ///
+    /// @markup How to use:
+    /// <style>.clear-example div{float:left;margin:0;}</style> <!-- for example only -->
+    /// <div class="clear-example u-clear">
+    ///   <div>Item</div>
+    ///   <div>Item</div>
+    ///   <div>Item</div>
+    /// </div>
+    ///
+    /// @markup (example="false") How **NOT** to use:
+    /// <style>.clear-example div{float:left;margin:0;}</style> <!-- for example only -->
+    /// <div class="clear-example">
+    ///   <div>Item</div>
+    ///   <div>Item</div>
+    ///   <div>Item</div>
+    ///   <br class="u-clear">
+    /// </div>
+    .u-clear{$media}
+      clear()

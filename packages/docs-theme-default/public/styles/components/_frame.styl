@@ -1,0 +1,145 @@
+.c-frame
+  $border-radius = 4px
+  // background green
+  border-radius $border-radius
+  border 1px solid color(a, -7)
+
+  &__header
+    background color(a, -7.75)
+    border-radius ($border-radius - 2) ($border-radius - 2) 0 0
+    margin 0
+    padding 0.5em 0.75em 0.55em 63px
+    font-size 12px
+    border 1px solid #d4d7d7
+    border-bottom none
+    border-radius 3px 3px 0 0
+    color #34495e
+    display block
+    line-height 1em
+    position relative
+    spacing off inner
+    display flex
+    flex-flow row nowrap
+
+    &:before {
+      $red = #ed7669
+      $yellow = #f4d03f
+      $green = #28e1bd
+      $size = 11px
+      $spacing = 5px
+      background $red
+      border-radius 100%
+      box-shadow ($size + $spacing) 0 0 $yellow, (($size + $spacing) * 2) 0 0 $green
+      content ''
+      height $size
+      left 9px
+      position absolute
+      top 10px
+      width $size
+    }
+
+  &__url
+    background white
+    border-radius $border-radius
+    display block
+    font-size 12px
+    flex 1
+    overflow hidden
+    white-space nowrap
+    text-overflow ellipsis
+    margin 0
+    padding 0.2857em 1em
+
+  &__action
+    background blue
+    border 1px solid color(a, -5)
+    border-radius: $config.border-radius;
+    display inline-block
+    padding: $config.spacing-sizes.tiny;
+    margin-left: $config.spacing-sizes.small;
+
+  &__language
+    display none
+
+  &__body
+    margin 0
+    padding 0
+
+  &__section
+    border-radius 0 0 $border-radius $border-radius
+    overflow hidden
+
+    &:only-child
+      display block
+
+    &--raw, &--raw-stateless
+      padding: $config.spacing;
+
+    &--raw-stateless, &--escaped-stateless
+      display block
+      .has-state &:not(:only-child)
+        display none
+
+    &--raw, &--escaped
+      &:not(:only-child)
+        display none
+
+      .has-state &
+        display block
+
+  &__body, &__pre, &__code
+    border-radius 0 0 $border-radius $border-radius
+
+  &__pre, &__code
+    display block
+    font 500 14px/1.4em 'Source Code Pro', Consolas, Monaco, 'Andale Mono', monospace
+    font-smoothing auto
+    hyphens none
+    // overflow-x scroll
+    overflow-y hidden
+    margin 0
+    padding 0
+    position relative
+    tab-size 4
+    text-align left
+    white-space nowrap
+    word-break normal
+    word-spacing normal
+
+  &__pre
+    overflow-x scroll
+    display flex
+    flex-flow row nowrap
+    padding: $config.spacing-sizes.small;
+    padding-right 0
+
+  &__code
+    white-space pre
+    flex 1
+    order 2
+    padding-right: $config.spacing;
+
+  &__linenos, &__lineno
+    display block
+    margin 0
+    padding 0
+
+  &__linenos
+    counter-reset line
+    user-select(none)
+    flex 0 0 auto
+    margin-left: $config.spacing-sizes.tiny;
+    &:after
+      content attr(data-end)
+      position relative
+
+
+  &__lineno
+    counter-increment line
+    &:before
+      content counter(line)
+      position relative
+      background blue
+
+  &__copied
+    background blue

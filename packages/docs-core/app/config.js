@@ -38,9 +38,12 @@ export default function config(options = {}) { // eslint-disable-line
   // merge the config file with passed options
   options = to.extend(user_options, options)
 
-  if (!!options.plugins) {
-    options = to.extend(options, getPlugins(options.plugins))
-  }
+  // ensure that the plugins option is an array
+  // and add the default annotations to the plugins plist
+  options.plugins = to.array(options.plugins)
+  options.plugins.unshift('default-annotations')
+
+  options = to.extend(options, getPlugins(options.plugins))
 
   if (!options.theme) {
     logger.error('You must specificy a theme')
@@ -50,7 +53,7 @@ export default function config(options = {}) { // eslint-disable-line
     options = to.merge(options, theme)
   }
 
-  options.assets = to.array(options.assets)
+  options.assets = to.unique(to.array(options.assets))
 
   // merge options with default_options so there's a complete list of settings
   options = to.extend(to.clone(default_options), options)

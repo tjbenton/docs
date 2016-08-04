@@ -1,0 +1,74 @@
+/// @author Tyler Benton
+/// @page helpers/mixins
+/// @description This mixin is to help with IE specific styles by adding one of these classes `.ie`, `.ie6`, `.ie7`, `.ie8`, `.ie9`
+///
+/// @note {!!!} - This only supports IE versions 6, 7, 8, 9
+///
+/// @arg {all, string} - list of ie versions or "all"
+///
+/// @markup {styl} (example="false") **Example: ** IE styles for all versions of IE
+/// .foo {
+///   display: flex;
+///   ...
+///
+///   +ie() {
+///     display: block;
+///   }
+/// }
+///
+/// @markup {css} **Output: ** IE styles for all versions of IE
+/// .foo {
+///   display: flex;
+///   ...
+/// }
+///
+/// .t-ie .foo {
+///   display: block;
+/// }
+///
+/// @markup {styl} **Example: ** IE styles for specific versions
+/// .foo {
+///   width: 100vw;
+///   ...
+///
+///   +ie(9..11) {
+///     width: 100%;
+///   }
+/// }
+///
+/// @markup {css} **Output: ** IE styles for specific versions
+/// .foo {
+///   width: 100vw;
+///   ...
+/// }
+///
+/// .t-ie9 .foo,
+/// .t-ie10 .foo,
+/// .t-ie11 .foo {
+///   width: 100%;
+/// }
+ie($ie-versions...) {
+  $selector = selector()
+  $ie-base-selector = '.t-ie'
+  $ie-selector = $ie-base-selector
+  $length = length(arguments)
+  unless $length == 0 || arguments[0] == 'all' {
+    for $ie-version, $i in arguments {
+      if $ie-version is a 'unit' && ($ie-version != clamp($ie-version, 7, 12) && unit($ie-version) == '') {
+        error('you must past in a valid ie version number between 1 and 12')
+      }
+
+      $ie-selector += $ie-version
+
+      unless $i == $length - 1 {
+        $ie-selector += ', ' + $ie-base-selector
+      }
+    }
+  }
+
+  /{$ie-selector} {
+    {$selector} {
+      {block}
+    }
+  }
+}

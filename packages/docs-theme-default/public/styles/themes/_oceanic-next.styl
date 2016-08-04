@@ -1,0 +1,237 @@
+
+color-set({
+  'namespace': 'oceanic-next',
+  'colors': {
+    'gray': {
+      '-4': #D8DEE9,
+      '-3': #CDD3DE,
+      '-2': #C0C5CE,
+      '-1': #A7ADBA,
+      '0': mix(#65737E, #A7ADBA, 50%),
+      '1': #65737E,
+      '2': #4F5B66,
+      '3': #343D46,
+      '4': #1B2B34,
+      'color-name': 'gray'
+    },
+    'red': {
+      '0': #EC5f67,
+      'color-name': 'red'
+    },
+    'orange': {
+      '0': #F99157,
+      'color-name': 'orange'
+    },
+    'yellow': {
+      '0': #FAC863,
+      'color-name': 'yellow'
+    },
+    'green': {
+      '0': #99C794,
+      'color-name': 'green'
+    },
+    'turquoise': {
+      '0': #5FB3B3,
+      'color-name': 'turquoise'
+    },
+    'blue': {
+      '0': #6699CC,
+      'color-name': 'blue'
+    },
+    'purple': {
+      '0': #C594C5,
+      'color-name': 'purple'
+    },
+    'brown': {
+      '0': #AB7967,
+      'color-name': 'brown'
+    },
+  }
+})
+
+highlight($color, $variation = 0, $force = false, $save = true)
+  color($color, $variation, 'oceanic-next', $force, $save)
+
+
+// Stylable classes
+//
+// ### General-purpose
+// `keyword` - keyword in a regular Algol-style language
+// `built_in` - built-in or library object (constant, class, function)
+// `type` - type name used in a function signature, type parameter, generic template, etc
+// `literal` - special identifier for a built-in value ("true", "false", "null")
+// `number` - number, including units and modifiers, if any.
+// `regexp` - literal regular expression
+// `string` - literal string, character
+// `subst` - parsed section inside a literal string
+// `symbol` - symbolic constant, interned string, goto label
+// `class` - class or class-level declaration (interfaces, traits, modules, etc)
+// `function` - function or method declaration
+// `title` - name of a class or a function at the place of declaration
+// `params` - block of function arguments (parameters) at the place of declaration
+//
+// ### Meta
+// `comment` - comment
+// `doctag` - documentation markup within comments
+// `meta` - flags, modifiers, annotations, processing instructions, preprocessor directive, etc
+// `meta-keyword` - keyword or built-in within meta construct
+// `meta-string` - string within meta construct
+// Tags, attributes, configs
+// `section` - heading of a section in a config file, heading in text markup
+// `tag` - XML/HTML tag
+// `name` - name of an XML tag, the first word in an s-expression
+// `builtin-name` - s-expression name from the language standard library
+// `attr` - name of an attribute with no language defined semantics (keys in JSON, setting names in .ini), also sub-attribute within another highlighted object, like XML tag
+// `attribute` - name of an attribute followed by a structured value part, like CSS properties
+// `variable` - variable in a config or a template file, environment var expansion in a script
+//
+// ### Markup
+// `bullet` - list item bullet in text markup
+// `code` - code block in text markup
+// `emphasis` - emphasis in text markup
+// `strong` - strong emphasis in text markup
+// `formula` - mathematical formula in text markup
+// `link` - hyperlink in text markup
+// `quote` - quotation in text markup
+//
+// ### CSS
+// `selector-tag` - tag selector in CSS
+// `selector-id` - #id selector in CSS
+// `selector-class` - .class selector in CSS
+// `selector-attr` - [attr] selector in CSS
+// `selector-pseudo` - :pseudo selector in CSS
+//
+// ### Templates
+// `template-tag` - tag of a template language
+// `template-variable` - variable in a template language
+//
+// ### Diff
+// `addition` - added or changed line in a diff
+// `deletion` - deleted line in a diff
+
+
+.hljs
+  display block
+  overflow-x auto
+  background highlight('gray', 4)
+  color highlight('gray', -4)
+  padding 0.5em
+
+  span
+    position relative
+
+  &-leading-whitespaces
+    color highlight('gray', 2)
+    cursor text
+    &:empty
+      display none
+
+  &-leading-whitespace
+    &:after, &:before
+      content '•'
+      left 0
+      top 0
+      width 100%
+      font-size 0.5em
+      text-align center
+
+    &:before
+      color rgba(black, 0)
+
+    &:nth-of-type(odd)
+      &:before
+        border-left 1px solid highlight('gray', 2)
+
+  &-linenos, &-lineno
+    display block
+    margin 0
+    padding 0
+
+    &:after
+      display block
+      position relative
+
+  &-linenos
+    color highlight('gray')
+    counter-reset line
+    user-select(none)
+    flex 0 0 auto
+    margin-right: $config.spacing-sizes.small;
+    text-align right
+
+    &:after
+      content attr(data-end)
+      height 0
+      overflow hidden
+
+
+  &-lineno
+    counter-increment line
+
+    &:after
+      content counter(line)
+
+  /* Comment */
+  &-comment,
+  &-quote
+    color highlight('gray', -5)
+
+
+  &-tag
+    color highlight('turquoise')
+
+  /* Red */
+  &-variable,
+  &-template-variable,
+  &-name,
+  &-selector-id,
+  &-selector-class,
+  &-regexp,
+  &-title,
+  &-deletion
+    color highlight('red')
+
+  /* Orange */
+  &-number,
+  &-built_in,
+  &-builtin-name,
+  &-literal,
+  &-type,
+  &-params,
+  &-meta,
+  &-link
+    color highlight('orange')
+
+  /* Yellow */
+  &-attribute
+    color highlight('yellow')
+
+  /* Green */
+  &-string,
+  &-symbol,
+  &-bullet,
+  &-addition,
+  &-value
+    color highlight('green')
+
+  /* Blue */
+  &-section
+    color highlight('blue')
+
+  /* Purple */
+  &-keyword,
+  &-selector-tag,
+  &-attribute
+    color highlight('purple')
+
+  &-emphasis
+    font-style italic
+
+  &-strong
+    font-weight bold
+
+
+  &.json
+    color highlight('gray', -4)
+  &.json &-attribute
+    color highlight('green')
