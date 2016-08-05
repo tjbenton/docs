@@ -11,8 +11,9 @@ export const default_options = {
 
   assets: [],
 
+  sort: [],
+
   watch: true,
-  raw: false,
 
   theme: '',
 
@@ -41,7 +42,7 @@ export default function config(options = {}) { // eslint-disable-line
   // ensure that the plugins option is an array
   // and add the default annotations to the plugins plist
   options.plugins = to.array(options.plugins)
-  options.plugins.unshift('default-annotations')
+  options.plugins.push('default-annotations')
 
   options = to.extend(options, getPlugins(options.plugins))
 
@@ -58,7 +59,7 @@ export default function config(options = {}) { // eslint-disable-line
   // merge options with default_options so there's a complete list of settings
   options = to.extend(to.clone(default_options), options)
 
-  options.assets.push(path.join(root, 'docs'))
+  options.assets.unshift(path.join(root, 'docs'))
 
   logger.options.debug = options.debug
   logger.options.warning = options.warning
@@ -68,11 +69,11 @@ export default function config(options = {}) { // eslint-disable-line
 }
 
 
-function getPlugins(plugins, prefix = 'plugin') {
+export function getPlugins(plugins, prefix = 'plugin') {
   return to.reduce(plugins, (prev, next) => to.merge(prev, getPlugin(next, prefix)), {})
 }
 
-function getPlugin(plugin, prefix, message = '') {
+export function getPlugin(plugin, prefix, message = '') {
   prefix = `docs-${prefix}-`
   try {
     // if the plugin path isn't relative then add the docs-plugin- prefix to it.
@@ -97,7 +98,6 @@ function getPlugin(plugin, prefix, message = '') {
     }
   } catch (e) {
     logger.error(e)
-    // logger.error(!!message ? message : e)
     return {}
   }
 

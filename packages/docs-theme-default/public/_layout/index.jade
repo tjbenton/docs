@@ -4,20 +4,19 @@
 doctype html
 html
   head
-    != partial('_layout/head')
+    != partial('head')
 
   body(itemscope itemtype="http://schema.org/WebPage")
     p(class="s-browser-upgrade c-alert c-alert--warning") You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/?locale=en">upgrade your browser</a> to improve your experience.
-
     div(class="s-documentation")
       //- navigation
-      != partial('_layout/nav')
+      != partial('nav')
       div(class="s-documentation__body")
         //- header
-        != partial('_layout/header')
-  
+        != partial('header')
+    
         //- main content
-        != partial('_layout/content')
+        != partial('content')
     
         //- footer
-        != partial('_layout/footer')
+        != partial('footer')

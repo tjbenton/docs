@@ -51,10 +51,13 @@ class Logger {
     return this
   }
 
-  // alias for emit
-  log(name, ...args) {
-    this.emit(name, ...args)
+  log(...args) {
+    console.log(...this.format(...args))
     return this
+  }
+
+  print(...args) {
+    return this.log(...args)
   }
 
   format(...args) {
@@ -76,11 +79,6 @@ class Logger {
     })
   }
 
-  print(...args) {
-    console.log(...this.format(...args))
-    return this
-  }
-
   space() {
     console.log('')
   }
@@ -94,15 +92,15 @@ class Logger {
       .on('debug', (...args) => {
         if (this.options.debug) {
           console.log('')
-          this.print(`${messaging.debug}`)
-          this.print(...args)
+          this.log(`${messaging.debug}`)
+          this.log(...args)
         }
       })
       .on('file', (file, ...args) => {
         if (this.options.debug) {
           console.log('')
-          this.print(`${messaging.file} ${file}`)
-          this.print(...args)
+          this.log(`${messaging.file} ${file}`)
+          this.log(...args)
         }
       })
 
@@ -110,20 +108,20 @@ class Logger {
     this.on('warning', (...args) => {
       if (this.options.warning) {
         console.log('')
-        this.print(`${messaging.warning}`)
-        this.print(...args)
+        this.log(`${messaging.warning}`)
+        this.log(...args)
       }
     })
 
     this.on('error', (...args) => {
       console.log('')
-      this.print(`${messaging.error}`)
-      this.print(...args)
+      this.log(`${messaging.error}`)
+      this.log(...args)
     })
 
 
     this.on('success', (...args) => {
-      this.print(`${clor.green(icon.check)}`, ...args)
+      this.log(`${clor.green(icon.check)}`, ...args)
     })
   }
 

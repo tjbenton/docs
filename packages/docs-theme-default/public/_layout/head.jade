@@ -20,7 +20,7 @@ block meta
 block prefetch
   each link in prefetch || []
     link(rel="dns-prefetch" href="#{link}")
-    
+
 //- mobile specific
 //- used by older palm & blackberry devices
 meta(name="HandheldFriendly" content="True")
@@ -36,17 +36,13 @@ meta(name="format-detection" content="address=no")
 //- css 
 block css
   each file in public.styles._contents
-    link(rel="stylesheet" href="styles/#{file}")
+    if /\.css$/.test(file)
+      link(rel="stylesheet" href="/styles/#{file}")
 
 //- js
 block js
   each file in public.js._contents
-    script(src="js/#{file}")
-  
-//- != LRScript
+    if /\.jsx?$/.test(file)
+      script(src="/js/#{file}")
 
-//- script.
-//-   System.import('site')
-//-   //- script.
-//-     //- System.import('site/combined.js');
-//-     //- System.import('site');
+//- != LRScript

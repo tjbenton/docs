@@ -18,11 +18,9 @@ export default function cli() {
     .usage('starts a docs server')
     .description('Start a docs server')
     .action(async (options) => {
-      const { ip = '0.0.0.0', port = 9966 } = options
+      const { ip = '127.0.0.1', port = 4444 } = options
       const docs = new Docs()
       await docs.server({ ip, port })
-      const address = ip === '0.0.0.0' || ip === '127.0.0.1' ? 'localhost' : ip
-      console.log(`Your server is listening at http://${address}:${port}`)
     })
 
   commander
