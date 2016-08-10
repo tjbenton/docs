@@ -3,6 +3,14 @@
   "body": [
     {
       "access": "public",
+      "throws": [
+        {
+          "types": [
+            "throw"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+        }
+      ],
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -19,18 +27,18 @@
           "end": 8
         }
       },
-      "inline": [],
-      "throws": [
-        {
-          "types": [
-            "throw"
-          ],
-          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-        }
-      ]
+      "inline": []
     },
     {
       "access": "public",
+      "throws": [
+        {
+          "types": [
+            "exception"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+        }
+      ],
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -47,18 +55,18 @@
           "end": 8
         }
       },
-      "inline": [],
-      "throws": [
-        {
-          "types": [
-            "exception"
-          ],
-          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-        }
-      ]
+      "inline": []
     },
     {
       "access": "public",
+      "throws": [
+        {
+          "types": [
+            "error"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+        }
+      ],
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -75,18 +83,18 @@
           "end": 8
         }
       },
-      "inline": [],
-      "throws": [
-        {
-          "types": [
-            "error"
-          ],
-          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-        }
-      ]
+      "inline": []
     },
     {
       "access": "public",
+      "throws": [
+        {
+          "types": [
+            "catch"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+        }
+      ],
       "blockinfo": {
         "comment": {
           "start": 7,
@@ -103,15 +111,7 @@
           "end": 8
         }
       },
-      "inline": [],
-      "throws": [
-        {
-          "types": [
-            "catch"
-          ],
-          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-        }
-      ]
+      "inline": []
     }
   ]
 }

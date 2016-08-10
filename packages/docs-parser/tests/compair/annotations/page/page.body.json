@@ -3,6 +3,9 @@
   "body": [
     {
       "access": "public",
+      "page": [
+        "level 1"
+      ],
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -19,13 +22,13 @@
           "end": 7
         }
       },
-      "inline": [],
-      "page": [
-        "level 1"
-      ]
+      "inline": []
     },
     {
       "access": "public",
+      "page": [
+        "level 1/level 2"
+      ],
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -42,13 +45,14 @@
           "end": 7
         }
       },
-      "inline": [],
-      "page": [
-        "level 1/level 2"
-      ]
+      "inline": []
     },
     {
       "access": "public",
+      "page": [
+        "page 1/level 2",
+        "page 2/level 2"
+      ],
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -65,11 +69,7 @@
           "end": 7
         }
       },
-      "inline": [],
-      "page": [
-        "page 1/level 2",
-        "page 2/level 2"
-      ]
+      "inline": []
     }
   ]
 }

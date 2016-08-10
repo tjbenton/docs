@@ -3,6 +3,10 @@
   "body": [
     {
       "access": "public",
+      "raw-code": {
+        "raw": "function rawCode() {\n\n}",
+        "escaped": "function rawCode() {\n\n}"
+      },
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -19,11 +23,7 @@
           "end": 4
         }
       },
-      "inline": [],
-      "raw-code": {
-        "raw": "function rawCode() {\n\n}",
-        "escaped": "function rawCode() {\n\n}"
-      }
+      "inline": []
     }
   ]
 }

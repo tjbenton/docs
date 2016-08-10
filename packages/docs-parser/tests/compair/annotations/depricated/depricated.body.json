@@ -2,6 +2,10 @@
   "header": {},
   "body": [
     {
+      "deprecated": {
+        "version": "0",
+        "description": ""
+      },
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -19,13 +23,13 @@
           "end": 11
         }
       },
-      "deprecated": {
-        "version": "0",
-        "description": ""
-      },
       "inline": []
     },
     {
+      "deprecated": {
+        "version": "0.0.1",
+        "description": "<p>Lorem</p>\n"
+      },
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -43,13 +47,13 @@
           "end": 11
         }
       },
+      "inline": []
+    },
+    {
       "deprecated": {
         "version": "0.0.1",
         "description": "<p>Lorem</p>\n"
       },
-      "inline": []
-    },
-    {
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -67,13 +71,13 @@
           "end": 11
         }
       },
-      "deprecated": {
-        "version": "0.0.1",
-        "description": "<p>Lorem</p>\n"
-      },
       "inline": []
     },
     {
+      "deprecated": {
+        "version": "^0.0.1",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis maiores veritatis,\nsed repellat voluptatibus, eaque nihil assumenda odit at, ea consequatur provident\naccusamus fugit magnam et adipisci eum, saepe incidunt.</p>\n"
+      },
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -90,10 +94,6 @@
           "start": 1,
           "end": 11
         }
-      },
-      "deprecated": {
-        "version": "^0.0.1",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis maiores veritatis,\nsed repellat voluptatibus, eaque nihil assumenda odit at, ea consequatur provident\naccusamus fugit magnam et adipisci eum, saepe incidunt.</p>\n"
       },
       "inline": []
     }

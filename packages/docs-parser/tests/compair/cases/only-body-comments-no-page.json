@@ -22,7 +22,21 @@
         "header": {},
         "body": [
           {
+            "name": "Button group",
+            "description": "<p>Used when there&#39;s a group of buttons that need to be on the same line.</p>\n",
             "access": "public",
+            "markup": [
+              {
+                "id": "0",
+                "language": "scss",
+                "settings": {},
+                "description": "",
+                "raw": "<div class=\"c-btn-group\">\n <a href=\"#\" class=\"c-btn\">Button (a.button)</a>\n <button class=\"c-btn\">Button (button)</button>\n <input class=\"c-btn\" type=\"button\" value=\"Button (input.button)\">\n</div>",
+                "escaped": "&lt;div class=&quot;c-btn-group&quot;&gt;\n &lt;a href=&quot;#&quot; class=&quot;c-btn&quot;&gt;Button (a.button)&lt;/a&gt;\n &lt;button class=&quot;c-btn&quot;&gt;Button (button)&lt;/button&gt;\n &lt;input class=&quot;c-btn&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;",
+                "raw_stateless": "<div class=\"c-btn-group\">\n <a href=\"#\" class=\"c-btn\">Button (a.button)</a>\n <button class=\"c-btn\">Button (button)</button>\n <input class=\"c-btn\" type=\"button\" value=\"Button (input.button)\">\n</div>",
+                "escaped_stateless": "&lt;div class=&quot;c-btn-group&quot;&gt;\n &lt;a href=&quot;#&quot; class=&quot;c-btn&quot;&gt;Button (a.button)&lt;/a&gt;\n &lt;button class=&quot;c-btn&quot;&gt;Button (button)&lt;/button&gt;\n &lt;input class=&quot;c-btn&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
+              }
+            ],
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -39,43 +53,12 @@
                 "end": 21
               }
             },
-            "description": "<p>Used when there&#39;s a group of buttons that need to be on the same line.</p>\n",
-            "inline": [],
-            "markup": [
-              {
-                "id": "0",
-                "language": "scss",
-                "settings": {},
-                "description": "",
-                "raw": "<div class=\"c-btn-group\">\n <a href=\"#\" class=\"c-btn\">Button (a.button)</a>\n <button class=\"c-btn\">Button (button)</button>\n <input class=\"c-btn\" type=\"button\" value=\"Button (input.button)\">\n</div>",
-                "escaped": "&lt;div class=&quot;c-btn-group&quot;&gt;\n &lt;a href=&quot;#&quot; class=&quot;c-btn&quot;&gt;Button (a.button)&lt;/a&gt;\n &lt;button class=&quot;c-btn&quot;&gt;Button (button)&lt;/button&gt;\n &lt;input class=&quot;c-btn&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;",
-                "raw_stateless": "<div class=\"c-btn-group\">\n <a href=\"#\" class=\"c-btn\">Button (a.button)</a>\n <button class=\"c-btn\">Button (button)</button>\n <input class=\"c-btn\" type=\"button\" value=\"Button (input.button)\">\n</div>",
-                "escaped_stateless": "&lt;div class=&quot;c-btn-group&quot;&gt;\n &lt;a href=&quot;#&quot; class=&quot;c-btn&quot;&gt;Button (a.button)&lt;/a&gt;\n &lt;button class=&quot;c-btn&quot;&gt;Button (button)&lt;/button&gt;\n &lt;input class=&quot;c-btn&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
-              }
-            ],
-            "name": "Button group"
+            "inline": []
           },
           {
-            "access": "public",
-            "blockinfo": {
-              "comment": {
-                "start": 12,
-                "end": 20,
-                "type": "body"
-              },
-              "code": {
-                "start": -1,
-                "end": -1
-              },
-              "file": {
-                "path": "docs/packages/docs-parser/tests/compair/cases/only-body-comments-no-page.scss",
-                "start": 1,
-                "end": 21
-              }
-            },
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
-            "inline": [],
             "name": "Test",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
+            "access": "public",
             "states": {
               "null": [
                 {
@@ -106,7 +89,24 @@
                   "markup": {}
                 }
               ]
-            }
+            },
+            "blockinfo": {
+              "comment": {
+                "start": 12,
+                "end": 20,
+                "type": "body"
+              },
+              "code": {
+                "start": -1,
+                "end": -1
+              },
+              "file": {
+                "path": "docs/packages/docs-parser/tests/compair/cases/only-body-comments-no-page.scss",
+                "start": 1,
+                "end": 21
+              }
+            },
+            "inline": []
           }
         ]
       }

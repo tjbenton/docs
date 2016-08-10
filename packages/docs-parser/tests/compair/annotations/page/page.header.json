@@ -1,6 +1,9 @@
 {
   "header": {
     "access": "public",
+    "page": [
+      "level 1/level 2"
+    ],
     "blockinfo": {
       "comment": {
         "start": 1,
@@ -16,10 +19,7 @@
         "start": 1,
         "end": 4
       }
-    },
-    "page": [
-      "level 1/level 2"
-    ]
+    }
   },
   "body": []
 }

@@ -3,6 +3,10 @@
   "body": [
     {
       "access": "public",
+      "type": {
+        "type": "undefined",
+        "description": ""
+      },
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -19,14 +23,14 @@
           "end": 18
         }
       },
-      "inline": [],
-      "type": {
-        "type": "undefined",
-        "description": ""
-      }
+      "inline": []
     },
     {
       "access": "public",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -43,14 +47,14 @@
           "end": 18
         }
       },
-      "inline": [],
-      "type": {
-        "type": "object",
-        "description": ""
-      }
+      "inline": []
     },
     {
       "access": "public",
+      "type": {
+        "type": "undefined",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+      },
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -67,14 +71,14 @@
           "end": 18
         }
       },
-      "inline": [],
-      "type": {
-        "type": "undefined",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-      }
+      "inline": []
     },
     {
       "access": "public",
+      "type": {
+        "type": "undefined",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+      },
       "blockinfo": {
         "comment": {
           "start": 7,
@@ -91,14 +95,14 @@
           "end": 18
         }
       },
-      "inline": [],
-      "type": {
-        "type": "undefined",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-      }
+      "inline": []
     },
     {
       "access": "public",
+      "type": {
+        "type": "array",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+      },
       "blockinfo": {
         "comment": {
           "start": 9,
@@ -115,14 +119,14 @@
           "end": 18
         }
       },
-      "inline": [],
-      "type": {
-        "type": "array",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-      }
+      "inline": []
     },
     {
       "access": "public",
+      "type": {
+        "type": "array",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+      },
       "blockinfo": {
         "comment": {
           "start": 11,
@@ -139,14 +143,14 @@
           "end": 18
         }
       },
-      "inline": [],
-      "type": {
-        "type": "array",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-      }
+      "inline": []
     },
     {
       "access": "public",
+      "type": {
+        "type": "array",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, quod\nlibero tenetur rerum odio harum perferendis repellat sunt, soluta expedita\niure. Provident, debitis, cupiditate. Quae magnam ipsa modi,\naspernatur eligendi.</p>\n"
+      },
       "blockinfo": {
         "comment": {
           "start": 13,
@@ -163,11 +167,7 @@
           "end": 18
         }
       },
-      "inline": [],
-      "type": {
-        "type": "array",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, quod\nlibero tenetur rerum odio harum perferendis repellat sunt, soluta expedita\niure. Provident, debitis, cupiditate. Quae magnam ipsa modi,\naspernatur eligendi.</p>\n"
-      }
+      "inline": []
     }
   ]
 }

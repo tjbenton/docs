@@ -2,6 +2,7 @@
   "header": {},
   "body": [
     {
+      "name": "autofill access",
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -19,8 +20,7 @@
           "end": 2
         }
       },
-      "inline": [],
-      "name": "autofill access"
+      "inline": []
     }
   ]
 }

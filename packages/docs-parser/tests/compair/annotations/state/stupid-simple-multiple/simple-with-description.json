@@ -3,23 +3,6 @@
   "body": [
     {
       "access": "public",
-      "blockinfo": {
-        "comment": {
-          "start": 1,
-          "end": 8,
-          "type": "body"
-        },
-        "code": {
-          "start": 9,
-          "end": 23
-        },
-        "file": {
-          "path": "docs/packages/docs-parser/tests/compair/annotations/state/stupid-simple-multiple/simple-with-description.scss",
-          "start": 1,
-          "end": 74
-        }
-      },
-      "inline": [],
       "markup": [
         {
           "id": "0",
@@ -83,19 +66,16 @@
             }
           }
         ]
-      }
-    },
-    {
-      "access": "public",
+      },
       "blockinfo": {
         "comment": {
-          "start": 26,
-          "end": 33,
+          "start": 1,
+          "end": 8,
           "type": "body"
         },
         "code": {
-          "start": 34,
-          "end": 48
+          "start": 9,
+          "end": 23
         },
         "file": {
           "path": "docs/packages/docs-parser/tests/compair/annotations/state/stupid-simple-multiple/simple-with-description.scss",
@@ -103,7 +83,10 @@
           "end": 74
         }
       },
-      "inline": [],
+      "inline": []
+    },
+    {
+      "access": "public",
       "markup": [
         {
           "id": "0",
@@ -167,19 +150,16 @@
             }
           }
         ]
-      }
-    },
-    {
-      "access": "public",
+      },
       "blockinfo": {
         "comment": {
-          "start": 51,
-          "end": 58,
+          "start": 26,
+          "end": 33,
           "type": "body"
         },
         "code": {
-          "start": 59,
-          "end": 73
+          "start": 34,
+          "end": 48
         },
         "file": {
           "path": "docs/packages/docs-parser/tests/compair/annotations/state/stupid-simple-multiple/simple-with-description.scss",
@@ -187,7 +167,10 @@
           "end": 74
         }
       },
-      "inline": [],
+      "inline": []
+    },
+    {
+      "access": "public",
       "markup": [
         {
           "id": "0",
@@ -251,7 +234,24 @@
             }
           }
         ]
-      }
+      },
+      "blockinfo": {
+        "comment": {
+          "start": 51,
+          "end": 58,
+          "type": "body"
+        },
+        "code": {
+          "start": 59,
+          "end": 73
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/state/stupid-simple-multiple/simple-with-description.scss",
+          "start": 1,
+          "end": 74
+        }
+      },
+      "inline": []
     }
   ]
 }

@@ -39,6 +39,7 @@
             "author": [
               "Tyler Benton"
             ],
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -50,17 +51,17 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/file-types/coffeescript/test.coffee",
+                "path": "docs/packages/docs-parser/tests/compair/file-types/coffeescript/test.coffee",
                 "start": 1,
                 "end": 40
               }
-            },
-            "access": "public"
+            }
           },
           "body": [
             {
               "name": "One",
               "description": "<p>main method</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 7,
@@ -72,17 +73,17 @@
                   "end": 14
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/coffeescript/test.coffee",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/coffeescript/test.coffee",
                   "start": 1,
                   "end": 40
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Two",
               "description": "<p>This is a normal multi-line comment.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 17,
@@ -94,17 +95,17 @@
                   "end": 28
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/coffeescript/test.coffee",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/coffeescript/test.coffee",
                   "start": 1,
                   "end": 40
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Three",
               "description": "<p>This is another normla multi-line comment.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 31,
@@ -116,12 +117,11 @@
                   "end": 39
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/coffeescript/test.coffee",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/coffeescript/test.coffee",
                   "start": 1,
                   "end": 40
                 }
               },
-              "access": "public",
               "inline": []
             }
           ]

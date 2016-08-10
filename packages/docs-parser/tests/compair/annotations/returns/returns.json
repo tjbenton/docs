@@ -3,6 +3,12 @@
   "body": [
     {
       "access": "public",
+      "returns": {
+        "types": [
+          "undefined"
+        ],
+        "description": ""
+      },
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -19,16 +25,16 @@
           "end": 23
         }
       },
-      "inline": [],
+      "inline": []
+    },
+    {
+      "access": "public",
       "returns": {
         "types": [
           "undefined"
         ],
         "description": ""
-      }
-    },
-    {
-      "access": "public",
+      },
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -45,16 +51,18 @@
           "end": 23
         }
       },
-      "inline": [],
-      "returns": {
-        "types": [
-          "undefined"
-        ],
-        "description": ""
-      }
+      "inline": []
     },
     {
       "access": "public",
+      "returns": {
+        "types": [
+          "array",
+          "string",
+          "boolean"
+        ],
+        "description": ""
+      },
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -71,7 +79,10 @@
           "end": 23
         }
       },
-      "inline": [],
+      "inline": []
+    },
+    {
+      "access": "public",
       "returns": {
         "types": [
           "array",
@@ -79,10 +90,7 @@
           "boolean"
         ],
         "description": ""
-      }
-    },
-    {
-      "access": "public",
+      },
       "blockinfo": {
         "comment": {
           "start": 7,
@@ -99,18 +107,16 @@
           "end": 23
         }
       },
-      "inline": [],
-      "returns": {
-        "types": [
-          "array",
-          "string",
-          "boolean"
-        ],
-        "description": ""
-      }
+      "inline": []
     },
     {
       "access": "public",
+      "returns": {
+        "types": [
+          "object"
+        ],
+        "description": "<p>Lorem ipsum dolor sit amet</p>\n"
+      },
       "blockinfo": {
         "comment": {
           "start": 9,
@@ -127,16 +133,16 @@
           "end": 23
         }
       },
-      "inline": [],
-      "returns": {
-        "types": [
-          "object"
-        ],
-        "description": "<p>Lorem ipsum dolor sit amet</p>\n"
-      }
+      "inline": []
     },
     {
       "access": "public",
+      "returns": {
+        "types": [
+          "array"
+        ],
+        "description": "<p>Lorem ipsum dolor sit amet</p>\n"
+      },
       "blockinfo": {
         "comment": {
           "start": 11,
@@ -153,16 +159,16 @@
           "end": 23
         }
       },
-      "inline": [],
-      "returns": {
-        "types": [
-          "array"
-        ],
-        "description": "<p>Lorem ipsum dolor sit amet</p>\n"
-      }
+      "inline": []
     },
     {
       "access": "public",
+      "returns": {
+        "types": [
+          "object"
+        ],
+        "description": "<p>This super awesome object</p>\n<pre><code class=\"lang-js\">{\n  i: {\n    found: {\n      waldo: &#39;Shoot, you found me&#39;\n    }\n  }\n}\n</code></pre>\n"
+      },
       "blockinfo": {
         "comment": {
           "start": 13,
@@ -179,13 +185,7 @@
           "end": 23
         }
       },
-      "inline": [],
-      "returns": {
-        "types": [
-          "object"
-        ],
-        "description": "<p>This super awesome object</p>\n<pre><code class=\"lang-js\">{\n  i: {\n    found: {\n      waldo: &#39;Shoot, you found me&#39;\n    }\n  }\n}\n</code></pre>\n"
-      }
+      "inline": []
     }
   ]
 }

@@ -35,6 +35,7 @@
             "author": [
               "Tyler Benton"
             ],
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -46,17 +47,17 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/file-types/css/test.css",
+                "path": "docs/packages/docs-parser/tests/compair/file-types/css/test.css",
                 "start": 1,
                 "end": 31
               }
-            },
-            "access": "public"
+            }
           },
           "body": [
             {
               "name": "Base Styles",
               "description": "<ol>\n<li>Set default font family to sans-serif.</li>\n<li>Prevent iOS text size adjust after orientation change, without disabling\nuser zoom.</li>\n</ol>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -68,17 +69,17 @@
                   "end": 17
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/css/test.css",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/css/test.css",
                   "start": 1,
                   "end": 31
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Input",
               "description": "<ol>\n<li>Address <code>appearance</code> set to <code>searchfield</code> in Safari 5 and Chrome.</li>\n<li>Address <code>box-sizing</code> set to <code>border-box</code> in Safari 5 and Chrome\n(include <code>-moz</code> to future-proof).</li>\n</ol>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 20,
@@ -90,12 +91,11 @@
                   "end": 31
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/css/test.css",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/css/test.css",
                   "start": 1,
                   "end": 31
                 }
               },
-              "access": "public",
               "inline": []
             }
           ]

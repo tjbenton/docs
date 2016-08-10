@@ -39,6 +39,7 @@
             "author": [
               "Tyler Benton"
             ],
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -50,16 +51,16 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/file-types/less/test.less",
+                "path": "docs/packages/docs-parser/tests/compair/file-types/less/test.less",
                 "start": 1,
                 "end": 59
               }
-            },
-            "access": "public"
+            }
           },
           "body": [
             {
               "name": "One",
+              "access": "public",
               "type": {
                 "type": "color",
                 "description": ""
@@ -87,17 +88,17 @@
                   "end": 14
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/less/test.less",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/less/test.less",
                   "start": 1,
                   "end": 59
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Two",
               "description": "<p>A simple nav component, used to help with navigation</p>\n",
+              "access": "public",
               "markup": [
                 {
                   "id": "0",
@@ -121,17 +122,17 @@
                   "end": 41
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/less/test.less",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/less/test.less",
                   "start": 1,
                   "end": 59
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Three",
               "description": "<p>A mixin to help with opacity fallbacks</p>\n",
+              "access": "public",
               "arg": [
                 {
                   "types": [
@@ -165,12 +166,11 @@
                   "end": 58
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/less/test.less",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/less/test.less",
                   "start": 1,
                   "end": 59
                 }
               },
-              "access": "public",
               "inline": []
             }
           ]

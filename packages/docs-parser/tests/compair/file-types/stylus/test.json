@@ -39,6 +39,7 @@
             "author": [
               "Tyler Benton"
             ],
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -50,17 +51,17 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/file-types/stylus/test.styl",
+                "path": "docs/packages/docs-parser/tests/compair/file-types/stylus/test.styl",
                 "start": 1,
                 "end": 37
               }
-            },
-            "access": "public"
+            }
           },
           "body": [
             {
               "name": "One",
               "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -72,17 +73,17 @@
                   "end": 14
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/stylus/test.styl",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/stylus/test.styl",
                   "start": 1,
                   "end": 37
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Two",
               "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 16,
@@ -94,17 +95,17 @@
                   "end": 25
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/stylus/test.styl",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/stylus/test.styl",
                   "start": 1,
                   "end": 37
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Three",
               "description": "<p>This is another normal multi-line comment.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 27,
@@ -116,12 +117,11 @@
                   "end": 34
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/stylus/test.styl",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/stylus/test.styl",
                   "start": 1,
                   "end": 37
                 }
               },
-              "access": "public",
               "inline": []
             }
           ]

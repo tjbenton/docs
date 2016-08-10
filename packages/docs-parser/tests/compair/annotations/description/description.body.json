@@ -2,6 +2,7 @@
   "header": {},
   "body": [
     {
+      "description": "<p>Lorem ipsum dolor sit amet</p>\n",
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -19,10 +20,10 @@
           "end": 15
         }
       },
-      "description": "<p>Lorem ipsum dolor sit amet</p>\n",
       "inline": []
     },
     {
+      "description": "<p>Line one\nOther\nlines\nbelow\nit</p>\n",
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -40,10 +41,10 @@
           "end": 15
         }
       },
-      "description": "<p>Line one\nOther\nlines\nbelow\nit</p>\n",
       "inline": []
     },
     {
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nAccusantium vel, eveniet, architecto saepe, modi dolore incidunt\nquisquam eaque cum porro explicabo velit sunt illo praesentium\nfacere. Sit consequuntur illo nihil.</p>\n",
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -61,7 +62,6 @@
           "end": 15
         }
       },
-      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nAccusantium vel, eveniet, architecto saepe, modi dolore incidunt\nquisquam eaque cum porro explicabo velit sunt illo praesentium\nfacere. Sit consequuntur illo nihil.</p>\n",
       "inline": []
     }
   ]

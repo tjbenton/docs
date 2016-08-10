@@ -1,6 +1,18 @@
 {
   "header": {
     "access": "public",
+    "requires": [
+      {
+        "types": [
+          "function"
+        ],
+        "name": "path",
+        "description": "<p>the path function from node</p>\n"
+      }
+    ],
+    "page": [
+      "general"
+    ],
     "blockinfo": {
       "comment": {
         "start": 1,
@@ -16,19 +28,7 @@
         "start": 1,
         "end": 4
       }
-    },
-    "page": [
-      "general"
-    ],
-    "requires": [
-      {
-        "types": [
-          "function"
-        ],
-        "name": "path",
-        "description": "<p>the path function from node</p>\n"
-      }
-    ]
+    }
   },
   "body": []
 }

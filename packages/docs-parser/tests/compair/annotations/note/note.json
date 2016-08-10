@@ -3,6 +3,12 @@
   "body": [
     {
       "access": "public",
+      "note": [
+        {
+          "importance": "0",
+          "description": ""
+        }
+      ],
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -19,16 +25,16 @@
           "end": 20
         }
       },
-      "inline": [],
-      "note": [
-        {
-          "importance": "0",
-          "description": ""
-        }
-      ]
+      "inline": []
     },
     {
       "access": "public",
+      "note": [
+        {
+          "importance": "10",
+          "description": ""
+        }
+      ],
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -45,16 +51,16 @@
           "end": 20
         }
       },
-      "inline": [],
-      "note": [
-        {
-          "importance": "10",
-          "description": ""
-        }
-      ]
+      "inline": []
     },
     {
       "access": "public",
+      "note": [
+        {
+          "importance": "0",
+          "description": "<p>Lorem ipsum dolor sit amet</p>\n"
+        }
+      ],
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -71,16 +77,16 @@
           "end": 20
         }
       },
-      "inline": [],
-      "note": [
-        {
-          "importance": "0",
-          "description": "<p>Lorem ipsum dolor sit amet</p>\n"
-        }
-      ]
+      "inline": []
     },
     {
       "access": "public",
+      "note": [
+        {
+          "importance": "0",
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna\naliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n"
+        }
+      ],
       "blockinfo": {
         "comment": {
           "start": 7,
@@ -97,16 +103,16 @@
           "end": 20
         }
       },
-      "inline": [],
-      "note": [
-        {
-          "importance": "0",
-          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna\naliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n"
-        }
-      ]
+      "inline": []
     },
     {
       "access": "public",
+      "note": [
+        {
+          "importance": "5",
+          "description": "<p>Lorem ipsum dolor sit amet</p>\n"
+        }
+      ],
       "blockinfo": {
         "comment": {
           "start": 13,
@@ -123,16 +129,16 @@
           "end": 20
         }
       },
-      "inline": [],
-      "note": [
-        {
-          "importance": "5",
-          "description": "<p>Lorem ipsum dolor sit amet</p>\n"
-        }
-      ]
+      "inline": []
     },
     {
       "access": "public",
+      "note": [
+        {
+          "importance": "5",
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna\naliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n"
+        }
+      ],
       "blockinfo": {
         "comment": {
           "start": 15,
@@ -149,13 +155,7 @@
           "end": 20
         }
       },
-      "inline": [],
-      "note": [
-        {
-          "importance": "5",
-          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna\naliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n"
-        }
-      ]
+      "inline": []
     }
   ]
 }

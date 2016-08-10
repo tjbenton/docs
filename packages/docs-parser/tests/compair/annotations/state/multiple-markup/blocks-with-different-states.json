@@ -3,23 +3,6 @@
   "body": [
     {
       "access": "public",
-      "blockinfo": {
-        "comment": {
-          "start": 1,
-          "end": 15,
-          "type": "body"
-        },
-        "code": {
-          "start": 16,
-          "end": 26
-        },
-        "file": {
-          "path": "docs/packages/docs-parser/tests/compair/annotations/state/multiple-markup/blocks-with-different-states.scss",
-          "start": 1,
-          "end": 27
-        }
-      },
-      "inline": [],
       "markup": [
         {
           "id": "0",
@@ -111,7 +94,24 @@
             }
           }
         ]
-      }
+      },
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 15,
+          "type": "body"
+        },
+        "code": {
+          "start": 16,
+          "end": 26
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compair/annotations/state/multiple-markup/blocks-with-different-states.scss",
+          "start": 1,
+          "end": 27
+        }
+      },
+      "inline": []
     }
   ]
 }

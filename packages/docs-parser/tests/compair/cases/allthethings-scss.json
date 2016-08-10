@@ -28,10 +28,11 @@
       "buttons": {
         "page": {
           "header": {
-            "access": "public",
+            "name": "All the things test",
             "author": [
               "Tyler Benton"
             ],
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -47,29 +48,13 @@
                 "start": 1,
                 "end": 239
               }
-            },
-            "name": "All the things test"
+            }
           },
           "body": [
             {
-              "access": "public",
-              "blockinfo": {
-                "comment": {
-                  "start": 8,
-                  "end": 26,
-                  "type": "body"
-                },
-                "code": {
-                  "start": 27,
-                  "end": 239
-                },
-                "file": {
-                  "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-scss.scss",
-                  "start": 1,
-                  "end": 239
-                }
-              },
+              "name": "Buttons",
               "description": "<p>Your standard form button.</p>\n",
+              "access": "public",
               "markup": [
                 {
                   "id": "0",
@@ -92,7 +77,6 @@
                   "escaped_stateless": "&lt;p&gt; THIS IS SOME COMPLETELY DIFFERENT EXAMPLE ;)&lt;/p&gt;\n&lt;div class=&quot;c-btn-group&quot;&gt;\n  &lt;a href=&quot;#&quot; class=&quot;c-btn&quot;&gt;Button (a.button)&lt;/a&gt;\n  &lt;button class=&quot;c-btn&quot;&gt;Button (button)&lt;/button&gt;\n  &lt;input class=&quot;c-btn&quot; type=&quot;button&quot; value=&quot;Button (input.button)&quot;&gt;\n&lt;/div&gt;"
                 }
               ],
-              "name": "Buttons",
               "states": {
                 "0": [
                   {
@@ -113,25 +97,25 @@
                   }
                 ]
               },
+              "blockinfo": {
+                "comment": {
+                  "start": 8,
+                  "end": 26,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 27,
+                  "end": 239
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-scss.scss",
+                  "start": 1,
+                  "end": 239
+                }
+              },
               "inline": [
                 {
                   "access": "public",
-                  "blockinfo": {
-                    "comment": {
-                      "start": 48,
-                      "end": 48,
-                      "type": "inline"
-                    },
-                    "code": {
-                      "start": 48,
-                      "end": 50
-                    },
-                    "file": {
-                      "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-scss.scss",
-                      "start": 1,
-                      "end": 239
-                    }
-                  },
                   "states": {
                     "1": [
                       {
@@ -151,26 +135,26 @@
                         }
                       }
                     ]
-                  }
-                },
-                {
-                  "access": "public",
+                  },
                   "blockinfo": {
                     "comment": {
-                      "start": 52,
-                      "end": 53,
+                      "start": 48,
+                      "end": 48,
                       "type": "inline"
                     },
                     "code": {
-                      "start": 54,
-                      "end": 56
+                      "start": 48,
+                      "end": 50
                     },
                     "file": {
                       "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-scss.scss",
                       "start": 1,
                       "end": 239
                     }
-                  },
+                  }
+                },
+                {
+                  "access": "public",
                   "states": {
                     "0": [
                       {
@@ -206,6 +190,22 @@
                         }
                       }
                     ]
+                  },
+                  "blockinfo": {
+                    "comment": {
+                      "start": 52,
+                      "end": 53,
+                      "type": "inline"
+                    },
+                    "code": {
+                      "start": 54,
+                      "end": 56
+                    },
+                    "file": {
+                      "path": "docs/packages/docs-parser/tests/compair/cases/allthethings-scss.scss",
+                      "start": 1,
+                      "end": 239
+                    }
                   }
                 }
               ]

@@ -39,6 +39,7 @@
             "author": [
               "Tyler Benton"
             ],
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -50,17 +51,17 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/file-types/c++/test.c",
+                "path": "docs/packages/docs-parser/tests/compair/file-types/c++/test.c",
                 "start": 1,
                 "end": 93
               }
-            },
-            "access": "public"
+            }
           },
           "body": [
             {
               "name": "one",
               "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -72,17 +73,17 @@
                   "end": 32
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/c++/test.c",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/c++/test.c",
                   "start": 1,
                   "end": 93
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Two",
               "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque non fugit,\naspernatur! Quos consequatur libero, fugiat tempora maxime maiores quia\naspernatur praesentium voluptatum incidunt! Tempora rem aperiam\nconsectetur aut, fugiat.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 35,
@@ -94,17 +95,17 @@
                   "end": 66
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/c++/test.c",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/c++/test.c",
                   "start": 1,
                   "end": 93
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Three",
               "description": "<p>This is another normal multi-line comment.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 68,
@@ -116,12 +117,11 @@
                   "end": 92
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/c++/test.c",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/c++/test.c",
                   "start": 1,
                   "end": 93
                 }
               },
-              "access": "public",
               "inline": []
             }
           ]

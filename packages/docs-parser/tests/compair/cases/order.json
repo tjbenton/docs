@@ -1,0 +1,169 @@
+{
+  "nav": [
+    {
+      "title": "Order",
+      "href": "/order",
+      "body": [
+        {
+          "title": "Order",
+          "href": "/order#order"
+        }
+      ],
+      "subpages": []
+    }
+  ],
+  "pages": {
+    "order": {
+      "page": {
+        "header": {},
+        "body": [
+          {
+            "name": "Order",
+            "version": {
+              "version": "^0.0.1",
+              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+            },
+            "author": [
+              "Tyler Benton"
+            ],
+            "deprecated": {
+              "version": "^0.0.1",
+              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis maiores veritatis.</p>\n"
+            },
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nAccusantium vel, eveniet, architecto saepe, modi dolore incidunt.</p>\n",
+            "access": "public",
+            "type": {
+              "type": "array",
+              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+            },
+            "arg": [
+              {
+                "types": [
+                  "type"
+                ],
+                "name": "name-of-variable",
+                "value": "default value",
+                "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>\n"
+              }
+            ],
+            "throws": [
+              {
+                "types": [
+                  "fileNotFound"
+                ],
+                "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+              }
+            ],
+            "since": {
+              "version": "^0.0.1",
+              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis maiores veritatis.</p>\n"
+            },
+            "returns": {
+              "types": [
+                "object"
+              ],
+              "description": "<p>This super awesome object</p>\n<pre><code class=\"lang-js\">{\n  i: {\n    found: {\n      waldo: &#39;Shoot, you found me&#39;\n    }\n  }\n}\n</code></pre>\n"
+            },
+            "requires": [
+              {
+                "types": [
+                  "function"
+                ],
+                "name": "path",
+                "description": "<p>the path function from node</p>\n"
+              }
+            ],
+            "readonly": false,
+            "property": [
+              {
+                "types": [
+                  "type"
+                ],
+                "name": "key.name",
+                "value": "",
+                "description": "<p>description</p>\n"
+              }
+            ],
+            "alias": [
+              "foo",
+              "bar"
+            ],
+            "chainable": [
+              "One",
+              "Two"
+            ],
+            "markup": [
+              {
+                "id": "0",
+                "language": "html",
+                "settings": {},
+                "description": "",
+                "raw": "<div class=\"something-super-awesome ${@state}\">\n  Mind blown\n</div>",
+                "escaped": "&lt;div class=&quot;something-super-awesome ${@state}&quot;&gt;\n  Mind blown\n&lt;/div&gt;",
+                "raw_stateless": "<div class=\"something-super-awesome\">\n  Mind blown\n</div>",
+                "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  Mind blown\n&lt;/div&gt;"
+              }
+            ],
+            "states": {
+              "0": [
+                {
+                  "state": {
+                    "0": {
+                      "state": ":hover",
+                      "description": ""
+                    }
+                  },
+                  "markup": {
+                    "id": "0",
+                    "language": "html",
+                    "settings": {},
+                    "description": "",
+                    "raw": "<div class=\"something-super-awesome :hover\">\n  Mind blown\n</div>",
+                    "escaped": "&lt;div class=&quot;something-super-awesome :hover&quot;&gt;\n  Mind blown\n&lt;/div&gt;"
+                  }
+                }
+              ]
+            },
+            "note": [
+              {
+                "importance": "5",
+                "description": "<p>Lorem ipsum dolor sit amet</p>\n"
+              },
+              {
+                "importance": "5",
+                "description": "<p>Lorem ipsum dolor sit amet</p>\n"
+              }
+            ],
+            "todo": [
+              {
+                "importance": "10",
+                "assignees": [
+                  "Assignee One",
+                  "Assignee Two"
+                ],
+                "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+              }
+            ],
+            "blockinfo": {
+              "comment": {
+                "start": 1,
+                "end": 39,
+                "type": "body"
+              },
+              "code": {
+                "start": 40,
+                "end": 42
+              },
+              "file": {
+                "path": "docs/packages/docs-parser/tests/compair/cases/order.js",
+                "start": 1,
+                "end": 43
+              }
+            },
+            "inline": []
+          }
+        ]
+      }
+    }
+  }
+}

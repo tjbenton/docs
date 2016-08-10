@@ -18,6 +18,8 @@
         "header": {},
         "body": [
           {
+            "name": "Single body comment",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
             "access": "public",
             "blockinfo": {
               "comment": {
@@ -35,9 +37,7 @@
                 "end": 8
               }
             },
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
-            "inline": [],
-            "name": "Single body comment"
+            "inline": []
           }
         ]
       }

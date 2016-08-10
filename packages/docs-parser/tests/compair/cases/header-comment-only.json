@@ -11,10 +11,12 @@
     "header-comment-only": {
       "page": {
         "header": {
-          "access": "public",
+          "name": "Header",
           "author": [
             "Tyler Benton"
           ],
+          "description": "<p>This test is for a file that only has a header comment.</p>\n",
+          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 1,
@@ -30,9 +32,7 @@
               "start": 1,
               "end": 8
             }
-          },
-          "description": "<p>This test is for a file that only has a header comment.</p>\n",
-          "name": "Header"
+          }
         },
         "body": []
       }

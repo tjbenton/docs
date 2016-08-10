@@ -2,7 +2,12 @@
   "header": {},
   "body": [
     {
+      "name": "one",
       "access": "public",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "blockinfo": {
         "comment": {
           "start": 4,
@@ -19,14 +24,17 @@
           "end": 45
         }
       },
-      "name": "one",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
       "inline": [
         {
           "access": "public",
+          "property": [
+            {
+              "types": [],
+              "name": "",
+              "value": "",
+              "description": ""
+            }
+          ],
           "blockinfo": {
             "comment": {
               "start": 7,
@@ -42,20 +50,17 @@
               "start": 1,
               "end": 45
             }
-          },
-          "property": [
-            {
-              "types": [],
-              "name": "",
-              "value": "",
-              "description": ""
-            }
-          ]
+          }
         }
       ]
     },
     {
+      "name": "two",
       "access": "public",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "blockinfo": {
         "comment": {
           "start": 10,
@@ -72,14 +77,19 @@
           "end": 45
         }
       },
-      "name": "two",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
       "inline": [
         {
           "access": "public",
+          "property": [
+            {
+              "types": [
+                "number"
+              ],
+              "name": "bar.value",
+              "value": "",
+              "description": ""
+            }
+          ],
           "blockinfo": {
             "comment": {
               "start": 13,
@@ -95,22 +105,17 @@
               "start": 1,
               "end": 45
             }
-          },
-          "property": [
-            {
-              "types": [
-                "number"
-              ],
-              "name": "bar.value",
-              "value": "",
-              "description": ""
-            }
-          ]
+          }
         }
       ]
     },
     {
+      "name": "three",
       "access": "public",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "blockinfo": {
         "comment": {
           "start": 16,
@@ -127,14 +132,20 @@
           "end": 45
         }
       },
-      "name": "three",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
       "inline": [
         {
           "access": "public",
+          "property": [
+            {
+              "types": [
+                "number",
+                "array"
+              ],
+              "name": "baz.value",
+              "value": "",
+              "description": ""
+            }
+          ],
           "blockinfo": {
             "comment": {
               "start": 19,
@@ -150,23 +161,17 @@
               "start": 1,
               "end": 45
             }
-          },
-          "property": [
-            {
-              "types": [
-                "number",
-                "array"
-              ],
-              "name": "baz.value",
-              "value": "",
-              "description": ""
-            }
-          ]
+          }
         }
       ]
     },
     {
+      "name": "four",
       "access": "public",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "blockinfo": {
         "comment": {
           "start": 22,
@@ -183,14 +188,19 @@
           "end": 45
         }
       },
-      "name": "four",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
       "inline": [
         {
           "access": "public",
+          "property": [
+            {
+              "types": [
+                "function"
+              ],
+              "name": "qux.value",
+              "value": "",
+              "description": "<p>description</p>\n"
+            }
+          ],
           "blockinfo": {
             "comment": {
               "start": 25,
@@ -206,22 +216,17 @@
               "start": 1,
               "end": 45
             }
-          },
-          "property": [
-            {
-              "types": [
-                "function"
-              ],
-              "name": "qux.value",
-              "value": "",
-              "description": "<p>description</p>\n"
-            }
-          ]
+          }
         }
       ]
     },
     {
+      "name": "five",
       "access": "public",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "blockinfo": {
         "comment": {
           "start": 30,
@@ -238,14 +243,19 @@
           "end": 45
         }
       },
-      "name": "five",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
       "inline": [
         {
           "access": "public",
+          "property": [
+            {
+              "types": [
+                "number"
+              ],
+              "name": "corge.value",
+              "value": "5",
+              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>\n"
+            }
+          ],
           "blockinfo": {
             "comment": {
               "start": 33,
@@ -261,22 +271,17 @@
               "start": 1,
               "end": 45
             }
-          },
-          "property": [
-            {
-              "types": [
-                "number"
-              ],
-              "name": "corge.value",
-              "value": "5",
-              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>\n"
-            }
-          ]
+          }
         }
       ]
     },
     {
+      "name": "five",
       "access": "public",
+      "type": {
+        "type": "object",
+        "description": ""
+      },
       "blockinfo": {
         "comment": {
           "start": 37,
@@ -293,14 +298,19 @@
           "end": 45
         }
       },
-      "name": "five",
-      "type": {
-        "type": "object",
-        "description": ""
-      },
       "inline": [
         {
           "access": "public",
+          "property": [
+            {
+              "types": [
+                "function"
+              ],
+              "name": "quux.value",
+              "value": "'whatup'",
+              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>\n"
+            }
+          ],
           "blockinfo": {
             "comment": {
               "start": 40,
@@ -316,17 +326,7 @@
               "start": 1,
               "end": 45
             }
-          },
-          "property": [
-            {
-              "types": [
-                "function"
-              ],
-              "name": "quux.value",
-              "value": "'whatup'",
-              "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>\n"
-            }
-          ]
+          }
         }
       ]
     }

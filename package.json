@@ -45,7 +45,8 @@
     "lerna": "2.0.0-beta.24",
     "power-assert": "^1.4.1",
     "babel-runtime": "^6.9.2",
-    "docs-helpers-test": "^0.0.0-alpha.1"
+    "docs-helpers-test": "^0.0.0-alpha.1",
+    "docs-helpers-create-test": "file:packages/docs-helpers-create-test"
   },
   "ava": {
     "files": [

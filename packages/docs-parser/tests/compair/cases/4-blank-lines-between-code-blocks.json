@@ -18,7 +18,12 @@
         "header": {},
         "body": [
           {
+            "name": "moz-only",
             "access": "public",
+            "raw-code": {
+              "raw": "@mixin moz-only() {\n  $selector: &;\n  @at-root {\n    @-moz-document url-prefix() {\n      #{$selector} {\n        @content;\n      }\n    }\n  }\n}",
+              "escaped": "@mixin moz-only() {\n  $selector: &amp;;\n  @at-root {\n    @-moz-document url-prefix() {\n      #{$selector} {\n        @content;\n      }\n    }\n  }\n}"
+            },
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -35,12 +40,7 @@
                 "end": 34
               }
             },
-            "inline": [],
-            "name": "moz-only",
-            "raw-code": {
-              "raw": "@mixin moz-only() {\n  $selector: &;\n  @at-root {\n    @-moz-document url-prefix() {\n      #{$selector} {\n        @content;\n      }\n    }\n  }\n}",
-              "escaped": "@mixin moz-only() {\n  $selector: &amp;;\n  @at-root {\n    @-moz-document url-prefix() {\n      #{$selector} {\n        @content;\n      }\n    }\n  }\n}"
-            }
+            "inline": []
           }
         ]
       }

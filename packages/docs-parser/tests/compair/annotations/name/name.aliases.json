@@ -2,6 +2,7 @@
   "header": {},
   "body": [
     {
+      "name": "Title",
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -19,10 +20,10 @@
           "end": 6
         }
       },
-      "inline": [],
-      "name": "Title"
+      "inline": []
     },
     {
+      "name": "Heading",
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -40,10 +41,10 @@
           "end": 6
         }
       },
-      "inline": [],
-      "name": "Heading"
+      "inline": []
     },
     {
+      "name": "Header",
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -61,8 +62,7 @@
           "end": 6
         }
       },
-      "inline": [],
-      "name": "Header"
+      "inline": []
     }
   ]
 }

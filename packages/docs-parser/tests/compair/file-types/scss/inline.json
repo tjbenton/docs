@@ -31,6 +31,7 @@
             "author": [
               "Tyler Benton"
             ],
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -42,21 +43,21 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/file-types/scss/inline.scss",
+                "path": "docs/packages/docs-parser/tests/compair/file-types/scss/inline.scss",
                 "start": 1,
                 "end": 15
               }
-            },
-            "access": "public"
+            }
           },
           "body": [
             {
               "name": "$colors",
+              "description": "<p>what up\nshoot</p>\n",
+              "access": "public",
               "type": {
                 "type": "map",
                 "description": ""
               },
-              "description": "<p>what up\nshoot</p>\n",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -68,14 +69,14 @@
                   "end": 15
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/scss/inline.scss",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/scss/inline.scss",
                   "start": 1,
                   "end": 15
                 }
               },
-              "access": "public",
               "inline": [
                 {
+                  "access": "public",
                   "property": [
                     {
                       "types": [
@@ -97,14 +98,14 @@
                       "end": 12
                     },
                     "file": {
-                      "path": "docs-parser/tests/file-types/scss/inline.scss",
+                      "path": "docs/packages/docs-parser/tests/compair/file-types/scss/inline.scss",
                       "start": 1,
                       "end": 15
                     }
-                  },
-                  "access": "public"
+                  }
                 },
                 {
+                  "access": "public",
                   "property": [
                     {
                       "types": [
@@ -126,14 +127,14 @@
                       "end": 13
                     },
                     "file": {
-                      "path": "docs-parser/tests/file-types/scss/inline.scss",
+                      "path": "docs/packages/docs-parser/tests/compair/file-types/scss/inline.scss",
                       "start": 1,
                       "end": 15
                     }
-                  },
-                  "access": "public"
+                  }
                 },
                 {
+                  "access": "public",
                   "property": [
                     {
                       "types": [
@@ -155,12 +156,11 @@
                       "end": 14
                     },
                     "file": {
-                      "path": "docs-parser/tests/file-types/scss/inline.scss",
+                      "path": "docs/packages/docs-parser/tests/compair/file-types/scss/inline.scss",
                       "start": 1,
                       "end": 15
                     }
-                  },
-                  "access": "public"
+                  }
                 }
               ]
             }

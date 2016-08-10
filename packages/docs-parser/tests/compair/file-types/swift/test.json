@@ -39,6 +39,7 @@
             "author": [
               "Tyler Benton"
             ],
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -50,17 +51,17 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/file-types/swift/test.swift",
+                "path": "docs/packages/docs-parser/tests/compair/file-types/swift/test.swift",
                 "start": 1,
                 "end": 49
               }
-            },
-            "access": "public"
+            }
           },
           "body": [
             {
               "name": "main",
               "description": "<p>main method</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -72,17 +73,17 @@
                   "end": 20
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/swift/test.swift",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/swift/test.swift",
                   "start": 1,
                   "end": 49
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Something",
               "description": "<p>This is a normal multi-line comment.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 23,
@@ -94,17 +95,17 @@
                   "end": 31
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/swift/test.swift",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/swift/test.swift",
                   "start": 1,
                   "end": 49
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Something else",
               "description": "<p>This is another normal multi-line comment.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 34,
@@ -116,12 +117,11 @@
                   "end": 48
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/swift/test.swift",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/swift/test.swift",
                   "start": 1,
                   "end": 49
                 }
               },
-              "access": "public",
               "inline": []
             }
           ]

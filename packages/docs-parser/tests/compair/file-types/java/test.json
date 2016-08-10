@@ -39,6 +39,7 @@
             "author": [
               "Tyler Benton"
             ],
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -50,17 +51,17 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/file-types/java/test.java",
+                "path": "docs/packages/docs-parser/tests/compair/file-types/java/test.java",
                 "start": 1,
                 "end": 34
               }
-            },
-            "access": "public"
+            }
           },
           "body": [
             {
               "name": "One",
               "description": "<p>A very simple class to print out <code>Hello World</code></p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -72,17 +73,17 @@
                   "end": 15
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/java/test.java",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/java/test.java",
                   "start": 1,
                   "end": 34
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Two",
               "description": "<p>This is a normal multi-line comment.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 17,
@@ -94,17 +95,17 @@
                   "end": 24
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/java/test.java",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/java/test.java",
                   "start": 1,
                   "end": 34
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
               "name": "Three",
               "description": "<p>This is another normal multi-line comment.</p>\n",
+              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 26,
@@ -116,12 +117,11 @@
                   "end": 33
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/java/test.java",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/java/test.java",
                   "start": 1,
                   "end": 34
                 }
               },
-              "access": "public",
               "inline": []
             }
           ]

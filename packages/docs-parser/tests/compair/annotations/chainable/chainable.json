@@ -3,6 +3,7 @@
   "body": [
     {
       "access": "public",
+      "chainable": true,
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -19,11 +20,11 @@
           "end": 18
         }
       },
-      "chainable": true,
       "inline": []
     },
     {
       "access": "public",
+      "chainable": true,
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -40,11 +41,11 @@
           "end": 18
         }
       },
-      "chainable": true,
       "inline": []
     },
     {
       "access": "public",
+      "chainable": false,
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -61,11 +62,13 @@
           "end": 18
         }
       },
-      "chainable": false,
       "inline": []
     },
     {
       "access": "public",
+      "chainable": [
+        "Object.prototype"
+      ],
       "blockinfo": {
         "comment": {
           "start": 7,
@@ -82,13 +85,14 @@
           "end": 18
         }
       },
-      "chainable": [
-        "Object.prototype"
-      ],
       "inline": []
     },
     {
       "access": "public",
+      "chainable": [
+        "One",
+        "Two"
+      ],
       "blockinfo": {
         "comment": {
           "start": 9,
@@ -105,14 +109,14 @@
           "end": 18
         }
       },
-      "chainable": [
-        "One",
-        "Two"
-      ],
       "inline": []
     },
     {
       "access": "public",
+      "chainable": [
+        "One",
+        "Two"
+      ],
       "blockinfo": {
         "comment": {
           "start": 11,
@@ -129,14 +133,14 @@
           "end": 18
         }
       },
-      "chainable": [
-        "One",
-        "Two"
-      ],
       "inline": []
     },
     {
       "access": "public",
+      "chainable": [
+        "One",
+        "Two"
+      ],
       "blockinfo": {
         "comment": {
           "start": 15,
@@ -153,10 +157,6 @@
           "end": 18
         }
       },
-      "chainable": [
-        "One",
-        "Two"
-      ],
       "inline": []
     }
   ]

@@ -20,10 +20,10 @@
     "only-comments": {
       "page": {
         "header": {
-          "access": "public",
           "author": [
             "Tyler Benton"
           ],
+          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 1,
@@ -43,9 +43,25 @@
         },
         "body": [
           {
-            "access": "public",
+            "name": "moz-only",
             "author": [
               "Tyler Benton"
+            ],
+            "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
+            "access": "public",
+            "markup": [
+              {
+                "id": "0",
+                "language": "scss",
+                "settings": {
+                  "example": "'false'"
+                },
+                "description": "<p><strong>Example:</strong></p>\n",
+                "raw": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: \"\";\n}",
+                "escaped": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: &quot;&quot;;\n}",
+                "raw_stateless": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: \"\";\n}",
+                "escaped_stateless": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: &quot;&quot;;\n}"
+              }
             ],
             "blockinfo": {
               "comment": {
@@ -63,25 +79,11 @@
                 "end": 27
               }
             },
-            "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
-            "inline": [],
-            "markup": [
-              {
-                "id": "0",
-                "language": "scss",
-                "settings": {
-                  "example": "'false'"
-                },
-                "description": "<p><strong>Example:</strong></p>\n",
-                "raw": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: \"\";\n}",
-                "escaped": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: &quot;&quot;;\n}",
-                "raw_stateless": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: \"\";\n}",
-                "escaped_stateless": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: &quot;&quot;;\n}"
-              }
-            ],
-            "name": "moz-only"
+            "inline": []
           },
           {
+            "name": "Test one",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
             "access": "public",
             "blockinfo": {
               "comment": {
@@ -99,9 +101,7 @@
                 "end": 27
               }
             },
-            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
-            "inline": [],
-            "name": "Test one"
+            "inline": []
           }
         ]
       }

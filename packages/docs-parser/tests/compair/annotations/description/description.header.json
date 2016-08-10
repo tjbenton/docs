@@ -1,6 +1,10 @@
 {
   "header": {
+    "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem,\ninventore modi ratione. Ipsum natus odio inventore quibusdam error dolores\nnumquam sapiente dicta, perferendis quos quo provident,\nvoluptate, alias deserunt?</p>\n",
     "access": "public",
+    "page": [
+      "general"
+    ],
     "blockinfo": {
       "comment": {
         "start": 1,
@@ -16,11 +20,7 @@
         "start": 1,
         "end": 8
       }
-    },
-    "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem,\ninventore modi ratione. Ipsum natus odio inventore quibusdam error dolores\nnumquam sapiente dicta, perferendis quos quo provident,\nvoluptate, alias deserunt?</p>\n",
-    "page": [
-      "general"
-    ]
+    }
   },
   "body": []
 }

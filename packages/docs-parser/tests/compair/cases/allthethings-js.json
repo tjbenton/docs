@@ -16,10 +16,11 @@
     "components": {
       "page": {
         "header": {
-          "access": "public",
+          "name": "All the things test",
           "author": [
             "Tyler Benton"
           ],
+          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 1,
@@ -35,11 +36,12 @@
               "start": 1,
               "end": 23
             }
-          },
-          "name": "All the things test"
+          }
         },
         "body": [
           {
+            "name": "Beards",
+            "description": "<p>This is an awesome class about beards</p>\n",
             "access": "public",
             "blockinfo": {
               "comment": {
@@ -57,10 +59,9 @@
                 "end": 23
               }
             },
-            "description": "<p>This is an awesome class about beards</p>\n",
-            "name": "Beards",
             "inline": [
               {
+                "name": "constructor",
                 "access": "public",
                 "arg": [
                   {
@@ -87,10 +88,10 @@
                     "start": 1,
                     "end": 23
                   }
-                },
-                "name": "constructor"
+                }
               },
               {
+                "name": "beard",
                 "access": "public",
                 "arg": [
                   {
@@ -117,8 +118,7 @@
                     "start": 1,
                     "end": 23
                   }
-                },
-                "name": "beard"
+                }
               }
             ]
           }

@@ -2,6 +2,7 @@
   "header": {},
   "body": [
     {
+      "description": "<p>This block shouldn&#39;t have a page annotation because page doesn&#39;t autofill body comments</p>\n",
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -19,7 +20,6 @@
           "end": 2
         }
       },
-      "description": "<p>This block shouldn&#39;t have a page annotation because page doesn&#39;t autofill body comments</p>\n",
       "inline": []
     }
   ]

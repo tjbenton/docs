@@ -2,6 +2,10 @@
   "header": {},
   "body": [
     {
+      "version": {
+        "version": "undefined",
+        "description": ""
+      },
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -19,13 +23,13 @@
           "end": 13
         }
       },
-      "inline": [],
-      "version": {
-        "version": "undefined",
-        "description": ""
-      }
+      "inline": []
     },
     {
+      "version": {
+        "version": "0.0.1",
+        "description": ""
+      },
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -43,13 +47,13 @@
           "end": 13
         }
       },
-      "inline": [],
-      "version": {
-        "version": "0.0.1",
-        "description": ""
-      }
+      "inline": []
     },
     {
+      "version": {
+        "version": "^0.0.1",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+      },
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -67,13 +71,13 @@
           "end": 13
         }
       },
-      "inline": [],
+      "inline": []
+    },
+    {
       "version": {
         "version": "^0.0.1",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-      }
-    },
-    {
+      },
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -91,13 +95,13 @@
           "end": 13
         }
       },
-      "inline": [],
-      "version": {
-        "version": "^0.0.1",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
-      }
+      "inline": []
     },
     {
+      "version": {
+        "version": "1.0.1",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium necessitatibus\nlaboriosam, hic odit sequi facilis, amet consequuntur ullam, rem iure commodi doloremque\nsapiente numquam. Minima vel voluptates sint nostrum facere.</p>\n"
+      },
       "access": "public",
       "blockinfo": {
         "comment": {
@@ -115,11 +119,7 @@
           "end": 13
         }
       },
-      "inline": [],
-      "version": {
-        "version": "1.0.1",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium necessitatibus\nlaboriosam, hic odit sequi facilis, amet consequuntur ullam, rem iure commodi doloremque\nsapiente numquam. Minima vel voluptates sint nostrum facere.</p>\n"
-      }
+      "inline": []
     }
   ]
 }

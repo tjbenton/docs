@@ -35,6 +35,7 @@
             "author": [
               "Tyler Benton"
             ],
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -46,16 +47,16 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/file-types/scss/test.scss",
+                "path": "docs/packages/docs-parser/tests/compair/file-types/scss/test.scss",
                 "start": 1,
                 "end": 39
               }
-            },
-            "access": "public"
+            }
           },
           "body": [
             {
               "name": "One",
+              "access": "public",
               "type": {
                 "type": "color",
                 "description": ""
@@ -71,12 +72,11 @@
                   "end": 8
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/scss/test.scss",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/scss/test.scss",
                   "start": 1,
                   "end": 39
                 }
               },
-              "access": "public",
               "inline": []
             },
             {
@@ -85,6 +85,7 @@
                 "Tyler Benton"
               ],
               "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
+              "access": "public",
               "arg": [
                 {
                   "types": [
@@ -129,12 +130,11 @@
                   "end": 38
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/scss/test.scss",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/scss/test.scss",
                   "start": 1,
                   "end": 39
                 }
               },
-              "access": "public",
               "inline": []
             }
           ]

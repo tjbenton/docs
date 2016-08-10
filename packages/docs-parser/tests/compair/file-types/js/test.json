@@ -31,6 +31,7 @@
             "author": [
               "Tyler Benton"
             ],
+            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -42,26 +43,26 @@
                 "end": -1
               },
               "file": {
-                "path": "docs-parser/tests/file-types/js/test.js",
+                "path": "docs/packages/docs-parser/tests/compair/file-types/js/test.js",
                 "start": 1,
                 "end": 28
               }
-            },
-            "access": "public"
+            }
           },
           "body": [
             {
               "name": "@author",
-              "alias": [
-                "@authors"
-              ],
               "description": "<p>Author of the documented item</p>\n",
+              "access": "public",
               "returns": {
                 "types": [
                   "string"
                 ],
                 "description": ""
               },
+              "alias": [
+                "@authors"
+              ],
               "markup": [
                 {
                   "id": "0",
@@ -85,12 +86,11 @@
                   "end": 27
                 },
                 "file": {
-                  "path": "docs-parser/tests/file-types/js/test.js",
+                  "path": "docs/packages/docs-parser/tests/compair/file-types/js/test.js",
                   "start": 1,
                   "end": 28
                 }
               },
-              "access": "public",
               "inline": []
             }
           ]

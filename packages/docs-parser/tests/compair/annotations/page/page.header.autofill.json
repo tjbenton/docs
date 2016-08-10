@@ -1,6 +1,10 @@
 {
   "header": {
+    "name": "page autofill test",
     "access": "public",
+    "page": [
+      "general"
+    ],
     "blockinfo": {
       "comment": {
         "start": 1,
@@ -16,11 +20,7 @@
         "start": 1,
         "end": 4
       }
-    },
-    "name": "page autofill test",
-    "page": [
-      "general"
-    ]
+    }
   },
   "body": []
 }
