@@ -45,14 +45,22 @@ export const default_options = {
   // this will return the raw data by file, aka data won't be sorted
   raw: false,
 
-  // this is used to sort the annotations to be in a specific order after
-  // the block has been parsed initial and before the the resolve functions run
-  // for each annotation. You can manipulate this list to ensure that a specific
-  // annotation resolves before another one does, this is used in the event that
-  // one annotation depends on another annotation to be resolved first
-  sort(a, b) {
-    return a.localeCompare(b) // same as the default sort function
-  },
+  sort: [
+    'name<=0',
+    'access<=1',
+    'author<=1',
+    'deprecated<=1',
+    'description<=1',
+    'markdown>6',
+    'markup>5',
+    'states>5',
+    'note>=-3',
+    'raw-code>6',
+    'todo>=-2',
+    'type<=1',
+    'version<=1',
+    'blockinfo>=-1',
+  ],
 
   languages: {
     default: {

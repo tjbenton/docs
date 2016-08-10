@@ -65,7 +65,6 @@ async function docsParser(options = {}, callback) {
       should_log && logger.emit('start', 'parser')
       const ext = path.extname(file).replace('.', '')
       let parser = parsers[ext]
-      file = file.replace(`${root}${path.sep}`, '')
       if (!parser) {
         parser = parsers[ext] = new Parser(languages[ext] || languages.default, ext, parser_options)
       }
@@ -89,6 +88,9 @@ async function docsParser(options = {}, callback) {
 
   const parsefile = async (file) => {
     logger.emit('start', 'total')
+    if (!json[file]) {
+      file = file.replace(`${root}${path.sep}`, '')
+    }
     await parse(file, true)
     const result = sortdata()
     logger.emit('complete', 'total')
@@ -122,6 +124,7 @@ async function docsParser(options = {}, callback) {
   const result = await parsefiles(globs)
 
   if (!watch) {
+    watcher.close()
     return result
   }
 

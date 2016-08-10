@@ -31,8 +31,24 @@ const annotations = [
   return prev
 }, {})
 
-
 module.exports = {
   annotations,
-  assets: path.join(__dirname, '..', 'public')
+  assets: path.join(__dirname, '..', 'public'),
+  sort: [
+    'name<=0',
+    'access<=0',
+    'author<=1',
+    'deprecated<=1',
+    'description<=1',
+    'markdown>6',
+    'markup>5',
+    'states>5',
+    'note>=-3',
+    'property',
+    'raw-code>6',
+    'todo>=-2',
+    'type<=1',
+    'version<=1',
+    'blockinfo>=-1',
+  ]
 }
