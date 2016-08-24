@@ -1,17 +1,20 @@
 for $breakpoint in $media-breakpoints-list
   +media($breakpoint)
-    // @name Showing and hiding content
-    // @author Tyler Benton
-    // @page utilities/display
-    // @description
-    // Force an element to be shown or hidden with the use of `.u-show` and `.u-hide` classes. These classes use `!important` to avoid specificity conflicts, just like the quick floats. They are only available for block level toggling.
-    //
-    // @markup {html} (example="false")
-    // <div class="u-show"></div>
-    // <div class="u-show--inline"></div>
-    // <div class="u-hide"></div>
-    // <div class="u-invisible"></div>
-    // <div class="u-visible"></div>
+    /// @name Showing and hiding content
+    /// @author Tyler Benton
+    /// @page utilities/display
+    /// @description
+    /// Force an element to be shown or hidden with the use of `.u-show` and
+    /// `.u-hide` classes. These classes use `!important` to avoid specificity
+    /// conflicts, just like the quick floats. They are only available for
+    /// block level toggling.
+    ///
+    /// @markup {html} (example="false")
+    /// <div class="u-show"></div>
+    /// <div class="u-show--inline"></div>
+    /// <div class="u-hide"></div>
+    /// <div class="u-invisible"></div>
+    /// <div class="u-visible"></div>
     .u-show{$media}
       display block !important
 

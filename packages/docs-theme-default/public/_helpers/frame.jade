@@ -1,60 +1,63 @@
-mixin frame(obj, token, block)
-  - block = prefix + '-c-frame' + (!!block ? '--' + block : '')
-  - var frame = prefix + '-js-frame'
-  - obj = obj.toString().slice(8, -1) !== 'Object' ? { raw: obj, escaped: obj } : obj
-  - var lang = obj.language || obj.lang || 'json'
+if _.isArray(data)
+  each item in data 
+    != partial('frame', { data: item })
+else if _.isArray(data.items)
+  - var items = data.items
+  - delete data.items
+  each item in items
+    - var result = { data: _.assign({}, data, _.isPlainObject(item) ? item : { raw: item, escaped: _.escape(item) }) }
+    != partial('frame', result)
+else
+  - var cls = 'c-frame'
+  - var js = 'js-frame'
+  - var modifier = data.modifier ? cls + data.modifier : '' 
+  - data = Object.prototype.toString.call(data) !== '[object Object]' ? { raw: data, escaped: _.escape(data) } : data
+  - var lang = data.language || data.lang || 'json'
   - var blockinfo = (token || {}).blockinfo || {}
   - var file_path = (blockinfo.file || {}).path
-  - var description = obj.description
-  - obj.settings = obj.settings || {}
-  - obj.settings.class = obj.settings.class ? obj.settings.class.replace(/\s*\./g, ' ') : ''
+  - var description = data.description
+  - data.settings = data.settings || {}
+  - data.settings.class = data.settings.class ? data.settings.class.replace(/\s*\./g, ' ') : ''
   - var code = blockinfo.code || {}
-  - var id = 'markup-' + encode(obj)
+  - var keys = Object.keys(data).filter(function(item) {
+  -   return [ 'raw', 'escaped', 'raw_stateless', 'escaped_stateless' ].indexOf(item) > -1
+  - })
+  - var id = 'markup-item' + global.base_x.encode(data)
   
-  section(id="#{id}")
-    if description
-      != description
-    div(class="#{block} #{frame}")&attributes(obj.settings)
-      div(class="#{block}__header")
-        div(class="#{block}__url")
-          span(class='#{block}__project-name')= pkg.name
+  section(id="#{id}", class="c-frame-container")&attributes(data.settings)
+    if data.description
+      != data.description
+    div(class="#{cls} #{js}")
+      div(class="#{cls}__header")
+        div(class="#{cls}__url")
+          //- span(class='#{cls}__project-name')= pkg.name
           if !!file_path
-            span(class="#{block}__path") /#{file_path}
-        div(class="#{block}__actions #{frame}__actions #{prefix}-o-spacing--off")
-          a(class="#{block}__action--copy #{frame}__copy") Copy
-          a(class="#{block}__action--link #{frame}__link", href="##{id}") Link To
-
-        span(class="#{block}__language")= lang
-      div(class='#{block}__body')
-        each type in [ 'raw', 'raw_stateless', 'escaped', 'escaped_stateless' ]
-          - var should_escape = type.indexOf('escaped') > -1
-          - var data = obj[type.replace('escaped', 'raw')] || obj[type]
-          if data
+            span(class="#{cls}__path") /#{file_path}
+        div(class="#{cls}__actions #{js}__actions o-spacing--off")
+          a(class="#{cls}__action--copy #{js}__copy") Copy
+          a(class="#{cls}__action--link #{js}__link", href="##{id}") Link To
+  
+        span(class="#{cls}__language")= lang
+        
+      div(class='#{cls}__body')
+        each type in keys
+          - var should_highlight = type.indexOf('escaped') > -1
+          - var content = data[type.replace('escaped', 'raw')] || data[type] ||  false
+          - type = type.replace('_', '-')
+          if content
             div(
-              class="#{block}__section--#{type.replace('_', '-')} #{frame}__section", 
-              data-type="#{type.replace('_', '-')}"
+              class="#{cls}__section #{cls}__section--#{type} #{js}__section", 
+              data-type="#{type}"
             )
-              if should_escape
-                - data = highlight(data, lang)
-                - var len = data.split('\n').length
-                - var line_numbers = []
-                - var start = code.start || 1
-                - var end = code.end || len || 0
-                - for (var i = 0; i < len; i++) line_numbers.push('<span class="hljs-lineno"></span>')
-                - data = data.replace(/^\s*/gm, function(match) {
-                -   var result = '<span class="hljs-leading-whitespaces">'
-                -   result += match.replace(/\s/g, '<span class="hljs-leading-whitespace"> </span>')
-                -   result += '</span>'
-                -   return result
-                - })
-                pre(class="#{block}__pre #{syntax_highlight} hljs #{lang}", data-type="#{syntax_highlight}")
-                  code(class="#{block}__code")
-                    != data
-                  span(
-                    class="hljs-linenos",
-                    data-start="#{start}",
-                    data-end="#{end}",
-                    style="counter-reset: line #{start > 0 ? start - 1 : start}"
-                  )!= line_numbers.join('\n')
+              if should_highlight
+                - var options = {}
+                - options.preCls = cls + '__pre'
+                - options.codeCls = cls + '__code'
+                - options.lineno = true
+                - options.start = code.start || 1
+                - options.language = lang
+                != global.highlight(content, options)
               else
-                != data
+                != content
+
+  

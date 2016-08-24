@@ -123,24 +123,33 @@ highlight($color, $variation = 0, $force = false, $save = true)
   &-leading-whitespaces
     color highlight('gray', 2)
     cursor text
+
     &:empty
       display none
-
-  &-leading-whitespace
-    &:after, &:before
-      content '•'
-      left 0
-      top 0
-      width 100%
-      font-size 0.5em
-      text-align center
 
     &:before
       color rgba(black, 0)
 
-    &:nth-of-type(odd)
-      &:before
-        border-left 1px solid highlight('gray', 2)
+
+  &-leading-whitespaces,
+  &-leading-whitespace:nth-of-type(odd)
+    &:before
+      border-left 1px solid highlight('gray', 2)
+
+  &-leading-whitespaces:before,
+  &-leading-whitespace:after,
+  &-leading-whitespace:before
+    content '•'
+    left 0
+    top 0
+    width 100%
+    font-size 0.5em
+    text-align center
+
+  &-leading-whitespace
+    &:before
+      color rgba(black, 0)
+
 
   &-linenos, &-lineno
     display block

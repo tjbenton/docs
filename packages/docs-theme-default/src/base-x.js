@@ -6,7 +6,7 @@ let dictionaries = {}
 /// @arg {number} input The number to be encoded to a string
 /// @arg {number, string} dictionary ['DICTIONARY_52'] - The dictionary to use for the encoding
 /// @arg {number} padding [0] - The padding (minimum length of the generated string)
-base_x.encode = function encode(input, padding, dictionary) {
+base_x.encodeNumber = (input, padding, dictionary) => {
   let result = []
   dictionary = base_x.getDictionary(dictionary)
   let base = dictionary.length
@@ -42,7 +42,7 @@ base_x.encode = function encode(input, padding, dictionary) {
 /// @arg {number} input - The encoded string to be decoded
 /// @arg {number, string} dictionary ['DICTIONARY_52'] - The dictionary to use for the encoding
 /// @arg {number} padding [0] - The padding (minimum length of the generated string) to use
-base_x.decode = function decode(input, padding, dictionary) {
+base_x.decodeNumber = (input, padding, dictionary) => {
   let chars = input.split('').reverse()
   dictionary = base_x.getDictionary(dictionary)
   let base = dictionary.length
@@ -74,7 +74,7 @@ base_x.decode = function decode(input, padding, dictionary) {
 /// @description Gets a dictionary or returns the default dictionary of 'DICTIONARY_52'
 /// @arg {number, string} dictionary ['DICTIONARY_52'] - The dictionary to get
 /// @returns {array}
-base_x.getDictionary = function getDictionary(dictionary) {
+base_x.getDictionary = (dictionary) => {
   return dictionaries[dictionary] || dictionaries['DICTIONARY_' + dictionary] || dictionaries.DICTIONARY_52
 }
 
@@ -82,7 +82,7 @@ base_x.getDictionary = function getDictionary(dictionary) {
 /// @description Adds a new dictionary
 /// @arg {string} name - The name of the dictionary to add
 /// @arg {string, array} dictionary - The dictionary to use as an array of characters
-base_x.addDictionary = function addDictionary(name, dictionary) {
+base_x.addDictionary = (name, dictionary) => {
   if (typeof dictionary === 'string') {
     dictionary = dictionary.split('')
   }
@@ -129,15 +129,17 @@ base_x.addDictionary('DICTIONARY_89',
 
 import crypto from 'crypto'
 
-base_x.encodeString = function encodeString(data, padding = 4, dictionary = 'letters') {
+base_x.encode = (data, padding = 4, dictionary = 'letters') => {
   let hash = crypto
     .createHash('md5')
     .update(JSON.stringify(data), 'utf8')
     .digest('hex')
     .split('')
     .reduce((prev, next) => prev + next.charCodeAt(), 0)
-  return base_x.encode(hash, padding, dictionary)
+  return base_x.encodeNumber(hash, padding, dictionary)
 }
 
 
-export default base_x
+let base = global.base_x = global.base_x || base_x
+
+export default base

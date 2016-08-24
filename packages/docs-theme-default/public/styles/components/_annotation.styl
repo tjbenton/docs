@@ -1,3 +1,11 @@
 .c-annotation
-  spacing large
   spacing medium inner
+
+  &--raw-code
+    &:not(.is-expanded) .c-expanded, &.is-expanded .c-collapsed
+      height 0
+      margin-top 0
+      max-height 0
+      opacity 0
+      overflow hidden
+      visibility hidden

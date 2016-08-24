@@ -34,7 +34,7 @@ $not-hidden ?= ':not(script):not(link):not(meta):not(style)'
 
 spacing($size = 'medium', $type = 'self')
   if $type == 'self'
-    &{$not-hidden}
+    *{$not-hidden} ~ &
       +cache('shit-o-spacing--' + $size)
         margin-top $spacing-sizes[$size]
   else

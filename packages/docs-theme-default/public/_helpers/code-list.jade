@@ -1,0 +1,4 @@
+if !!data
+  div.c-code-list
+    - data = !_.isArray(data) ? [ data ] : data
+    != '<code>' + data.join('</code>, <code>') + '</code>'

@@ -1,6 +1,13 @@
-/// @access public
+/* eslint-disable */
+////
+/// @name All the things
 /// @page all-the-things
-/// @name All the things test
+/// @description This is a example of all the annotations
+////
+
+
+/// @access public
+/// @name First Comment Block
 /// @alias foo, bar
 /// @arg {type} name-of-variable [default value] - Lorem ipsum dolor sit amet, consectetur adipisicing elit
 /// Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -39,15 +46,52 @@
 /// sed repellat voluptatibus, eaque nihil assumenda odit at, ea consequatur provident
 /// accusamus fugit magnam et adipisci eum, saepe incidunt.
 /// @state {:hover}
-///
+/// @state {:disabled}
 /// @markup {html}
 /// <div class="something-super-awesome ${@state}">
 ///   Mind blown
 /// </div>
+///
+/// @state {:hover} Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+/// @markup {html}
+/// <div class="something-super-awesome ${@state}">
+///   ${@state.description}
+/// </div>
+///
+/// @markup {html} No states
+/// <div>This is just an example without any states</div>
 /// @throws {fileNotFound} Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 /// @todo {10} [Assignee One, Assignee Two] Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 /// @type {array} - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 /// @version {^0.0.1} - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-function allTheThings() { // eslint-disable-line
-  return []
+/// @raw-code
+export async function findFiles(folders) {
+  const files = []
+  const sort = (list) => {
+    const to_search = []
+    list = to.flatten(list)
+    for (let item of list) {
+      if (!!path.extname(item)) {
+        files.push(item)
+      } else {
+        to_search.push(item)
+      }
+    }
+    return to_search
+  }
+  const find = async (_folders) => {
+    _folders = sort(await map(_folders, (folder) => globby(path.join(folder, '*'))))
+    if (_folders.length) {
+      return find(_folders)
+    }
+  }
+
+  await find(to.array(folders))
+  return files
 }
+
+
+/// @name Second Comment Block
+/// @page all-the-things
+/// @access private
+/// @description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed.

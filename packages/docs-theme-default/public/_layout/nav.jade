@@ -1,10 +1,14 @@
-//- mixin menu(tree)
-//-   ul
-//-     for node in tree
-//-       li= node.title
-//-       if node.sub
-//-         +menu(node.sub)
+mixin menu(tree, klass)
+  - klass = klass || ''
+  ul(class="#{klass}")
+    for node in tree
+      li
+        a(href="#{node.href}")= node.title
+        if node.body && node.body.length
+          +menu(node.body, klass)
+          
+        if node.subpages && node.subpages.length
+          +menu(node.subpages, klass)
 
 nav(class="s-documentation__nav" role="navigation")
-  h1 Nav
-  != partial('../_helpers/json', { json: nav })
+  +menu(nav)

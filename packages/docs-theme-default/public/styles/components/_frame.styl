@@ -21,7 +21,7 @@
     display flex
     flex-flow row nowrap
 
-    &:before {
+    &:before
       $red = #ed7669
       $yellow = #f4d03f
       $green = #28e1bd
@@ -36,7 +36,6 @@
       position absolute
       top 10px
       width $size
-    }
 
   &__url
     background white
@@ -67,25 +66,23 @@
 
   &__section
     border-radius 0 0 $border-radius $border-radius
+    display none
+    margin-top 0
     overflow hidden
-
-    &:only-child
-      display block
 
     &--raw, &--raw-stateless
       padding: $config.spacing;
 
-    &--raw-stateless, &--escaped-stateless
-      display block
-      .has-state &:not(:only-child)
-        display none
-
-    &--raw, &--escaped
-      &:not(:only-child)
-        display none
-
-      .has-state &
+    .has-state &
+      &--raw, &--escaped
         display block
+
+    .has-no-state &
+      &--raw-stateless, &--escaped-stateless
+        display block
+
+    &:nth-last-child(-n+2):first-child, &:nth-last-child(-n+2):first-child ~ *
+      display block
 
   &__body, &__pre, &__code
     border-radius 0 0 $border-radius $border-radius
@@ -114,6 +111,7 @@
     padding-right 0
 
   &__code
+    background none
     white-space pre
     flex 1
     order 2

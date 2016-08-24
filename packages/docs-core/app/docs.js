@@ -1,6 +1,5 @@
 'use strict'
 
-/* eslint-disable */
 import globby from 'globby'
 import fs from 'fs-extra-promisify'
 import docsParser from 'docs-parser'
@@ -9,9 +8,8 @@ import to, { is } from 'to-js'
 import config from './config'
 import path from 'path'
 import harp from 'harp'
-import { forEach, map, reduce } from 'async-array-methods'
+import { forEach, map } from 'async-array-methods'
 import chokidar from 'chokidar'
-
 harp._compile = harp.compile
 harp.compile = (...args) => {
   return new Promise((resolve, reject) => harp._compile(...args, (err, output) => err ? reject(err) : resolve(output)))
@@ -25,6 +23,7 @@ harp.server = (...args) => {
 export default class Docs {
   constructor(options = {}) {
     this.options = config(options)
+    to.extend(global, this.options.global)
     this.cwd = process.cwd()
     this.public = path.join(this.cwd, 'node_modules', 'docs-core', 'public')
   }
@@ -62,7 +61,7 @@ export default class Docs {
 
       const sortPages = (data, prefix) => {
         const page_data = {}
-        for (let { name, page, i, ...rest } of to.objectEntries(data, 'name')) {
+        for (let { name, page, i, ...rest } of to.objectEntries(data, 'name')) { // eslint-disable-line
           if (prefix) {
             name = path.join(prefix, name)
           }
@@ -81,17 +80,17 @@ export default class Docs {
 
       docsParser(options).catch(reject)
 
-      logger.on('parsed', (json, files) => {
+      logger.on('parsed', (json) => {
         const page_data = sortPages(json.pages)
         const write_json = fs.outputJson(path.join(this.public, '_data.json'), json).catch(reject)
         const write_pages = forEach(to.keys(page_data), async (folder) => {
           let data = folder.split(path.sep)
-          let relative = data.map((i) => '..').join(path.sep)
+          let relative = data.map(() => '..').join(path.sep)
           data = 'public' + data.map((item) => `['${item}']`).join('') + '._data'
           return await Promise.all([
             fs.outputJson(path.join(this.public, folder, '_data.json'), page_data[folder]),
             fs.outputFile(path.join(this.public, folder, 'index.jade'),
-              `!= partial('${path.join(relative, '_layout', 'annotation')}', ${data})` + '\n')
+              `!= partial('${path.join(relative, '_layout', 'annotation')}', ${data})\n`)
           ])
         })
 
@@ -100,54 +99,50 @@ export default class Docs {
     })
   }
 
-  assets(watch = false) {
-    return new Promise((resolve, reject) => {
-      let copied = {}
+  async assets(watch = false) {
+    let copied = {}
 
-      const position = (file) => {
-        for (let i = 0; i < this.options.assets.length; i++) {
-          if (file.indexOf(this.options.assets[i]) > -1) return i
+    const position = (file) => {
+      for (let i = 0; i < this.options.assets.length; i++) {
+        if (file.indexOf(this.options.assets[i]) > -1) return i
+      }
+      return false
+    }
+
+    const copy = async (file) => {
+      const pos = position(file)
+      const { dir, base } = path.parse(file.replace(this.options.assets[pos] + path.sep, ''))
+      const relative = path.join(dir, base)
+      const dest = path.join(this.public, relative)
+      const existing = copied[relative]
+
+      if (
+        !!!existing || // is undefined
+        existing === file || // is the same as the existing file
+        position(existing) >= pos // the existing one has less importance than the passed in file
+      ) {
+        copied[relative] = file
+        try {
+          await fs.copy(file, dest, { clobber: true })
+        } catch (err) {
+          logger.emit('error', file, 'was not copied to the public folder', err)
         }
-        return false
       }
 
-      const copy = async (file) => {
-        const pos = position(file)
-        const { dir, base } = path.parse(file.replace(this.options.assets[pos] + path.sep, ''))
-        const relative = path.join(dir, base)
-        const to = path.join(this.public, relative)
-        const existing = copied[relative]
+      return false
+    }
 
-        if (
-          !!!existing || // is undefined
-          existing === file || // is the same as the existing file
-          position(existing) >= pos // the existing one has less importance than the passed in file
-        ) {
-          copied[relative] = file
-          try {
-            await fs.copy(file, to, { clobber: true })
-          } catch (err) {
-            reject(err)
-            logger.emit('error', file, 'was not copied to the public folder', err)
-          }
-        }
+    const files = await this.findFiles(this.options.assets)
 
-        return false
-      }
+    if (watch) {
+      chokidar
+        .watch(this.options.assets, { persistent: true, ignoreInitial: true })
+        .on('add', copy)
+        .on('change', copy)
+        .on('error', logger.error)
+    }
 
-      this.findFiles(this.options.assets)
-        .then((files) => forEach(files, copy))
-        .then(resolve)
-        .then(() => {
-          if (watch) {
-            const watcher = chokidar.watch(this.options.assets, { persistent: true, ignoreInitial: true })
-            watcher
-              .on('add', copy)
-              .on('change', copy)
-              .on('error', (err) => reject(logger.error(err)))
-          }
-        })
-    })
+    await forEach(files, copy)
   }
 
   async run(watch) {
@@ -178,7 +173,7 @@ export default class Docs {
 
     try {
       await harp.compile(this.public, output)
-    } catch (e) {
+    } catch (err) {
       logger.error('harp compile', err)
       process.exit(1)
     }

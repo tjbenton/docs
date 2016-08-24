@@ -39,14 +39,6 @@ export default function cli() {
       }
     })
 
-  // let type = program.args[0]
-  // let file = program.args[1] || 'docsfile.js'
-  // file = path.join(process.cwd(), file)
-  // try {
-  //   require(file)
-  // } catch (err) {
-  //   console.log(err)
-  // }
   commander.parse(process.argv)
 
   if (commander.args.length < 1) {

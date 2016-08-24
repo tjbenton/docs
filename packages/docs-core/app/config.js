@@ -7,14 +7,19 @@ const root = process.cwd()
 
 // changed by `options` key
 export const default_options = {
+  // plugins to use
   plugins: [],
 
+  // folders locations to where assets are located
   assets: [],
 
+  // global assets avaliable to templates
+  global: {},
+
+  // sort order for annotations
   sort: [],
 
-  watch: true,
-
+  // the theme to use
   theme: '',
 
   // debugging levels

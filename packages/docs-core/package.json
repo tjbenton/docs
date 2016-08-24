@@ -30,7 +30,7 @@
     "globby": "^6.0.0",
     "harp": "github:sintaxi/harp#v0.21.0-pre",
     "terraform": "github:tjbenton/terraform",
-    "to-js": "0.0.4"
+    "to-js": "^0.0.5"
   },
   "keywords": [
     "css",

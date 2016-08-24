@@ -1,3 +1,7 @@
 div(class="c-annotation c-annotation--note")
   h4 Note
-  != partial('../_helpers/json', { json: data })
+  ul.c-list
+    each note in data
+      li.c-list__item.c-importance(data-importance="#{note.importance}")
+        != note.description
+    

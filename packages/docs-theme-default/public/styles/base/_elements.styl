@@ -39,3 +39,24 @@ input
  for type in ('button' 'reset' 'submit' 'radio' 'checkbox')
    &[type={type}]
      @extend $cursor
+
+code, pre
+  font-family 'Source Code Pro', Monaco, Menlo, Consolas, 'Courier New', monospace
+  border-radius: $config.border-radius;
+
+code
+  background-color color(e, -7.5)
+  border-radius: ($config.border-radius / 2);
+  color e
+  padding: ($config.spacing-sizes.tiny / 2) $config.spacing-sizes.tiny ($config.spacing-sizes.tiny / 2);
+  white-space nowrap
+
+pre code
+  background color(a, -8)
+  border 0
+  color #333
+  color inherit
+  display block
+  line-height: $config.line-height;
+  padding 0.5em
+  white-space pre-wrap

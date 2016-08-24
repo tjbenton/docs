@@ -1,3 +1,10 @@
-div(class="c-annotation c-annotation--raw-code")
-  h4 Raw-code
-  != partial('../_helpers/json', { json: data })
+div(class="c-annotation c-annotation--raw-code js-toggle")
+  h4 Code
+  - var language 
+  if token && token.blockinfo && token.blockinfo.file
+    - language = _.last(token.blockinfo.file.path.split('.'))
+  - var expanded = { escaped: data.raw, language: language, settings: { class: 'c-expanded js-toggle__trigger', 'data-state': 'is-expanded' } }
+  - var collapsed = data.raw.split('\n')
+  - collapsed = _.first(collapsed) + ' ... ' + _.last(collapsed)
+  - collapsed = { escaped: collapsed, language: language, settings: { class: 'c-collapsed js-toggle__trigger', 'data-state': 'is-expanded' } }
+  != partial('../_helpers/frame', { data: [ expanded, collapsed ] })

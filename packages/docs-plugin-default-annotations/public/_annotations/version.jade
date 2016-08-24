@@ -1,3 +1,4 @@
 div(class="c-annotation c-annotation--version")
   h4 Version
-  != partial('../_helpers/json', { json: data })
+  div.c-message.c-message--info
+    != data.version + ' &mdash; ' + data.description

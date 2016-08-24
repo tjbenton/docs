@@ -1,3 +1,8 @@
 div(class="c-annotation c-annotation--todo")
   h4 Todo
-  != partial('../_helpers/json', { json: data })
+  ul.c-list.c-list--numbered
+    each todo in data
+      li.c-list__item.c-importance(data-importance="#{todo.importance}")
+        //-/ @todo come back and add integration for author links
+        != '<b>' + todo.assignees.join('</b>, <b>') + '</b>'
+        != todo.description

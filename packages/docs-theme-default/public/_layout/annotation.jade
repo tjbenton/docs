@@ -3,15 +3,13 @@ mixin annotations(type, token)
     each item in token
       +annotations(type, item)
   else
-    - var elem, klass
-    if type === 'header'
-      - elem = type
-      - klass = 'c-token-header'
-    else 
-      - elem = 'section'
-      - klass = 'c-token-' + type
-    #{elem}(class="#{klass}")
-      h2 #{type} comment
+    - var elem = type === 'header' ? 'header' : 'section'
+    - var cls = 'c-token-' + type
+    
+    if token.access
+      - cls += ' is-' + token.access
+    
+    #{elem}(class="#{cls}")
       each data, name in token
         if name === 'inline'
           +annotations('inline', token.inline)
@@ -20,11 +18,14 @@ mixin annotations(type, token)
 
 mixin annotation(name, data, token)
   if name !== 'blockinfo' && name !== 'inline'
-    != partial('../_annotations/' + name, { data: data, token: token })
+    - var filepath = token && token.blockinfo ? token.blockinfo.file.path : ''
+    - var id = name + '-' + global.base_x.encode(JSON.stringify(data) + filepath)
+    //- if name === 'raw-code'
+    != partial('../_annotations/' + name, { data: data, token: token || {}, id: id })
 
 article.docs-o-container
-  if header
+  if header && Object.keys(header).length
     +annotations('header', header)
   
-  if body
+  if body && body.length
     +annotations('body', body)
