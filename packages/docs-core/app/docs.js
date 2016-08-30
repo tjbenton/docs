@@ -100,7 +100,33 @@ export default class Docs {
     })
   }
 
-  async assets(watch = false) {
+  async copy(glob, callback, watch = false) {
+    const files = await this.findFiles(glob)
+
+    const copy = async (file) => {
+      let dest
+      try {
+        dest = await callback(file)
+        if (dest) {
+          await fs.copy(file, dest, { clobber: true })
+        }
+      } catch (err) {
+        logger.emit('error', file, `was not copied ${dest ? 'into ' + dest : 'correctly'}`, err)
+      }
+    }
+
+    if (watch) {
+      chokidar
+        .watch(glob, { persistent: true, ignoreInitial: true })
+        .on('add', copy)
+        .on('change', copy)
+        .on('error', logger.error)
+    }
+
+    await forEach(files, copy)
+  }
+
+  assets(watch) {
     let copied = {}
 
     const position = (file) => {
@@ -110,7 +136,7 @@ export default class Docs {
       return false
     }
 
-    const copy = async (file) => {
+    return this.copy(this.options.assets, (file) => {
       const pos = position(file)
       const { dir, base } = path.parse(file.replace(this.options.assets[pos] + path.sep, ''))
       const relative = path.join(dir, base)
@@ -123,33 +149,28 @@ export default class Docs {
         position(existing) >= pos // the existing one has less importance than the passed in file
       ) {
         copied[relative] = file
-        try {
-          await fs.copy(file, dest, { clobber: true })
-        } catch (err) {
-          logger.emit('error', file, 'was not copied to the public folder', err)
-        }
+        return dest
       }
 
       return false
-    }
+    }, watch)
+  }
 
-    const files = await this.findFiles(this.options.assets)
-
-    if (watch) {
-      chokidar
-        .watch(this.options.assets, { persistent: true, ignoreInitial: true })
-        .on('add', copy)
-        .on('change', copy)
-        .on('error', logger.error)
-    }
-
-    await forEach(files, copy)
+  projectAssets(watch) {
+    return this.copy(this.options.project_assets, (file) => {
+      const relative = file.replace(this.options.project_assets + path.sep, '')
+      return path.join(this.public, 'project', relative)
+    }, watch)
   }
 
   async run(watch) {
     try {
       await fs.remove(this.public)
-      await Promise.all([ this.assets(watch), this.parse(watch) ])
+      await Promise.all([
+        this.projectAssets(watch),
+        this.assets(watch),
+        this.parse(watch)
+      ])
     } catch (e) {
       logger.error(e)
     }

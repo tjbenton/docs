@@ -13,6 +13,9 @@ export const default_options = {
   // folders locations to where assets are located
   assets: [],
 
+  // folder that has assets to be loaded
+  project_assets: path.join(root, 'dist'),
+
   // global assets avaliable to templates
   global: {},
 
@@ -43,6 +46,11 @@ export default function config(options = {}) { // eslint-disable-line
 
   // merge the config file with passed options
   options = to.extend(user_options, options)
+
+  // ensure that the project_assets is an absolute
+  if (options.project_assets && !path.isAbsolute(options.project_assets)) {
+    options.project_assets = path.join(root, options.project_assets)
+  }
 
   // ensure that the plugins option is an array
   // and add the default annotations to the plugins plist
