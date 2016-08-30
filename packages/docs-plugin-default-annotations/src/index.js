@@ -33,7 +33,7 @@ const annotations = [
 
 module.exports = {
   annotations,
-  assets: path.join(__dirname, '..', 'public'),
+  assets: path.join(__dirname, '..', 'public-dist'),
   sort: [
     'name<=0',
     'access<=0',

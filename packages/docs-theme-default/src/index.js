@@ -57,7 +57,7 @@ to.markdown({
 })
 
 export default {
-  assets: path.join(__dirname, '..', 'public'),
+  assets: path.join(__dirname, '..', 'public-dist'),
   global: {
     base_x,
     highlight
