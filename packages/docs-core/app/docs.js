@@ -58,37 +58,38 @@ export default class Docs {
       const options = { ...this.options }
       options.watch = watch
       options.raw = false
-
+      let page_data = {}
       const sortPages = (data, prefix) => {
-        const page_data = {}
+        const result = page_data
         for (let { name, page, i, ...rest } of to.objectEntries(data, 'name')) { // eslint-disable-line
           if (prefix) {
             name = path.join(prefix, name)
           }
-          if (!page_data[name]) {
-            page_data[name] = {}
+          if (!result[name]) {
+            result[name] = {}
           }
 
           if (!is.empty(rest)) {
             sortPages(rest, name)
           }
-          page_data[name] = to.merge(page_data[name], page)
+          result[name] = to.merge(result[name], page)
         }
 
-        return page_data
+        return result
       }
 
       docsParser(options).catch(reject)
 
       logger.on('parsed', (json) => {
-        const page_data = sortPages(json.pages)
+        page_data = {}
+        const sorted_pages = sortPages(json.pages)
         const write_json = fs.outputJson(path.join(this.public, '_data.json'), json).catch(reject)
-        const write_pages = forEach(to.keys(page_data), async (folder) => {
+        const write_pages = forEach(to.keys(sorted_pages), async (folder) => {
           let data = folder.split(path.sep)
           let relative = data.map(() => '..').join(path.sep)
           data = 'public' + data.map((item) => `['${item}']`).join('') + '._data'
           return await Promise.all([
-            fs.outputJson(path.join(this.public, folder, '_data.json'), page_data[folder]),
+            fs.outputJson(path.join(this.public, folder, '_data.json'), sorted_pages[folder]),
             fs.outputFile(path.join(this.public, folder, 'index.jade'),
               `!= partial('${path.join(relative, '_layout', 'annotation')}', ${data})\n`)
           ])
