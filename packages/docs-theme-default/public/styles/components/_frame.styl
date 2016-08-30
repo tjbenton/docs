@@ -70,9 +70,6 @@
     margin-top 0
     overflow hidden
 
-    &--raw, &--raw-stateless
-      padding: $config.spacing;
-
     .has-state &
       &--raw, &--escaped
         display block
@@ -84,6 +81,11 @@
     &:nth-last-child(-n+2):first-child, &:nth-last-child(-n+2):first-child ~ *
       display block
 
+    &.is-loading
+      .c-frame__iframe
+        opacity 0
+        visibility hidden
+
   &__body, &__pre, &__code
     border-radius 0 0 $border-radius $border-radius
 
@@ -92,7 +94,6 @@
     font 500 14px/1.4em 'Source Code Pro', Consolas, Monaco, 'Andale Mono', monospace
     font-smoothing auto
     hyphens none
-    // overflow-x scroll
     overflow-y hidden
     margin 0
     padding 0
@@ -117,27 +118,11 @@
     order 2
     padding-right: $config.spacing;
 
-  &__linenos, &__lineno
+  &__iframe
+    border 0
     display block
-    margin 0
-    padding 0
-
-  &__linenos
-    counter-reset line
-    user-select(none)
-    flex 0 0 auto
-    margin-left: $config.spacing-sizes.tiny;
-    &:after
-      content attr(data-end)
-      position relative
-
-
-  &__lineno
-    counter-increment line
-    &:before
-      content counter(line)
-      position relative
-      background blue
+    width 100%
+    transition opacity 0.2s ease-in
 
   &__copied
     background blue

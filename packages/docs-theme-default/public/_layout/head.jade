@@ -45,4 +45,7 @@ block js
     if /\.jsx?$/.test(file)
       script(src="/js/#{file}")
 
+if global.iframify_options
+  script!= 'var iframify_options =' +  JSON.stringify(global.iframify_options)
+
 //- != LRScript

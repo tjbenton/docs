@@ -43,11 +43,13 @@ else
         each type in keys
           - var should_highlight = type.indexOf('escaped') > -1
           - var content = data[type.replace('escaped', 'raw')] || data[type] ||  false
+          - var loading =  should_highlight ? '' : 'u-loading u-loading--middle u-loading--huge is-loading'
           - type = type.replace('_', '-')
           if content
             div(
-              class="#{cls}__section #{cls}__section--#{type} #{js}__section", 
-              data-type="#{type}"
+              class="#{cls}__section #{cls}__section--#{type} #{js}__section #{loading}", 
+              data-type="#{type}",
+              data-language="#{lang}"
             )
               if should_highlight
                 - var options = {}
@@ -58,6 +60,5 @@ else
                 - options.language = lang
                 != global.highlight(content, options)
               else
-                != content
-
-  
+                div.u-lazy.u-lazy--fade.js-iframify
+                  = partial('../iframe', { data: content })

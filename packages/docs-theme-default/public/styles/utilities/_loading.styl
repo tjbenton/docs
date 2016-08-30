@@ -1,0 +1,81 @@
+.u-loading
+  position relative
+  transition padding 0.25s cubic-bezier(0.55, 0, 0.1, 1)
+
+  &:before
+    animation rotate 2s linear infinite
+    $svg = join('',
+      "<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' preserveAspectRatio='xMidYMid meet' viewBox='0 0 50 50'>",
+        "<circle class='path' cx='50%' cy='50%' r='20' fill='none' stroke-width='6' stroke-miterlimit='10' />",
+        '<style>',
+          '.path {',
+            '-webkit-animation: dash 1.5s ease-in-out infinite;',
+            'animation: dash 1.5s ease-in-out infinite;',
+            'stroke: #894082;',
+            'stroke-dasharray: 1,200;',
+            'stroke-dashoffset: 0;',
+            'stroke-linecap: round;',
+          '}',
+          '@-webkit-keyframes dash {',
+            '0% { stroke-dasharray: 1,200; stroke-dashoffset: 0; }',
+            '50%{ stroke-dasharray: 89,200;stroke-dashoffset: -35; }',
+            '100%{ stroke-dasharray: 89,200;stroke-dashoffset: -124; }',
+          '}',
+          '@keyframes dash {',
+            '0% { stroke-dasharray: 1,200; stroke-dashoffset: 0; }',
+            '50%{ stroke-dasharray: 89,200;stroke-dashoffset: -35; }',
+            '100%{ stroke-dasharray: 89,200;stroke-dashoffset: -124; }',
+          '}',
+        '<%2fstyle>',
+      '</svg>'
+    );
+    background: url('data:image/svg+xml;charset=UTF-8,' + $svg) 0 0/contain no-repeat;
+    content ''
+    height 1em
+    position absolute
+    width 1em
+
+
+  &--top
+    padding-top 2.4286em
+
+    &:before
+      top 0.7143em
+      left 50%
+      margin-left -0.5em
+
+
+  &--right
+    padding-right 2.4286em
+
+    &:before
+      right 0.7143em
+      margin-top -0.5em
+      top 50%
+
+
+  &--bottom
+    padding-bottom 2.4286em
+
+    &:before
+      bottom 0.7143em
+      left 50%
+      margin-left -0.5em
+
+
+  &--left
+    padding-left 2.4286em
+
+    &:before
+      left 0.7143em
+      margin-top -0.5em
+      top 50%
+
+
+  &--middle:before
+    top 50%
+    left 50%
+    margin -0.5em
+
+  &--huge:before
+    font-size 50px

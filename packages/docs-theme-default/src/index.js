@@ -60,6 +60,7 @@ export default {
   assets: path.join(__dirname, '..', 'public-dist'),
   global: {
     base_x,
-    highlight
+    highlight,
+    iframify_options: {}
   }
 }
