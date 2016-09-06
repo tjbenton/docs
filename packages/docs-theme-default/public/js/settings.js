@@ -1,33 +1,40 @@
 /* global $ */
-/* eslint-disable prefer-arrow-callback, func-names */
-$(function() {
-  var $root = $('html')
-  var $settings = $('.js-settings')
-  var settings = JSON.parse(localStorage.getItem('settings'))
-  if (!settings) {
-    settings = {}
-    $settings.find('input').each(function(obj) {
-      settings[obj.value] = obj.checked
+{
+  let settings = JSON.parse(localStorage.getItem('settings')) || {}
+  let keys = Object.keys(settings)
+  const $root = $(document.documentElement)
+
+  $(() => {
+    const $container = $root.find('.js-settings')
+    const $settings = $container.find('.js-settings__setting')
+
+    if (!keys.length) {
+      $settings.each((obj) => update(obj, obj.checked))
+    } else {
+      $settings.each((obj) => update(obj, settings[obj.value]))
+    }
+
+    $container.on('change', '.js-settings__setting', (e) => {
+      update(e.target, e.target.checked)
+      if (window.lazy_iframify) {
+        window.lazy_iframify.check()
+      }
     })
-
-    localStorage.setItem('settings', JSON.stringify(settings, null, 2))
-  }
-
-  $settings.on('change', '.js-settings__setting', function PageSettingChange() {
-    settings[this.value] = this.checked
-    localStorage.setItem('settings', JSON.stringify(settings, null, 2))
-    toggleSetting(this.value)
   })
 
-  for (var setting in settings) {
-    if (settings.hasOwnProperty(setting)) {
-      var $obj = $settings.find('.js-settings__setting[value=' + setting + ']')
-      settings[setting] ? $obj.attr('checked') : $obj.removeAttr('checked')
-      toggleSetting(setting)
-    }
+  if (settings) {
+    keys.forEach(updateRoot)
   }
 
-  function toggleSetting(name) {
+  function update(obj, state) {
+    const name = obj.value
+    settings[name] = state = state !== undefined ? state : settings[name]
+    obj.checked = state
+    updateRoot(name)
+    localStorage.setItem('settings', JSON.stringify(settings, null, 2))
+  }
+
+  function updateRoot(name) {
     if (settings[name]) {
       $root.addClass('has-' + name)
       $root.removeClass('has-no-' + name)
@@ -36,4 +43,4 @@ $(function() {
       $root.removeClass('has-' + name)
     }
   }
-})
+}

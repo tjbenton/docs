@@ -31,9 +31,9 @@
     "es6": true
   },
   "parser": "babel-eslint",
-  "globals": {
-    $: true
-  },
+  # "globals": {
+  #   $: true
+  # },
   "plugins": [
     "babel"
   ],

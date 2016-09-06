@@ -1,3 +1,68 @@
 div(class="c-annotation c-annotation--states")
-  h4 States
-  != partial('../_helpers/json', { json: data })
+  h4 State
+  each group, id in data
+    - var getId = function(obj) { return obj.id === id }
+    - var markup = _.find(token.markup, getId)
+    - var blockinfo = (!!markup ? token.blockinfo : parent.blockinfo) || {}
+    - markup = !!markup ? markup : _.find(parent.markup, getId)
+
+    if !markup
+      p.c-alert.c-alert--error No markup tag with the id of #{id}
+    else
+      - var file_path = (blockinfo.file || {}).path
+      - var id = 'state-section' + global.base_x.encode(group)
+      
+      section(id="#{id}", class="c-frame-container")
+        div(class="c-frame js-frame")
+          div(class="c-frame__header")
+            div(class="c-frame__url")
+              if !!file_path
+                span(class="c-frame__path") /#{file_path}
+            div(class="c-frame__actions js-frame__actions o-spacing--off")
+              a(class="c-frame__action--copy js-frame__copy") Copy
+              a(class="c-frame__action--link js-frame__link", href="##{id}") Link To
+              span(class="c-frame__language")= lang
+              
+          div(class='c-frame__body')
+            each item, index in group
+              - var lang = item.markup.language || item.markup.lang || 'json'
+              - var loading = 'u-loading u-loading--middle u-loading--huge is-loading'
+              - var type = 'raw-state'
+              div(
+                class="c-frame__section c-frame__section--#{type} o-spacing--off js-frame__section js-iframify-parent", 
+                data-type="#{type}",
+                data-index="#{index}",
+                data-language="#{lang}"
+              )
+                - item.state = _.reduce(item.state, function(a, b) { 
+                -   a.push(b)
+                -   return a
+                - }, [])
+                .o-container
+                  != partial('../_helpers/table', { data: item.state })
+                div(class="#{loading}")
+                  div.u-lazy.u-lazy--fade.js-iframify
+                    = partial('../iframe', { data: item.markup.raw })
+                    
+
+            each item, index in group
+              - item = item.markup
+              - var lang = item.language || item.lang || 'json'
+              - var type = 'escaped-state'
+              div(
+                class="c-frame__section c-frame__section--#{type} o-spacing--off js-frame__section js-iframify-parent", 
+                data-type="#{type}",
+                data-index="#{index}",
+                data-language="#{lang}"
+              )
+                - var options = {}
+                - options.preCls = 'c-frame__pre'
+                - options.codeCls = 'c-frame__code'
+                - options.lineno = true
+                - options.start = (blockinfo.code || {}).start || 1
+                - options.language = lang
+                != global.highlight(item.raw, options)
+              
+      - delete markup.raw
+      - delete markup.raw_stateless
+      != partial('../_helpers/frame', { data: markup, token: token })

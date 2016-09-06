@@ -70,6 +70,23 @@
     margin-top 0
     overflow hidden
 
+    &--raw-state
+      background color(a, -9)
+      display block
+
+      & + &
+        border-top: 1px solid color($config.border-color, 4);
+
+      & ^[0]__iframe
+        border-top: 1px solid color($config.border-color, -4);
+
+    &--escaped-state
+      display none
+
+      &[data-index='0']
+        display block
+
+
     .has-state &
       &--raw, &--escaped
         display block
@@ -77,14 +94,6 @@
     .has-no-state &
       &--raw-stateless, &--escaped-stateless
         display block
-
-    &:nth-last-child(-n+2):first-child, &:nth-last-child(-n+2):first-child ~ *
-      display block
-
-    &.is-loading
-      .c-frame__iframe
-        opacity 0
-        visibility hidden
 
   &__body, &__pre, &__code
     border-radius 0 0 $border-radius $border-radius
@@ -119,10 +128,21 @@
     padding-right: $config.spacing;
 
   &__iframe
+    background #fff
     border 0
     display block
     width 100%
     transition opacity 0.2s ease-in
 
+    .is-loading &
+      height 80px
+      opacity 0
+      overflow hidden
+      text-indent -9999em
+      visibility hidden
+      white-space nowrap
+
   &__copied
     background blue
+
+

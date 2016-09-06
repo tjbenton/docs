@@ -1,10 +1,7 @@
 scripts
 node_modules
-packages/*/node_modules/**/*.js
-packages/*/tools*/**/*.js
-packages/*/test*/**/*.js
-packages/*/dist/**/*.js
-packages/*/dist/**/*.js
-packages/*/public/jspm_packages/**/*.js
+jspm_packages
+*dist
+packages/*/tests/compair/*/**/*
 packages/*/public/config.js
 vendor

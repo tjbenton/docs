@@ -13,7 +13,9 @@ class LazyShow { // eslint-disable-line
       visible: 'lazy.visible',
       check: 'lazy.check', // event to trigger a check
       added: 'lazy.added',
-      callback: undefined // if you don't want to use an event listener then you can just run a callback
+      callback: undefined, // if you don't want to use an event listener then you can just run a callback
+      check_parents: true, // this is used to check parents `visiblity` and `display` styles
+      log: false,
     }, options)
 
     // console.log((this.options.threshold / 100) * window.innerHeight)
@@ -48,21 +50,18 @@ class LazyShow { // eslint-disable-line
     // is so that every time request scroll gets called it doesn't have to check
     // if the container has a tag.
     if (this.has_tag) {
-      this.requestUpdate = () => {
+      this.check = () => {
         this.last_y = this.options.container.scrollTop + this.getOffset(this.options.container)
         this.last_x = this.options.container.scrollLeft + this.getOffset(this.options.container, 'left')
-        this.tick()
+        return this.tick()
       }
     } else {
-      this.requestUpdate = () => {
+      this.check = () => {
         this.last_y = window.pageYOffset
         this.last_x = window.pageXOffset
-        this.tick()
+        return this.tick()
       }
     }
-
-    // this handler is used to bind this instance of LazyShow to the requestUpdate
-    this.handler = this.requestUpdate.bind(this)
 
     // this sets the custom event to look for
     // when an element become visible
@@ -123,9 +122,10 @@ class LazyShow { // eslint-disable-line
 
   tick() {
     if (!this.ticking) {
-      requestAnimationFrame(this.check.bind(this))
+      requestAnimationFrame(this.checkNodes.bind(this))
       this.ticking = true
     }
+    return this
   }
 
   listeners(type = 'add') {
@@ -137,18 +137,18 @@ class LazyShow { // eslint-disable-line
 
     // add/remove event's for the initial page load
     for (const event of [ 'DOMContentLoaded', 'load' ]) {
-      window[type](event, this.handler, false)
+      window[type](event, this.check, false)
     }
 
     // add/remove event's that occur when the screen changes sizes or
     // the url gets updated without a page load
     for (const event of [ 'resize', 'orientationchange', 'hashchange' ]) {
-      window[type](event, this.handler, false)
+      window[type](event, this.debounce(this.check, 200), false)
     }
 
     // add/remove event's that can be added to container
     for (const event of [ 'scroll', this.options.check ]) {
-      this.options.container[type](event, this.handler, false)
+      this.options.container[type](event, this.check, false)
     }
 
     // a) Add event listener to trigger the callback defined in the options.
@@ -162,6 +162,14 @@ class LazyShow { // eslint-disable-line
 
   on(event, callback) {
     this._container.addEventListener(this.options[event] || event, (e) => callback.call(e.target, e))
+    return this
+  }
+
+  emit(event, target) {
+    if (typeof event === 'string') {
+      event = this.events[event] || this.createEvent(event)
+    }
+    (target || this._container).dispatchEvent(event)
     return this
   }
 
@@ -206,11 +214,34 @@ class LazyShow { // eslint-disable-line
     return style.getPropertyValue('visible') === 'hidden' || style.getPropertyValue('display') === 'none'
   }
 
-  /// @name check
+
+  checkParents(node, callback) {
+    function matches(el, selector) {
+      var match = el && (el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector || el.oMatchesSelector)
+      return !!match && match.call(el, selector)
+    }
+
+    if (typeof callback === 'function') {
+      while (
+        node !== document.body.parentNode &&
+        node !== this._container.parentElement &&
+        !matches(node, `.${this.options.selector}-parent`)
+      ) {
+        node = node.parentElement
+        if (callback.call(node, node)) {
+          return true
+        }
+      }
+    }
+
+    return false
+  }
+
+  /// @name checkNodes
   /// @description
   /// This will check if an element is visible or within the threshold that was passed.
   /// It can be triggered via `document.dispatchEvent("lazy.check")
-  check() {
+  checkNodes() {
     let not_visible = [] // stores nodes that still aren't visible
     let nodes_length = this.nodes.length
 
@@ -226,8 +257,13 @@ class LazyShow { // eslint-disable-line
         // check if node in viewport
         // a) trigger the custom callback on that node
         // b) add the item to the `not_visible` array
-        !this.isHidden(node) && this.isVisible(node) ? node.dispatchEvent(this.events.visible) : not_visible.push(node)
-        node.dispatchEvent(this.events.check)
+        let is_hidden = this.isHidden(node)
+        if (is_hidden || this.options.check_parents) {
+          is_hidden = this.checkParents(node, this.isHidden)
+        }
+
+        !is_hidden && this.isVisible(node) ? this.emit('visible', node) : not_visible.push(node)
+        this.emit('check', node)
       }
 
       // update `this.nodes` to be the new array of items that
@@ -245,7 +281,7 @@ class LazyShow { // eslint-disable-line
   add(node) {
     if (this.nodes.indexOf(node) < 0) {
       this.nodes.push(node)
-      node.dispatchEvent(this.events.added)
+      this.emit('added', node)
     }
   }
 
@@ -253,12 +289,7 @@ class LazyShow { // eslint-disable-line
   observer() {
     const MutationObserver = 'MutationObserver'
     const Observer = window[MutationObserver] || window[`WebKit${MutationObserver}`] || window[`Moz${MutationObserver}`]
-    // 1. placeholder for the nodes that were added
-    // 2. placeholder for each node that was added
-    // 3. placeholder for children elements that have a class of `this.options.selector`
-
     this.nodes.forEach((node) => this.add(node))
-
     let children_nodes
 
     return Observer && new Observer((mutations) => {
@@ -293,13 +324,15 @@ class LazyShow { // eslint-disable-line
             if (!this.listening) {
               this.listeners()
             }
-
-            this._container.dispatchEvent(this.events.check)
+            this.check()
           }
         }
       }
 
-      if (this.nodes.length) {
+      if (
+        this.nodes.length &&
+        this.options.log
+      ) {
         console.log('%s nodes were added', this.nodes.length)
       }
     })

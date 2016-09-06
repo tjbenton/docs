@@ -1,11 +1,12 @@
-div(class="c-annotation c-annotation--markup")
-  h4 Markup
+div(class="c-annotation c-annotation--markup")  
   if token && token.states
-    - var cls 
     - var ids = _.keys(token.states)
     - data = _.isArray(data) ? data : [ data ]
-    each markup in data
-      if ids.indexOf(markup.id) < 0
+    - data = data.filter(function(markup) { return ids.indexOf(markup.id) < 0 })
+    if data.length
+      h4 Markup
+      each markup in data
         != partial('../_helpers/frame', { data: markup })
   else
+    h4 Markup
     != partial('../_helpers/frame', { data: data })

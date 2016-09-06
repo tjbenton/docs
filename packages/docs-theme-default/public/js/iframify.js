@@ -107,11 +107,12 @@
 
     var iframe = document.createElement('iframe');
     iframe.srcdoc = getIframeContentForNode(node, options);
+    iframe.className = node.className
     node.parentNode.replaceChild(iframe, node);
 
-    iframe.addEventListener('load', function() {
-      iframe.height = getDocumentHeight(iframe.contentDocument || iframe.contentWindow.document);
-    });
+    // iframe.addEventListener('load', function() {
+    //   setIframeHeight(iframe)
+    // });
 
     return iframe;
   }
