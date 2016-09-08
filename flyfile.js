@@ -26,16 +26,6 @@ const modifyFile = (file) => {
     }))
 }
 
-const babel = {
-  presets: [ 'es2015', 'stage-0' ],
-  plugins: [
-    'syntax-async-functions',
-    'transform-async-to-generator',
-    'transform-decorators-legacy',
-    'transform-regenerator',
-    'transform-runtime',
-  ]
-}
 
 
 // compiles all the javascript files and
@@ -43,7 +33,7 @@ const babel = {
 async function build(file) {
   await this
     .source(modifyFile(file) || packages('{app,src}'))
-    .babel(babel)
+    .babel()
     .filter(modify())
     .target(base)
 }
@@ -76,7 +66,7 @@ export async function watch() {
 export async function baseTools() {
   await this
     .source(path.join('{scripts,tools,tests}', '**', '*.js'))
-    .babel(babel)
+    .babel()
     .filter(modify(true))
     .target(__dirname)
 }
@@ -84,7 +74,7 @@ export async function baseTools() {
 export async function tools(file) {
   await this
     .source(modifyFile(file) || packages('{scripts,tools,tests}'))
-    .babel(babel)
+    .babel()
     .filter(modify(true))
     .target(base)
 }
