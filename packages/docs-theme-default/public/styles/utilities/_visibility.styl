@@ -15,22 +15,22 @@ for $breakpoint in $media-breakpoints-list
     /// <div class="u-hide"></div>
     /// <div class="u-invisible"></div>
     /// <div class="u-visible"></div>
-    .u-show{$media}
+    $u-show{$media}, .u-show{$media}
       display block !important
 
-    .u-show--inline{$media}
+    $u-show--inline{$media}, .u-show--inline{$media}
       display inline-block !important
 
-    .u-hide{$media}
+    $u-hide{$media}, .u-hide{$media}
       display none !important
 
-    .u-hide{$media},
-    .u-invisible{$media}
+    $u-hide{$media}, .u-hide{$media},
+    $u-invisible{$media}, .u-invisible{$media}
       opacity 0 !important
       visibility hidden !important
 
-    .u-show{$media},
-    .u-show--inline{$media},
-    .u-visible{$media}
+    $u-show{$media}, .u-show{$media},
+    $u-show--inline{$media}, .u-show--inline{$media},
+    $u-visible{$media}, .u-visible{$media}
       opacity 1 !important
       visibility visible !important

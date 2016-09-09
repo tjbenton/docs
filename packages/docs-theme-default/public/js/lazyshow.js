@@ -210,8 +210,7 @@ class LazyShow { // eslint-disable-line
   ///  // do something with the node that is not hidden
   /// }
   isHidden(node) {
-    let style = window.getComputedStyle(node, null)
-    return style.getPropertyValue('visible') === 'hidden' || style.getPropertyValue('display') === 'none'
+    return !(node.offsetWidth || node.offsetHeight || node.getClientRects().length)
   }
 
 

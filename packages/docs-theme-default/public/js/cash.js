@@ -467,23 +467,25 @@
     };
   });
 
-  function registerEvent(node, eventName, callback) {
-    var eventCache = getData(node, "_cashEvents") || setData(node, "_cashEvents", {});
-    eventCache[eventName] = eventCache[eventName] || [];
-    eventCache[eventName].push(callback);
-    node.addEventListener(eventName, callback);
+  function registerEvent(node, events, callback) {
+    var eventCache = getData(node,'_cashEvents') || setData(node, '_cashEvents', {});
+    events.split(/[,\s]+/g).forEach(function(eventName) {
+      eventCache[eventName] = eventCache[eventName] || [];
+      eventCache[eventName].push(callback);
+      node.addEventListener(eventName, callback);
+    });
   }
 
-  function removeEvent(node, eventName, callback) {
-    var eventCache = getData(node, "_cashEvents")[eventName];
-    if (callback) {
-      node.removeEventListener(eventName, callback);
-    } else {
-      each(eventCache, function (event) {
-        node.removeEventListener(eventName, event);
-      });
-      eventCache = [];
-    }
+  function removeEvent(node, events, callback){
+    var eventCache = getData(node,'_cashEvents')
+    events.split(/[,\s]+/g).forEach(function(eventName) {
+      if (callback) {
+        node.removeEventListener(eventName, callback);
+      } else {
+        each(eventCache[eventName], event => { node.removeEventListener(eventName, event); });
+        eventCache[eventName] = [];
+      }
+    });
   }
 
   fn.extend({
@@ -770,7 +772,11 @@
       if (!selector || matches(this[0], selector)) {
         return this;
       }
-      return this.parent().closest(selector);
+      const $parent = this.parent()
+      if (!$parent.is('html')) {
+        return $parent.closest(selector);
+      }
+      return $()
     },
 
     is: function (selector) {

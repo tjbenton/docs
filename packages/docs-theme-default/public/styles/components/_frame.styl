@@ -1,25 +1,33 @@
+$has-state
+  .has-state &
+    display block
+
+$has-no-state
+  .has-no-state &
+    display block
+
+
+
+
 .c-frame
   $border-radius = 4px
-  // background green
   border-radius $border-radius
   border 1px solid color(a, -7)
+  overflow hidden
 
   &__header
     background color(a, -7.75)
     border-radius ($border-radius - 2) ($border-radius - 2) 0 0
-    margin 0
-    padding 0.5em 0.75em 0.55em 63px
-    font-size 12px
-    border 1px solid #d4d7d7
-    border-bottom none
-    border-radius 3px 3px 0 0
     color #34495e
     display block
-    line-height 1em
-    position relative
-    spacing off inner
     display flex
     flex-flow row nowrap
+    font-size 12px
+    line-height 1em
+    margin 0
+    padding 0.5em 0.75em 0.55em 63px
+    position relative
+    spacing off inner
 
     &:before
       $red = #ed7669
@@ -49,13 +57,17 @@
     margin 0
     padding 0.2857em 1em
 
+  &__actions
+    padding: 0 0 0 $config.spacing-sizes.small;
+
   &__action
-    background blue
     border 1px solid color(a, -5)
     border-radius: $config.border-radius;
     display inline-block
     padding: $config.spacing-sizes.tiny;
-    margin-left: $config.spacing-sizes.small;
+
+    & + &
+      margin-left: $config.spacing-sizes.small;
 
   &__language
     display none
@@ -63,16 +75,29 @@
   &__body
     margin 0
     padding 0
+    position relative
+
+  &__state-info
+    .has-no-developer &
+      display none
+
+  &__view-state
+    border: 1px solid $config.border-color;
+    border-width 0 0 1px 1px
+    border-radius 0
+    position absolute
+    right 0
+    top 0
 
   &__section
     border-radius 0 0 $border-radius $border-radius
     display none
     margin-top 0
-    overflow hidden
 
     &--raw-state
-      background color(a, -9)
+      background color(a, -8.5)
       display block
+      position relative
 
       & + &
         border-top: 1px solid color($config.border-color, 4);
@@ -86,14 +111,21 @@
       &[data-index='0']
         display block
 
-
-    .has-state &
-      &--raw, &--escaped
+    &--raw, &--escaped
+      .has-state &
         display block
 
-    .has-no-state &
-      &--raw-stateless, &--escaped-stateless
+    &--raw-stateless, &--escaped-stateless
+      .has-no-state &
         display block
+
+    &--raw, &--raw-stateless
+      .has-no-designer &
+        display none
+
+    &--escaped, &--escaped-stateless, &--escaped-state
+      .has-no-developer &
+        display none !important // stylelint-disable-line
 
   &__body, &__pre, &__code
     border-radius 0 0 $border-radius $border-radius
@@ -103,7 +135,8 @@
     font 500 14px/1.4em 'Source Code Pro', Consolas, Monaco, 'Andale Mono', monospace
     font-smoothing auto
     hyphens none
-    overflow-y hidden
+    overflow visible
+    // overflow-y hidden
     margin 0
     padding 0
     position relative
@@ -114,7 +147,6 @@
     word-spacing normal
 
   &__pre
-    overflow-x scroll
     display flex
     flex-flow row nowrap
     padding: $config.spacing-sizes.small;
@@ -122,10 +154,11 @@
 
   &__code
     background none
-    white-space pre
     flex 1
     order 2
+    overflow-y scroll
     padding-right: $config.spacing;
+    white-space pre
 
   &__iframe
     background #fff
@@ -142,7 +175,11 @@
       visibility hidden
       white-space nowrap
 
-  &__copied
-    background blue
+    .has-no-designer &
+      display none
+
+
+  .has-no-designer & .is-loading
+    display none
 
 

@@ -1,0 +1,188 @@
+/// @author Tyler Benton
+/// @page components/buttons
+///
+/// @description Your standard form button.
+///
+/// @state :hover
+/// @state :active
+/// @state :disabled - Dims the button when disabled.
+/// @state .c-btn--mini - A mini button
+/// @state .c-btn--tiny - A tiny button
+/// @state .c-btn--small - A tiny button
+/// @state .c-btn--medium - A medium button
+/// @state .c-btn--large - A large button
+/// @state .c-btn--huge - A huge button
+/// @state .c-btn--massive - A massive button
+/// @state .c-btn--primary - Primary action
+/// @state .c-btn--primary:hover
+/// @state .c-btn--primary:active
+/// @state .c-btn--secondary - Secondary action
+/// @state .c-btn--secondary:hover
+/// @state .c-btn--secondary:active
+/// @state .c-btn--tertiary - Tertiary action
+/// @state .c-btn--tertiary:hover
+/// @state .c-btn--tertiary:active
+/// @state .c-btn--text - It's a text link as a button
+/// @state .c-btn--text:hover
+/// @state .c-btn--text:active
+///
+/// @markup
+/// <div class="c-btn-group">
+///   <a href="#" class="c-btn ${@state}">Button (a.button)</a>
+///   <button class="c-btn ${@state}">Button (button)</button>
+///   <input class="c-btn ${@state}" type="button" value="Button (input.button)">
+/// </div>
+.c-btn
+  background color(a)
+  border none
+  border-radius: $config.border-radius;
+  color #fff
+  display inline-block
+  font-size 1em
+  font-weight bold
+  line-height 1em
+  padding em(13px) 1.5em
+  text-align center
+  text-decoration none
+  transition background 0.25s ease-out, color 0.25s ease-out
+  vertical-align middle
+  width auto // this resets the input style of 100%
+
+  &:hover, &:active, &:focus
+    // had to write it like this to over ride the styles on the anchor tags without using important
+    color #fff
+    text-decoration none
+
+  &:hover
+    background color(a, -2)
+
+  &:active, &:focus
+    background color(a, 2)
+
+  &:disabled
+    opacity 0.5
+
+
+  &--mini
+    font-size 0.8rem
+    padding 0.6em 0.8em
+
+  &--tiny
+    font-size 0.875rem
+    padding 0.6em 0.8em
+
+
+  &--small
+    font-size 0.875rem
+
+  &--medium
+    font-size 1rem
+
+  &--large
+    font-size 1.125rem
+
+  &--big
+    font-size 1.25rem
+
+  &--huge
+    font-size 1.375rem
+
+  &--massive
+    font-size 1.5rem
+
+  &--primary
+    background color(f)
+
+    &:hover
+      background color(f, -2)
+
+    &:active, &:focus
+      background color(f, 2)
+
+    .c-badge
+      color f;
+
+
+  &--secondary
+    background color(b)
+
+    &:hover
+      background color(b, -2)
+
+    &:active, &:focus
+      background color(b, 2)
+
+    .c-badge
+      color b
+
+
+  &--tertiary
+    background color(a, -7)
+    &, &:hover, &:active, &:focus
+      color a 3
+
+    &:hover
+      background color(a, -5)
+
+    &:active, &:focus
+      background color(a, -3)
+
+    .c-badge
+      color a
+
+
+  /$c-btn--no-background
+    &, &:hover, &:active, &:focus
+      background none
+
+
+  &--text
+    @extend $c-btn--no-background
+    color b 0
+
+    &:hover
+      color b -2
+
+    &:active, &:focus
+      color b 2
+
+    .c-badge
+      color b
+
+
+  // &--danger
+  //   @extend %c-btn--no-background;
+  //   color: color(danger, $namespace: 'messaging');
+  //
+  //   &:hover
+  //     color: color(danger, -2, $namespace: 'messaging');
+  //
+  //   &:active, &:focus
+  //     color: color(danger, 2, $namespace: 'messaging');
+  //
+  //
+  //   .c-badge
+  //     background: color(danger, $namespace: 'messaging');
+  //     color: #fff;
+
+  .c-badge
+    background #fff
+
+
+
+.c-btn-group
+  & > *
+    margin-top 0
+
+    & + *
+      margin-left em(6px)
+
+  &__conditional
+    background color(c, 7)
+    border-radius 10em
+    display inline-block
+    height 2em
+    line-height 1em
+    padding em(6px)
+    text-align center
+    width 2em

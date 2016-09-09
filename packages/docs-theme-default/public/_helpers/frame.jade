@@ -9,8 +9,6 @@ else if _.isArray(data.items)
       - item = { raw: item, escaped: _.escape(item) }
     != partial('frame', { data: _.assign({}, data, item ) })
 else
-  - var cls = 'c-frame'
-  - var js = 'js-frame'
   - data = !_.isPlainObject(data) ? { raw: data, escaped: _.escape(data) } : data
   - var lang = data.language || data.lang || 'json'
   - var blockinfo = (token || {}).blockinfo || {}
@@ -28,34 +26,34 @@ else
   section(id="#{id}", class="c-frame-container")&attributes(data.settings)
     if data.description
       != data.description
-    div(class="#{cls} #{js}")
-      div(class="#{cls}__header")
-        div(class="#{cls}__url")
-          //- span(class='#{cls}__project-name')= pkg.name
+    div(class="c-frame js-frame")
+      div(class="c-frame__header")
+        div(class="c-frame__url")
+          //- span(class='c-frame__project-name')= pkg.name
           if !!file_path
-            span(class="#{cls}__path") /#{file_path}
-        div(class="#{cls}__actions #{js}__actions o-spacing--off")
-          a(class="#{cls}__action--copy #{js}__copy") Copy
-          a(class="#{cls}__action--link #{js}__link", href="##{id}") Link To
+            span(class="c-frame__path") /#{file_path}
+        div(class="c-frame__actions js-frame__actions o-spacing--off")
+          a(class="c-frame__action c-frame__action--copy js-frame__copy") Copy
+          a(class="c-frame__action c-frame__action--link js-frame__link", href="##{id}") Link To
   
-        span(class="#{cls}__language")= lang
+        span(class="c-frame__language")= lang
         
-      div(class='#{cls}__body')
+      div(class='c-frame__body')
         each type in keys
           - var should_highlight = type.indexOf('escaped') > -1
           - var content = data[type] ||  false
-          - var loading =  should_highlight ? '' : 'u-loading u-loading--middle u-loading--huge js-iframify-parent is-loading'
+          - var loading =  should_highlight ? 'js-copied' : 'u-loading u-loading--middle u-loading--huge js-iframify-parent is-loading'
           - type = type.replace('_', '-')
           if content
             div(
-              class="#{cls}__section #{cls}__section--#{type} #{loading} #{js}__section", 
+              class="c-frame__section c-frame__section--#{type} #{loading} js-frame__section", 
               data-type="#{type}",
               data-language="#{lang}"
             )
               if should_highlight
                 - var options = {}
-                - options.preCls = cls + '__pre'
-                - options.codeCls = cls + '__code'
+                - options.preCls = 'c-frame__pre'
+                - options.codeCls = 'c-frame__code u-copied js-copied__content'
                 - options.lineno = true
                 - options.start = code.start || 1
                 - options.language = lang

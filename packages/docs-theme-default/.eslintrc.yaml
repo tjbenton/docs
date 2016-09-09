@@ -1,0 +1,9 @@
+globals:
+  iframify: true,
+  iframify_options: true,
+  LazyShow: true,
+  iFrameResize: true,
+  iframeResizerContentWindow: true,
+  $: true
+  copy: true
+  selectContent: true

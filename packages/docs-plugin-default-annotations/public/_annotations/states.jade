@@ -19,8 +19,8 @@ div(class="c-annotation c-annotation--states")
               if !!file_path
                 span(class="c-frame__path") /#{file_path}
             div(class="c-frame__actions js-frame__actions o-spacing--off")
-              a(class="c-frame__action--copy js-frame__copy") Copy
-              a(class="c-frame__action--link js-frame__link", href="##{id}") Link To
+              a(class="c-frame__action c-frame__action--copy js-frame__copy") Copy
+              a(class="c-frame__action c-frame__action--link js-frame__link", href="##{id}") Link To
               span(class="c-frame__language")= lang
               
           div(class='c-frame__body')
@@ -31,38 +31,36 @@ div(class="c-annotation c-annotation--states")
               div(
                 class="c-frame__section c-frame__section--#{type} o-spacing--off js-frame__section js-iframify-parent", 
                 data-type="#{type}",
-                data-index="#{index}",
+                data-index="#{index + 1}",
                 data-language="#{lang}"
               )
                 - item.state = _.reduce(item.state, function(a, b) { 
                 -   a.push(b)
                 -   return a
                 - }, [])
-                .o-container
+                a(class="c-frame__view-state c-btn c-btn--text c-btn--mini js-frame__view-state", href="#") View Code
+                .c-frame__state-info.o-container
                   != partial('../_helpers/table', { data: item.state })
                 div(class="#{loading}")
                   div.u-lazy.u-lazy--fade.js-iframify
                     = partial('../iframe', { data: item.markup.raw })
-                    
-
+            
+            - group.unshift({ markup: markup })
+            
             each item, index in group
               - item = item.markup
               - var lang = item.language || item.lang || 'json'
               - var type = 'escaped-state'
               div(
-                class="c-frame__section c-frame__section--#{type} o-spacing--off js-frame__section js-iframify-parent", 
+                class="c-frame__section c-frame__section--#{type} o-spacing--off js-frame__section js-iframify-parent js-copied", 
                 data-type="#{type}",
                 data-index="#{index}",
                 data-language="#{lang}"
               )
                 - var options = {}
                 - options.preCls = 'c-frame__pre'
-                - options.codeCls = 'c-frame__code'
+                - options.codeCls = 'c-frame__code u-copied js-copied__content'
                 - options.lineno = true
                 - options.start = (blockinfo.code || {}).start || 1
                 - options.language = lang
                 != global.highlight(item.raw, options)
-              
-      - delete markup.raw
-      - delete markup.raw_stateless
-      != partial('../_helpers/frame', { data: markup, token: token })

@@ -160,11 +160,10 @@ function pseudoStyles() {
 }
 
 
-/* global iframify, iframify_options, LazyShow, iFrameResize */
 $(() => {
   const lazy = new LazyShow('js-iframify')
-  window.lazy_iframify = lazy
   const options = iframify_options || {}
+  const $doc = $(document)
   const extras = `
     <script>
       ${pseudoStyles.toString()};
@@ -200,16 +199,44 @@ $(() => {
         minSize: 50,
         resizedCallback() {
           $iframe
-          .parent()
-          .addClass('u-lazy--in')
-          .parent()
-          .removeClass('u-loading u-loading--middle u-loading--huge is-loading')
+            .parent()
+            .addClass('u-lazy--in')
+            .parent()
+            .removeClass('u-loading u-loading--middle u-loading--huge is-loading')
         }
       }, iframe)
     })
   })
 
-  // $(document).on('click', '.js-frame', () => {
-  //   // change the state
-  // })
+  $doc.on('click', '.js-frame .js-frame__view-state', function ViewState(e) {
+    e.preventDefault()
+    const $obj = $(this)
+    const id = $obj.parent().data('index')
+
+    $obj
+      .closest('.js-frame')
+      .find('.js-frame__section[data-type=escaped-state]')
+      .each((item) => {
+        const $item = $(item)
+        const test = $item.data('index') === id
+        $item
+          .toggleClass('u-show', test)
+          .toggleClass('u-hide', !test)
+      })
+  })
+
+  $doc.on('click', '.js-frame__copy', function CopyToClipBoardButton(e) {
+    e.preventDefault()
+    const $frame = $(this).parents('.js-frame')
+    const $code = $frame
+      .find('.js-frame__section[data-type^="escape"]')
+      // filters out hidden items
+      .filter((elem) => !!(elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length))
+      .find('code')
+      .first()
+    if ($code.length) {
+      copy($code)
+    }
+  })
 })
+
