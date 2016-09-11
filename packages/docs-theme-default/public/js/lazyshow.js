@@ -103,16 +103,35 @@ class LazyShow { // eslint-disable-line
   // be triggered. The function will be called after it stops being called for
   // N milliseconds. If `immediate` is passed, trigger the function on the
   // leading edge, instead of the trailing.
-  debounce(func, wait, immediate) {
-    let timeout
-    return function Callback(...args) {
-      let callNow = immediate && !timeout
-      clearTimeout(timeout)
-      timeout = setTimeout(() => {
+  debounce(func, wait, options = {}) {
+    let context, args, result
+    let timeout = null
+    let previous = 0
+
+    return function Callback() {
+      let now = Date.now()
+      if (!previous && options.leading === false) {
+        previous = now
+      }
+
+      let remaining = wait - (now - previous)
+      context = this // eslint-disable-line
+      args = arguments
+      if (remaining <= 0) {
+        clearTimeout(timeout)
         timeout = null
-        !immediate && func.apply(this, args)
-      }, wait)
-      callNow && func.apply(this, args)
+        previous = now
+        result = func.apply(context, args)
+        context = args = null
+      } else if (!timeout && options.trailing !== false) {
+        timeout = setTimeout(() => {
+          previous = options.leading === false ? 0 : Date.now()
+          timeout = null
+          result = func.apply(context, args)
+          context = args = null
+        }, remaining)
+      }
+      return result
     }
   }
 
@@ -136,8 +155,12 @@ class LazyShow { // eslint-disable-line
     type = `${type.toLowerCase()}EventListener`
 
     // add/remove event's for the initial page load
-    for (const event of [ 'DOMContentLoaded', 'load' ]) {
-      window[type](event, this.check, false)
+    if (document.readyState !== 'loading') {
+      this.check()
+    } else {
+      for (const event of [ 'DOMContentLoaded', 'load' ]) {
+        window[type](event, this.check, false)
+      }
     }
 
     // add/remove event's that occur when the screen changes sizes or
@@ -262,7 +285,6 @@ class LazyShow { // eslint-disable-line
         }
 
         !is_hidden && this.isVisible(node) ? this.emit('visible', node) : not_visible.push(node)
-        this.emit('check', node)
       }
 
       // update `this.nodes` to be the new array of items that

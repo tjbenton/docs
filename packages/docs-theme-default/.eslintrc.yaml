@@ -7,3 +7,5 @@ globals:
   $: true
   copy: true
   selectContent: true
+  $script: true
+  pseudoStyles: true

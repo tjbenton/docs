@@ -1,4 +1,4 @@
-$(() => {
+$script('cash', () => {
   const $doc = $(document)
 
   $doc.on('copy', (e) => {

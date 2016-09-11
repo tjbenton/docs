@@ -1,25 +1,21 @@
-/* global $ */
-{
+$script('cash', () => {
   let settings = JSON.parse(localStorage.getItem('settings')) || {}
   let keys = Object.keys(settings)
   const $root = $(document.documentElement)
+  const $container = $root.find('.js-settings')
+  const $settings = $container.find('.js-settings__setting')
 
-  $(() => {
-    const $container = $root.find('.js-settings')
-    const $settings = $container.find('.js-settings__setting')
+  if (!keys.length) {
+    $settings.each((obj) => update(obj, obj.checked))
+  } else {
+    $settings.each((obj) => update(obj, settings[obj.value]))
+  }
 
-    if (!keys.length) {
-      $settings.each((obj) => update(obj, obj.checked))
-    } else {
-      $settings.each((obj) => update(obj, settings[obj.value]))
+  $container.on('change', '.js-settings__setting', (e) => {
+    update(e.target, e.target.checked)
+    if (window.lazy_iframify) {
+      window.lazy_iframify.check()
     }
-
-    $container.on('change', '.js-settings__setting', (e) => {
-      update(e.target, e.target.checked)
-      if (window.lazy_iframify) {
-        window.lazy_iframify.check()
-      }
-    })
   })
 
   if (settings) {
@@ -43,4 +39,4 @@
       $root.removeClass('has-' + name)
     }
   }
-}
+})

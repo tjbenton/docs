@@ -12,9 +12,12 @@ clean:
 
 deep-clean:
 	make clean
-	rm -rf node_modules/ packages/*/node_modules
+	rm -rf packages/*/node_modules
+	rm -rf *.log packages/*/*.log
+	rm -rf .DS_Store packages/*/.DS_Store
 
 rebuild:
+	rm -rf node_modules
 	make deep-clean
 	npm install
 	make build
