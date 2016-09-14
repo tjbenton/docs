@@ -28,9 +28,7 @@
     "docs-plugin-default-annotations": "^0.0.0-alpha-5.1",
     "fs-extra-promisify": "0.0.2",
     "globby": "^6.0.0",
-    "harp": "github:sintaxi/harp#v0.21.0-pre",
-    "terraform": "github:tjbenton/terraform",
-    "to-js": "^0.0.5"
+    "to-js": "0.0.5"
   },
   "keywords": [
     "css",

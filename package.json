@@ -38,11 +38,13 @@
     "fly-ava": "^0.11.0",
     "fly-babel": "^1.0.0",
     "fly-esnext": "github:tjbenton/fly-esnext#53af02718ba6c4e9d52a95d71927ee82606a9c96",
+    "fly-rollup": "^1.0.0",
     "fs-extra-promisify": "0.0.2",
     "globby": "^5.0.0",
     "jsondiffpatch": "^0.1.43",
     "lerna": "2.0.0-beta.24",
     "power-assert": "^1.4.1",
+    "rollup-plugin-babel": "^2.6.1",
     "stylelint": "^7.1.0",
     "to-js": "^0.0.5"
   },

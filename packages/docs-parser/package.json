@@ -13,24 +13,7 @@
   "license": "ISC",
   "main": "dist/index.js",
   "scripts": {
-    "clean": "rm -rf ./dist",
-    "refresh": "rm -rf -- node_modules/ .tmp/ dist/ .nyc_output/ coverage/; npm i",
-    "watch": "npm run clean; babel app/ -d dist/ --watch",
-    "mocha": "mocha --compilers js:babel-register --ui tdd --check-leaks --colors --delay --bail",
-    "unit-tests": "npm run mocha -- tests/unit/*.js tests/unit/**/*.js",
-    "mock-tests": "npm run mocha -- tests/run.test.js",
-    "test": "npm run unit-tests; npm run mock-tests",
-    "coverage": "nyc npm run unit-tests",
-    "coveralls": "npm run coverage && nyc report --reporter=text-lcov | coveralls",
-    "plato": "rm -rf coverage/plato; plato --recurse --exclude .json --jshint .jshintrc -d coverage/plato  app",
-    "deploy": "npm run test && git push origin master && npm publish"
-  },
-  "nyc": {
-    "exclude": [
-      "node_modules/",
-      "tests/",
-      "tools/"
-    ]
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
     "dist/",
@@ -54,24 +37,6 @@
     "fs-extra-promisify": "^0.0.2",
     "to-js": "^0.0.5",
     "globby": "^4.0.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.6.5",
-    "core-assert": "^0.2.0",
-    "mocha": "^2.4.5",
-    "nyc": "^6.4.4",
-    "plato": "deedubs/es6-plato",
-    "proxyquire": "^1.7.4",
-    "sinon": "^1.17.3"
-  },
-  "babel": {
-    "presets": [
-      "stage-0",
-      "es2015"
-    ],
-    "plugins": [
-      "transform-runtime"
-    ]
   },
   "keywords": [
     "css",
