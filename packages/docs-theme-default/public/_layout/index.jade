@@ -2,21 +2,26 @@
 - locals.pages = locals.public._data.pages
 
 doctype html
-html
+html.js-toggle
   head
     != partial('head')
 
   body(itemscope itemtype="http://schema.org/WebPage")
     p(class="s-browser-upgrade c-alert c-alert--warning") You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/?locale=en">upgrade your browser</a> to improve your experience.
     div(class="s-documentation")
-      //- navigation
-      != partial('nav')
-      div(class="s-documentation__body")
+      div(class="s-documentation__sidebar o-spacing o-spacing--off o-spacing@lg o-spacing--medium@lg")
         //- header
         != partial('header')
-    
-        //- main content
-        != partial('content')
-    
+        
+        //- settings
+        != partial('settings')
+        
+        //- navigation
+        != partial('nav')
+        
         //- footer
         != partial('footer')
+      
+      div(class="s-documentation__body")
+        //- main content
+        != partial('content')

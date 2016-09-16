@@ -1,7 +1,7 @@
 $script('cash', () => {
   let settings = JSON.parse(localStorage.getItem('settings')) || {}
   let keys = Object.keys(settings)
-  const $root = $(document.documentElement)
+  const $root = $('html')
   const $container = $root.find('.js-settings')
   const $settings = $container.find('.js-settings__setting')
 

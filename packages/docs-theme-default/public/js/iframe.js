@@ -55,6 +55,7 @@ $script(iframify_requires, () => {
             .addClass('u-lazy--in')
             .parent()
             .removeClass('u-loading u-loading--middle u-loading--huge is-loading')
+          lazy.check()
         }
       }, iframe)
     })

@@ -1,0 +1,24 @@
+.c-settings
+  $color = color(b)
+  text-align center
+  padding $spacing
+
+  // &__input
+  //   overflow
+  &__setting
+    background color(a, -8)
+    border-radius 100%
+    box-sizing content-box
+    color color(b)
+    height 1em
+    line-height 1em
+    margin-top 0
+    padding 10px
+    width 1em
+
+    :checked + &
+      background color(b)
+      color color(a, -8)
+
+    & ~ &
+      margin-left $spacing

@@ -1,17 +1,13 @@
-header(class="s-header o-container")
-  h1 Site header
-  fieldset(class="c-settings js-settings")
-    label(class="c-settings__state")
-      | state
-      input(class="js-settings__setting" type="checkbox" value="state")
-    label(class="c-settings__designer")
-      | designer
-      input(class="js-settings__setting" type="checkbox" value="designer", checked)
-    label(class="c-settings__developer")
-      | developer
-      input(class="js-settings__setting" type="checkbox" value="developer", checked)
+header(class="s-documentation__header o-spacing--off o-spacing--medium@lg o-container@lg")
+  //- h1 Logo
+  img(class="s-documentation__logo" src="/images/docs-logo.svg")
+  
+  a(
+    class="s-documentation__sidebar-toggle u-icon u-icon--bars o-pseudo o-pseudo--middle js-toggle__trigger",
+    data-state="has-open-menu",
+    href="#"
+  ) Toggle
 
   //- fieldset(class="c-search js-search")
   //-   input(class="c-search js-search__input", placeholder="search this shit")
   //-   ul(class="c-search__list js-search__list")
-      

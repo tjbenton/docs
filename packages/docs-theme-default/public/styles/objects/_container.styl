@@ -4,8 +4,19 @@
 // @description
 // Creates a container to use so certain items can stand out more than others.
 .o-container
-  border-radius: $config.border-radius
-  padding 12px
+  $small = '\@sm'
+  $medium = '\@md'
+  $large = '\@lg'
+  padding $spacing
+
+  +media('>=sm')
+    &{$small}
+      padding $spacing
 
   +media('>=md')
-    padding 20px
+    &, &{$small}, &{$medium}
+      padding ($spacing * 2)
+
+  +media('>=lg')
+    &, &{$small}, &{$medium}, &{$large}
+      padding ($spacing * 2)

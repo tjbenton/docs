@@ -51,6 +51,7 @@ export async function buildRest(file) {
 }
 
 export async function watch() {
+  await this.clear('packages/*/*dist')
   await Promise.all([
     this.watch(packages('{app,src}'), 'build'),
     this.watch(packages('{app,src}', '!(*.js)'), 'buildRest'),

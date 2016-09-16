@@ -43,21 +43,11 @@ block css
 block js
   script(src='/js/script.js')
   script(src='/js/settings.js')
+  if global.iframify_options
+    script!= 'var iframify_options =' +  JSON.stringify(global.iframify_options)
+    
   script.
     $script.path('/js/')
-    $script('copied')
-    $script('cash', function() {
-      if ($('.js-frame').length) {
-        $script('iframe')
-      }
-    })
-  
-  //- - var ignore = [ 'script', 'copied' ]
-  //- each file in public.js._contents
-  //-   if /\.jsx?$/.test(file) && ignore.indexOf(file.split('.')[0]) < 0
-  //-     script(src="/js/#{file}")
-
-if global.iframify_options
-  script!= 'var iframify_options =' +  JSON.stringify(global.iframify_options)
+    $script('index')
 
 //- != LRScript

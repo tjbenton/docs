@@ -78,7 +78,7 @@ $has-no-state
     position relative
 
   &__state-info
-    .has-no-developer &
+    .has-no-code &
       display none
 
   &__view-state
@@ -124,7 +124,7 @@ $has-no-state
         display none
 
     &--escaped, &--escaped-stateless, &--escaped-state
-      .has-no-developer &
+      .has-no-code &
         display none !important // stylelint-disable-line
 
   &__body, &__pre, &__code
@@ -167,7 +167,7 @@ $has-no-state
     width 100%
     transition opacity 0.2s ease-in
 
-    .is-loading &
+    .c-frame .is-loading &
       height 80px
       opacity 0
       overflow hidden
@@ -179,7 +179,7 @@ $has-no-state
       display none
 
 
-  .has-no-designer & .is-loading
+  .has-no-designer & .c-frame .is-loading
     display none
 
 

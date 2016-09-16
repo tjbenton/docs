@@ -6,10 +6,11 @@ main // this resets the `main` so it acts normal in all browsers
 img
   border 0
   height auto // Part 2: Scale the height according to the width, otherwise you get stretching
-  -ms-interpolation-mode bicubic
+  max-height 100%
   max-width 100% // Part 1: Set a maxium relative to the parent
   vertical-align middle
   width auto\9 // IE7-8: need help adjusting responsive images
+  -ms-interpolation-mode bicubic
 
 figure
   margin 0

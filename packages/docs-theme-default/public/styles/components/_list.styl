@@ -1,0 +1,60 @@
+.c-list
+  display block
+  list-style none outside none
+  padding 0
+  margin-left 0
+
+  &--toggle
+    background rgba(color(a, -5.5), 0.15)
+
+    .c-list__item
+      > .c-list--toggle
+        margin-top 0
+        max-height 0
+        overflow hidden
+        opacity 0
+
+      &.is-active
+        background transparent
+
+        > .c-list--toggle
+          overflow visible
+          max-height 100%
+          opacity 1
+
+  &__group, &__page
+    font-weight 400
+    border-left 6px solid transparent
+    display block
+    padding em(6px) em(24px)
+    text-decoration none
+    border-bottom: 1px solid $config.border-color;
+    position relative
+
+    &:after
+      $size = 8px
+      background url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5IiBoZWlnaHQ9IjE1IiB2aWV3Qm94PSIwIDAgOSAxNSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbH MtMSB7CiAgICAgICAgZmlsbDogIzIzMWYyMDsKICAgICAgICBmaWxsLXJ1bGU6IGV2ZW5vZGQ7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQ2MC40NDgsNDkxLjAwOUw0NjgsNDk4LjVsLTcuNTQ4LDcuNDkyTDQ1OSw1MDQuNTU3bDYuMS02LjA1NS02LjEtNi4wNTdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDU5IC00OTEpIi8+Cjwvc3ZnPgo=') center no-repeat
+      background-size $size $size
+      content ''
+      display block
+      height $size
+      margin-top ($size / 2) * -1
+      position absolute
+      right 24px
+      top 50%
+      transition transform 0.25s ease
+      width $size
+
+
+  &__group
+    &:after
+      transform rotate(90deg)
+
+    ^[0]__item.is-active > &
+      font-weight 800
+      &:after
+        transform rotate(-90deg)
+
+  &__item
+    background white
+    margin-top 0

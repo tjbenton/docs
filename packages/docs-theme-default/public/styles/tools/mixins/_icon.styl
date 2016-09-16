@@ -1,67 +1,60 @@
-// /// @author Tyler Benton
-// /// @page helpers/mixins
-// ///
-// /// @description
-// /// This is used to add icon(s) to a CSS pseudo-elements.
-// ///
-// ///
-// /// @arg {list} - This can be a list of icons names
-// /// @arg {string} nth($icon-list, -1) - If the last argument is matches any of the following characters it will add it as a seperator ("", " ", "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "{", "}", "|", "[", "]", "\\", "<", ",", ".", ">", "?", ":", ";", "\"", "'", "x", "X")
-// ///
-// /// @note {!!!} - It's required because of this dumb issue https:///github.com/sass/sass/issues/1395
-// ///
-// /// @markup {styl} (example="false") **Example:** Without a sperator
-// ///  .star{
-// ///   &:before{
-// ///    icon-get(star, star, star, star, star);
-// ///   }
-// ///  }
-// ///
-// /// @markup {css} (example="false") **Output:** Without a sperator
-// ///  .star:before{
-// ///   content: "\e63b\e63b\e63b\e63b\e63b"
-// ///  }
-// ///
-// /// @markup {styl} (example="false") **Example:** With seperators
-// ///  .star{
-// ///   &:before{
-// ///    icon-get(star, star, star, star, star, "    +    ");
-// ///   }
-// ///  }
-// ///
-// /// @markup {css} (example="false") **Output:** With seperators
-// ///  .star:before{
-// ///   content: "\e63b    +    \e63b    +    \e63b    +    \e63b    +    \e63b"
-// ///  }
-// icon($icon-list...) {
-//   $result: "";
-//   $seperator: "";
-//   $possible-sperators: ("", " ", "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "{", "}", "|", "[", "]", "\\", "<", ",", ".", ">", "?", ":", ";", "\"", "'", "x", "X");
-//   $last: nth($icon-list, -1);
-//   @if not index(map-keys($icons), $last) and type-of($last) == "string"{
-//     /// @debug "checking '{$last}'";
-//     $is-sperator: true;
-//     @for $i from 1 through str-length($last) {
-//       @if not index($possible-sperators, str-nth($last, $i)){
-//         $is-sperator: false;
-//       }
-//     }
-//
-//     @if $is-sperator {
-//       $seperator: $last;
-//     }
-//   }
-//
-//   @each $icon in $icon-list {
-//     $val: get($icons, $icon);
-//     @if $val {
-//       $result: $result + $seperator + unquote(str-insert($val, "\\", 1))
-//     }
-//   }
-//
-//   content: unquote("\"") + str-slice($result, str-length($seperator) + 1) + unquote("\"");
-// }
-//
+/// @author Tyler Benton
+/// @page helpers/mixins
+///
+/// @description
+/// This is used to add icon(s) to a CSS pseudo-elements.
+///
+///
+/// @arg {list} - This can be a list of icons names
+/// @arg {string} nth($icon-list, -1) - If the last argument is matches any of the following characters it will add it as a seperator ('', " ", "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "{", "}", "|", "[", "]", "\\", "<", ",", ".", ">", "?", ":", ";", "\'', "'", "x", "X")
+///
+/// @note {!!!} - It's required because of this dumb issue https:///github.com/sass/sass/issues/1395
+///
+/// @markup {styl} (example="false") **Example:** Without a sperator
+/// .star {
+///   &:before {
+///     icon star, star, star, star
+///   }
+/// }
+///
+/// @markup {css} (example="false") **Output:** Without a sperator
+/// .star:before {
+///   content: '\e63b\e63b\e63b\e63b\e63b'
+/// }
+///
+/// @markup {styl} (example="false") **Example:** With seperators
+/// .star {
+///   &:before {
+///     icon star, star, star, star, star, '    +    '
+///   }
+/// }
+///
+/// @markup {css} (example="false") **Output:** With seperators
+/// .star:before {
+///   content: '\e63b    +    \e63b    +    \e63b    +    \e63b    +    \e63b'
+/// }
+icon($icon-list...)
+  $result = ()
+  $seperator = ''
+  $last = last($icon-list)
+
+  // finds the seperator if exists
+  if length($icon-list) > 1 and type-of($last) == 'string' and (not $last in $icons)
+    $is-sperator = true;
+    for $char, $i in split('', $last)
+      if !$char || match('[^a-z]|x|X', $char) == null
+        $is-sperator = false
+
+    if $is-sperator
+      $seperator = pop($icon-list)
+
+  // get the icon values
+  for $icon in $icon-list
+    if $icons[$icon]
+      push($result, $icons[$icon])
+
+  content join($seperator, $result)
+
 //
 //
 // /// @author Tyler Benton
@@ -92,7 +85,7 @@
 //    $selector: $selector + ":before";
 //   }
 //   @at-root {$selector}{
-//    /// content: "";
+//    /// content: '';
 //    display: inline-block;
 //    height: $height;
 //    /// font-style font-variant font-weight font-size/line-height font-family

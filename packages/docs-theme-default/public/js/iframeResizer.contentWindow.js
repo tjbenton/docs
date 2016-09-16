@@ -10,7 +10,8 @@
  * Contributor: Ian Caunce - ian@hallnet.co.uk
  */
 
-function iframeResizerContentWindow(win = window, undefined) {
+function iframeResizerContentWindow(win, undefined) {
+	win = win || window
 	'use strict';
 
 	var

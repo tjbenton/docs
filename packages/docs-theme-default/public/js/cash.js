@@ -769,14 +769,17 @@
     },
 
     closest: function (selector) {
-      if (!selector || matches(this[0], selector)) {
-        return this;
-      }
-      const $parent = this.parent()
-      if (!$parent.is('html')) {
-        return $parent.closest(selector);
-      }
-      return $()
+      if (!selector || matches(this[0], selector)) { return this; }
+      return this.parent().closest(selector);
+
+      // if (!selector || matches(this[0], selector)) {
+      //   return this;
+      // }
+      // const $parent = this.parent()
+      // if (!$parent.is('html') || matches($parent[0], selector)) {
+      //   return $parent.closest(selector);
+      // }
+      // return $()
     },
 
     is: function (selector) {

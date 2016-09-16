@@ -34,65 +34,66 @@
 // .d-o-list-example .d-o-list-example__item a {
 //   padding: 5px 10px;
 // }
-.o-list {
-  $this: &;
-  $this: str-slice(nth(nth(&, 1), 1), 2);
-  $gutter: get($config, 'spacing');
-  $sizes: (
-    'tiny': $gutter / 4,
-    'small': $gutter / 2,
-    'large': $gutter * 1.50,
-    'huge': $gutter * 2.25,
-    'flush': 0
-  );
-  @extend %#{$this}--flex;
-  align-items: center;
-  flex-flow: row wrap;
-  list-style: none outside none;
-  margin-left: -$gutter;
-  padding: 0;
 
-  &--stretch {
-    align-items: stretch;
-  }
-
-  &--multi-line {
-    margin-top: 0;
-    .#{$this}__item {
-      margin-top: $gutter;
-    }
-  }
-
-
-  @each $size, $value in $sizes {
-    &--#{$size} {
-      margin-left: -$value;
-      > .#{$this}__item {
-        padding-left: $value;
-      }
-      &.#{$this}--multi-line > .#{$this}_item {
-        margin-top: $value;
-      }
-    }
-  }
-
-  &__item {
-    @extend %#{$this}--flex;
-    display: inline-block;
-    margin-top: 0;
-    padding-left: $gutter;
-    vertical-align: top;
-    > * {
-      // ensures the direct decendant is 100% of the width of the `.#{$this}__item`,
-      // this is for when there's a width set on the `.#{$this}__item`.
-      width: 100%;
-    }
-  }
-
-  // Both the parent and the items are display flex.
-  // This ensures items direct decendant stretches to
-  // fill the item.
-  @at-root %#{$this}--flex {
-    display: flex;
-  }
-}
+// .o-list {
+//   $this: &;
+//   $this: str-slice(nth(nth(&, 1), 1), 2);
+//   $gutter: get($config, 'spacing');
+//   $sizes: (
+//     'tiny': $gutter / 4,
+//     'small': $gutter / 2,
+//     'large': $gutter * 1.50,
+//     'huge': $gutter * 2.25,
+//     'flush': 0
+//   );
+//   @extend %#{$this}--flex;
+//   align-items: center;
+//   flex-flow: row wrap;
+//   list-style: none outside none;
+//   margin-left: -$gutter;
+//   padding: 0;
+//
+//   &--stretch {
+//     align-items: stretch;
+//   }
+//
+//   &--multi-line {
+//     margin-top: 0;
+//     .#{$this}__item {
+//       margin-top: $gutter;
+//     }
+//   }
+//
+//
+//   @each $size, $value in $sizes {
+//     &--#{$size} {
+//       margin-left: -$value;
+//       > .#{$this}__item {
+//         padding-left: $value;
+//       }
+//       &.#{$this}--multi-line > .#{$this}_item {
+//         margin-top: $value;
+//       }
+//     }
+//   }
+//
+//   &__item {
+//     @extend %#{$this}--flex;
+//     display: inline-block;
+//     margin-top: 0;
+//     padding-left: $gutter;
+//     vertical-align: top;
+//     > * {
+//       // ensures the direct decendant is 100% of the width of the `.#{$this}__item`,
+//       // this is for when there's a width set on the `.#{$this}__item`.
+//       width: 100%;
+//     }
+//   }
+//
+//   // Both the parent and the items are display flex.
+//   // This ensures items direct decendant stretches to
+//   // fill the item.
+//   @at-root %#{$this}--flex {
+//     display: flex;
+//   }
+// }

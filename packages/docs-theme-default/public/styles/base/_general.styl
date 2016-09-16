@@ -33,6 +33,7 @@
 ///     margin 0 // 8
 *
   border-color inherit // 1
+  background-color inherit
   box-sizing border-box // 2
   margin 0 // 3
   outline none // 4
@@ -41,11 +42,8 @@
    box-sizing inherit // 5
    position absolute // 6
 
-  ~ *
+  &{$not-hidden} ~ *
     margin-top $spacing // 7
-
-html, body
-  spacing off inner
 
 
 // Mobile Screen Resizing
@@ -59,7 +57,7 @@ html, body
 //  3. Ensures elements that are off the page won't effect the current layout
 //  4. Default iOS settings
 //  5. Enable WP8 fastclick
-html, body, font
+html, body
   color: $config.color // 1
   font: $config.font-size/$config.line-height $config.font-family // 2
   overflow-x hidden // 3
@@ -70,6 +68,24 @@ html, body, font
   -webkit-touch-callout none // 4
   -ms-touch-select none // 5
   min-width 320px // 6
-
-html, body
+  spacing off inner
   width 100%
+
+body
+  transition filter 0.5s ease
+
+html.is-loading
+  overflow hidden
+  max-height 100%
+
+  &:after
+    background rgba(color(a), 0.25)
+    bottom 0
+    content ''
+    left 0
+    position fixed
+    right 0
+    top 0
+
+  body
+    filter blur(2px)
