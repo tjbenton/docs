@@ -11,6 +11,17 @@ const modify = (keep = false, name = 'dist') => {
   }
 }
 
+const babel_options = {
+  presets: [
+    'latest',
+    'stage-0'
+  ],
+  plugins: [
+    'transform-decorators-legacy',
+    'transform-runtime'
+  ]
+}
+
 const modifyFile = (file) => {
   if (!file) return
   return path.join('packages', ...file.split('packages')[1]
@@ -26,39 +37,53 @@ const modifyFile = (file) => {
     }))
 }
 
+export default async function() {
+  await this.start('clean')
+  await this.start([
+    'build',
+    'rest',
+    'baseTools',
+    'tools',
+    'theme',
+    'themeJs',
+    'themeRest',
+  ], { parallel: true })
+}
 
 
 // compiles all the javascript files and
 // outputs them in the correct packages
-async function build(file) {
+export async function build(file) {
   await this
     .source(modifyFile(file) || packages('{app,src}'))
-    .babel()
+    .babel(babel_options)
     .filter(modify())
     .target(base)
 }
 
-export { build }
-export default build
-
 // copies all files that aren't `js` into
 // the packages `dist` folder
-export async function buildRest(file) {
+export async function rest(file) {
   await this
   .source(modifyFile(file) || packages('{app,src}', '!(*.js)'))
   .filter(modify())
   .target(base)
 }
 
+export async function clean() {
+  await this.clear(path.join('packages', '*', '*dist'))
+}
+
 export async function watch() {
-  await this.clear('packages/*/*dist')
+  await this.start('clean')
   await Promise.all([
     this.watch(packages('{app,src}'), 'build'),
-    this.watch(packages('{app,src}', '!(*.js)'), 'buildRest'),
+    this.watch(packages('{app,src}', '!(*.+(js|styl))'), 'rest'),
     this.watch(packages('{scripts,tools,tests}'), 'tools'),
     this.watch(path.join('{scripts,tools,tests}', '**', '*.js'), 'baseTools'),
     this.watch(packages('public'), 'themeJs'),
-    this.watch(packages('public', '!(*.js)'), 'themeRest'),
+    this.watch(packages('public', path.join('**', '*.styl')), 'themeStyles'),
+    this.watch(packages('public', '!(*.+(js|styl))'), 'themeRest'),
     // this.watch(packages('{app,src}'), 'test')
   ])
 }
@@ -67,7 +92,7 @@ export async function watch() {
 export async function baseTools() {
   await this
     .source(path.join('{scripts,tools,tests}', '**', '*.js'))
-    .babel()
+    .babel(babel_options)
     .filter(modify(true))
     .target(__dirname)
 }
@@ -75,7 +100,7 @@ export async function baseTools() {
 export async function tools(file) {
   await this
     .source(modifyFile(file) || packages('{scripts,tools,tests}'))
-    .babel()
+    .babel(babel_options)
     .filter(modify(true))
     .target(base)
 }
@@ -85,6 +110,7 @@ export async function tools(file) {
 export async function theme() {
   await this.start([
     'themeJs',
+    'themeStyles',
     'themeRest'
   ], { parallel: true })
 }
@@ -134,11 +160,28 @@ export async function themeJs(file) {
     .target(base)
 }
 
+import globby from 'globby'
+
+export async function themeStyles() {
+  const source = path.join(base, '*', 'public', 'styles*')
+  const paths = await globby([ source, path.join(source, '**', '*') ], { ignore: path.join(source, '**', '*.styl') })
+  await this
+    .source(path.join(source, 'index.styl'))
+    .stylus({
+      paths
+    })
+    .filter(modify(true))
+    .target(base)
+}
+
+// stylus packages/docs-theme-default/public/styles/index.styl packages/docs-theme-default/public-dist/styles/index.css
+
+
 // copies all files that aren't `js` into
 // the packages `public-dist` folder
 export async function themeRest(file) {
   await this
-    .source(modifyFile(file) || packages('public', '!(*.js)'))
+    .source(modifyFile(file) || packages('public', '!(*.+(js|styl))'))
     .filter(modify(true))
     .target(base)
 }
