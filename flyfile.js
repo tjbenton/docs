@@ -118,44 +118,19 @@ export async function theme() {
 // compiles all js in themes public folder and
 // outputs it into the `public-dist` folder
 export async function themeJs(file) {
-  const loose = false
   await this
     .source(modifyFile(file) || packages('public'))
     .filter(modify(true))
     .babel({
+      presets: [
+        [
+          'latest', {
+            es2015: { loose: false, modules: false }
+          }
+        ],
+        'stage-0'
+      ],
       babelrc: false,
-      plugins: [
-        [ 'transform-es2015-template-literals', { loose } ],
-        'transform-es2015-literals',
-        'transform-es2015-function-name',
-        'transform-es2015-arrow-functions',
-        'transform-es2015-block-scoped-functions',
-        [ 'transform-es2015-classes', { loose } ],
-        'transform-es2015-object-super',
-        'transform-es2015-shorthand-properties',
-        'transform-es2015-duplicate-keys',
-        [ 'transform-es2015-computed-properties', { loose } ],
-        [ 'transform-es2015-for-of', { loose } ],
-        'transform-es2015-sticky-regex',
-        'transform-es2015-unicode-regex',
-        'check-es2015-constants',
-        [ 'transform-es2015-spread', { loose } ],
-        'transform-es2015-parameters',
-        [ 'transform-es2015-destructuring', { loose } ],
-        'transform-es2015-block-scoping',
-        [ 'transform-regenerator', { async: true, asyncGenerators: true } ],
-        'transform-do-expressions',
-        'transform-function-bind',
-        'transform-class-constructor-call',
-        'transform-export-extensions',
-        'transform-class-properties',
-        'transform-object-rest-spread',
-        'transform-decorators',
-        'syntax-trailing-function-commas',
-        'transform-async-to-generator',
-        'transform-exponentiation-operator',
-        'syntax-async-functions',
-      ]
     })
     .target(base)
 }
