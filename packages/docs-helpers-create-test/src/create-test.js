@@ -1,5 +1,8 @@
 'use strict'
-require('babel-register')
+require('babel-register')({
+  presets: [ 'latest', 'stage-0' ],
+  plugins: [ 'transform-runtime' ]
+})
 
 import fs from 'fs-extra-promisify'
 import globby from 'globby'
@@ -25,7 +28,7 @@ export default async function createTest() { // eslint-disable-line
   }
 
   let pkg = argv[0]
-  let base = path.join(_root, 'packages', pkg, 'tests', 'compair')
+  let base = path.join(_root, 'packages', pkg, 'tests', 'fixtures')
   let globs = argv
     .slice(1)
     .join(',')
@@ -56,7 +59,7 @@ export default async function createTest() { // eslint-disable-line
   parsed = await Promise.all(parsed)
 
   async function run(file) {
-    let name = file.match(/(?:tests\/compair\/)([a-z\-]*)/)[1]
+    let name = file.match(/(?:tests\/fixtures\/)([a-z\-]*)/)[1]
     let fn = create[to.camelCase(name)]
     let log_file = file.replace(path.join(_root, ''), 'docs')
     let result = { file, log_file }

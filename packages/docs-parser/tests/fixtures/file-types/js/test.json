@@ -1,0 +1,101 @@
+{
+  "nav": [
+    {
+      "title": "Tests",
+      "href": "/tests",
+      "body": [],
+      "subpages": [
+        {
+          "title": "Js",
+          "href": "/tests/js",
+          "body": [
+            {
+              "title": "@author",
+              "href": "/tests/js#author"
+            }
+          ],
+          "subpages": []
+        }
+      ]
+    }
+  ],
+  "pages": {
+    "tests": {
+      "page": {
+        "header": {},
+        "body": []
+      },
+      "js": {
+        "page": {
+          "header": {
+            "author": [
+              "Tyler Benton"
+            ],
+            "access": "public",
+            "blockinfo": {
+              "comment": {
+                "start": 1,
+                "end": 4,
+                "type": "header"
+              },
+              "code": {
+                "start": -1,
+                "end": -1
+              },
+              "file": {
+                "path": "docs/packages/docs-parser/tests/fixtures/file-types/js/test.js",
+                "start": 1,
+                "end": 28
+              }
+            }
+          },
+          "body": [
+            {
+              "name": "@author",
+              "description": "<p>Author of the documented item</p>\n",
+              "access": "public",
+              "returns": {
+                "types": [
+                  "string"
+                ],
+                "description": ""
+              },
+              "alias": [
+                "@authors"
+              ],
+              "markup": [
+                {
+                  "id": "0",
+                  "language": "js",
+                  "settings": {},
+                  "description": "<p>Usage</p>\n",
+                  "raw": "/// @author Author's name\n\n/// @author Author One, Author Two\n\n/// @author Author One\n/// @author Author Two",
+                  "escaped": "/// @author Author&#39;s name\n\n/// @author Author One, Author Two\n\n/// @author Author One\n/// @author Author Two",
+                  "raw_stateless": "/// @author Author's name\n\n/// @author Author One, Author Two\n\n/// @author Author One\n/// @author Author Two",
+                  "escaped_stateless": "/// @author Author&#39;s name\n\n/// @author Author One, Author Two\n\n/// @author Author One\n/// @author Author Two"
+                }
+              ],
+              "blockinfo": {
+                "comment": {
+                  "start": 8,
+                  "end": 18,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 19,
+                  "end": 27
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/fixtures/file-types/js/test.js",
+                  "start": 1,
+                  "end": 28
+                }
+              },
+              "inline": []
+            }
+          ]
+        }
+      }
+    }
+  }
+}

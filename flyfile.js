@@ -161,12 +161,6 @@ export async function themeRest(file) {
     .target(base)
 }
 
-export async function test() {
-  await this
-    .source('packages/docs-parser/tests/compair/index.js')
-    .ava()
-}
-
 
 // const in_glob = path.join(__dirname, 'packages', '*', '{app,src}', '**', '*.js')
 // const file = '/Users/tylerbenton/ui-development/docs/packages/docs-core/app/docs.js'

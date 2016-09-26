@@ -1,0 +1,161 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "markup": [
+        {
+          "id": "0",
+          "language": "html",
+          "settings": {},
+          "description": "",
+          "raw": "<div class=\"something-super-awesome ${@state}\">\n  ${@state.description}\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state}&quot;&gt;\n  ${@state.description}\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\"></div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;&lt;/div&gt;"
+        }
+      ],
+      "states": {
+        "0": [
+          {
+            "state": {
+              "0": {
+                "state": ":hover",
+                "description": "<p>Some super awesome description</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :hover\">\n  <p>Some super awesome description</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :hover&quot;&gt;\n  <p>Some super awesome description</p>\n\n&lt;/div&gt;"
+            }
+          }
+        ]
+      },
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 6,
+          "type": "body"
+        },
+        "code": {
+          "start": 7,
+          "end": 13
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/fixtures/annotations/state/stupid-simple/with-description.scss",
+          "start": 1,
+          "end": 43
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "markup": [
+        {
+          "id": "0",
+          "language": "html",
+          "settings": {},
+          "description": "",
+          "raw": "<div class=\"something-super-awesome ${@state.state}\">\n  ${@state.description}\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state.state}&quot;&gt;\n  ${@state.description}\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\"></div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;&lt;/div&gt;"
+        }
+      ],
+      "states": {
+        "0": [
+          {
+            "state": {
+              "0": {
+                "state": ":hover",
+                "description": "<p>Some super awesome description</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :hover\">\n  <p>Some super awesome description</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :hover&quot;&gt;\n  <p>Some super awesome description</p>\n\n&lt;/div&gt;"
+            }
+          }
+        ]
+      },
+      "blockinfo": {
+        "comment": {
+          "start": 16,
+          "end": 21,
+          "type": "body"
+        },
+        "code": {
+          "start": 22,
+          "end": 28
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/fixtures/annotations/state/stupid-simple/with-description.scss",
+          "start": 1,
+          "end": 43
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "markup": [
+        {
+          "id": "0",
+          "language": "html",
+          "settings": {},
+          "description": "",
+          "raw": "<div class=\"something-super-awesome ${@state}\">\n  ${@state[description]}\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state}&quot;&gt;\n  ${@state[description]}\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\"></div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;&lt;/div&gt;"
+        }
+      ],
+      "states": {
+        "0": [
+          {
+            "state": {
+              "0": {
+                "state": ":hover",
+                "description": "<p>Some super awesome description</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :hover\">\n  <p>Some super awesome description</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :hover&quot;&gt;\n  <p>Some super awesome description</p>\n\n&lt;/div&gt;"
+            }
+          }
+        ]
+      },
+      "blockinfo": {
+        "comment": {
+          "start": 30,
+          "end": 35,
+          "type": "body"
+        },
+        "code": {
+          "start": 36,
+          "end": 42
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/fixtures/annotations/state/stupid-simple/with-description.scss",
+          "start": 1,
+          "end": 43
+        }
+      },
+      "inline": []
+    }
+  ]
+}
