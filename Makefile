@@ -7,6 +7,17 @@ export NODE_ENV = test
 
 .PHONY: clean build bootstrap
 
+bootstrap:
+	lerna bootstrap
+
+build:
+	fly
+
+ci-test:
+	make lint
+	make build
+	ava
+
 clean:
 	rm -rf -- packages/*/*dist/
 
@@ -16,31 +27,24 @@ deep-clean:
 	rm -rf *.log packages/*/*.log
 	rm -rf .DS_Store packages/*/.DS_Store
 
+install:
+	npm install
+	make boostrap
+
+lint:
+	eslint 'flyfile.js' 'scripts/**/*' 'packages/*/+(app|public|src|tools)/**/*.js'
+
+publish:
+	lerna publish --npm-tag=prerelease --force-publish=*
+
 rebuild:
 	rm -rf node_modules
 	make deep-clean
 	npm install
 	make build
 
-build:
-	fly
+test:
+	ava $(args)
 
 watch:
 	fly watch
-
-bootstrap:
-	lerna bootstrap
-
-test:
-	ava args
-
-lint:
-	eslint '**/*.js'
-
-ci-test:
-	make lint
-	make build
-	ava
-
-publish:
-	lerna publish --npm-tag=prerelease --force-publish=*

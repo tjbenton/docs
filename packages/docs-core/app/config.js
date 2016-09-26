@@ -16,7 +16,7 @@ export const default_options = {
   // folder that has assets to be loaded
   project_assets: path.join(root, 'dist'),
 
-  // global assets avaliable to templates
+  // global assets available to templates
   global: {},
 
   // sort order for annotations
