@@ -46,7 +46,7 @@
     "power-assert": "^1.4.1",
     "rollup-plugin-babel": "^2.6.1",
     "stylelint": "^7.1.0",
-    "to-js": "^0.0.5"
+    "to-js": "0.0.6"
   },
   "ava": {
     "files": [

@@ -3,7 +3,7 @@ import path from 'path'
 import base_x from './base-x'
 import hljs from 'highlight.js'
 import to from 'to-js'
-
+import marked from 'marked'
 
 function whitespace(content) {
   return content
@@ -49,7 +49,19 @@ function highlight(content, options = {}) {
   ].join('')
 }
 
+
+const renderer = new marked.Renderer()
+
+// renderer.heading = (text, level, raw) => {
+//   var escaped = `heading-${level}-${raw.toLowerCase().replace(/[^\w]+/g, '-')}`
+//   return `<h${level}><a class="c-link-to js-link" name="${escaped}" href="${escaped}">${escaped}</a>${text}</h${level}>`
+// }
+
+renderer.paragraph = (text) => `<p>${text}</p>`
+
+
 to.markdown({
+  renderer,
   langPrefix: 'hljs ',
   highlight(code, language) {
     return whitespace(hljs.highlight(language, code, true).value)
