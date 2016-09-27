@@ -1,0 +1,18 @@
+- data = _.isArray(data) ? data : [ data ]
+table.c-table
+  thead.c-table__head
+    tr.c-table__row
+      each value, key in data[0]
+        th.c-table__heading!= key.slice(0, 1).toUpperCase() + key.slice(1)
+  tbody.c-table__body
+    each arg in data
+      tr.c-table__row
+        each value, key in arg
+          td.c-table__cell
+            if key === 'description'
+              != value
+            else if value === ''
+              != '&mdash;'
+            else 
+              != partial('code-list', { data: value })
+//- != partial('json', { json: data })

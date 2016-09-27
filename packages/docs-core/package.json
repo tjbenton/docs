@@ -1,0 +1,74 @@
+{
+  "name": "docs-core",
+  "version": "0.0.0-alpha-5.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjbenton/docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tjbenton/docs/issues"
+  },
+  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "bin": {
+    "docs": "bin/docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "async-array-methods": "^2.1.0",
+    "babel-register": "^6.9.0",
+    "chokidar": "^1.6.0",
+    "commander": "^2.9.0",
+    "docs-helpers-logger": "^0.0.0-alpha-5.1",
+    "docs-parser": "^0.0.0-alpha-5.1",
+    "docs-plugin-default-annotations": "^0.0.0-alpha-5.1",
+    "fs-extra-promisify": "0.0.2",
+    "globby": "^6.0.0",
+    "harp": "github:sintaxi/harp#v0.21.0-pre",
+    "to-js": "0.0.6"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "less",
+    "stylus",
+    "crush",
+    "preprocessor",
+    "js",
+    "javascript",
+    "coffescript",
+    "sql",
+    "nosql",
+    "perl",
+    "java",
+    "coldfusion",
+    "xml",
+    "cfm",
+    "cfc",
+    "cfml",
+    "php",
+    "c",
+    "c#",
+    "c++",
+    "objective-c",
+    "swift",
+    "python",
+    "ruby",
+    "rb",
+    "shell",
+    "bash",
+    "code",
+    "doc",
+    "docs",
+    "documentation",
+    "parse",
+    "parser",
+    "annotation",
+    "comments"
+  ]
+}

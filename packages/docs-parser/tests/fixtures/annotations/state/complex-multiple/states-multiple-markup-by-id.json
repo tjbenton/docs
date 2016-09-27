@@ -1,0 +1,173 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "markup": [
+        {
+          "id": "foo",
+          "language": "html",
+          "settings": {},
+          "description": "<p>Example 1</p>\n",
+          "raw": "<div class=\"something-super-awesome ${@state[0]}\">\n  <h3>${@state[0].description}</h3>\n  <ul>\n    <li class=\"something-super-awesome__item ${@state[1].state}\">${@state[1].description}</li>\n  </ul>\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state[0]}&quot;&gt;\n  &lt;h3&gt;${@state[0].description}&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item ${@state[1].state}&quot;&gt;${@state[1].description}&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\">\n  <h3></h3>\n  <ul>\n    <li class=\"something-super-awesome__item\"></li>\n  </ul>\n</div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  &lt;h3&gt;&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item&quot;&gt;&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;"
+        },
+        {
+          "id": "bar",
+          "language": "html",
+          "settings": {},
+          "description": "<p>Example 2</p>\n",
+          "raw": "<div class=\"something-super-awesome ${@state[0]}\">\n  <h3>Example 2 ${@state[0].description}</h3>\n  <ul>\n    <li class=\"something-super-awesome__item ${@state[1].state}\">${@state[1].description}</li>\n  </ul>\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state[0]}&quot;&gt;\n  &lt;h3&gt;Example 2 ${@state[0].description}&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item ${@state[1].state}&quot;&gt;${@state[1].description}&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\">\n  <h3>Example 2</h3>\n  <ul>\n    <li class=\"something-super-awesome__item\"></li>\n  </ul>\n</div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  &lt;h3&gt;Example 2&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item&quot;&gt;&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;"
+        }
+      ],
+      "states": {
+        "foo": [
+          {
+            "state": {
+              "0": {
+                "state": ".something-super-awesome--modifier",
+                "description": "<p>Modifier state for example 1, state 1</p>\n"
+              },
+              "1": {
+                "state": ":hover",
+                "description": "<p>Hover state for example 1, state 1</p>\n"
+              }
+            },
+            "markup": {
+              "id": "foo",
+              "language": "html",
+              "settings": {},
+              "description": "<p>Example 1</p>\n",
+              "raw": "<div class=\"something-super-awesome .something-super-awesome--modifier\">\n  <h3><p>Modifier state for example 1, state 1</p>\n</h3>\n  <ul>\n    <li class=\"something-super-awesome__item :hover\"><p>Hover state for example 1, state 1</p>\n</li>\n  </ul>\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome .something-super-awesome--modifier&quot;&gt;\n  &lt;h3&gt;<p>Modifier state for example 1, state 1</p>\n&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item :hover&quot;&gt;<p>Hover state for example 1, state 1</p>\n&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ".something-super-awesome--modifier",
+                "description": "<p>Modifier state for example 1, state 2</p>\n"
+              },
+              "1": {
+                "state": ":focus",
+                "description": "<p>Focus state for example 1, state 2</p>\n"
+              }
+            },
+            "markup": {
+              "id": "foo",
+              "language": "html",
+              "settings": {},
+              "description": "<p>Example 1</p>\n",
+              "raw": "<div class=\"something-super-awesome .something-super-awesome--modifier\">\n  <h3><p>Modifier state for example 1, state 2</p>\n</h3>\n  <ul>\n    <li class=\"something-super-awesome__item :focus\"><p>Focus state for example 1, state 2</p>\n</li>\n  </ul>\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome .something-super-awesome--modifier&quot;&gt;\n  &lt;h3&gt;<p>Modifier state for example 1, state 2</p>\n&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item :focus&quot;&gt;<p>Focus state for example 1, state 2</p>\n&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ".something-super-awesome--modifier",
+                "description": "<p>Modifier state for example 1, state 3</p>\n"
+              },
+              "1": {
+                "state": ":active",
+                "description": "<p>Active state for example 1, state 3</p>\n"
+              }
+            },
+            "markup": {
+              "id": "foo",
+              "language": "html",
+              "settings": {},
+              "description": "<p>Example 1</p>\n",
+              "raw": "<div class=\"something-super-awesome .something-super-awesome--modifier\">\n  <h3><p>Modifier state for example 1, state 3</p>\n</h3>\n  <ul>\n    <li class=\"something-super-awesome__item :active\"><p>Active state for example 1, state 3</p>\n</li>\n  </ul>\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome .something-super-awesome--modifier&quot;&gt;\n  &lt;h3&gt;<p>Modifier state for example 1, state 3</p>\n&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item :active&quot;&gt;<p>Active state for example 1, state 3</p>\n&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;"
+            }
+          }
+        ],
+        "bar": [
+          {
+            "state": {
+              "0": {
+                "state": ".something-super-awesome--modifier",
+                "description": "<p>Modifier state for example 2, state 1</p>\n"
+              },
+              "1": {
+                "state": ":hover",
+                "description": "<p>Hover state for example 2, state 1</p>\n"
+              }
+            },
+            "markup": {
+              "id": "bar",
+              "language": "html",
+              "settings": {},
+              "description": "<p>Example 2</p>\n",
+              "raw": "<div class=\"something-super-awesome .something-super-awesome--modifier\">\n  <h3>Example 2 <p>Modifier state for example 2, state 1</p>\n</h3>\n  <ul>\n    <li class=\"something-super-awesome__item :hover\"><p>Hover state for example 2, state 1</p>\n</li>\n  </ul>\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome .something-super-awesome--modifier&quot;&gt;\n  &lt;h3&gt;Example 2 <p>Modifier state for example 2, state 1</p>\n&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item :hover&quot;&gt;<p>Hover state for example 2, state 1</p>\n&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ".something-super-awesome--modifier",
+                "description": "<p>Modifier state for example 2, state 2</p>\n"
+              },
+              "1": {
+                "state": ":focus",
+                "description": "<p>Focus state for example 2, state 2</p>\n"
+              }
+            },
+            "markup": {
+              "id": "bar",
+              "language": "html",
+              "settings": {},
+              "description": "<p>Example 2</p>\n",
+              "raw": "<div class=\"something-super-awesome .something-super-awesome--modifier\">\n  <h3>Example 2 <p>Modifier state for example 2, state 2</p>\n</h3>\n  <ul>\n    <li class=\"something-super-awesome__item :focus\"><p>Focus state for example 2, state 2</p>\n</li>\n  </ul>\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome .something-super-awesome--modifier&quot;&gt;\n  &lt;h3&gt;Example 2 <p>Modifier state for example 2, state 2</p>\n&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item :focus&quot;&gt;<p>Focus state for example 2, state 2</p>\n&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ".something-super-awesome--modifier",
+                "description": "<p>Modifier state for example 2, state 3</p>\n"
+              },
+              "1": {
+                "state": ":active",
+                "description": "<p>Active state for example 2, state 3</p>\n"
+              }
+            },
+            "markup": {
+              "id": "bar",
+              "language": "html",
+              "settings": {},
+              "description": "<p>Example 2</p>\n",
+              "raw": "<div class=\"something-super-awesome .something-super-awesome--modifier\">\n  <h3>Example 2 <p>Modifier state for example 2, state 3</p>\n</h3>\n  <ul>\n    <li class=\"something-super-awesome__item :active\"><p>Active state for example 2, state 3</p>\n</li>\n  </ul>\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome .something-super-awesome--modifier&quot;&gt;\n  &lt;h3&gt;Example 2 <p>Modifier state for example 2, state 3</p>\n&lt;/h3&gt;\n  &lt;ul&gt;\n    &lt;li class=&quot;something-super-awesome__item :active&quot;&gt;<p>Active state for example 2, state 3</p>\n&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/div&gt;"
+            }
+          }
+        ]
+      },
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 40,
+          "type": "body"
+        },
+        "code": {
+          "start": 41,
+          "end": 59
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/fixtures/annotations/state/complex-multiple/states-multiple-markup-by-id.scss",
+          "start": 1,
+          "end": 60
+        }
+      },
+      "inline": []
+    }
+  ]
+}

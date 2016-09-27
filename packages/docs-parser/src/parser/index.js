@@ -1,9 +1,10 @@
-import { Logger } from '../utils'
+import logger from 'docs-helpers-logger'
 import fs from 'fs-extra-promisify'
 import to, { is } from 'to-js'
 import AnnotationApi from '../annotation-api'
 import path from 'path'
 import Tokenizer from './tokenizer'
+import sort from './sort'
 
 export default class Parser {
   constructor(options) { // eslint-disable-line
@@ -34,8 +35,8 @@ export default class Parser {
       blank_lines: 4,
       indent: true,
       annotations: {},
-      sort: (a, b) => a.localeCompare(b), // same as the default sort function
-      log: new Logger()
+      sort: [],
+      log: logger
     }, arguments)
 
     let { annotations, type, log, ...rest } = options
@@ -65,9 +66,16 @@ export default class Parser {
         return to.extend(previous, value)
       }, {})
       const regex = new RegExp(`^\s*${language.prefix}(?:(${to.keys(reverse_alias_list).join('|')})|(${parse.join('|')}))\\b\\s*`)
-
-      this.annotations_list = { reverse_alias_list, regex }
+      const available = to.unique(to.reduce(this.api.annotations, (previous, { value }) => previous.concat(to.keys(value)), []))
+      this.annotations_list = { available, reverse_alias_list, regex }
     }
+
+    this.options.order = sort(this.options.sort, this.annotations_list.available)
+    this.options.order.push('inline') // this is for the inline part of the annotation
+  }
+
+  order(obj) {
+    return to.sort(obj, (a, b) => this.options.order.indexOf(a) - this.options.order.indexOf(b))
   }
 
   async parse(file = {}) {
@@ -170,7 +178,7 @@ export default class Parser {
       comment.contents = to.map(comment.contents, hasAnnotation)
 
       // get the annotations that are in the comment
-      const annotations = new Annotations(comment.contents, language.prefix)
+      let annotations = new Annotations(comment.contents, language.prefix)
 
       return { comment, code, inline, annotations }
     })
@@ -220,16 +228,10 @@ export default class Parser {
   }
 
   resolveTokens(tokens) {
-    const { sort } = this.options
-    let resolve_list = to.keys(this.api.annotations.resolve)
-    // sort the parsed object before the annotations are resolved
-    if (is.function(sort)) {
-      resolve_list = to.sort(resolve_list, sort)
-    }
-
     return this.map(tokens, (token, parent) => {
       const parsed_keys = to.keys(token.parsed)
-      for (let name of resolve_list) {
+      const list = this.order(to.keys(this.api.annotations.resolve))
+      for (let name of list) {
         if (is.in(parsed_keys, name)) {
           const result = this.api.run('resolve', {
             annotation: { name, alias: this.api.annotations.alias[name] },
@@ -250,7 +252,7 @@ export default class Parser {
     // option a
     // return
     return this.map(tokens, ({ parsed, inline }) => {
-      return to.object(to.json({ ...parsed, inline }))
+      return this.order(to.object(to.json({ ...parsed, inline })))
     })
 
     // option b

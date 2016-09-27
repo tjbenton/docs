@@ -1,14 +1,25 @@
 {
   "name": "docs-example",
-  "version": "1.0.0",
+  "version": "0.0.0-alpha.5.1",
   "description": "This project is used to show how you can use docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjbenton/docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tjbenton/docs/issues"
+  },
+  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "build": "which docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
-  "license": "ISC",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "docs-core": "^0.0.0-alpha.5.1",
+    "docs-theme-default": "^0.0.0-alpha-5.1"
+  }
 }

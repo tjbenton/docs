@@ -59,7 +59,7 @@ var path = require('path')
 var fs = require('fs')
 
 function getTokenizerOption(file) {
-  var type = file.split(/tests\//).pop().split(path.sep).slice(1, -1)
+  var type = file.split(/tests\/fixtures\//).pop().split(path.sep).slice(1, -1)
   var comment = type.reduce(function(prev, current) {
     var result =  (prev || {})[current]
     if (!result) {

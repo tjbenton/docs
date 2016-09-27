@@ -21,5 +21,9 @@ export default {
     }
 
     return alias_list
+  },
+  render(obj) {
+    obj = obj.map((alias) => `<li><code>${alias}</code></li>`).join('\n')
+    return `<ul class="c-annotation c-alias">${obj}</ul>`
   }
 }

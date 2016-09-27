@@ -1,0 +1,23 @@
+image-set()
+  $prop = current-property[0]
+  $value = current-property[1]
+  $fallback = null
+  $args = unquote(join(', ', arguments))
+  $webkit = s('-webkit-image-set(%s)', $args)
+  $standard = s('image-set(%s)', $args)
+
+  for $image-set in arguments
+    if $image-set[1] == '1x'
+      $fallback = $image-set[0]
+
+  unless $fallback
+    error('you must pass in a 1x image size for an image set')
+
+  if $prop == 'background' && length($value) > 1
+    add-property('background-image', $fallback);
+    add-property('background-image', $webkit);
+    add-property('background-image', $standard)
+    return
+  else
+    add-property($prop, $fallback);
+    return $standard

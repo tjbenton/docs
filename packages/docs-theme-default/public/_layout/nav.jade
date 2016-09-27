@@ -1,0 +1,30 @@
+mixin menu(tree)
+  - var path = (current.source === 'index' ? current.path.slice(0, -1) : current.path).join('/')
+  ul(class="c-list c-list--toggle")
+    for node in tree
+      - var has_body = node.body && node.body.length
+      - var has_subpages = node.subpages && node.subpages.length
+      - var current_page = node.href.slice(1).split('#')
+      - var is_current = path === current_page[0]
+      - var item_cls = 'c-list__item'
+      if is_current
+        - item_cls += ' c-list__item--current'
+      if has_subpages || has_body
+        - item_cls += ' js-toggle'
+      li(class="#{item_cls}")
+        if has_subpages || has_body
+          a(class="c-list__group js-toggle__trigger" href="#{node.href}")= node.title
+          
+          if has_body
+            - node.body.unshift({ title: 'View All', href: node.href })
+            +menu(node.body)
+            
+          if has_subpages
+            +menu(node.subpages)
+        else if is_current
+          a(class="c-list__page" href="##{current_page[1] || ''}")= node.title
+        else
+          a(class="c-list__page js-page-accelerator" href="#{node.href}")= node.title
+
+nav(class="s-documentation__nav" role="navigation")
+  +menu(nav)

@@ -1,0 +1,23 @@
+.c-table
+  border-collapse collapse
+  width 100%
+
+  &__heading, &__cell
+    padding: $config.spacing-sizes.small;
+    vertical-align top
+    text-align left
+
+    tr &:first-of-type
+       padding-left 0
+
+    tr &:last-of-type
+      padding-right 0
+
+  &__heading
+    color a, -2
+    border-top none
+    font-weight 800
+    vertical-align bottom
+
+  &__cell
+    border-top: 1px solid $config.border-color;

@@ -1,0 +1,24 @@
+/// @name Spacing(owl)
+/// @author Tyler Benton
+/// @page objects/spacing
+/// @decsription
+/// This is a helper mixin for using the [lobotomized owl selector](http://alistapart.com/article/axiomatic-css-and-lobotomized-owls).
+///
+/// @state .o-spacing--off - Resets the margin-top to what it was originally, without the Lobotomized Owl selector
+/// @state .o-spacing--compact - Used to make sections compact when needed. Only targets direct descendants.
+/// @state .o-spacing--sm - Is similar to `.o-spacing--compact` but it will apply to all children elements
+/// @state .o-spacing--md - The default size for the spacing selector
+/// @state .o-spacing--lg - Adds a larger space between elements(Affects all children)
+/// @state .o-spacing--expanded - Adds more spacing between sections. Only targets direct descendants.
+///
+/// @markup
+/// <div class=${@state}>
+///  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa debitis quos tempore, amet. Quasi ut ipsa veniam illum saepe cum fuga, repudiandae, autem vero laborum similique in dolor. Sequi, cupiditate.</p>
+///  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa debitis quos tempore, amet. Quasi ut ipsa veniam illum saepe cum fuga, repudiandae, autem vero laborum similique in dolor. Sequi, cupiditate.</p>
+///  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa debitis quos tempore, amet. Quasi ut ipsa veniam illum saepe cum fuga, repudiandae, autem vero laborum similique in dolor. Sequi, cupiditate.</p>
+/// </div>
+for $type, $size in $config.spacing-sizes
+  for $breakpoint in $media-breakpoints-list
+    +media($breakpoint)
+      .o-spacing--{$type}{$media} > * ~ *{$not-hidden}
+        margin-top $size

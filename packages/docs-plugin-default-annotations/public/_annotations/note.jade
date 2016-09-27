@@ -1,0 +1,7 @@
+div(class="c-annotation c-annotation--note")
+  h4 Note
+  ul.c-list
+    each note in data
+      li.c-list__item.c-importance(data-importance="#{note.importance}")
+        != note.description
+    

@@ -1,0 +1,60 @@
+o-pseudo($side = 'middle', $type = 'before') {
+  +cache('o-pseudo--' + $side) {
+    if $side == 'middle' {
+      display inline-block
+      text-indent -999em
+
+      &:{$type} {
+        display block
+        left 50%
+        line-height 1em
+        margin-left -0.5em
+        margin-top -0.5em
+        position absolute
+        text-align center
+        top 50%
+      }
+
+    } else if $side == 'top' {
+      padding-top 2.25em
+
+      &:{$type} {
+        display block
+        left 50%
+        margin-left -0.5em
+        position absolute
+        top 0.625em
+      }
+    } else if $side == 'right' {
+      padding-right 2.25em
+
+      &:{$type} {
+        display block
+        margin-top -0.5em
+        position absolute
+        right 0.625em
+        top 50%
+      }
+    } else if $side == 'bottom' {
+      padding-bottom 2.25em
+
+      &:{$type} {
+        bottom 0.625em
+        display block
+        left 50%
+        margin-left -0.5em
+        position absolute
+      }
+    } else if $side == 'left' {
+      padding-left 2.25em
+
+      &:{$type} {
+        display block
+        left 0.625em
+        margin-top -0.5em
+        position absolute
+        top 50%
+      }
+    }
+  }
+}

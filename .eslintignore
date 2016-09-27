@@ -1,6 +1,7 @@
 scripts
 node_modules
-packages/*/tools
-packages/*/test
-packages/*/dist
+jspm_packages
+*dist
+packages/*/tests/fixtures/*/**/*
+packages/*/public/config.js
 vendor

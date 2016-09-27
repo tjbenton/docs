@@ -1,0 +1,32 @@
+mixin annotations(type, token, parent)
+  if Array.isArray(token)
+    each item in token
+      +annotations(type, item, parent)
+  else
+    - var elem = type === 'header' ? 'header' : 'section'
+    - var cls = 'c-token-' + type
+    
+    if token.access
+      - cls += ' is-' + token.access
+    
+    #{elem}(class="#{cls}")
+      each data, name in token
+        if name === 'inline'
+          - const parent = _.clone(token)
+          - delete parent.inline
+          +annotations('inline', token.inline, parent)
+        else
+          +annotation(name, data, token, parent)
+
+mixin annotation(name, data, token, parent)
+  if name !== 'blockinfo' && name !== 'inline'
+    - var filepath = token && token.blockinfo ? token.blockinfo.file.path : ''
+    - var id = name + '-' + global.base_x.encode(JSON.stringify(data) + filepath)
+    != partial('../_annotations/' + name, { data: data, token: token || {}, parent: parent || {}, id: id })
+
+article.docs-o-container
+  if header && Object.keys(header).length
+    +annotations('header', header)
+  
+  if body && body.length
+    +annotations('body', body)

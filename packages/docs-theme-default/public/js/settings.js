@@ -1,35 +1,42 @@
-import $ from 'cash'
-import storage from './storage'
-
-$(() => {
+$script('cash', () => {
+  let settings = JSON.parse(localStorage.getItem('settings')) || {}
+  let keys = Object.keys(settings)
   const $root = $('html')
-  const $settings = $('.docs-js-settings')
-  let settings = storage.get('settings')
-  if (!settings) {
-    settings = {}
-    $settings.find('input').each((obj) => {
-      settings[obj.value] = true
-    })
-    storage.set('settings', settings)
+  const $container = $root.find('.js-settings')
+  const $settings = $container.find('.js-settings__setting')
+
+  if (!keys.length) {
+    $settings.each((obj) => update(obj, obj.checked))
+  } else {
+    $settings.each((obj) => update(obj, settings[obj.value]))
   }
 
-  $settings.on('change', '.docs-js-settings__setting', function PageSettingChange() {
-    const { checked, value: name } = this
-    settings[name] = checked
-    storage.set('settings', settings)
-    toggleSetting(name)
+  $container.on('change', '.js-settings__setting', (e) => {
+    update(e.target, e.target.checked)
+    if (window.lazy_iframify) {
+      window.lazy_iframify.check()
+    }
   })
 
-  for (let name in settings) {
-    if (settings.hasOwnProperty(name)) {
-      $settings
-        .find(`.docs-js-settings__setting[value='${name}']`)
-        .attr('checked', settings[name])
-      toggleSetting(name)
-    }
+  if (settings) {
+    keys.forEach(updateRoot)
   }
 
-  function toggleSetting(name) {
-    $root.toggleClass(`docs-has-${name}`, settings[name])
+  function update(obj, state) {
+    const name = obj.value
+    settings[name] = state = state !== undefined ? state : settings[name]
+    obj.checked = state
+    updateRoot(name)
+    localStorage.setItem('settings', JSON.stringify(settings, null, 2))
+  }
+
+  function updateRoot(name) {
+    if (settings[name]) {
+      $root.addClass('has-' + name)
+      $root.removeClass('has-no-' + name)
+    } else {
+      $root.addClass('has-no-' + name)
+      $root.removeClass('has-' + name)
+    }
   }
 })

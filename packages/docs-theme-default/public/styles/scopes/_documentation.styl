@@ -1,0 +1,97 @@
+html.has-open-menu
+  +media('<=lg')
+    overflow hidden
+
+.s-documentation
+  $header-height = 44px
+  $width = 275px
+  background white
+
+  +media('<=lg')
+    &__settings, &__nav, &__footer
+      background white
+      transform translateY(-100vh)
+      transition transform 0.35s ease-in-out
+
+      .has-open-menu &
+        transform translateY(0)
+
+    for $selector, $i in '&__nav' '&__footer'
+      /{selector($selector)}
+        transition-delay s('%ss', 0.05 * ($i + 1))
+
+  &__nav, &__body
+    margin-top 0
+
+  &__sidebar
+    display flex
+    flex-flow column nowrap
+    left 0
+    overflow-x hidden
+    overflow-y auto
+    position fixed
+    top 0
+    width 100%
+    z-index 100
+
+    +media('<=lg')
+      height ($header-height + 1)
+      transition height 0.35s ease-in-out
+
+      .has-open-menu &
+        height 100%
+
+    +media('>=lg')
+      bottom 0
+      box-shadow 1px 0 2px rgba(black, 0.2)
+      width $width
+
+      > * ~ *
+        margin-top $spacing
+
+  &__logo
+    padding em(10px)
+
+    +media('>=lg')
+      padding $spacing
+
+  &__sidebar-toggle
+    margin-top 0
+    min-width 44px
+    min-height 44px
+    position absolute
+    top 0
+    right 0
+
+    +media('>=lg')
+      display none
+
+  &__header
+    background color(a, -8)
+    box-shadow: 0 1px 0 $config.border-color;
+    height $header-height
+    z-index 3
+
+    +media('>=lg')
+      height auto
+
+  &__settings
+    z-index 2
+
+  &__nav
+    background color(a, -9)
+    border-right 1px solid color(a, -7)
+    // flex 1
+    max-height 83.4vh
+
+    +media('>=lg')
+      height auto
+
+  &__body
+    +media('>=lg')
+      padding-left ($width + $spacing)
+
+  &__footer
+    background color(a, -10)
+    position absolute
+    bottom 0

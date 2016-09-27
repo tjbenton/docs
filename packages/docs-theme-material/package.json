@@ -2,10 +2,18 @@
   "name": "docs-theme-material",
   "version": "0.0.0",
   "description": "Material theme for docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjbenton/docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tjbenton/docs/issues"
+  },
+  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Tyler Benton <tjbenton21@gmail.com> (https://github.com/tjbenton)",
-  "license": "ISC"
+  "private": true
 }

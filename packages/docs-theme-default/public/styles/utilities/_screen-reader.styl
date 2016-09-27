@@ -1,0 +1,31 @@
+for $breakpoint in $media-breakpoints-list
+  +media($breakpoint)
+    // @name Screen readers
+    // @author Tyler Benton
+    // @page utilities/screen-reader
+    // @description Only display content to screen readers. Checkout this [article](http://a11yproject.com/posts/how-to-hide-content/) for more information
+    //
+    // @markup {html} (example="false")
+    // <div class="u-sr-only"></div>
+    // <div class="u-sr-only u-sr-only--focusable"> <!-- only displays content when focused -->
+    .u-sr-only{$media}
+      border 0
+      clip rect(0, 0, 0, 0)
+      height 1px
+      margin -1px
+      overflow hidden
+      padding 0
+      position absolute
+      width 1px
+
+      // Use in conjunction with .sr-only to only display content when it's focused.
+      // Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+      // Credit: HTML5 Boilerplate
+    .u-sr-only--focusable#{$media}
+      &:active, &:focus
+        clip auto
+        height auto
+        margin 0
+        overflow visible
+        position static
+        width auto

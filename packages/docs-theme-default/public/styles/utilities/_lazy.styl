@@ -1,0 +1,29 @@
+// @name Loading Effect
+// @author Jessica Kennedy
+// @page components/global-classes
+//
+// @description
+//  Animates in a particular item with a pop over.
+//  `.c-products > *` & any elements with `.u-lazy` classes are animated in by default using...
+//  `ma.loadingEffect()`: called in document ready to animate in all items with `u-lazy` class
+//
+// @markup
+//  <span class="u-lazy u-lazy--in">
+//   I shall animate in!
+//  </span>
+$u-lazy, .u-lazy
+  transform scale(0)
+  transition: transform 0.3s $easing.swift;
+
+  &--fade
+    transform scale(1)
+    opacity 0
+    transition: opacity 0.3s $easing.swift;
+  
+  &--in
+    transform scale(1)
+    opacity 1
+
+  &--out
+    transform scale(0)
+    opacity 0

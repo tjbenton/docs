@@ -1,11 +1,10 @@
 /* eslint-disable guard-for-in */
-import { Logger } from './utils'
 import fs from 'fs-extra-promisify'
 import to, { is } from 'to-js'
 import path from 'path'
 import * as annotations from './annotations'
 import clor from 'clor'
-let log = new Logger()
+import logger from 'docs-helpers-logger'
 
 // changed by `options` key
 export const default_options = {
@@ -36,9 +35,9 @@ export const default_options = {
   // this stops the current block from adding lines if there're `n`
   // blank line lines between code, and starts a new block.
   blank_lines: 4,
-  debug: true,
-  warning: true,
-  timestamps: true,
+  debug: false,
+  warning: false,
+  timestamps: false,
 
   // stop adding code to the token.code.contents if the indent is less than the starting line indent
   indent: true,
@@ -46,14 +45,22 @@ export const default_options = {
   // this will return the raw data by file, aka data won't be sorted
   raw: false,
 
-  // this is used to sort the annotations to be in a specific order after
-  // the block has been parsed initial and before the the resolve functions run
-  // for each annotation. You can manipulate this list to ensure that a specific
-  // annotation resolves before another one does, this is used in the event that
-  // one annotation depends on another annotation to be resolved first
-  sort(a, b) {
-    return a.localeCompare(b) // same as the default sort function
-  },
+  sort: [
+    'name<=0',
+    'access<=1',
+    'author<=1',
+    'deprecated<=1',
+    'description<=1',
+    'markdown>6',
+    'markup>5',
+    'states>5',
+    'note>=-3',
+    'raw-code>6',
+    'todo>=-2',
+    'type<=1',
+    'version<=1',
+    'blockinfo>=-1',
+  ],
 
   languages: {
     default: {
@@ -150,26 +157,23 @@ export default async function config(options = {}) {
   }
 
   // always ignore json files because they don't support comments
-  options.ignore.push('*.json')
+  options.ignore.push('**/*.json')
 
   // ensures blank_lines is a number to avoid errors
   options.blank_lines = to.number(options.blank_lines)
 
   options.languages = parseLanguages(options.languages)
 
-  options.log = new Logger({
-    debug: options.debug,
-    warning: options.warning,
-    timestamps: options.timestamps
-  })
-
-
   {
     const { inline } = options.annotations
     if (inline) {
-      options.log.error(`you can't have an ${clor.bold.red('@inline')} annotation because it's reserved`)
+      logger.emit('error', `you can't have an ${clor.bold.red('@inline')} annotation because it's reserved`)
     }
   }
+
+  logger.options.debug = options.debug
+  logger.options.warning = options.warning
+  logger.options.timestamps = options.timestamps
 
   return options
 }
@@ -212,35 +216,4 @@ export function parseLanguages(languages) {
   }
 
   return parsed
-}
-
-
-let valid_options = to.keys(default_options)
-let valid_language_options = to.keys(default_options.languages.default)
-
-/// @name ensureValidConfig
-/// @description
-/// Ensures that the user set's a valid config
-/// @access private
-function ensureValidConfig(user_config) {
-  for (let key in user_config) {
-    if (!is.in(valid_options, key)) {
-      log.emit('warning', `'${key}' is not a valid option, see docs options for more details`) ///# @todo add link to the doc options
-    }
-  }
-
-  // ensures the newly added language has the correct comment format
-  if (user_config.languages) {
-    for (let [ lang, options ] of to.entries(user_config.languages)) {
-      for (let [ key ] of to.entries(options)) {
-        if (!is.in(valid_language_options, key)) {
-          log.emit(
-            'warning',
-            `'${key}' is not a valid comment option in '${lang}'. Here's the default language config`,
-            default_options.languages.default
-          )
-        }
-      }
-    }
-  }
 }

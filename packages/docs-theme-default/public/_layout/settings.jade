@@ -1,0 +1,5 @@
+fieldset(class="s-documentation__settings c-settings js-settings")
+  each setting in [ 'state', 'designer', 'code']
+    input(class="c-settings__input u-sr-only js-settings__setting", type="checkbox", value="#{setting}" id='#{setting}', checked)
+    label(class="c-settings__setting u-icon u-icon--#{setting} o-pseudo o-pseudo--middle" for="#{setting}")
+      = setting

@@ -1,11 +1,6 @@
-/* eslint-disable complexity, max-statements, max-depth */
-import { debug as _debug } from '../utils'
 import to, { is } from 'to-js'
 import { default_options } from '../config'
-import clor from 'clor'
 
-/* eslint-enable */
-@_debug('Tokenizer')
 export default class Tokenizer {
   constructor(str, options = {}) { // eslint-disable-line
     this.options = {}
@@ -18,7 +13,6 @@ export default class Tokenizer {
   }
 
   setOptions(options) { // eslint-disable-line
-    const debug = this.debugSet('options')
     options = to.arguments({
       content: '',
       lineno: 0,
@@ -34,9 +28,6 @@ export default class Tokenizer {
       indent: !is.undefined(this.options.indent) ? this.options.indent : true,
       offset: 0,
     }, arguments)
-
-
-    debug.push('options 1:', options)
 
     { // parse the comment to ensure the settings are valid, and attempt to update them
       // to be valid if they aren't valid
@@ -93,9 +84,6 @@ export default class Tokenizer {
 
     // update the iterator to use
     this.iterator = to.entries(this.stash, this.lineno)
-
-    debug.push('this.options', this.options, '')
-    debug.run()
   }
 
   /// @name hasNext
@@ -103,7 +91,7 @@ export default class Tokenizer {
   /// Used to check if the next line exists
   /// @returns {boolean}
   hasNext() {
-    return this.debugHasNext.ifFalse(this.peak(), "doesn't have another element", true)
+    return this.peak() // if false doesn't have another element
   }
 
   /// @name next
@@ -195,13 +183,10 @@ export default class Tokenizer {
       this.setOptions(arguments)
     }
 
-    this.setDebug()
-    const debug = this.debugParse
     const result = to.clone(this.getTokens())
     this.tokens = [] // reset the tokens list to be empty
     this.stash = [] // resets the stash to be empty
     this.token = undefined // reset the current token to be empty
-    debug.push('parsed:', result).run()
     return result
   }
 
@@ -217,8 +202,6 @@ export default class Tokenizer {
   /// This function will recursively get all the tokens in the file
   getTokens() {
     this.token = undefined
-    this.setDebug(true)
-    const debug = this.debugGetTokens
     if (!this.hasNext()) {
       return this.tokens
     }
@@ -226,15 +209,15 @@ export default class Tokenizer {
     this.next()
 
     if (
-      debug.ifTrue(is.empty(`${this.line}`.trim()), "the line was empty, and isn't in a token already") ||
-      debug.ifTrue(!this.line.has_comment, "The line doesn't have a comment, and isn't in a token already") ||
-      debug.ifTrue(this.is_multi && !this.line.index.start, "The line doesn't have a starting comment")
+      is.empty(`${this.line}`.trim()) ||  // the line was empty, and isn't in a token already
+      !this.line.has_comment || // The line doesn't have a comment, and isn't in a token already
+      (
+        this.is_multi &&
+        !this.line.index.start
+      ) // The line doesn't have a starting comment
     ) {
-      debug.push('', '', '', '').run()
       return this.getTokens()
     }
-
-    debug.push(`line [${this.lineno}]: ${clor.bgBlue(this.line)}`, this.line).run()
 
     if (this.line.has_comment) {
       this.token = new Token()
@@ -242,8 +225,6 @@ export default class Tokenizer {
       if (this.options.comment.type) {
         this.token.comment.type = this.options.comment.type
       }
-
-      debug.push('has comment').run()
 
       if (this.is_same_multi && this.line.index.start === this.line.index.end) {
         this.line.index.end = false
@@ -263,8 +244,6 @@ export default class Tokenizer {
     if (is.truthy(this.token)) {
       this.pushToken()
     }
-
-    debug.push('', '', '', '').run()
 
     return !this.options.restrict ? this.getTokens() : this.tokens
   }
@@ -295,7 +274,6 @@ export default class Tokenizer {
   /// @description
   /// Recursively pushes the code from each line onto the current token
   getCode() {
-    const debug = this.debugGetCode
     // store the starting lines indent
     const { indent } = this.line
 
@@ -328,16 +306,17 @@ export default class Tokenizer {
 
       if (
         this.hasNext() &&
-        debug.ifTrue(!this.is_same_multi || !line.has_comment, `the current line(${line.lineno}) doesn't have a comment: ${clor.bgGreen(line)}`)
+        ( // `the current line(${line.lineno}) doesn't have a comment: ${clor.bgGreen(line)}`
+          !this.is_same_multi ||
+          !line.has_comment
+        )
       ) {
         const next_line = this.peak()
-        const next_msg = `the next line(${next_line.lineno}) has a comment: ${clor.bgRed(next_line)}`
-        return debug.ifFalse(!next_line.has_comment, next_msg) && this.next() && recursiveCode()
+        return !next_line.has_comment && this.next() && recursiveCode()
       }
     }
 
     recursiveCode()
-    debug.run()
   }
 
   /// @name getSingleComment
@@ -345,22 +324,19 @@ export default class Tokenizer {
   /// Recursively pushes the single comment lines from each line onto the
   /// current token until the next instance of code
   getSingleComment() {
-    const debug = this.debugGetSingleComment
     const { comment } = this.options
     let line = to.clone(this.line)
     line.str = this.getAfter(comment.single, `${line}`)
 
     this.token.comment.contents.push(line)
-    const current_msg = `the current line(${line.lineno}) doesn't have code: ${clor.bgGreen(line)}`
-    if (debug.ifTrue(!line.has_code, current_msg) && this.hasNext()) {
+    if (
+      !line.has_code && // `the current line(${line.lineno}) doesn't have code: ${clor.bgGreen(line)}`
+      this.hasNext()
+    ) {
       const next_line = this.peak()
-      const context = next_line.has_code ? 'has code' : 'is empty'
-      const next_msg = `the next line(${next_line.lineno}) ${context}: ${clor.bgRed(next_line)}`
-
       this.next()
-      return debug.ifFalse(next_line.has_comment && !next_line.has_code, next_msg, true) && this.getSingleComment()
+      return next_line.has_comment && !next_line.has_code && this.getSingleComment()
     }
-    debug.run()
   }
 
   /// @name getMultiComment
@@ -368,7 +344,6 @@ export default class Tokenizer {
   /// Recursively pushes the multi line comment lines onto the
   /// current token until the next instance of code
   getMultiComment() {
-    const debug = this.debugGetMultiComment
     const { comment } = this.options
 
     let line = to.clone(this.line)
@@ -389,23 +364,20 @@ export default class Tokenizer {
 
     line.str = str
     this.token.comment.contents.push(line)
-    debug.push(line)
     if (this.hasNext()) {
-      if (debug.ifTrue(!line.index.end, `the current line(${line.lineno}) wasn't the last comment: ${clor.bgGreen(this.line)}`)) {
-        debug.run()
+      // `the current line(${line.lineno}) wasn't the last comment: ${clor.bgGreen(this.line)}`
+      if (!line.index.end) {
         return this.next() && this.getMultiComment()
       }
       const next = this.peak()
       if (
-        debug.ifTrue(!line.index.code, `the current line(${line.lineno}) doesn't has code: ${clor.bgGreen(line)}`) &&
-        debug.ifTrue(!next.has_comment, `the next line(${next.lineno}) doesn't have a comment: ${clor.bgGreen(next)}`)
+        !line.index.code && // `the current line(${line.lineno}) doesn't has code: ${clor.bgGreen(line)}`
+        !next.has_comment // `the next line(${next.lineno}) doesn't have a comment: ${clor.bgGreen(next)}`
       ) {
-        debug.run()
         return this.next()
       }
     }
 
-    debug.run()
     return
   }
 
@@ -415,7 +387,6 @@ export default class Tokenizer {
   /// It will normalize all the content that's passed to the comment and code in the token, then
   /// determin the starting and ending point for the comment and code.
   pushToken() {
-    const debug = this.debugPushToken
     const { offset } = this.options
     let token = to.clone(this.token)
 
@@ -461,7 +432,6 @@ export default class Tokenizer {
 
     token.comment = normalizeContent(token.comment, true)
     token.code = normalizeContent(token.code)
-    debug.push(token).run()
     this.tokens.push(token)
     this.token = undefined
     this.current_blank_lines = 0
@@ -490,24 +460,6 @@ export default class Tokenizer {
     }
 
     return false
-  }
-
-  /// @name setDebug
-  /// @description
-  /// This function is used to turn the debug options on or off
-  /// @arg {boolean} condition
-  setDebug(condition) {
-    if (is.undefined(condition)) {
-      condition = this.should_debug || false
-    }
-
-    this.debugParse = this.debugSet('parse', { condition, spaces: 0 })
-    this.debugGetTokens = this.debugSet('parse', { condition, spaces: 0 })
-    this.debugGetSingleComment = this.debugGetTokens.set('getSingleComment', 0)
-    this.debugGetMultiComment = this.debugGetTokens.set('getMultiComment', 0)
-    this.debugGetCode = this.debugGetTokens.set('getCode', 0)
-    this.debugPushToken = this.debugGetTokens.set('pushToken', 0)
-    this.debugHasNext = this.debugGetTokens.set('hasNext', 0)
   }
 }
 

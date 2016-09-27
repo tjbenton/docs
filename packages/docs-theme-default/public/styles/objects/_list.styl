@@ -1,0 +1,99 @@
+// @name List
+// @page objects/list
+// @description
+// This object allows you to easily create inline lists of objects
+// without using the grid system
+//
+// @state .o-list--tiny
+// @state .o-list--small
+// @state .o-list--large
+// @state .o-list--huge
+// @state .o-list--flush
+// @state .o-list--flex - Displays as a flex list that wraps. It's convienet for lists that you just want to stretch to be equal heights.
+// @state .o-list--multi-line - Adds spacing on the top of each list item to ensure the correct spacing is applied
+//
+// @markup **Example**
+// <ul class="o-list {$state} d-o-list-example">
+//   <li class="o-list__item"><a href="">Item 1</a></li>
+//   <li class="o-list__item"><a href="">Item 2</a></li>
+//   <li class="o-list__item"><a href="">Item 3</a></li>
+//   <li class="o-list__item d-o-list-example__item"><a href="">Item 4</a></li>
+//   <li class="o-list__item"><a href="">Item 5</a></li>
+//   <li class="o-list__item"><a href="">Item 6</a></li>
+// <ul>
+//
+// @markup {css} (code="false")
+// .d-o-list-example .o-list__item a {
+//   background: #e2e2e2;
+//   display: block;
+//   padding: 10px;
+// }
+// .d-o-list-example  .o-list__item:nth-child(odd) a {
+//   background: #d2d2d2;
+// }
+// .d-o-list-example .d-o-list-example__item a {
+//   padding: 5px 10px;
+// }
+
+// .o-list {
+//   $this: &;
+//   $this: str-slice(nth(nth(&, 1), 1), 2);
+//   $gutter: get($config, 'spacing');
+//   $sizes: (
+//     'tiny': $gutter / 4,
+//     'small': $gutter / 2,
+//     'large': $gutter * 1.50,
+//     'huge': $gutter * 2.25,
+//     'flush': 0
+//   );
+//   @extend %#{$this}--flex;
+//   align-items: center;
+//   flex-flow: row wrap;
+//   list-style: none outside none;
+//   margin-left: -$gutter;
+//   padding: 0;
+//
+//   &--stretch {
+//     align-items: stretch;
+//   }
+//
+//   &--multi-line {
+//     margin-top: 0;
+//     .#{$this}__item {
+//       margin-top: $gutter;
+//     }
+//   }
+//
+//
+//   @each $size, $value in $sizes {
+//     &--#{$size} {
+//       margin-left: -$value;
+//       > .#{$this}__item {
+//         padding-left: $value;
+//       }
+//       &.#{$this}--multi-line > .#{$this}_item {
+//         margin-top: $value;
+//       }
+//     }
+//   }
+//
+//   &__item {
+//     @extend %#{$this}--flex;
+//     display: inline-block;
+//     margin-top: 0;
+//     padding-left: $gutter;
+//     vertical-align: top;
+//     > * {
+//       // ensures the direct decendant is 100% of the width of the `.#{$this}__item`,
+//       // this is for when there's a width set on the `.#{$this}__item`.
+//       width: 100%;
+//     }
+//   }
+//
+//   // Both the parent and the items are display flex.
+//   // This ensures items direct decendant stretches to
+//   // fill the item.
+//   @at-root %#{$this}--flex {
+//     display: flex;
+//   }
+// }

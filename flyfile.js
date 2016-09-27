@@ -1,90 +1,168 @@
-/* eslint-disable */
+/* eslint-disable no-invalid-this */
 import path from 'path'
-import glob from 'globby'
-const packages = (folder) => path.join('packages', '*', folder, '**', '*.js')
-function modify(dir, name) {
-  dir = dir.split(path.sep)
-  dir[2] = name
-  return dir.join(path.sep)
+
+const base = path.join(__dirname, 'packages')
+const packages = (folder, file = '*.js') => path.join(base, '*', folder, '**', file)
+const regex = /[^/\\\\]*(public|app|src|scripts|tools|tests)/
+const modify = (keep = false, name = 'dist') => {
+  return (data, opts) => {
+    opts.file.dir = opts.file.dir.replace(regex, keep ? `$1-${name}` : name)
+    return data
+  }
 }
 
-const babel = {
-  presets: [ 'es2015', 'stage-0' ],
+const babel_options = {
+  presets: [
+    'latest',
+    'stage-0'
+  ],
   plugins: [
-    'syntax-async-functions',
-    'transform-async-to-generator',
     'transform-decorators-legacy',
-    'transform-regenerator',
-    'transform-runtime',
+    'transform-runtime'
   ]
 }
 
-const mocha = {
-  compilers: 'js:babel-register',
-  ui: 'tdd',
-  'check-leaks': true,
-  colors: true,
-  delay: true,
-  bail: true
+const modifyFile = (file) => {
+  if (!file) return
+  return path.join('packages', ...file.split('packages')[1]
+    .slice(1)
+    .split(path.sep)
+    .map((obj) => {
+      obj = obj.split('')
+      if (obj.length === 1) {
+        return ''
+      }
+      obj[0] = `[${obj[0]}]`
+      return obj.join('')
+    }))
+}
+
+export default async function() {
+  await this.start('clean')
+  await this.start([
+    'build',
+    'rest',
+    'baseTools',
+    'tools',
+    'theme',
+    'themeJs',
+    'themeRest',
+  ], { parallel: true })
 }
 
 
-export default async function build() {
+// compiles all the javascript files and
+// outputs them in the correct packages
+export async function build(file) {
   await this
-    .source(packages('{app,src}'))
-    .babel(babel)
-    .filter((data, opts) => {
-      opts.file.dir = modify(opts.file.dir, 'dist')
-      return data
-    })
-    .target('packages')
+    .source(modifyFile(file) || packages('{app,src}'))
+    .babel(babel_options)
+    .filter(modify())
+    .target(base)
 }
 
-export async function tools() {
-  const promises = []
+// copies all files that aren't `js` into
+// the packages `dist` folder
+export async function rest(file) {
+  await this
+  .source(modifyFile(file) || packages('{app,src}', '!(*.js)'))
+  .filter(modify())
+  .target(base)
+}
+
+export async function clean() {
+  await this.clear(path.join('packages', '*', '*dist'))
+}
+
+export async function watch() {
+  await this.start('clean')
+  await Promise.all([
+    this.watch(packages('{app,src}'), 'build'),
+    this.watch(packages('{app,src}', '!(*.+(js|styl))'), 'rest'),
+    this.watch(packages('{scripts,tools,tests}'), 'tools'),
+    this.watch(path.join('{scripts,tools,tests}', '**', '*.js'), 'baseTools'),
+    this.watch(packages('public'), 'themeJs'),
+    this.watch(packages('public', path.join('**', '*.styl')), 'themeStyles'),
+    this.watch(packages('public', '!(*.+(js|styl))'), 'themeRest'),
+    // this.watch(packages('{app,src}'), 'test')
+  ])
+}
+
+
+export async function baseTools() {
   await this
     .source(path.join('{scripts,tools,tests}', '**', '*.js'))
-    .babel(babel)
-    .filter((data, opts) => {
-      opts.file.dir = `${opts.file.dir}-dist`
-      return data
-    })
-    .target('./')
+    .babel(babel_options)
+    .filter(modify(true))
+    .target(__dirname)
+}
 
+export async function tools(file) {
   await this
-    .source(packages(`{scripts,tools,tests}`))
-    .babel(babel)
-    .filter((data, opts) => {
-      opts.file.dir = modify(opts.file.dir, opts.file.dir.split(path.sep)[2] + '-dist')
-      return data
-    })
-    .target('packages')
+    .source(modifyFile(file) || packages('{scripts,tools,tests}'))
+    .babel(babel_options)
+    .filter(modify(true))
+    .target(base)
 }
 
-export async function test() {
-  await this.start([ 'testUnit', 'testMock' ])
+
+// compiles/copies themes
+export async function theme() {
+  await this.start([
+    'themeJs',
+    'themeStyles',
+    'themeRest'
+  ], { parallel: true })
 }
 
-export async function testUnit() {
+// compiles all js in themes public folder and
+// outputs it into the `public-dist` folder
+export async function themeJs(file) {
   await this
-    .source(packages(path.join('tests', 'unit')))
-    .babel(babel)
-    .mocha(mocha)
+    .source(modifyFile(file) || packages('public'))
+    .filter(modify(true))
+    .babel({
+      presets: [
+        [
+          'latest', {
+            es2015: { loose: false, modules: false }
+          }
+        ],
+        'stage-0'
+      ],
+      babelrc: false,
+    })
+    .target(base)
 }
 
-export async function testMock() {
-  // await this
-  //   .source(path.join('packages', '*', 'tests', 'run.test.js'))
-  //   .babel(babel)
-  //   .mocha(mocha)
+import globby from 'globby'
+
+export async function themeStyles() {
+  const source = path.join(base, '*', 'public', 'styles*')
+  const paths = await globby([ source, path.join(source, '**', '*') ], { ignore: path.join(source, '**', '*.styl') })
+  await this
+    .source(path.join(source, 'index.styl'))
+    .stylus({
+      paths
+    })
+    .filter(modify(true))
+    .target(base)
 }
 
-// import globby from 'globby'
-// export async function test() {
-//   let base = __dirname
-//   let pkgs = await globby(path.join('packages', '*', 'flyfile.js'))
-//   for (let pkg of pkgs) {
-//     pkg = pkg.split(path.sep).slice(0, -1).join(path.sep)
-//     pkg = path.join(base, pkg)
-//   }
-// }
+// stylus packages/docs-theme-default/public/styles/index.styl packages/docs-theme-default/public-dist/styles/index.css
+
+
+// copies all files that aren't `js` into
+// the packages `public-dist` folder
+export async function themeRest(file) {
+  await this
+    .source(modifyFile(file) || packages('public', '!(*.+(js|styl))'))
+    .filter(modify(true))
+    .target(base)
+}
+
+
+// const in_glob = path.join(__dirname, 'packages', '*', '{app,src}', '**', '*.js')
+// const file = '/Users/tylerbenton/ui-development/docs/packages/docs-core/app/docs.js'
+// const out_glob = path.join(__dirname, 'packages', '*', 'dist', '**', '*.js')
+// const expected = '/Users/tylerbenton/ui-development/docs/packages/docs-core/dist/docs.js'

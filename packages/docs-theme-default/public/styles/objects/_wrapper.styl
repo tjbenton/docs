@@ -1,0 +1,37 @@
+/// @name wrapper
+/// @author Tyler Benton
+/// @page objects/wrapper
+/// @description
+/// This class is used to give an object some spacing around
+/// all sides. It's very reusable and you can nest it inside
+/// it's self.
+///
+/// @state .o-wrapper--tiny
+/// @state .o-wrapper--small
+/// @state .o-wrapper--large
+/// @state .o-wrapper--huge
+///
+/// @markup
+/// <div class="o-wrapper {$state}" style="background: #e2e2e2">
+///   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet repudiandae veritatis reiciendis, voluptatum magnam, officiis ut esse ipsa molestias est, nesciunt cum. Rerum minus autem, odio in tempora, vitae iste.</p>
+///   <div class="o-wrapper__flush o-wrapper {$state}" style="background: #ccc">
+///     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet repudiandae veritatis reiciendis, voluptatum magnam, officiis ut esse ipsa molestias est, nesciunt cum. Rerum minus autem, odio in tempora, vitae iste.</p>
+///     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet repudiandae veritatis reiciendis, voluptatum magnam, officiis ut esse ipsa molestias est, nesciunt cum. Rerum minus autem, odio in tempora, vitae iste.</p>
+///     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet repudiandae veritatis reiciendis, voluptatum magnam, officiis ut esse ipsa molestias est, nesciunt cum. Rerum minus autem, odio in tempora, vitae iste.</p>
+///   </div>
+///   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet repudiandae veritatis reiciendis, voluptatum magnam, officiis ut esse ipsa molestias est, nesciunt cum. Rerum minus autem, odio in tempora, vitae iste.</p>
+/// </div>
+.o-wrapper
+  padding: ($config.spacing)
+
+  &__flush
+    margin-left: -($config.spacing)
+    margin-right: -($config.spacing)
+
+for $size, $value in $spacing-sizes
+  .o-wrapper--{$size}
+    padding $value
+
+    > .wrapper__flush
+      margin-left -($value)
+      margin-right -($value)
