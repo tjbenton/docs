@@ -1,7 +1,0 @@
-has-modifiers($selector = '')
-  $selector = selector() + $selector
-  $selector = unquote(slice($selector, 1))
-  $selector = s("[class^='%s'], [class*=' %s']", $selector, $selector)
-
-  /{$selector}
-    {block}

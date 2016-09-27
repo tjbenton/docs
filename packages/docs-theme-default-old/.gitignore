@@ -1,9 +1,0 @@
-node_modules/
-npm*
-.DS_S*
-.sass-cache
-
-*.map
-public/styles
-public/jspm_packages
-*.bundle*

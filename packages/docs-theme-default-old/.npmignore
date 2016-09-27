@@ -1,8 +1,0 @@
-tests/
-app/
-coverage/
-.coveralls.yml
-.travis.yml
-.gitignore
-.jscsrc
-.jshintrc
