@@ -1,6 +1,6 @@
 {
   "name": "docs-example",
-  "version": "0.0.0-alpha-5.3",
+  "version": "0.0.0-alpha-5.4",
   "description": "This project is used to show how you can use docs",
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "docs-core": "^0.0.0-alpha-5.3",
-    "docs-theme-default": "^0.0.0-alpha-5.3"
+    "docs-core": "^0.0.0-alpha-5.4",
+    "docs-theme-default": "^0.0.0-alpha-5.4"
   }
 }
