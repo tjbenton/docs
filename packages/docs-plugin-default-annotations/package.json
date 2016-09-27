@@ -2,10 +2,7 @@
   "name": "docs-plugin-default-annotations",
   "version": "0.0.0-alpha-5.3",
   "description": "Default annotations for docs",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tjbenton/docs.git"
-  },
+  "repository": "https://github.com/tjbenton/docs/tree/master/packages/docs-plugin-default-annotations",
   "bugs": {
     "url": "https://github.com/tjbenton/docs/issues"
   },

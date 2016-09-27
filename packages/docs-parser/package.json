@@ -1,11 +1,8 @@
 {
   "name": "docs-parser",
   "version": "0.0.0-alpha-5.3",
-  "description": "Documentation chameleon, adapts to any language and will help you document all the things.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tjbenton/docs.git"
-  },
+  "description": "Documentation parser, adapts to any language and will help you document all the things.",
+  "repository": "https://github.com/tjbenton/docs/tree/master/packages/docs-parser",
   "bugs": {
     "url": "https://github.com/tjbenton/docs/issues"
   },

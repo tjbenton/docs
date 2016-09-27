@@ -2,10 +2,7 @@
   "name": "docs-theme-default",
   "version": "0.0.0-alpha-5.3",
   "description": "Default theme for docs",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tjbenton/docs.git"
-  },
+  "repository": "https://github.com/tjbenton/docs/tree/master/packages/docs-theme-default",
   "bugs": {
     "url": "https://github.com/tjbenton/docs/issues"
   },
