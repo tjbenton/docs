@@ -1,6 +1,6 @@
 {
   "name": "docs-theme-default",
-  "version": "0.0.0-alpha-5.4",
+  "version": "0.0.0-alpha-5.5",
   "description": "Default theme for docs",
   "repository": "https://github.com/tjbenton/docs/tree/master/packages/docs-theme-default",
   "bugs": {

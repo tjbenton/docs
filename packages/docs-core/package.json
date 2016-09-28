@@ -1,6 +1,6 @@
 {
   "name": "docs-core",
-  "version": "0.0.0-alpha-5.4",
+  "version": "0.0.0-alpha-5.5",
   "description": "",
   "repository": "https://github.com/tjbenton/docs/tree/master/packages/docs-core",
   "bugs": {
@@ -20,9 +20,9 @@
     "babel-register": "^6.9.0",
     "chokidar": "^1.6.0",
     "commander": "^2.9.0",
-    "docs-helpers-logger": "^0.0.0-alpha-5.4",
-    "docs-parser": "^0.0.0-alpha-5.4",
-    "docs-plugin-default-annotations": "^0.0.0-alpha-5.4",
+    "docs-helpers-logger": "^0.0.0-alpha-5.5",
+    "docs-parser": "^0.0.0-alpha-5.5",
+    "docs-plugin-default-annotations": "^0.0.0-alpha-5.5",
     "fs-extra-promisify": "0.0.2",
     "globby": "^6.0.0",
     "harp": "github:sintaxi/harp#v0.21.0-pre",
