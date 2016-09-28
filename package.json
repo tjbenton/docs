@@ -50,14 +50,14 @@
   },
   "ava": {
     "files": [
-      "packages/docs-parser/tests/fixtures/*.test.js",
+      "packages/docs-parser/tests/compare/*.test.js",
       "packages/docs-parser/tests/unit/**/*.test.js"
     ],
     "source": [
       "packages/*/dist/**/*.js"
     ],
-    "match": [],
     "concurrency": 5,
+    "failFast": true,
     "timeout": "1m"
   }
 }

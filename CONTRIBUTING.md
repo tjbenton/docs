@@ -62,12 +62,12 @@ Most packages in [`/packages`](/packages) have a `tests` folder
 
 ##### `docs-plugin-x`
 
-All the Docs plugins (and other packages) that have a `/tests/fixtures` are written in a similar way.
+All the Docs plugins (and other packages) that have a `/tests/compare` are written in a similar way.
 
 To generate your test result run `create-test <package> 'glob'`. For example to create a test case for `docs-parser` you would do the following
 
-  1. Create a test in `packages/docs-parser/tests/fixtures/cases/`
-  2. If a `create.js` is not located under `tests/fixtures` then you must create one and author how you want this test to be created. See [docs-parser](/packages/docs-parser/tests/fixtures/create.js) for an example.
+  1. Create a test in `packages/docs-parser/tests/compare/cases/`
+  2. If a `create.js` is not located under `tests/compare` then you must create one and author how you want this test to be created. See [docs-parser](/packages/docs-parser/tests/compare/create.js) for an example.
   3. Write the input in what ever language you want to (not `json` because it doesn't support comments)
   4. run `create-test docs-parser 'cases/name-of-test.js'`
   5. ensure that the output of `cases/name-of-test.json` is correct.

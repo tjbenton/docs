@@ -1,0 +1,49 @@
+{
+  "nav": [
+    {
+      "title": "4 Blank Lines Between Code Blocks",
+      "href": "/4-blank-lines-between-code-blocks",
+      "body": [
+        {
+          "title": "moz-only",
+          "href": "/4-blank-lines-between-code-blocks#moz-only"
+        }
+      ],
+      "subpages": []
+    }
+  ],
+  "pages": {
+    "4-blank-lines-between-code-blocks": {
+      "page": {
+        "header": {},
+        "body": [
+          {
+            "name": "moz-only",
+            "access": "public",
+            "raw-code": {
+              "raw": "@mixin moz-only() {\n  $selector: &;\n  @at-root {\n    @-moz-document url-prefix() {\n      #{$selector} {\n        @content;\n      }\n    }\n  }\n}",
+              "escaped": "@mixin moz-only() {\n  $selector: &amp;;\n  @at-root {\n    @-moz-document url-prefix() {\n      #{$selector} {\n        @content;\n      }\n    }\n  }\n}"
+            },
+            "blockinfo": {
+              "comment": {
+                "start": 1,
+                "end": 3,
+                "type": "body"
+              },
+              "code": {
+                "start": 4,
+                "end": 13
+              },
+              "file": {
+                "path": "docs/packages/docs-parser/tests/compare/cases/4-blank-lines-between-code-blocks.scss",
+                "start": 1,
+                "end": 34
+              }
+            },
+            "inline": []
+          }
+        ]
+      }
+    }
+  }
+}

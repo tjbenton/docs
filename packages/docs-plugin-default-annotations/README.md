@@ -157,7 +157,7 @@ referenced it will throw an error.
     "end": -1
   },
   "file": {
-    "path": "docs/packages/docs-parser/tests/fixtures/annotations/access/access.autofill.body.js",
+    "path": "docs/packages/docs-parser/tests/compare/annotations/access/access.autofill.body.js",
     "start": 1,
     "end": 2
   }

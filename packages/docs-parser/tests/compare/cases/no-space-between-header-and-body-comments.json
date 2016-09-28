@@ -1,0 +1,81 @@
+{
+  "nav": [
+    {
+      "title": "No Space Between Header And Body Comment",
+      "href": "/no-space-between-header-and-body-comment",
+      "body": [
+        {
+          "title": "moz-only",
+          "href": "/no-space-between-header-and-body-comment#moz-only"
+        }
+      ],
+      "subpages": []
+    }
+  ],
+  "pages": {
+    "no-space-between-header-and-body-comment": {
+      "page": {
+        "header": {
+          "author": [
+            "Tyler Benton"
+          ],
+          "access": "public",
+          "blockinfo": {
+            "comment": {
+              "start": 1,
+              "end": 4,
+              "type": "header"
+            },
+            "code": {
+              "start": -1,
+              "end": -1
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compare/cases/no-space-between-header-and-body-comments.scss",
+              "start": 1,
+              "end": 28
+            }
+          }
+        },
+        "body": [
+          {
+            "name": "moz-only",
+            "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
+            "access": "public",
+            "markup": [
+              {
+                "id": "0",
+                "language": "scss",
+                "settings": {
+                  "example": "'false'"
+                },
+                "description": "<p><strong>Example:</strong></p>\n",
+                "raw": "@include moz-only(){\n // removes the weird styling in firefox\n -moz-appearance: none;\n padding: {\n  top: nth-val(get($form-config, padding), 1) - .2em;\n  bottom: nth-val(get($form-config, padding), 3) - .2em;\n };\n text-indent: 0.01px;\n text-overflow: \"\";\n}",
+                "escaped": "@include moz-only(){\n // removes the weird styling in firefox\n -moz-appearance: none;\n padding: {\n  top: nth-val(get($form-config, padding), 1) - .2em;\n  bottom: nth-val(get($form-config, padding), 3) - .2em;\n };\n text-indent: 0.01px;\n text-overflow: &quot;&quot;;\n}",
+                "raw_stateless": "@include moz-only(){\n // removes the weird styling in firefox\n -moz-appearance: none;\n padding: {\n  top: nth-val(get($form-config, padding), 1) - .2em;\n  bottom: nth-val(get($form-config, padding), 3) - .2em;\n };\n text-indent: 0.01px;\n text-overflow: \"\";\n}",
+                "escaped_stateless": "@include moz-only(){\n // removes the weird styling in firefox\n -moz-appearance: none;\n padding: {\n  top: nth-val(get($form-config, padding), 1) - .2em;\n  bottom: nth-val(get($form-config, padding), 3) - .2em;\n };\n text-indent: 0.01px;\n text-overflow: &quot;&quot;;\n}"
+              }
+            ],
+            "blockinfo": {
+              "comment": {
+                "start": 5,
+                "end": 17,
+                "type": "body"
+              },
+              "code": {
+                "start": 18,
+                "end": 27
+              },
+              "file": {
+                "path": "docs/packages/docs-parser/tests/compare/cases/no-space-between-header-and-body-comments.scss",
+                "start": 1,
+                "end": 28
+              }
+            },
+            "inline": []
+          }
+        ]
+      }
+    }
+  }
+}

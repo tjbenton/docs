@@ -35,12 +35,18 @@ lint:
 	eslint 'flyfile.js' 'scripts/**/*' 'packages/*/+(app|public|src|tools)/**/*.js'
 
 publish:
+	make clean
+	make build
+	make test
 	lerna publish --npm-tag=latest --force-publish=*
 
 prerelease:
+	make clean
+	make build
+	make test
 	lerna publish --npm-tag=prerelease --force-publish=*
 
-rebuild:
+rebuild reinstall:
 	rm -rf node_modules
 	make deep-clean
 	npm install

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "access": "public",
+    "page": [
+      "general"
+    ],
+    "markdown": "<h1 id=\"h1-tag\">H1 Tag</h1>\n<pre><code class=\"lang-scss\">.foo {\n  .bar {\n    background: blue;\n  }\n}\n</code></pre>\n",
+    "blockinfo": {
+      "comment": {
+        "start": 1,
+        "end": 3,
+        "type": "header"
+      },
+      "code": {
+        "start": -1,
+        "end": -1
+      },
+      "file": {
+        "path": "docs/packages/docs-parser/tests/compare/annotations/markdown/md.md",
+        "start": 1,
+        "end": 13
+      }
+    }
+  },
+  "body": []
+}

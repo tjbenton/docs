@@ -28,7 +28,7 @@ export default async function createTest() { // eslint-disable-line
   }
 
   let pkg = argv[0]
-  let base = path.join(_root, 'packages', pkg, 'tests', 'fixtures')
+  let base = path.join(_root, 'packages', pkg, 'tests', 'compare')
   let globs = argv
     .slice(1)
     .join(',')
@@ -59,7 +59,7 @@ export default async function createTest() { // eslint-disable-line
   parsed = await Promise.all(parsed)
 
   async function run(file) {
-    let name = file.match(/(?:tests\/fixtures\/)([a-z\-]*)/)[1]
+    let name = file.match(/(?:tests\/compare\/)([a-z\-]*)/)[1]
     let fn = create[to.camelCase(name)]
     let log_file = file.replace(path.join(_root, ''), 'docs')
     let result = { file, log_file }

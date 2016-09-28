@@ -1,0 +1,57 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "note": [
+        {
+          "importance": "0",
+          "description": "<ul>\n<li>note 1</li>\n<li>note 2</li>\n<li>note 3</li>\n</ul>\n"
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 4,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compare/annotations/note/note.alias.js",
+          "start": 1,
+          "end": 10
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "note": [
+        {
+          "importance": "10",
+          "description": "<ul>\n<li>note 1</li>\n<li>note 2</li>\n<li>note 3</li>\n</ul>\n"
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 6,
+          "end": 9,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compare/annotations/note/note.alias.js",
+          "start": 1,
+          "end": 10
+        }
+      },
+      "inline": []
+    }
+  ]
+}

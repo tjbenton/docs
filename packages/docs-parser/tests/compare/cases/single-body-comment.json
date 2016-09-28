@@ -1,0 +1,63 @@
+{
+  "nav": [
+    {
+      "title": "Single Body Comment",
+      "href": "/single-body-comment",
+      "body": [
+        {
+          "title": "moz-only",
+          "href": "/single-body-comment#moz-only"
+        }
+      ],
+      "subpages": []
+    }
+  ],
+  "pages": {
+    "single-body-comment": {
+      "page": {
+        "header": {},
+        "body": [
+          {
+            "name": "moz-only",
+            "author": [
+              "Tyler Benton"
+            ],
+            "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
+            "access": "public",
+            "markup": [
+              {
+                "id": "0",
+                "language": "scss",
+                "settings": {
+                  "example": "'false'"
+                },
+                "description": "<p><strong>Example:</strong></p>\n",
+                "raw": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: '';\n}",
+                "escaped": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: &#39;&#39;;\n}",
+                "raw_stateless": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: '';\n}",
+                "escaped_stateless": "@include moz-only() {\n  // removes the weird styling in firefox\n  -moz-appearance: none;\n  padding: {\n    top: nth-val(get($form-config, padding), 1) - .2em;\n    bottom: nth-val(get($form-config, padding), 3) - .2em;\n  };\n  text-indent: 0.01px;\n  text-overflow: &#39;&#39;;\n}"
+              }
+            ],
+            "blockinfo": {
+              "comment": {
+                "start": 1,
+                "end": 15,
+                "type": "body"
+              },
+              "code": {
+                "start": 16,
+                "end": 26
+              },
+              "file": {
+                "path": "docs/packages/docs-parser/tests/compare/cases/single-body-comment.scss",
+                "start": 1,
+                "end": 27
+              }
+            },
+            "inline": []
+          }
+        ]
+      }
+    }
+  }
+}

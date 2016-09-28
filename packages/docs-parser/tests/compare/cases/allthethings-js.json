@@ -1,0 +1,129 @@
+{
+  "nav": [
+    {
+      "title": "Components",
+      "href": "/components",
+      "body": [
+        {
+          "title": "Beards",
+          "href": "/components#beards"
+        }
+      ],
+      "subpages": []
+    }
+  ],
+  "pages": {
+    "components": {
+      "page": {
+        "header": {
+          "name": "All the things test",
+          "author": [
+            "Tyler Benton"
+          ],
+          "access": "public",
+          "blockinfo": {
+            "comment": {
+              "start": 1,
+              "end": 5,
+              "type": "header"
+            },
+            "code": {
+              "start": -1,
+              "end": -1
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compare/cases/allthethings-js.js",
+              "start": 1,
+              "end": 23
+            }
+          }
+        },
+        "body": [
+          {
+            "name": "Beards",
+            "description": "<p>This is an awesome class about beards</p>\n",
+            "access": "public",
+            "blockinfo": {
+              "comment": {
+                "start": 8,
+                "end": 10,
+                "type": "body"
+              },
+              "code": {
+                "start": 11,
+                "end": 23
+              },
+              "file": {
+                "path": "docs/packages/docs-parser/tests/compare/cases/allthethings-js.js",
+                "start": 1,
+                "end": 23
+              }
+            },
+            "inline": [
+              {
+                "name": "constructor",
+                "access": "public",
+                "arg": [
+                  {
+                    "types": [
+                      "object"
+                    ],
+                    "name": "options",
+                    "value": "",
+                    "description": ""
+                  }
+                ],
+                "blockinfo": {
+                  "comment": {
+                    "start": 12,
+                    "end": 13,
+                    "type": "inline"
+                  },
+                  "code": {
+                    "start": 14,
+                    "end": 16
+                  },
+                  "file": {
+                    "path": "docs/packages/docs-parser/tests/compare/cases/allthethings-js.js",
+                    "start": 1,
+                    "end": 23
+                  }
+                }
+              },
+              {
+                "name": "beard",
+                "access": "public",
+                "arg": [
+                  {
+                    "types": [
+                      "string"
+                    ],
+                    "name": "type",
+                    "value": "'full beard'",
+                    "description": "<p>The type of beard you&#39;re wanting to get</p>\n"
+                  }
+                ],
+                "blockinfo": {
+                  "comment": {
+                    "start": 18,
+                    "end": 19,
+                    "type": "inline"
+                  },
+                  "code": {
+                    "start": 20,
+                    "end": 22
+                  },
+                  "file": {
+                    "path": "docs/packages/docs-parser/tests/compare/cases/allthethings-js.js",
+                    "start": 1,
+                    "end": 23
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "raw-code": {
+        "raw": "function rawCode() {\n\n}",
+        "escaped": "function rawCode() {\n\n}"
+      },
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": 2,
+          "end": 4
+        },
+        "file": {
+          "path": "docs/packages/docs-parser/tests/compare/annotations/raw-code/raw-code.js",
+          "start": 1,
+          "end": 4
+        }
+      },
+      "inline": []
+    }
+  ]
+}

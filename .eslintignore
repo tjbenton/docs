@@ -2,6 +2,6 @@ scripts
 node_modules
 jspm_packages
 *dist
-packages/*/tests/fixtures/*/**/*
+packages/*/tests/compare/*/**/*
 packages/*/public/config.js
 vendor
