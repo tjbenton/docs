@@ -28,8 +28,8 @@ deep-clean:
 	rm -rf .DS_Store packages/*/.DS_Store
 
 install:
-	npm install
-	make boostrap
+	type yarn 2>/dev/null && yarn install || npm install
+	make bootstrap
 
 lint:
 	eslint 'flyfile.js' 'scripts/**/*' 'packages/*/+(app|public|src|tools)/**/*.js'
@@ -46,10 +46,10 @@ prerelease:
 	make test
 	lerna publish --npm-tag=prerelease --force-publish=*
 
-rebuild reinstall:
+reinstall:
 	rm -rf node_modules
 	make deep-clean
-	npm install
+	type yarn 2>/dev/null && yarn install || npm install
 	make build
 
 test:
