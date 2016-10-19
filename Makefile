@@ -28,10 +28,15 @@ deep-clean:
 	rm -rf .DS_Store packages/*/.DS_Store
 
 install:
-	type yarn 2>/dev/null && yarn install || npm install
-	echo -e "#!/usr/bin/env node\\nrequire('../../packages/docs-helpers-create-test')" > 'node_modules/docs-helpers-create-test/index.js'
-	echo "module.exports = require('../../../packages/docs-helpers-test')" > 'node_modules/docs-helpers-test/dist/index.js'
-	make bootstrap
+	if type yarn 2>/dev/null; then \
+		yarn install; \
+		echo -e "#!/usr/bin/env node\\nrequire('../../packages/docs-helpers-create-test')" > 'node_modules/docs-helpers-create-test/index.js'; \
+		echo "module.exports = require('../../../packages/docs-helpers-test')" > 'node_modules/docs-helpers-test/dist/index.js'; \
+		make bootstrap; \
+	else \
+		npm install yarn; \
+		make install; \
+  fi
 
 lint:
 	eslint 'flyfile.js' 'scripts/**/*' 'packages/*/+(app|public|src|tools)/**/*.js'
