@@ -1,76 +1,66 @@
-import { map } from 'async-array-methods'
 import assert from 'power-assert'
 import path from 'path'
-import globby from 'globby'
 import fs from 'fs-extra-promisify'
 import json from 'jsondiffpatch'
 
-export default class Tests {
-  constructor(folder) {
-    this.folder = path.join(process.cwd(), folder)
-    this.result = this.tests = new Promise((resolve, reject) => {
-      this.resolve = resolve
-      this.reject = reject
-    })
+import readDir from 'recursive-readdir-sync'
+import ava from 'ava-spec'
+
+ava.compair = function Compair(folder, options = {}) {
+  if (typeof folder === 'object') {
+    options = folder
+    folder = options.folder
   }
 
-  async expected() {
-    this.paths = await globby(path.join(this.folder, '**', '*'), {
-      ignore: [ path.join(this.folder, '**', '*.json') ],
-      nodir: true
-    })
-
-    return await map(this.paths, (file) => {
-      return fs.readJson(file.replace(path.extname(file), '.json'))
-        .then((expected) => {
-          return { file, expected }
-        })
-    })
+  if (typeof options === 'function') {
+    options = { actual: options }
   }
 
-  async actual(callback) {
-    let result = await map(await this.expected(), async (test) => {
-      test.actual = await callback(test)
-      return test
-    })
+  options = Object.assign({
+    actual() {},
+    test: false,
+    diff: true
+  }, options)
 
-    this.resolve(result)
+  const root = process.cwd()
+  const files = readDir(path.join(root, folder)).filter((file) => !file.includes('.json'))
 
-    return result
-  }
+  const createTest = (file) => {
+    const test = this.group(file.slice(root.length + 1))
 
-  async test(t, log = true) {
-    this.result = this.tests = await this.tests
-    const pass = []
-    const fail = []
-    for (let i = 0; i < this.tests.length; i++) {
-      let { file, actual, expected } = this.tests[i]
+    test(async (t) => {
+      let actual = options.actual(file, t)
+      let expected = fs.readJson(file.replace(path.extname(file), '.json'))
+
+      actual = await actual
+      expected = await expected
+
+      if (options.test) {
+        options.test(t, { file, actual, expected })
+        if (!options.diff) {
+          return
+        }
+      }
 
       try {
         assert.deepStrictEqual(actual, expected, file)
-        pass.push(file)
+        t.pass(file)
       } catch (e) {
         const delta = json.diff(actual, expected)
         const diff = json.formatters.console.format(delta)
-        fail.push({ file, diff })
-      }
-    }
-
-    if (fail.length) {
-      if (log) {
         const spaces = '  '
-        fail.forEach((item) => {
-          console.log('')
-          console.log(spaces + item.file)
-          console.log(item.diff.split('\n').map((line) => spaces + spaces + line).join('\n'))
-          console.log('')
-        })
+        t.fail(file)
+        console.log('')
+        console.log(spaces + file)
+        console.log(diff.split('\n').map((line) => spaces + spaces + line).join('\n'))
+        console.log('')
       }
-      t.fail(`${fail.length} file${fail.length > 1 ? 's' : ''} failed`)
-    } else {
-      t.pass(`${pass.length} file${pass.length > 1 ? 's' : ''} passed`)
-    }
+    })
+  }
 
-    return this.result
+  for (let file of files) {
+    createTest(file)
   }
 }
+
+export default ava

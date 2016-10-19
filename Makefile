@@ -29,6 +29,8 @@ deep-clean:
 
 install:
 	type yarn 2>/dev/null && yarn install || npm install
+	echo "module.exports = require('../../../packages/docs-helpers-create-test')" > 'node_modules/docs-helpers-create-test/index.js'
+	echo "module.exports = require('../../../packages/docs-helpers-test')" > 'node_modules/docs-helpers-test/dist/index.js'
 	make bootstrap
 
 lint:
