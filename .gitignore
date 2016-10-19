@@ -12,4 +12,3 @@ coverage
 packages/do*/docs
 !packages/docs-example/docs
 packages/docs-core/public
-test
