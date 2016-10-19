@@ -6,7 +6,7 @@ const defaults = {
   debug: false,
   timestamps: false,
   ignore: '.*',
-  annotations: defaultAnnotations.annotations
+  ...defaultAnnotations,
 }
 
 export async function annotations({ file }) {

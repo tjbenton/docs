@@ -64,7 +64,7 @@ to.markdown({
   renderer,
   langPrefix: 'hljs ',
   highlight(code, language) {
-    return whitespace(hljs.highlight(language, code, true).value)
+    return whitespace(!language ? code : hljs.highlight(language, code, true).value)
   }
 })
 

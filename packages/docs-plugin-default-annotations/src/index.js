@@ -47,7 +47,6 @@ module.exports = {
     'markup>5',
     'states>5',
     'note>=-3',
-    'property',
     'raw-code>6',
     'todo>=-2',
     'type<=1',

@@ -1,5 +1,5 @@
 
-import options from '../..'
+import defaultAnnotations from '../..'
 import docsParser from '../../../docs-parser'
 
 export async function annotations({ file }) {
@@ -10,7 +10,7 @@ export async function annotations({ file }) {
     debug: false,
     timestamps: false,
     ignore: '.*',
-    annotations: options.annotations
+    ...defaultAnnotations,
   })
   return result[file]
 }

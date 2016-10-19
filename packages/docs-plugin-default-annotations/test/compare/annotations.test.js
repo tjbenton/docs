@@ -1,6 +1,6 @@
 import test from 'docs-helpers-test'
 import docsParser from 'docs-parser'
-import { annotations } from '../..'
+import defaultAnnotations from '../..'
 
 test.compair('annotations', async (file) => {
   const result = await docsParser({
@@ -10,7 +10,7 @@ test.compair('annotations', async (file) => {
     timestamps: false,
     warning: false,
     ignore: '.*',
-    annotations,
+    ...defaultAnnotations,
   })
 
   return result[file]
