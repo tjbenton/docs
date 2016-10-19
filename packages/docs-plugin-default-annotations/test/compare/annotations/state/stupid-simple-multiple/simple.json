@@ -1,0 +1,89 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "markup": [
+        {
+          "id": "0",
+          "language": "html",
+          "settings": {},
+          "description": "",
+          "raw": "<div class=\"something-super-awesome ${@state}\">\n  Mind blown\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state}&quot;&gt;\n  Mind blown\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\">\n  Mind blown\n</div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;\n  Mind blown\n&lt;/div&gt;"
+        }
+      ],
+      "states": {
+        "0": [
+          {
+            "state": {
+              "0": {
+                "state": ":hover",
+                "description": ""
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :hover\">\n  Mind blown\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :hover&quot;&gt;\n  Mind blown\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ":focus",
+                "description": ""
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :focus\">\n  Mind blown\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :focus&quot;&gt;\n  Mind blown\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ":active",
+                "description": ""
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :active\">\n  Mind blown\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :active&quot;&gt;\n  Mind blown\n&lt;/div&gt;"
+            }
+          }
+        ]
+      },
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 8,
+          "type": "body"
+        },
+        "code": {
+          "start": 9,
+          "end": 23
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/state/stupid-simple-multiple/simple.scss",
+          "start": 1,
+          "end": 24
+        }
+      },
+      "inline": []
+    }
+  ]
+}

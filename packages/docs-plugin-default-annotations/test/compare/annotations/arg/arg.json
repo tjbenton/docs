@@ -1,0 +1,184 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "arg": [
+        {
+          "types": [],
+          "name": "",
+          "value": "",
+          "description": ""
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/arg/arg.js",
+          "start": 1,
+          "end": 17
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "arg": [
+        {
+          "types": [
+            "type"
+          ],
+          "name": "name-of-variable",
+          "value": "",
+          "description": ""
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 3,
+          "end": 3,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/arg/arg.js",
+          "start": 1,
+          "end": 17
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "arg": [
+        {
+          "types": [
+            "type",
+            "othertype"
+          ],
+          "name": "name-of-variable",
+          "value": "",
+          "description": ""
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 5,
+          "end": 5,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/arg/arg.js",
+          "start": 1,
+          "end": 17
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "arg": [
+        {
+          "types": [
+            "type"
+          ],
+          "name": "name-of-variable",
+          "value": "",
+          "description": "<p>description</p>\n"
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 7,
+          "end": 7,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/arg/arg.js",
+          "start": 1,
+          "end": 17
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "arg": [
+        {
+          "types": [
+            "type"
+          ],
+          "name": "name-of-variable",
+          "value": "default value",
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>\n"
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 9,
+          "end": 9,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/arg/arg.js",
+          "start": 1,
+          "end": 17
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "arg": [
+        {
+          "types": [
+            "type"
+          ],
+          "name": "name-of-variable",
+          "value": "default value",
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et\ndolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\nex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore\neu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia\ndeserunt mollit anim id est laborum.</p>\n"
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 11,
+          "end": 16,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/arg/arg.js",
+          "start": 1,
+          "end": 17
+        }
+      },
+      "inline": []
+    }
+  ]
+}

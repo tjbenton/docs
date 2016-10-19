@@ -1,0 +1,73 @@
+/// @state {:hover} Some super awesome description for the hover state
+/// @state {:focus} Some super awesome description for the focus state
+/// @state {:active} Some super awesome description for the active state
+///
+/// @markup {html}
+/// <div class="something-super-awesome ${@state}">
+///   ${@state.description}
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+
+  &:focus {
+    background: blue;
+  }
+
+  &:active {
+    background: green;
+  }
+}
+
+
+/// @state {:hover} Some super awesome description for the hover state
+/// @state {:focus} Some super awesome description for the focus state
+/// @state {:active} Some super awesome description for the active state
+///
+/// @markup {html}
+/// <div class="something-super-awesome ${@state.state}">
+///   ${@state.description}
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+
+  &:focus {
+    background: blue;
+  }
+
+  &:active {
+    background: green;
+  }
+}
+
+
+/// @state {:hover} - Some super awesome description for the hover state
+/// @state {:focus} - Some super awesome description for the focus state
+/// @state {:active} - Some super awesome description for the active state
+///
+/// @markup {html}
+/// <div class="something-super-awesome ${@state}">
+///   ${@state[description]}
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+
+  &:focus {
+    background: blue;
+  }
+
+  &:active {
+    background: green;
+  }
+}

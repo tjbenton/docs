@@ -1,3 +1,5 @@
+import { toBoolean } from '../utils'
+
 /// @name @async
 /// @page annotations
 /// @description Used to notate that a function is chainable
@@ -11,6 +13,6 @@
 /// /// @chainable false
 export default {
   parse() {
-    return true
+    return toBoolean(this.annotation.contents) || true
   }
 }
