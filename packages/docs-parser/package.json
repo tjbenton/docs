@@ -74,5 +74,8 @@
     "parser",
     "annotation",
     "comments"
-  ]
+  ],
+  "devDependencies": {
+    "docs-plugin-default-annotations": "0.0.0-alpha-5.5"
+  }
 }

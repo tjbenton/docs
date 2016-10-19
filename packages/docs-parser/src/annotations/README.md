@@ -1,1 +1,0 @@
-@todo This directory needs to be removed and `docs-plugin-default-annotations` should be used instead

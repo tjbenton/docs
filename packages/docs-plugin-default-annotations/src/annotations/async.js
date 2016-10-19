@@ -2,17 +2,19 @@ import { toBoolean } from '../utils'
 
 /// @name @async
 /// @page annotations
-/// @description Used to notate that a function is chainable
+/// @description Used to notate that a function is async
 /// @returns {boolean}
 /// @markup Usage
 /// // this will return true
-/// /// @chainable
+/// /// @async
 ///
-/// /// @chainable true
+/// /// @async true
 ///
-/// /// @chainable false
+/// /// @async false
 export default {
+  alias: [ 'promise' ],
   parse() {
-    return toBoolean(this.annotation.contents) || true
+    const bool = toBoolean(this.annotation.contents)
+    return bool !== undefined ? bool : true
   }
 }
