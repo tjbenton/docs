@@ -32,10 +32,9 @@ export default function sort(list, options = {}) {
   const existing = []
   return list
     .concat(options.extras)
-    // .reverse()
     .map((str) => {
       let [ name, operator = options.operator, amount = options.amount ] = str.match(/([a-z-]+)([><=]*)?([\-0-9]*)?/i).slice(1)
-      if (existing.includes(name)) {
+      if (existing.indexOf(name) > -1) {
         return false
       }
       existing.push(name)
