@@ -1,5 +1,4 @@
-// @todo update import link
-import { toBoolean, list } from '../../docs-parser/dist/annotations/annotation-utils'
+import { toBoolean, list } from '../../docs-plugin-default-annotations/dist/utils.js'
 import path from 'path'
 
 export default {

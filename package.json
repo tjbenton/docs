@@ -2,9 +2,7 @@
   "name": "docs",
   "version": "0.0.0-alpha-5.1",
   "description": "",
-  "scripts": {
-    "postinstall": "make bootstrap"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tjbenton/docs.git"
@@ -44,17 +42,18 @@
     "jsondiffpatch": "^0.2.4",
     "lerna": "^2.0.0-beta.29",
     "power-assert": "^1.4.1",
+    "recursive-readdir-sync": "~1.0.6",
     "rollup-plugin-babel": "^2.6.1",
     "stylelint": "^7.1.0",
     "to-js": "0.0.6"
   },
   "ava": {
     "files": [
-      "packages/docs-parser/tests/compare/*.test.js",
-      "packages/docs-parser/tests/unit/**/*.test.js"
+      "packages/*/+(tests|test)/**/*.test.js"
     ],
     "source": [
-      "packages/*/dist/**/*.js"
+      "packages/*/dist/**/*.js",
+      "packages/*/tests/compare/*/**/*"
     ],
     "concurrency": 5,
     "failFast": true,

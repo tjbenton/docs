@@ -1,0 +1,30 @@
+/// @state
+/// {.something-super-awesome--modifier} Modifier state
+/// {:hover} Hover state for .something-super-awesome__item
+///
+/// @markup {html} Example 1
+/// <div class="something-super-awesome ${@state[0]}">
+///   <h3>${@state[0].description}</h3>
+///   <ul>
+///     <li class="something-super-awesome__item ${@state[1].state}">${@state[1].description}</li>
+///   </ul>
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+
+  &--modifier {
+    &:hover {
+      background: blue;
+    }
+  }
+
+  &__item {
+    &:hover {
+      background: orange;
+    }
+  }
+}

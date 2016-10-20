@@ -1,10 +1,12 @@
 import docsParser from '../..'
+import defaultAnnotations from 'docs-plugin-default-annotations'
 
 const defaults = {
   warning: false,
   debug: false,
   timestamps: false,
-  ignore: '.*'
+  ignore: '.*',
+  ...defaultAnnotations,
 }
 
 export async function annotations({ file }) {

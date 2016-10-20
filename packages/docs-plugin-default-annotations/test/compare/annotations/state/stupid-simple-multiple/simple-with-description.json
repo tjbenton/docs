@@ -1,0 +1,257 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "markup": [
+        {
+          "id": "0",
+          "language": "html",
+          "settings": {},
+          "description": "",
+          "raw": "<div class=\"something-super-awesome ${@state}\">\n  ${@state.description}\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state}&quot;&gt;\n  ${@state.description}\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\"></div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;&lt;/div&gt;"
+        }
+      ],
+      "states": {
+        "0": [
+          {
+            "state": {
+              "0": {
+                "state": ":hover",
+                "description": "<p>Some super awesome description for the hover state</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :hover\">\n  <p>Some super awesome description for the hover state</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :hover&quot;&gt;\n  <p>Some super awesome description for the hover state</p>\n\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ":focus",
+                "description": "<p>Some super awesome description for the focus state</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :focus\">\n  <p>Some super awesome description for the focus state</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :focus&quot;&gt;\n  <p>Some super awesome description for the focus state</p>\n\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ":active",
+                "description": "<p>Some super awesome description for the active state</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :active\">\n  <p>Some super awesome description for the active state</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :active&quot;&gt;\n  <p>Some super awesome description for the active state</p>\n\n&lt;/div&gt;"
+            }
+          }
+        ]
+      },
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 8,
+          "type": "body"
+        },
+        "code": {
+          "start": 9,
+          "end": 23
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/state/stupid-simple-multiple/simple-with-description.scss",
+          "start": 1,
+          "end": 74
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "markup": [
+        {
+          "id": "0",
+          "language": "html",
+          "settings": {},
+          "description": "",
+          "raw": "<div class=\"something-super-awesome ${@state.state}\">\n  ${@state.description}\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state.state}&quot;&gt;\n  ${@state.description}\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\"></div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;&lt;/div&gt;"
+        }
+      ],
+      "states": {
+        "0": [
+          {
+            "state": {
+              "0": {
+                "state": ":hover",
+                "description": "<p>Some super awesome description for the hover state</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :hover\">\n  <p>Some super awesome description for the hover state</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :hover&quot;&gt;\n  <p>Some super awesome description for the hover state</p>\n\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ":focus",
+                "description": "<p>Some super awesome description for the focus state</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :focus\">\n  <p>Some super awesome description for the focus state</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :focus&quot;&gt;\n  <p>Some super awesome description for the focus state</p>\n\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ":active",
+                "description": "<p>Some super awesome description for the active state</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :active\">\n  <p>Some super awesome description for the active state</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :active&quot;&gt;\n  <p>Some super awesome description for the active state</p>\n\n&lt;/div&gt;"
+            }
+          }
+        ]
+      },
+      "blockinfo": {
+        "comment": {
+          "start": 26,
+          "end": 33,
+          "type": "body"
+        },
+        "code": {
+          "start": 34,
+          "end": 48
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/state/stupid-simple-multiple/simple-with-description.scss",
+          "start": 1,
+          "end": 74
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "markup": [
+        {
+          "id": "0",
+          "language": "html",
+          "settings": {},
+          "description": "",
+          "raw": "<div class=\"something-super-awesome ${@state}\">\n  ${@state[description]}\n</div>",
+          "escaped": "&lt;div class=&quot;something-super-awesome ${@state}&quot;&gt;\n  ${@state[description]}\n&lt;/div&gt;",
+          "raw_stateless": "<div class=\"something-super-awesome\"></div>",
+          "escaped_stateless": "&lt;div class=&quot;something-super-awesome&quot;&gt;&lt;/div&gt;"
+        }
+      ],
+      "states": {
+        "0": [
+          {
+            "state": {
+              "0": {
+                "state": ":hover",
+                "description": "<p>Some super awesome description for the hover state</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :hover\">\n  <p>Some super awesome description for the hover state</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :hover&quot;&gt;\n  <p>Some super awesome description for the hover state</p>\n\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ":focus",
+                "description": "<p>Some super awesome description for the focus state</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :focus\">\n  <p>Some super awesome description for the focus state</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :focus&quot;&gt;\n  <p>Some super awesome description for the focus state</p>\n\n&lt;/div&gt;"
+            }
+          },
+          {
+            "state": {
+              "0": {
+                "state": ":active",
+                "description": "<p>Some super awesome description for the active state</p>\n"
+              }
+            },
+            "markup": {
+              "id": "0",
+              "language": "html",
+              "settings": {},
+              "description": "",
+              "raw": "<div class=\"something-super-awesome :active\">\n  <p>Some super awesome description for the active state</p>\n\n</div>",
+              "escaped": "&lt;div class=&quot;something-super-awesome :active&quot;&gt;\n  <p>Some super awesome description for the active state</p>\n\n&lt;/div&gt;"
+            }
+          }
+        ]
+      },
+      "blockinfo": {
+        "comment": {
+          "start": 51,
+          "end": 58,
+          "type": "body"
+        },
+        "code": {
+          "start": 59,
+          "end": 73
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/state/stupid-simple-multiple/simple-with-description.scss",
+          "start": 1,
+          "end": 74
+        }
+      },
+      "inline": []
+    }
+  ]
+}

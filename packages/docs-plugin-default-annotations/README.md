@@ -93,6 +93,28 @@ Autofilled for some languages based off docs plugins, see their documentation fo
 /// dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
 ```
 
+### @async
+
+Attribute      | Value
+---------------|----------------------------------------------------------
+Description    | Used to notate that a function is async
+File types     | Any
+Multiple       | false
+Multi-line     | false
+Default        | -
+Aliases        | @promise
+Autofilled     | false
+
+###### Example
+
+```js
+/// @async
+
+/// @async true
+
+/// @async false
+```
+
 
 
 ### @author
@@ -173,9 +195,9 @@ Attribute      | Value
 Description    | Used to notate that a function is chainable
 File types     | Any
 Multiple       | true
-Multi-line     | false
+Multi-line     | true
 Default        | -
-Aliases        | -
+Aliases        | @chain
 Autofilled     | false
 
 ###### Example

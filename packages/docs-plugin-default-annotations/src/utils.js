@@ -7,7 +7,7 @@ import clor from 'clor'
 let regexes
 
 {
-  const types = '(?:{(.*)})?'
+  const types = '(?:{([^}]*)})?'
   const name = '([^\\s]*)?'
   const space = '(?:\\s*)?'
   const value = '(?:\\[(.*)\\])?'

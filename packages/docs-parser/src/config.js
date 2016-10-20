@@ -2,7 +2,6 @@
 import fs from 'fs-extra-promisify'
 import to, { is } from 'to-js'
 import path from 'path'
-import * as annotations from './annotations'
 import clor from 'clor'
 import logger from 'docs-helpers-logger'
 
@@ -45,22 +44,7 @@ export const default_options = {
   // this will return the raw data by file, aka data won't be sorted
   raw: false,
 
-  sort: [
-    'name<=0',
-    'access<=1',
-    'author<=1',
-    'deprecated<=1',
-    'description<=1',
-    'markdown>6',
-    'markup>5',
-    'states>5',
-    'note>=-3',
-    'raw-code>6',
-    'todo>=-2',
-    'type<=1',
-    'version<=1',
-    'blockinfo>=-1',
-  ],
+  sort: [],
 
   languages: {
     default: {
@@ -114,8 +98,7 @@ export const default_options = {
     }
   },
 
-  // default annotation list
-  annotations,
+  annotations: {},
 }
 
 export default async function config(options = {}) {

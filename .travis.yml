@@ -12,4 +12,5 @@ cache:
     - $HOME/.npm
     - node_modules
 
+install: make install
 script: make ci-test

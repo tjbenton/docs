@@ -31,19 +31,5 @@ export default {
         description: to.markdown(description, contents)
       }
     ]
-  },
-  render(params) {
-    params = params.map(({ types, name, value, description }) => {
-      types = types.map((type) => `<code>${type}</code>`).join(', ')
-      return `
-        <tr>
-          <td class="c-arg__name">${name}</td>
-          <td class="c-arg__value">${value}</td>
-          <td class="c-arg__types">${types}</td>
-          <td class="c-arg__description">${description}</td>
-        </tr>
-      `
-    }).join('\n')
-    return `<table class="c-annotation c-arg">${params}</table>`
   }
 }

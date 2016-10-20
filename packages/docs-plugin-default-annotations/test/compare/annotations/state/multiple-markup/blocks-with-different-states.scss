@@ -1,0 +1,26 @@
+/// @state {:hover} Hover state for example 1
+/// @state {:focus} - Focus state for example 1
+///
+/// @markup {html} Example 1
+/// <div class="something-super-awesome ${@state}">
+///   ${@state.description}
+/// </div>
+///
+/// @state {:hover} Hover state for example 2
+/// @state {:focus} - Focus state for example 2
+///
+/// @markup (something) {html} Example 2
+/// <div class="something-super-awesome ${@state}">
+///   ${@state.description}
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+
+  &:focus {
+    background: blue;
+  }
+}

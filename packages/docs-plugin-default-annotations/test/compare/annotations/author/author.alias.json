@@ -1,0 +1,30 @@
+{
+  "header": {},
+  "body": [
+    {
+      "author": [
+        "Author One",
+        "Author Two",
+        "Author Three"
+      ],
+      "access": "public",
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/author/author.alias.js",
+          "start": 1,
+          "end": 2
+        }
+      },
+      "inline": []
+    }
+  ]
+}

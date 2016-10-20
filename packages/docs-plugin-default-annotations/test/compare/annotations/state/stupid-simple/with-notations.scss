@@ -1,0 +1,43 @@
+/// @state {:hover}
+///
+/// @markup {html}
+/// <div class="something-super-awesome ${@state}">
+///   Mind blown
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+}
+
+
+/// @state {:hover}
+///
+/// @markup {html}
+/// <div class="something-super-awesome ${@state.state}">
+///   Mind blown
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+}
+
+
+/// @state {:hover}
+///
+/// @markup {html}
+/// <div class="something-super-awesome ${@state[state]}">
+///   Mind blown
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+}

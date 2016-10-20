@@ -1,0 +1,23 @@
+/// @state {:hover}
+/// @state {:focus}
+/// @state {:active}
+///
+/// @markup {html}
+/// <div class="something-super-awesome ${@state}">
+///   Mind blown
+/// </div>
+.something-super-awesome {
+  background: black;
+
+  &:hover {
+    background: gray;
+  }
+
+  &:focus {
+    background: green;
+  }
+
+  &:active {
+    background: green;
+  }
+}

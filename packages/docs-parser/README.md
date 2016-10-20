@@ -194,12 +194,12 @@ docs.annotation("arg", {
 ``` -->
 
 ## Default Annotations
-See more on the [default annotations](ANNOTATIONS.md)
+See more on the [default annotations](https://github.com/tjbenton/docs/blob/master/packages/docs-plugin-default-annotations/README.md)
 
 ## Documenting your items
 There are 3 different types of comment blocks **block level**, and **file level**.
 
-**Note:** the comments below are using the comment defaults which are slashes please see [defined languages](https://github.com/tjbenton/docs/blob/master/packages/docs-parser/src/config.js#L58) for other language specific comment styles
+**Note:** the comments below are using the comment defaults which are slashes please see [defined languages](https://github.com/tjbenton/docs/blob/master/packages/docs-parser/src/config.js#L49) for other language specific comment styles
 
 
 ### Header comment
@@ -243,9 +243,9 @@ const happypanda = {
 # Todo
   - Look into adding a callback function that runs after the block has been completely parsed this would be run after the single line comments are parsed. I'm not sure how useful this would be but it's a thought.
     - This could allow you to create your own data structure.
-  - Come up with a name for the project
  - Look into being able to reference a different language comment style withing the existing language.
    For example this would allow you to write JS documentation inside of an HTML document
+
    ```html
    <script>
    <!---{js}

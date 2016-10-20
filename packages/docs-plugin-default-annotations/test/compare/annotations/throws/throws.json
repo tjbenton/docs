@@ -1,0 +1,177 @@
+{
+  "header": {},
+  "body": [
+    {
+      "access": "public",
+      "throws": [
+        {
+          "types": [],
+          "description": ""
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 1,
+          "end": 1,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/throws/throws.js",
+          "start": 1,
+          "end": 16
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "throws": [
+        {
+          "types": [
+            "fileNotFound"
+          ],
+          "description": ""
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 3,
+          "end": 3,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/throws/throws.js",
+          "start": 1,
+          "end": 16
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "throws": [
+        {
+          "types": [
+            "fileNotFound"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 5,
+          "end": 5,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/throws/throws.js",
+          "start": 1,
+          "end": 16
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "throws": [
+        {
+          "types": [
+            "fileNotFound"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n"
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 7,
+          "end": 7,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/throws/throws.js",
+          "start": 1,
+          "end": 16
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "throws": [
+        {
+          "types": [
+            "fileNotFound"
+          ],
+          "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod sequi adipisci illum.\nAtque itaque sequi, qui ratione aliquid debitis dolorem alias blanditiis, impedit\nnecessitatibus quidem at non, earum a esse.</p>\n"
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 9,
+          "end": 12,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/throws/throws.js",
+          "start": 1,
+          "end": 16
+        }
+      },
+      "inline": []
+    },
+    {
+      "access": "public",
+      "throws": [
+        {
+          "types": [
+            "warning"
+          ],
+          "description": "<p>some warning message</p>\n"
+        },
+        {
+          "types": [
+            "error"
+          ],
+          "description": "<p>when something goes wrong</p>\n"
+        }
+      ],
+      "blockinfo": {
+        "comment": {
+          "start": 14,
+          "end": 15,
+          "type": "body"
+        },
+        "code": {
+          "start": -1,
+          "end": -1
+        },
+        "file": {
+          "path": "docs/packages/docs-plugin-default-annotations/test/compare/annotations/throws/throws.js",
+          "start": 1,
+          "end": 16
+        }
+      },
+      "inline": []
+    }
+  ]
+}

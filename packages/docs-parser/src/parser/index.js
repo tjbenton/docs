@@ -70,7 +70,10 @@ export default class Parser {
       this.annotations_list = { available, reverse_alias_list, regex }
     }
 
-    this.options.order = sort(this.options.sort, this.annotations_list.available)
+    this.options.order = sort(this.options.sort, {
+      extras: this.annotations_list.available,
+      amount: 3
+    })
     this.options.order.push('inline') // this is for the inline part of the annotation
   }
 
