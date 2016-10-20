@@ -4,4 +4,5 @@ jspm_packages
 *dist
 packages/*/tests/compare/*/**/*
 packages/*/public/config.js
+packages/docs-core/public
 vendor
