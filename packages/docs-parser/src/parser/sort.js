@@ -1,16 +1,49 @@
-export default function sort(list, extras = []) {
-  const current_items = []
-  list = list.map((str) => {
-    let [ name, operator = '<=', amount = '3' ] = str.match(/([a-z-]+)([><=]*)?([\-0-9]*)?/i).slice(1)
-    current_items.push(name)
-    return [ name, operator, parseInt(amount) ]
-  })
-  // if the item doesn't currently exist then push add it to the list
-  extras.forEach((extra) => current_items.indexOf(extra) < 0 && list.push([ extra, '<=', 3 ]))
+import to from 'to-js'
+import naturalSort from 'natural-sort'
+/// @name sort
+/// @page parser/sort
+/// @description This function is used to sort a list by `<>=[0-9]`
+/// @arg {array} list - List to sort
+/// @arg {object, array, string, number} options
+/// ```
+/// {
+///   extras: [], // if options is a `array` it refers to `extras`
+///   operator: '=', // if options is a `string` it refers to `operator`
+///   amount: 0, // if options is a `number` it refers to `amount`
+/// }
+/// ```
+/// @returns {array} of sorted items
+export default function sort(list, options = {}) {
+  const type = to.type(options)
+  if (type === 'array') {
+    options = { extras: options }
+  } else if (type === 'string') {
+    options = { operator: options }
+  } else if (type === 'number') {
+    options = { amount: options }
+  }
+
+  options = Object.assign({
+    extras: [],
+    operator: '=',
+    amount: 0
+  }, options)
+
+  const existing = []
   return list
+    .concat(options.extras)
+    // .reverse()
+    .map((str) => {
+      let [ name, operator = options.operator, amount = options.amount ] = str.match(/([a-z-]+)([><=]*)?([\-0-9]*)?/i).slice(1)
+      if (existing.includes(name)) {
+        return false
+      }
+      existing.push(name)
+      return { name, operator, amount: parseInt(amount) }
+    })
+    .filter(Boolean)
     // get the sort criteria
-    .map(([ name, operator, amount ]) => {
-      // obj is [ name, operator, amount ]
+    .map(({ name, operator, amount }) => {
       if (amount < 0) {
         amount += list.length
       }
@@ -19,17 +52,8 @@ export default function sort(list, extras = []) {
       } else if (operator === '<') {
         amount -= 1
       }
-
-      return [ name, amount ]
+      return `${amount}@@@@@${name}`
     })
-    // sort the array by the criteria
-    .sort((a, b) => {
-      a = a[1]
-      b = b[1]
-      if (a > b) return 1
-      if (a === b) return 0
-      return -1
-    })
-    // return just the name that was passed
-    .map((obj) => obj[0])
+    .sort(naturalSort())
+    .map((obj) => obj.split('@@@@@')[1])
 }
