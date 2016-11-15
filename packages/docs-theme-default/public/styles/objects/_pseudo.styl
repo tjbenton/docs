@@ -2,5 +2,5 @@ for $type in 'before' 'after'
   $selector = $type == 'before' ? '.o-pseudo' : '.o-pseudo-after'
   {$selector}
     for $side in 'middle' 'top' 'right' 'bottom' 'left'
-      &--{$side}
-        o-pseudo($side, $type)
+      &--{$side}:{$type}
+        pseudo $side
