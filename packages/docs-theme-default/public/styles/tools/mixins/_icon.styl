@@ -1,5 +1,5 @@
 /// @author Tyler Benton
-/// @page helpers/mixins
+/// @page tools/mixins
 ///
 /// @description
 /// This is used to add icon(s) to a CSS pseudo-elements.
@@ -55,134 +55,27 @@ icon($icon-list...)
 
   content join($seperator, $result)
 
-//
-//
-// /// @author Tyler Benton
-// /// @page helpers/mixins
-// ///
-// /// @arg {boolean}
-// /// @arg {unit}
-// /// @arg {unit}
-// /// @arg {unit}
-// ///
-// /// @description
-// /// This mixin adds the necessary styles to style pseudo elements for the icon font.
-// /// By Default the mixin will extend your selector onto the silenet selectors located in `_placeholders.scss`
-// ///
-// /// @markup {styl} (example="false") **Example:**
-// ///  .foo{
-// ///   icon-styles(); // this will be extend on to the placeholder
-// ///  }
-// ///  .foo{
-// ///   icon-styles(false); // this will be extend on to the placeholder
-// ///  }
-// @mixin icon-styles($extend: true, $font-size: 1em, $height: 1em, $width: 1em){
-//  @if $extend{
-//   @extend %icon-styles{$media}:before;
-//  }@else{
-//   $selector: to-string(&);
-//   @if str-has($selector, (":before", ":after")) == false{
-//    $selector: $selector + ":before";
-//   }
-//   @at-root {$selector}{
-//    /// content: '';
-//    display: inline-block;
-//    height: $height;
-//    /// font-style font-variant font-weight font-size/line-height font-family
-//    font: normal normal normal {$font-size}/1em map-get($icon, font-family); /// shorthand saves 85 characters
-//    speak: none;
-//    text-transform: none;
-//    text-indent: 0;
-//    user-select: none;
-//    -webkit-font-smoothing: antialiased;
-//    width: $width;
-//   }
-//  }
-// }
-//
-//
-// /// @author Tyler Benton
-// /// @page helpers/mixins
-// /// @description
-// /// Allows you easily change the side the icon is on.
-// ///
-// /// @arg {string} - Must be `middle`, `top`, `right`, `bottom`, or `left`
-// /// @arg {number}
-// /// @arg {boolean} - Creates less total CSS because it doesn't duplicate code.
-// ///
-// /// @requires map-get($icon, spacing)
-// ///
-// /// @markup {styl} (example="false") **Example:** Simple use case.
-// /// .foo{
-// ///  icon-pos(right);
-// /// }
-// /// @markup {css} (example="false") **Output:** By default it uses `:after`
-// /// .foo{
-// ///  padding-top: 10px;
-// /// }
-// /// .foo:after{
-// ///  ...styles to display the icon on the right...
-// /// }
-// ///
-// /// @markup {styl} (example="false") **Example:** Specifying that you want it to be a `:before`
-// /// .foo{
-// ///  &:before{
-// ///   icon-pos(right);
-// ///  }
-// /// }
-// /// @markup {css} (example="false") **Output:** Used `:before` because it was specified
-// /// .foo{
-// ///  padding-top: 10px;
-// /// }
-// /// .foo:before{
-// ///  ...styles to display the icon on the right...
-// /// }
-// @mixin icon-pos($side: right, $spacing: get($icon, spacing), $extend: true, $selector-only: false, $pseudos-only: false){
-//  @if not index(middle top right bottom left, $side){
-//   @error "$side must be one of the following middle, top, right, bottom, left. You passed {$side}";
-//  }
-//  $selectors: pseudo-selector-fix(&);
-//  @at-root {map-get($selectors, selector)}{
-//   @if $extend == true{
-//    @if not $pseudos-only{
-//     @extend %o-icon-pos--{$side}{$media};
-//    }
-//    @if not $selector-only{
-//     @at-root {map-get($selectors, selector-with-pseudos)}{
-//      @extend %o-icon-pos--{$side}{$media}:before;
-//     }
-//    }
-//   }@else{
-//    @if not $pseudos-only{
-//     @if $side != middle{
-//      padding-{$side}: em($spacing*2) + 1em;
-//     }@else{
-//      display: inline-block;
-//      /// font-size: 1.6em;
-//      text-indent: -999em;
-//     }
-//    }
-//
-//    @if not $selector-only{
-//     @at-root {map-get($selectors, selector-with-pseudos)}{ /// selector with :before and/or :after
-//      display: block;
-//      position: absolute;
-//      @if index(middle top bottom, $side){
-//       left: 50%;
-//       margin-left: -.5em;
-//      }
-//      @if index(middle right left, $side){
-//       margin-top: -.5em;
-//       top: 50%;
-//      }
-//      @if $side != middle{
-//       {$side}: em($spacing);
-//      }@else{
-//       line-height: 1em;
-//      }
-//     }
-//    }
-//
-//   }
-//  }
-// }
+/// @author Tyler Benton
+/// @page tools/mixins
+/// @description
+/// This mixin adds the necessary styles to style pseudo elements for the icon font.
+/// By Default the mixin will extend your selector onto the silenet selectors located in `_placeholders.scss`
+///
+/// @markup {styl} (example="false") **Example:**
+/// .foo
+///   icon-styles();
+icon-styles()
+  /{ensurePseudo(selector())}
+    +cache('icon-styles')
+      display inline-block
+      // font-style font-variant font-weight font-size/line-height font-family
+      font: normal normal normal $config.font-size/1em $icon.font-family; // shorthand saves 85 characters
+      -moz-osx-font-smoothing grayscale
+      -webkit-font-smoothing antialiased
+      height 1em
+      speak none
+      text-indent 0
+      text-rendering auto
+      text-transform none
+      user-select none
+      width 1em
