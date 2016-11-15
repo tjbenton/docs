@@ -27,8 +27,7 @@ html.has-open-menu
     display flex
     flex-flow column nowrap
     left 0
-    overflow-x hidden
-    overflow-y auto
+    overflow hidden
     position fixed
     top 0
     width 100%
@@ -53,7 +52,7 @@ html.has-open-menu
     padding em(10px)
 
     +media('>=lg')
-      padding $spacing
+      padding 0
 
   &__sidebar-toggle
     margin-top 0
@@ -81,8 +80,9 @@ html.has-open-menu
   &__nav
     background color(a, -9)
     border-right 1px solid color(a, -7)
-    // flex 1
+    flex 1
     max-height 83.4vh
+    overflow-x auto
 
     +media('>=lg')
       height auto
@@ -93,5 +93,9 @@ html.has-open-menu
 
   &__footer
     background color(a, -10)
-    position absolute
     bottom 0
+    font-size 0.85em
+    padding ($spacing / 2) $spacing
+
+    +media('>=lg')
+      width $width
