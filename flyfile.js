@@ -1,5 +1,6 @@
 /* eslint-disable no-invalid-this */
 import path from 'path'
+import fs from 'fs-extra-promisify'
 
 const base = path.join(__dirname, 'packages')
 const packages = (folder, file = '*.js') => path.join(base, '*', folder, '**', file)
@@ -71,7 +72,7 @@ export async function rest(file) {
 }
 
 export async function clean() {
-  await this.clear(path.join('packages', '*', '*dist'))
+  await fs.remove(path.join('packages', '*', '*dist'))
 }
 
 export async function watch() {
