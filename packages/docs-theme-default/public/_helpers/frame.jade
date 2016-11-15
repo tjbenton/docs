@@ -44,7 +44,7 @@ else
           - var content = data[type] ||  false
           - var loading =  should_highlight ? 'js-copied' : 'u-loading u-loading--middle u-loading--huge js-iframify-parent is-loading'
           - type = type.replace('_', '-')
-          if content
+          if content && (should_highlight || lang === 'html')
             div(
               class="c-frame__section c-frame__section--#{type} #{loading} js-frame__section", 
               data-type="#{type}",

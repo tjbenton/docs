@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "clor": "^2.0.2",
-    "to-js": "^0.0.5"
+    "to-js": "0.0.6"
   },
   "devDependencies": {
     "docs-parser": "^0.0.0-alpha-5.6"
