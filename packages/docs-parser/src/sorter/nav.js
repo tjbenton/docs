@@ -21,23 +21,39 @@ export default function nav(pages) {
 
 /// @name bodyNames
 /// @description Helper function to get the name of each block in the body
-/// @arg {string} - the href to append the `name` of the block to
-/// @arg {array} - the body of the page
+/// @arg {string} href - the href to append the `name` of the block to
+/// @arg {array} obj - the body of the page
 /// @returns {array}
 function bodyNames(href, body) {
-  let names = []
+  const items = []
   // loop over each block in the body
   for (let block of body) {
     // a) Add the name to the bodyNames
     if (is.existy(block.name)) {
-      names.push({
+      const item = {
         title: block.name,
-        href: `${href}#${to.paramCase(block.name)}`
-      })
+        href: `${href}/#${to.paramCase(block.name)}`,
+        inline: [],
+        blockinfo: block.blockinfo
+      }
+
+      if (block.inline && block.inline.length) {
+        for (let inline of block.inline) {
+          if (is.existy(inline.name)) {
+            item.inline.push({
+              title: inline.name,
+              href: `${item.href}-${to.paramCase(inline.name)}`,
+              blockinfo: inline.blockinfo
+            })
+          }
+        }
+      }
+
+      items.push(item)
     }
   }
 
-  return names
+  return items
 }
 
 

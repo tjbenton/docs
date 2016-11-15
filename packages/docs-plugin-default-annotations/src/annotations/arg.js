@@ -25,8 +25,8 @@ export default {
 
     return [
       {
-        types: list(types),
         name,
+        types: list(types),
         value,
         description: to.markdown(description, contents)
       }
