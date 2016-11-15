@@ -5,10 +5,10 @@
       "access": "public",
       "arg": [
         {
+          "name": "name-of-variable",
           "types": [
             "type"
           ],
-          "name": "name-of-variable",
           "value": "",
           "description": "<p>argument alias</p>\n"
         }
@@ -35,10 +35,10 @@
       "access": "public",
       "arg": [
         {
+          "name": "name-of-variable",
           "types": [
             "type"
           ],
-          "name": "name-of-variable",
           "value": "",
           "description": "<p>param alias</p>\n"
         }
@@ -65,10 +65,10 @@
       "access": "public",
       "arg": [
         {
+          "name": "name-of-variable",
           "types": [
             "type"
           ],
-          "name": "name-of-variable",
           "value": "",
           "description": "<p>parameter alias</p>\n"
         }

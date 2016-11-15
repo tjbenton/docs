@@ -1,4 +1,75 @@
 h1, h2, h3, h4, h5, h6
+  color d
+  font-size 1em
+  font-weight 500
+  line-height 1em
+
   margin 0
+
+  a
+    color inherit
+
   * ~ &
     spacing()
+
+h2, h4, h5
+  font-weight 200
+
+h2, h5
+  color b
+
+h1
+  font-size 3.8em // 3em
+
+h2
+  font-size 3.1em // 2em
+
+h3
+  font-size 2.5em // 1.25em
+
+h4
+  font-size 1.81em // 1em
+
+h5
+  font-size 1.75em // 0.85em
+
+a
+  @extend $cursor
+  color d
+  text-decoration none
+  outline none
+
+  &:visted
+    color inherit
+
+  &:hover, &:focus, &:active
+    text-decoration: underline;
+    outline none
+
+  &:hover
+    color d, -2
+
+  &:active, &:focus
+    color d, 2
+
+
+p
+  line-height: $config.line-height; // @note {!!!} - This has to be here because it is needed for list views used
+  margin 0
+  padding 0
+  white-space normal
+
+  a
+    word-wrap break-word
+
+
+ul, ol
+  margin-left: 2em;
+  padding: 0;
+
+  ul
+    list-style-type circle
+
+  li
+    * ~ &
+      spacing small

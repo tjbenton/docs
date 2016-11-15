@@ -11,7 +11,24 @@
           "body": [
             {
               "title": "Buttons",
-              "href": "/components/buttons#buttons"
+              "href": "/components/buttons/#buttons",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 8,
+                  "end": 26,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 27,
+                  "end": 239
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/cases/allthethings-scss.scss",
+                  "start": 1,
+                  "end": 239
+                }
+              }
             }
           ],
           "subpages": []
@@ -28,11 +45,11 @@
       "buttons": {
         "page": {
           "header": {
+            "access": "public",
             "name": "All the things test",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -52,9 +69,9 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "Buttons",
               "description": "<p>Your standard form button.</p>\n",
-              "access": "public",
               "markup": [
                 {
                   "id": "0",

@@ -1,30 +1,45 @@
-mixin menu(tree)
+mixin menu(tree, type)
+  - var list_cls = 'c-list c-list--toggle'
   - var path = (current.source === 'index' ? current.path.slice(0, -1) : current.path).join('/')
-  ul(class="c-list c-list--toggle")
+  if type
+    - list_cls += ' c-list--' + type
+  else 
+    - list_cls += ' js-nav-menu'
+  ul(class="#{list_cls}")
     for node in tree
+      if /#/.test(node.href)
+        - var id = 'name-' + global.base_x.encode(node.title.toLowerCase() + JSON.stringify(node.blockinfo || {}))
+        - node.href = node.href.split('#')[0] + '#' + id
+        
       - var has_body = node.body && node.body.length
       - var has_subpages = node.subpages && node.subpages.length
+      - var has_inline = node.inline && node.inline.length
+      - var is_group = has_subpages || has_inline || (has_body && node.body.length > 1) || (has_body && node.body[0].inline.length)
       - var current_page = node.href.slice(1).split('#')
       - var is_current = path === current_page[0]
       - var item_cls = 'c-list__item'
       if is_current
         - item_cls += ' c-list__item--current'
-      if has_subpages || has_body
+      if is_group
         - item_cls += ' js-toggle'
       li(class="#{item_cls}")
-        if has_subpages || has_body
+        if is_group
           a(class="c-list__group js-toggle__trigger" href="#{node.href}")= node.title
-          
-          if has_body
-            - node.body.unshift({ title: 'View All', href: node.href })
-            +menu(node.body)
-            
-          if has_subpages
-            +menu(node.subpages)
         else if is_current
           a(class="c-list__page" href="##{current_page[1] || ''}")= node.title
         else
           a(class="c-list__page js-page-accelerator" href="#{node.href}")= node.title
 
-nav(class="s-documentation__nav" role="navigation")
+        if has_subpages || has_body
+          if is_group
+            - node.body.unshift({ title: 'View all', href: node.href })
+          +menu(node.body, 'body')
+
+        if has_inline
+          +menu(node.inline, 'inline')
+          
+        if has_subpages
+          +menu(node.subpages, 'subpages')
+
+nav(class="s-documentation__nav " role="navigation")
   +menu(nav)

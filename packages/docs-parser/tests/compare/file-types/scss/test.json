@@ -11,11 +11,45 @@
           "body": [
             {
               "title": "One",
-              "href": "/tests/scss-file#one"
+              "href": "/tests/scss-file/#one",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 6,
+                  "end": 7,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 8,
+                  "end": 8
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/scss/test.scss",
+                  "start": 1,
+                  "end": 39
+                }
+              }
             },
             {
               "title": "moz-only",
-              "href": "/tests/scss-file#moz-only"
+              "href": "/tests/scss-file/#moz-only",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 12,
+                  "end": 28,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 29,
+                  "end": 38
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/scss/test.scss",
+                  "start": 1,
+                  "end": 39
+                }
+              }
             }
           ],
           "subpages": []
@@ -32,10 +66,10 @@
       "scss-file": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -55,8 +89,8 @@
           },
           "body": [
             {
-              "name": "One",
               "access": "public",
+              "name": "One",
               "type": {
                 "type": "color",
                 "description": ""
@@ -80,27 +114,27 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "moz-only",
               "author": [
                 "Tyler Benton"
               ],
               "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
-              "access": "public",
               "arg": [
                 {
+                  "name": "callbacks",
                   "types": [
                     "function",
                     "object"
                   ],
-                  "name": "callbacks",
                   "value": "something super sweet",
                   "description": "<p>Functions</p>\n"
                 },
                 {
+                  "name": "name-of-variable",
                   "types": [
                     "type"
                   ],
-                  "name": "name-of-variable",
                   "value": "default value",
                   "description": "<p>description\n@content</p>\n"
                 }

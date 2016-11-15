@@ -11,19 +11,87 @@
           "body": [
             {
               "title": "One",
-              "href": "/tests/cfm-file#one"
+              "href": "/tests/cfm-file/#one",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 6,
+                  "end": 10,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 11,
+                  "end": 16
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/coldfusion/test.cfm",
+                  "start": 1,
+                  "end": 61
+                }
+              }
             },
             {
               "title": "Two",
-              "href": "/tests/cfm-file#two"
+              "href": "/tests/cfm-file/#two",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 18,
+                  "end": 22,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 23,
+                  "end": 33
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/coldfusion/test.cfm",
+                  "start": 1,
+                  "end": 61
+                }
+              }
             },
             {
               "title": "Three",
-              "href": "/tests/cfm-file#three"
+              "href": "/tests/cfm-file/#three",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 34,
+                  "end": 39,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 40,
+                  "end": 49
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/coldfusion/test.cfm",
+                  "start": 1,
+                  "end": 61
+                }
+              }
             },
             {
               "title": "Four",
-              "href": "/tests/cfm-file#four"
+              "href": "/tests/cfm-file/#four",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 51,
+                  "end": 55,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 56,
+                  "end": 60
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/coldfusion/test.cfm",
+                  "start": 1,
+                  "end": 61
+                }
+              }
             }
           ],
           "subpages": []
@@ -40,10 +108,10 @@
       "cfm-file": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -63,9 +131,9 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "One",
               "description": "<p>main method</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -85,9 +153,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Two",
               "description": "<p>This is a normal multi-line coldfusion comment.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 18,
@@ -107,9 +175,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Three",
               "description": "<p>This is another multi-line normal Coldfusion\nScript comment made of single-line comments.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 34,
@@ -129,9 +197,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Four",
               "description": "<p>This is another normal multi-line coldfusion comment.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 51,

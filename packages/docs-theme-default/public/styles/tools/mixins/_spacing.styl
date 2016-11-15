@@ -33,11 +33,15 @@ $spacing-sizes ?= $config.spacing-sizes || {
 $not-hidden ?= ':not(script):not(link):not(meta):not(style)'
 
 spacing($size = 'medium', $type = 'self')
+  $name = $size
+  unless $spacing-sizes[$size] == null
+    $size = $spacing-sizes[$size]
+
   if $type == 'self'
     *{$not-hidden} ~ &
-      +cache('shit-o-spacing--' + $size)
-        margin-top $spacing-sizes[$size]
+      +cache('o-spacing--' + $size)
+        margin-top $size
   else
-    > * ~ *{$not-hidden}
-      +cache('shit-o-spacing--' + $size)
-        margin-top $spacing-sizes[$size]
+    > *{$not-hidden} ~ *
+      +cache('o-spacing--' + $size)
+        margin-top $size

@@ -2,8 +2,8 @@
   "header": {},
   "body": [
     {
-      "name": "Foo",
       "access": "public",
+      "name": "Foo",
       "blockinfo": {
         "comment": {
           "start": 1,

@@ -11,15 +11,66 @@
           "body": [
             {
               "title": "One",
-              "href": "/tests/cs-file#one"
+              "href": "/tests/cs-file/#one",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 10,
+                  "end": 14,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 15,
+                  "end": 38
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/cs/test.cs",
+                  "start": 1,
+                  "end": 95
+                }
+              }
             },
             {
               "title": "Two",
-              "href": "/tests/cs-file#two"
+              "href": "/tests/cs-file/#two",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 40,
+                  "end": 42,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 43,
+                  "end": 68
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/cs/test.cs",
+                  "start": 1,
+                  "end": 95
+                }
+              }
             },
             {
               "title": "Three",
-              "href": "/tests/cs-file#three"
+              "href": "/tests/cs-file/#three",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 70,
+                  "end": 72,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 73,
+                  "end": 94
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/cs/test.cs",
+                  "start": 1,
+                  "end": 95
+                }
+              }
             }
           ],
           "subpages": []
@@ -36,11 +87,11 @@
       "cs-file": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
             "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nEaque temporibus praesentium iure, qui dolorem blanditiis\nerror a reprehenderit voluptates debitis iusto, quibusdam.</p>\n",
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -60,9 +111,9 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "One",
               "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nEaque temporibus praesentium iure, qui dolorem blanditiis\nerror a reprehenderit voluptates debitis iusto, quibusdam.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 10,
@@ -82,9 +133,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Two",
               "description": "<p>This is a normal multi-line comment.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 40,
@@ -104,9 +155,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Three",
               "description": "<p>This is another normal multi-line comment.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 70,

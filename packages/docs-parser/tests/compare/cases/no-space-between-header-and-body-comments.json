@@ -6,7 +6,24 @@
       "body": [
         {
           "title": "moz-only",
-          "href": "/no-space-between-header-and-body-comment#moz-only"
+          "href": "/no-space-between-header-and-body-comment/#moz-only",
+          "inline": [],
+          "blockinfo": {
+            "comment": {
+              "start": 5,
+              "end": 17,
+              "type": "body"
+            },
+            "code": {
+              "start": 18,
+              "end": 27
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compare/cases/no-space-between-header-and-body-comments.scss",
+              "start": 1,
+              "end": 28
+            }
+          }
         }
       ],
       "subpages": []
@@ -16,10 +33,10 @@
     "no-space-between-header-and-body-comment": {
       "page": {
         "header": {
+          "access": "public",
           "author": [
             "Tyler Benton"
           ],
-          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 1,
@@ -39,9 +56,9 @@
         },
         "body": [
           {
+            "access": "public",
             "name": "moz-only",
             "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
-            "access": "public",
             "markup": [
               {
                 "id": "0",

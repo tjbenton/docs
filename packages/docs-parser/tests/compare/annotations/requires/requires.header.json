@@ -1,6 +1,9 @@
 {
   "header": {
     "access": "public",
+    "page": [
+      "general"
+    ],
     "requires": [
       {
         "types": [
@@ -9,9 +12,6 @@
         "name": "path",
         "description": "<p>the path function from node</p>\n"
       }
-    ],
-    "page": [
-      "general"
     ],
     "blockinfo": {
       "comment": {

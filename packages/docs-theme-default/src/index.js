@@ -7,7 +7,7 @@ import marked from 'marked'
 
 function whitespace(content) {
   return content
-    .replace(/^\s+/gm, (match) => {
+    .replace(/^(?:\s+)?/gm, (match) => {
       var result = '<span class="hljs-leading-whitespaces">'
       result += match.replace(/ /g, '<span class="hljs-leading-whitespace"> </span>')
       result += '</span>'
@@ -60,13 +60,32 @@ const renderer = new marked.Renderer()
 renderer.paragraph = (text) => `<p>${text}</p>`
 
 
-to.markdown({
-  renderer,
-  langPrefix: 'hljs ',
-  highlight(code, language) {
-    return whitespace(!language ? code : hljs.highlight(language, code, true).value)
-  }
-})
+renderer.code = (code, language) => {
+  code = whitespace(!language ? code : hljs.highlight(language, code, true).value)
+  return to.normalize(`
+    <div class="c-frame js-frame">
+      <div class="c-frame__header">
+        <div class="c-frame__url">
+          <span class="c-frame__path">markdown</span>
+        </div>
+        <div class="c-frame__actions js-frame__actions o-spacing--off">
+          <a class="c-frame__action c-frame__action--copy js-frame__copy">Copy</a>
+          <!-- <a href="#markup-itemBAAsC" class="c-frame__action c-frame__action--link js-frame__link">Link To</a> -->
+        </div>
+        <span class="c-frame__language">${language}</span>
+      </div>
+      <div class="c-frame__body">
+        <div data-type="escaped" data-language="${language}" class="c-frame__section c-frame__section--escaped js-copied js-frame__section">
+          <pre class="c-frame__pre hljs ${language}"><code class="c-frame__code u-copied js-copied__content">${code}</code></pre>
+        </div>
+      </div>
+    </div>
+  `)
+}
+
+
+
+to.markdown({ renderer })
 
 export default {
   assets: path.join(__dirname, '..', 'public-dist'),

@@ -6,11 +6,45 @@
       "body": [
         {
           "title": "Button group",
-          "href": "/general#button-group"
+          "href": "/general/#button-group",
+          "inline": [],
+          "blockinfo": {
+            "comment": {
+              "start": 1,
+              "end": 10,
+              "type": "body"
+            },
+            "code": {
+              "start": -1,
+              "end": -1
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compare/cases/only-body-comments-no-page.scss",
+              "start": 1,
+              "end": 21
+            }
+          }
         },
         {
           "title": "Test",
-          "href": "/general#test"
+          "href": "/general/#test",
+          "inline": [],
+          "blockinfo": {
+            "comment": {
+              "start": 12,
+              "end": 20,
+              "type": "body"
+            },
+            "code": {
+              "start": -1,
+              "end": -1
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compare/cases/only-body-comments-no-page.scss",
+              "start": 1,
+              "end": 21
+            }
+          }
         }
       ],
       "subpages": []
@@ -22,9 +56,9 @@
         "header": {},
         "body": [
           {
+            "access": "public",
             "name": "Button group",
             "description": "<p>Used when there&#39;s a group of buttons that need to be on the same line.</p>\n",
-            "access": "public",
             "markup": [
               {
                 "id": "0",
@@ -56,9 +90,9 @@
             "inline": []
           },
           {
+            "access": "public",
             "name": "Test",
             "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
-            "access": "public",
             "states": {
               "null": [
                 {

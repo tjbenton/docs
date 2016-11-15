@@ -18,3 +18,21 @@ has-pseudo($pseudo-types...)
       return true
 
   return false
+
+
+ensurePseudo($selectors)
+  $selectors = split(',', $selectors)
+
+  for $selector, $i in $selectors
+    unless match(':(?:before|after)$', $selector)
+      $selectors[$i] = $selector + ':before'
+
+  return join(', ', $selectors)
+
+stripPseudo($selectors)
+  $selectors = split(',', selector())
+
+  for $selector, $i in $selectors
+    $selectors[$i] = replace(':(?:before|after)$', '', $selector)
+
+  return join(', ', $selectors)

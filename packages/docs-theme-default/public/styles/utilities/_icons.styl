@@ -11,17 +11,7 @@
   position relative
 
   &:before
-    display inline-block
-    font: normal normal normal $config.font-size/1em $icon.font-family; // stylelint-disable-line
-    -moz-osx-font-smoothing grayscale
-    -webkit-font-smoothing antialiased
-    height 1em
-    speak none
-    text-indent 0
-    text-rendering auto
-    text-transform none
-    user-select none
-    width 1em
+    icon-styles()
 
   for $icon in $icons
     &--{$icon}:before

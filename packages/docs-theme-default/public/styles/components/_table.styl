@@ -1,23 +1,80 @@
 .c-table
   border-collapse collapse
+  border-spacing 0
   width 100%
+
+  &__body, &__head, &__footer
+    margin-top 0
 
   &__heading, &__cell
     padding: $config.spacing-sizes.small;
-    vertical-align top
     text-align left
+    vertical-align top
 
-    tr &:first-of-type
-       padding-left 0
+    &:first-of-type
+      padding-left 0
 
-    tr &:last-of-type
+    &:last-of-type
       padding-right 0
 
   &__heading
-    color a, -2
     border-top none
+    color a, -2
     font-weight 800
+    padding-top 0
     vertical-align bottom
+    text-transform capitalize
+
+  &__row
+    &:last-of-type .c-table__cell
+      padding-bottom 0
+
 
   &__cell
     border-top: 1px solid $config.border-color;
+
+  .c-frame__code
+    white-space pre-wrap
+
+
+
+  // removes the `background`, and `box-shadow` of the table because it's being applied to the
+  // `td` for smaller screens. Also hides the `thead`, and `tfoot` since the heading titles
+  // are being added to `td`'s for smaller screens.
+  +media('<md')
+    background transparent
+    box-shadow none
+    margin-bottom 0
+
+    &__head, &__foot
+      display none
+
+    &__body
+      display block
+
+    // Resets the `tr` to act as the `table`
+    &__row
+      display block
+      spacing small inner
+
+      & ~ &
+        border-top: 2px solid $config.border-color;
+        padding-top $spacing
+
+    &__cell
+      padding 0
+      border 0
+      display block
+      vertical-align middle
+
+      &:empty
+        min-height 2.7em
+
+      // Displays the table heading for each `td`
+      &[data-label]:before
+        color a, -2
+        content attr(data-label) ': '
+        font-size inherit
+        font-weight 800
+        position relative
+        text-transform capitalize

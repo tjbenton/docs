@@ -27,24 +27,35 @@ $script('cash', () => {
 
 
 function selectContent(obj) {
-  if (window.getSelection && document.createRange) {
-    let sel = window.getSelection()
-    let range = document.createRange()
+  if (
+    obj.tagName === 'INPUT' ||
+    obj.tagName === 'TEXTAREA'
+  ) {
+    obj.select()
+  } else if (
+    window.getSelection &&
+    document.createRange
+  ) {
+    const sel = window.getSelection()
+    const range = document.createRange()
     range.selectNodeContents(obj)
     sel.removeAllRanges()
     sel.addRange(range)
-  } else if (document.selection && document.body.createTextRange) {
-    let textRange = document.body.createTextRange()
-    textRange.moveToElementText(obj)
-    textRange.select()
+  } else if (
+    document.selection &&
+    document.body.createTextRange
+  ) {
+    const range = document.body.createTextRange()
+    range.moveToElementText(obj)
+    range.select()
   }
 }
 
 function copy(obj) { // eslint-disable-line
   if (typeof obj === 'undefined') {
     return
-  } else if (obj.push) {
-    obj = obj[0]
+  } else if (!obj.tagName) {
+    obj = [].slice.call(obj)[0]
   }
   try {
     selectContent(obj)

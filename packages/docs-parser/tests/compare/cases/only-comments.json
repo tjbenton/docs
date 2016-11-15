@@ -6,11 +6,45 @@
       "body": [
         {
           "title": "moz-only",
-          "href": "/only-comments#moz-only"
+          "href": "/only-comments/#moz-only",
+          "inline": [],
+          "blockinfo": {
+            "comment": {
+              "start": 6,
+              "end": 19,
+              "type": "body"
+            },
+            "code": {
+              "start": -1,
+              "end": -1
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compare/cases/only-comments.scss",
+              "start": 1,
+              "end": 27
+            }
+          }
         },
         {
           "title": "Test one",
-          "href": "/only-comments#test-one"
+          "href": "/only-comments/#test-one",
+          "inline": [],
+          "blockinfo": {
+            "comment": {
+              "start": 21,
+              "end": 26,
+              "type": "body"
+            },
+            "code": {
+              "start": -1,
+              "end": -1
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compare/cases/only-comments.scss",
+              "start": 1,
+              "end": 27
+            }
+          }
         }
       ],
       "subpages": []
@@ -20,10 +54,10 @@
     "only-comments": {
       "page": {
         "header": {
+          "access": "public",
           "author": [
             "Tyler Benton"
           ],
-          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 1,
@@ -43,12 +77,12 @@
         },
         "body": [
           {
+            "access": "public",
             "name": "moz-only",
             "author": [
               "Tyler Benton"
             ],
             "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
-            "access": "public",
             "markup": [
               {
                 "id": "0",
@@ -82,9 +116,9 @@
             "inline": []
           },
           {
+            "access": "public",
             "name": "Test one",
             "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 21,
