@@ -1,6 +1,5 @@
 $script('copied')
 $script('settings')
-$script('toggle')
 
 // /* global pageAccelerator */
 // holding off on this for now because it breaks other js on the page
@@ -23,8 +22,35 @@ $script('toggle')
 //   })
 // })
 
-$script('cash', () => {
+$script([ 'cash', 'toggle' ], () => {
   if ($('.js-frame').length) {
     $script('iframe')
   }
+
+  const $menu = $('.js-nav-menu')
+
+  $menu.on('click', '.js-toggle__trigger', function MenuToggle() {
+    const $obj = $(this)
+    const $list = $obj.closest('.c-list')
+    setTimeout(() => {
+      const has_active = $list.children('.is-active').length
+      $list
+        .toggleClass('has-active', has_active)
+        .siblings('.c-list')
+        .toggleClass('has-active', has_active)
+
+      if (!has_active) {
+        $list
+          .find('.is-active, .has-active')
+          .removeClass('is-active has-active')
+      }
+    })
+  })
+
+  // changes the menu to show what's on the current page
+  setTimeout(() => {
+    const loc = location.pathname.replace(/^\/|\/$/g, '').split('/')
+    const selectors = loc.map((str, i) => `[href='/${loc.slice(0, i + 1).join('/')}'].js-toggle__trigger`).join(', ')
+    $menu.find(selectors).trigger('click')
+  }, 100)
 })

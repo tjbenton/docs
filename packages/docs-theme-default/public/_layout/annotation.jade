@@ -4,7 +4,7 @@ mixin annotations(type, token, parent)
       +annotations(type, item, parent)
   else
     - var elem = type === 'header' ? 'header' : 'section'
-    - var cls = 'c-token-' + type
+    - var cls = 'c-token c-token--' + type
     
     if token.access
       - cls += ' is-' + token.access
@@ -20,8 +20,9 @@ mixin annotations(type, token, parent)
 
 mixin annotation(name, data, token, parent)
   if name !== 'blockinfo' && name !== 'inline'
-    - var filepath = token && token.blockinfo ? token.blockinfo.file.path : ''
-    - var id = name + '-' + global.base_x.encode(JSON.stringify(data) + filepath)
+    - var blockinfo = JSON.stringify((token || {}).blockinfo || {})
+    - var token_name = ((token || {}).name || '').toLowerCase()
+    - var id = name + '-' + global.base_x.encode(token_name + blockinfo)
     != partial('../_annotations/' + name, { data: data, token: token || {}, parent: parent || {}, id: id })
 
 article.docs-o-container

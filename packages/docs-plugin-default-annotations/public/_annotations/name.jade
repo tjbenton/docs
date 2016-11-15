@@ -1,10 +1,10 @@
-- var size = { header: 'h1', body: 'h2', inline: 'h4' }
+- var size = { header: 'h1', body: 'h2', inline: 'h3' }
 
 #{size[token.blockinfo.comment.type]}(
-  class="c-annotation c-annotation--name",
+  class="c-annotation c-annotation--name c-annotation--name-#{token.blockinfo.comment.type}",
   id="#{id}"
 )
   if token.access !== 'public'
     span(class='c-annotation c-annotation--access') [Private] 
-  
+
   a(class="c-link-to js-link-to", href="##{id}")= data

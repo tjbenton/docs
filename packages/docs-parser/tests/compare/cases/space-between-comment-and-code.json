@@ -9,7 +9,24 @@
             "Space between comment bock and code block",
             "moz-only"
           ],
-          "href": "/space-between-comment-and-code#space-between-comment-bock-and-code-block-moz-only"
+          "href": "/space-between-comment-and-code/#space-between-comment-bock-and-code-block-moz-only",
+          "inline": [],
+          "blockinfo": {
+            "comment": {
+              "start": 1,
+              "end": 15,
+              "type": "body"
+            },
+            "code": {
+              "start": 17,
+              "end": 27
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compare/cases/space-between-comment-and-code.scss",
+              "start": 1,
+              "end": 28
+            }
+          }
         }
       ],
       "subpages": []
@@ -21,12 +38,12 @@
         "header": {},
         "body": [
           {
+            "access": "public",
             "name": [
               "Space between comment bock and code block",
               "moz-only"
             ],
             "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
-            "access": "public",
             "markup": [
               {
                 "id": "0",

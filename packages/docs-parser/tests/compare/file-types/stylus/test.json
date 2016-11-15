@@ -11,15 +11,66 @@
           "body": [
             {
               "title": "One",
-              "href": "/tests/styl-file#one"
+              "href": "/tests/styl-file/#one",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 6,
+                  "end": 10,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 11,
+                  "end": 14
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/stylus/test.styl",
+                  "start": 1,
+                  "end": 37
+                }
+              }
             },
             {
               "title": "Two",
-              "href": "/tests/styl-file#two"
+              "href": "/tests/styl-file/#two",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 16,
+                  "end": 21,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 22,
+                  "end": 25
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/stylus/test.styl",
+                  "start": 1,
+                  "end": 37
+                }
+              }
             },
             {
               "title": "Three",
-              "href": "/tests/styl-file#three"
+              "href": "/tests/styl-file/#three",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 27,
+                  "end": 29,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 30,
+                  "end": 34
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/stylus/test.styl",
+                  "start": 1,
+                  "end": 37
+                }
+              }
             }
           ],
           "subpages": []
@@ -36,10 +87,10 @@
       "styl-file": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -59,9 +110,9 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "One",
               "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -81,9 +132,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Two",
               "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nQuasi omnis facilis vero architecto perferendis, debitis dignissimos tempore\ndolorem amet. Delectus, voluptatum, distinctio. Voluptas officiis\niste nostrum vel, culpa iure. Adipisci.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 16,
@@ -103,9 +154,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Three",
               "description": "<p>This is another normal multi-line comment.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 27,

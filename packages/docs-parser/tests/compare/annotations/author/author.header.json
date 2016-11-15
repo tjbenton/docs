@@ -1,9 +1,9 @@
 {
   "header": {
+    "access": "public",
     "author": [
       "Tyler Benton"
     ],
-    "access": "public",
     "page": [
       "general"
     ],

@@ -6,7 +6,24 @@
       "body": [
         {
           "title": "Preserve blank lines",
-          "href": "/preserve-blank-lines#preserve-blank-lines"
+          "href": "/preserve-blank-lines/#preserve-blank-lines",
+          "inline": [],
+          "blockinfo": {
+            "comment": {
+              "start": 1,
+              "end": 12,
+              "type": "body"
+            },
+            "code": {
+              "start": -1,
+              "end": -1
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compare/cases/preserves-blank-lines.scss",
+              "start": 1,
+              "end": 13
+            }
+          }
         }
       ],
       "subpages": []
@@ -18,8 +35,8 @@
         "header": {},
         "body": [
           {
-            "name": "Preserve blank lines",
             "access": "public",
+            "name": "Preserve blank lines",
             "markup": [
               {
                 "id": "0",

@@ -11,15 +11,66 @@
           "body": [
             {
               "title": "main",
-              "href": "/tests/swift-file#main"
+              "href": "/tests/swift-file/#main",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 6,
+                  "end": 8,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 9,
+                  "end": 20
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/swift/test.swift",
+                  "start": 1,
+                  "end": 49
+                }
+              }
             },
             {
               "title": "Something",
-              "href": "/tests/swift-file#something"
+              "href": "/tests/swift-file/#something",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 23,
+                  "end": 25,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 26,
+                  "end": 31
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/swift/test.swift",
+                  "start": 1,
+                  "end": 49
+                }
+              }
             },
             {
               "title": "Something else",
-              "href": "/tests/swift-file#something-else"
+              "href": "/tests/swift-file/#something-else",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 34,
+                  "end": 36,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 37,
+                  "end": 48
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/swift/test.swift",
+                  "start": 1,
+                  "end": 49
+                }
+              }
             }
           ],
           "subpages": []
@@ -36,10 +87,10 @@
       "swift-file": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -59,9 +110,9 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "main",
               "description": "<p>main method</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -81,9 +132,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Something",
               "description": "<p>This is a normal multi-line comment.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 23,
@@ -103,9 +154,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Something else",
               "description": "<p>This is another normal multi-line comment.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 34,

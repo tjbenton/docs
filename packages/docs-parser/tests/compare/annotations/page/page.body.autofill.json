@@ -2,8 +2,8 @@
   "header": {},
   "body": [
     {
-      "description": "<p>This block shouldn&#39;t have a page annotation because page doesn&#39;t autofill body comments</p>\n",
       "access": "public",
+      "description": "<p>This block shouldn&#39;t have a page annotation because page doesn&#39;t autofill body comments</p>\n",
       "blockinfo": {
         "comment": {
           "start": 1,

@@ -101,7 +101,7 @@
         "ignorePattern": "^\\s*(var|const|let)\\s.+=\\s*(?:(?:[a-z.\\[\\]'\"]+\\s+\\+)|(?:'|\"))"
       }
     ],
-    "max-nested-callbacks": [2, 3],
+    "max-nested-callbacks": [2, 5],
     "max-params": [ 1, 4 ],
     "max-statements": [ 1, 30 ],
     "new-parens": 2,

@@ -11,7 +11,24 @@
           "body": [
             {
               "title": "$colors",
-              "href": "/tests/scss-file#colors"
+              "href": "/tests/scss-file/#colors",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 6,
+                  "end": 10,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 11,
+                  "end": 15
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/scss/inline.scss",
+                  "start": 1,
+                  "end": 15
+                }
+              }
             }
           ],
           "subpages": []
@@ -28,10 +45,10 @@
       "scss-file": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -51,9 +68,9 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "$colors",
               "description": "<p>what up\nshoot</p>\n",
-              "access": "public",
               "type": {
                 "type": "map",
                 "description": ""

@@ -3,12 +3,12 @@ table.c-table
   thead.c-table__head
     tr.c-table__row
       each value, key in data[0]
-        th.c-table__heading!= key.slice(0, 1).toUpperCase() + key.slice(1)
+        th.c-table__heading!= key.replace(/[_\-]/, ' ')
   tbody.c-table__body
     each arg in data
       tr.c-table__row
         each value, key in arg
-          td.c-table__cell
+          td.c-table__cell(data-label="#{key.replace(/[_\-]/, ' ')}")
             if key === 'description'
               != value
             else if value === ''

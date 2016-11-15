@@ -1,60 +1,107 @@
-o-pseudo($side = 'middle', $type = 'before') {
-  +cache('o-pseudo--' + $side) {
-    if $side == 'middle' {
-      display inline-block
-      text-indent -999em
+/// @author Tyler Benton
+/// @page tools/mixins
+/// @description
+/// Allows you easily change the side the icon is on.
+///
+/// @arg {string} - Must be `middle`, `top`, `right`, `bottom`, or `left`
+/// @arg {number}
+/// @arg {boolean} - Creates less total CSS because it doesn't duplicate code.
+///
+/// @requires map-get($icon, spacing)
+///
+/// @markup {styl} (example="false") **Example:** Simple use case.
+/// .foo
+///   icon-pos right
+/// @markup {css} (example="false") **Output:** By default it uses `:after`
+/// .foo {
+///   padding-top: 10px;
+/// }
+/// .foo:after {
+///   ...styles to display the icon on the right...
+/// }
+///
+/// @markup {styl} (example="false") **Example:** Specifying that you want it to be a `:before`
+/// .foo
+///   &:before
+///     icon-pos right
+/// @markup {css} (example="false") **Output:** Used `:before` because it was specified
+/// .foo {
+///   padding-top: 10px;
+/// }
+/// .foo:before {
+///   ...styles to display the icon on the right...
+/// }
+pseudo($side = 'middle', $extend = true)
+  if index('middle' 'top' 'right' 'bottom' 'left', $side) == null
+    error('$side must be one of the following middle, top, right, bottom, left. You passed ' + $side)
+  $selectors = selector()
+  $without-pseudos = stripPseudo($selectors)
+  $with-pseudos = ensurePseudo($selectors)
 
-      &:{$type} {
+
+  if $extend
+    /{$without-pseudos}
+      +cache('pseudo-parent-' + $side)
+        if $side != 'middle'
+          padding-{$side} (em($spacing * 2) + 1em)
+        else
+          display inline-block
+          text-indent -999em
+
+
+    /{$with-pseudos}
+      +cache('pseudo-' + $side)
         display block
-        left 50%
-        line-height 1em
-        margin-left -0.5em
-        margin-top -0.5em
         position absolute
-        text-align center
-        top 50%
-      }
 
-    } else if $side == 'top' {
-      padding-top 2.25em
+        if index('middle' 'top' 'bottom', $side) != null
+          left 50%
+          margin-left -0.5em
 
-      &:{$type} {
-        display block
-        left 50%
-        margin-left -0.5em
-        position absolute
-        top 0.625em
-      }
-    } else if $side == 'right' {
-      padding-right 2.25em
+        if index('middle' 'right' 'left', $side) != null
+          margin-top -.5em
+          top 50%
 
-      &:{$type} {
-        display block
-        margin-top -0.5em
-        position absolute
-        right 0.625em
-        top 50%
-      }
-    } else if $side == 'bottom' {
-      padding-bottom 2.25em
+        if $side != 'middle'
+          {$side}: em($spacing);
+        else
+          line-height 1em
 
-      &:{$type} {
-        bottom 0.625em
-        display block
-        left 50%
-        margin-left -0.5em
-        position absolute
-      }
-    } else if $side == 'left' {
-      padding-left 2.25em
+  else
+    /{$without-pseudos}
+      +cache('pseudo-parent-' + $side)
+        if $side != 'middle'
+          if $side == 'top'
+            padding-top (em($spacing * 2) + 1em) unless @padding-top
+          else if $side == 'right'
+            padding-right (em($spacing * 2) + 1em) unless @padding-right
+          else if $side == 'bottom'
+            padding-bottom (em($spacing * 2) + 1em) unless @padding-bottom
+          else
+            padding-left (em($spacing * 2) + 1em) unless @padding-left
+        else
+          display inline-block unless @display
+          text-indent -999em unless @text-indent
 
-      &:{$type} {
-        display block
-        left 0.625em
-        margin-top -0.5em
-        position absolute
-        top 50%
-      }
-    }
-  }
-}
+
+    /{$with-pseudos}
+      +cache('pseudo-' + $side)
+        display block unless @display
+        position absolute unless @position
+        if index('middle' 'top' 'bottom', $side)
+          left 50% unless @left
+          margin-left -0.5em unless @margin-left
+        if index('middle' 'right' 'left', $side)
+          margin-top -0.5em unless @margin-top
+          top 50% unless @top
+        if $side != 'middle'
+          if $side == 'top'
+            top em($spacing) unless @top
+          else if $side == 'right'
+            right em($spacing) unless @right
+          else if $side == 'bottom'
+            bottom em($spacing) unless @bottom
+          else
+            left em($spacing) unless @left
+        else
+          line-height 1em unless @line-height

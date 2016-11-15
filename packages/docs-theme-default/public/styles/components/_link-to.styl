@@ -1,0 +1,17 @@
+.c-link-to
+  position relative
+
+  &:before
+    content '#'
+    filter grayscale(1)
+    font-size 0.85em
+    left 0
+    opacity 0
+    position absolute
+    transition: all $easing.swift 0.25s 0.15s;
+    top 50%
+    margin-top -0.5em
+
+  &:hover:before
+    opacity 1
+    transform translateX(-100%)

@@ -6,7 +6,24 @@
       "body": [
         {
           "title": "Only block in body",
-          "href": "/starts-and-ends-with-empty-lines#only-block-in-body"
+          "href": "/starts-and-ends-with-empty-lines/#only-block-in-body",
+          "inline": [],
+          "blockinfo": {
+            "comment": {
+              "start": 7,
+              "end": 22,
+              "type": "body"
+            },
+            "code": {
+              "start": 23,
+              "end": 32
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compare/cases/starts-and-ends-with-spaces.scss",
+              "start": 1,
+              "end": 38
+            }
+          }
         }
       ],
       "subpages": []
@@ -18,12 +35,12 @@
         "header": {},
         "body": [
           {
+            "access": "public",
             "name": "Only block in body",
             "author": [
               "Tyler Benton"
             ],
             "description": "<p>This allows you to write specific styles for mozilla firefox only</p>\n",
-            "access": "public",
             "markup": [
               {
                 "id": "0",
