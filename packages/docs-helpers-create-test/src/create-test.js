@@ -29,25 +29,35 @@ export default async function createTest() { // eslint-disable-line
 
   let pkg = argv[0]
   let base = path.join(_root, 'packages', pkg, 'test', 'compare')
-  let globs = argv
-    .slice(1)
+  let create
+  try {
+    create = require(path.join(base, 'create.js'))
+  } catch (e) {
+    try {
+      base = path.join(_root, 'packages', pkg, 'tests', 'compare')
+      create = require(path.join(base, 'create.js'))
+    } catch (err) {
+      log(`You must add a 'create.js' to ${base} with the name of the folder that you're creating tests for`)
+      return
+    }
+  }
+
+  let globs = argv.slice(1)
+  if (!globs.length) {
+    globs = [ '*/**/*' ]
+  }
+
+  globs = globs
     .join(',')
     .split(',')
     .filter(Boolean)
     .map((glob) => glob.trim().replace(/\/|\\/g, path.sep))
     .map((glob) => path.join(base, glob))
 
-  let create
-  try {
-    create = require(path.join(base, 'create.js'))
-  } catch (e) {
-    log(`You must add a 'create.js' to ${base} with the name of the folder that you're creating tests for`)
-    return
-  }
 
   // get all the files to test
-  let files = await globby(globs, { ignore: 'tests/**/*.json', nodir: true })
-  files = files.filter((file) => path.extname(file) !== '.json')
+  const files = await globby(globs, { ignore: [ '**/*.json' ], nodir: true })
+
   // placeholder for the created test cases
   let parsed = []
 
@@ -57,7 +67,6 @@ export default async function createTest() { // eslint-disable-line
   }
 
   parsed = await Promise.all(parsed)
-
   async function run(file) {
     let name = file.match(/(?:tests?\/compare\/)([a-z\-]*)/)[1]
     let fn = create[to.camelCase(name)]
@@ -120,4 +129,6 @@ export default async function createTest() { // eslint-disable-line
       console.trace(trace)
     }
   }
+
+  process.exit(0)
 }
