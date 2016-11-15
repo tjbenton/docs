@@ -36,13 +36,13 @@ install:
 lint:
 	eslint 'flyfile.js' 'scripts/**/*' 'packages/*/+(app|public|src|tools)/**/*.js'
 
-publish:
+publish release:
 	make clean
 	make build
 	make test
 	lerna publish --npm-tag=latest --force-publish=*
 
-prerelease:
+prepublish prerelease:
 	make clean
 	make build
 	make test
