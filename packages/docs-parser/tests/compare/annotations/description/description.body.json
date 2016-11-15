@@ -2,8 +2,8 @@
   "header": {},
   "body": [
     {
-      "description": "<p>Lorem ipsum dolor sit amet</p>\n",
       "access": "public",
+      "description": "<p>Lorem ipsum dolor sit amet</p>\n",
       "blockinfo": {
         "comment": {
           "start": 2,
@@ -23,8 +23,8 @@
       "inline": []
     },
     {
-      "description": "<p>Line one\nOther\nlines\nbelow\nit</p>\n",
       "access": "public",
+      "description": "<p>Line one\nOther\nlines\nbelow\nit</p>\n",
       "blockinfo": {
         "comment": {
           "start": 4,
@@ -44,8 +44,8 @@
       "inline": []
     },
     {
-      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nAccusantium vel, eveniet, architecto saepe, modi dolore incidunt\nquisquam eaque cum porro explicabo velit sunt illo praesentium\nfacere. Sit consequuntur illo nihil.</p>\n",
       "access": "public",
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.\nAccusantium vel, eveniet, architecto saepe, modi dolore incidunt\nquisquam eaque cum porro explicabo velit sunt illo praesentium\nfacere. Sit consequuntur illo nihil.</p>\n",
       "blockinfo": {
         "comment": {
           "start": 10,

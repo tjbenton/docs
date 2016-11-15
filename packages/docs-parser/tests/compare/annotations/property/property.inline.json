@@ -2,8 +2,8 @@
   "header": {},
   "body": [
     {
-      "name": "one",
       "access": "public",
+      "name": "one",
       "type": {
         "type": "object",
         "description": ""
@@ -55,8 +55,8 @@
       ]
     },
     {
-      "name": "two",
       "access": "public",
+      "name": "two",
       "type": {
         "type": "object",
         "description": ""
@@ -110,8 +110,8 @@
       ]
     },
     {
-      "name": "three",
       "access": "public",
+      "name": "three",
       "type": {
         "type": "object",
         "description": ""
@@ -166,8 +166,8 @@
       ]
     },
     {
-      "name": "four",
       "access": "public",
+      "name": "four",
       "type": {
         "type": "object",
         "description": ""
@@ -221,8 +221,8 @@
       ]
     },
     {
-      "name": "five",
       "access": "public",
+      "name": "five",
       "type": {
         "type": "object",
         "description": ""
@@ -276,8 +276,8 @@
       ]
     },
     {
-      "name": "five",
       "access": "public",
+      "name": "five",
       "type": {
         "type": "object",
         "description": ""

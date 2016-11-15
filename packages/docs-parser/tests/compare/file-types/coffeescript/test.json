@@ -11,15 +11,66 @@
           "body": [
             {
               "title": "One",
-              "href": "/tests/coffee-file#one"
+              "href": "/tests/coffee-file/#one",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 7,
+                  "end": 9,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 10,
+                  "end": 14
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/coffeescript/test.coffee",
+                  "start": 1,
+                  "end": 40
+                }
+              }
             },
             {
               "title": "Two",
-              "href": "/tests/coffee-file#two"
+              "href": "/tests/coffee-file/#two",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 17,
+                  "end": 19,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 20,
+                  "end": 28
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/coffeescript/test.coffee",
+                  "start": 1,
+                  "end": 40
+                }
+              }
             },
             {
               "title": "Three",
-              "href": "/tests/coffee-file#three"
+              "href": "/tests/coffee-file/#three",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 31,
+                  "end": 33,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 34,
+                  "end": 39
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/coffeescript/test.coffee",
+                  "start": 1,
+                  "end": 40
+                }
+              }
             }
           ],
           "subpages": []
@@ -36,10 +87,10 @@
       "coffee-file": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -59,9 +110,9 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "One",
               "description": "<p>main method</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 7,
@@ -81,9 +132,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Two",
               "description": "<p>This is a normal multi-line comment.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 17,
@@ -103,9 +154,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Three",
               "description": "<p>This is another normla multi-line comment.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 31,

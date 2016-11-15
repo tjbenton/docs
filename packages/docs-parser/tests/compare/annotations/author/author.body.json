@@ -2,10 +2,10 @@
   "header": {},
   "body": [
     {
+      "access": "public",
       "author": [
         "Tyler Benton"
       ],
-      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,

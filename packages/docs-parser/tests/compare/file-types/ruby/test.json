@@ -11,15 +11,66 @@
           "body": [
             {
               "title": "One",
-              "href": "/tests/rb-file#one"
+              "href": "/tests/rb-file/#one",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 6,
+                  "end": 8,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 9,
+                  "end": 12
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/ruby/test.rb",
+                  "start": 1,
+                  "end": 43
+                }
+              }
             },
             {
               "title": "Two",
-              "href": "/tests/rb-file#two"
+              "href": "/tests/rb-file/#two",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 15,
+                  "end": 17,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 18,
+                  "end": 21
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/ruby/test.rb",
+                  "start": 1,
+                  "end": 43
+                }
+              }
             },
             {
               "title": "Three",
-              "href": "/tests/rb-file#three"
+              "href": "/tests/rb-file/#three",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 24,
+                  "end": 29,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 30,
+                  "end": 34
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/ruby/test.rb",
+                  "start": 1,
+                  "end": 43
+                }
+              }
             }
           ],
           "subpages": []
@@ -36,10 +87,10 @@
       "rb-file": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -59,9 +110,9 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "One",
               "description": "<p>main method</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -81,9 +132,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Two",
               "description": "<p>This is a normal multi-line comment made of single line comments.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 15,
@@ -103,9 +154,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Three",
               "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur\nmollitia voluptas obcaecati numquam voluptatibus ex, enim vero, nemo\ncupiditate architecto dolore ipsum dolores, amet at porro quis. Quis,\nvoluptas consequuntur.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 24,

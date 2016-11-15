@@ -11,7 +11,24 @@
           "body": [
             {
               "title": "@author",
-              "href": "/tests/js#author"
+              "href": "/tests/js/#author",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 8,
+                  "end": 18,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 19,
+                  "end": 27
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/js/test.js",
+                  "start": 1,
+                  "end": 28
+                }
+              }
             }
           ],
           "subpages": []
@@ -28,10 +45,10 @@
       "js": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -51,18 +68,18 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "@author",
               "description": "<p>Author of the documented item</p>\n",
-              "access": "public",
+              "alias": [
+                "@authors"
+              ],
               "returns": {
                 "types": [
                   "string"
                 ],
                 "description": ""
               },
-              "alias": [
-                "@authors"
-              ],
               "markup": [
                 {
                   "id": "0",

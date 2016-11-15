@@ -11,11 +11,45 @@
           "body": [
             {
               "title": "Body Block 1",
-              "href": "/tests/html-file#body-block-1"
+              "href": "/tests/html-file/#body-block-1",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 13,
+                  "end": 17,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 18,
+                  "end": 25
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/html/test.html",
+                  "start": 1,
+                  "end": 36
+                }
+              }
             },
             {
               "title": "Body Block 2",
-              "href": "/tests/html-file#body-block-2"
+              "href": "/tests/html-file/#body-block-2",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 26,
+                  "end": 30,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 31,
+                  "end": 33
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/html/test.html",
+                  "start": 1,
+                  "end": 36
+                }
+              }
             }
           ],
           "subpages": []
@@ -32,11 +66,11 @@
       "html-file": {
         "page": {
           "header": {
+            "access": "public",
             "name": "Header",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 7,
@@ -56,9 +90,9 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "Body Block 1",
               "description": "<p>This is the main header of the site</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 13,
@@ -78,9 +112,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Body Block 2",
               "description": "<p>This is the main footer of the site</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 26,

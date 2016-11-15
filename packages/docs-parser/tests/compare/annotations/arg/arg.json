@@ -5,8 +5,8 @@
       "access": "public",
       "arg": [
         {
-          "types": [],
           "name": "",
+          "types": [],
           "value": "",
           "description": ""
         }
@@ -33,10 +33,10 @@
       "access": "public",
       "arg": [
         {
+          "name": "name-of-variable",
           "types": [
             "type"
           ],
-          "name": "name-of-variable",
           "value": "",
           "description": ""
         }
@@ -63,11 +63,11 @@
       "access": "public",
       "arg": [
         {
+          "name": "name-of-variable",
           "types": [
             "type",
             "othertype"
           ],
-          "name": "name-of-variable",
           "value": "",
           "description": ""
         }
@@ -94,10 +94,10 @@
       "access": "public",
       "arg": [
         {
+          "name": "name-of-variable",
           "types": [
             "type"
           ],
-          "name": "name-of-variable",
           "value": "",
           "description": "<p>description</p>\n"
         }
@@ -124,10 +124,10 @@
       "access": "public",
       "arg": [
         {
+          "name": "name-of-variable",
           "types": [
             "type"
           ],
-          "name": "name-of-variable",
           "value": "default value",
           "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>\n"
         }
@@ -154,10 +154,10 @@
       "access": "public",
       "arg": [
         {
+          "name": "name-of-variable",
           "types": [
             "type"
           ],
-          "name": "name-of-variable",
           "value": "default value",
           "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et\ndolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\nex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore\neu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia\ndeserunt mollit anim id est laborum.</p>\n"
         }

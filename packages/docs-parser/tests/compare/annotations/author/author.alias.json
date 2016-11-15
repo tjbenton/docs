@@ -2,12 +2,12 @@
   "header": {},
   "body": [
     {
+      "access": "public",
       "author": [
         "Author One",
         "Author Two",
         "Author Three"
       ],
-      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 1,

@@ -11,15 +11,66 @@
           "body": [
             {
               "title": "One",
-              "href": "/tests/less-test#one"
+              "href": "/tests/less-test/#one",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 6,
+                  "end": 9,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 10,
+                  "end": 14
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/less/test.less",
+                  "start": 1,
+                  "end": 59
+                }
+              }
             },
             {
               "title": "Two",
-              "href": "/tests/less-test#two"
+              "href": "/tests/less-test/#two",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 16,
+                  "end": 24,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 25,
+                  "end": 41
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/less/test.less",
+                  "start": 1,
+                  "end": 59
+                }
+              }
             },
             {
               "title": "Three",
-              "href": "/tests/less-test#three"
+              "href": "/tests/less-test/#three",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 43,
+                  "end": 50,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 51,
+                  "end": 58
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/less/test.less",
+                  "start": 1,
+                  "end": 59
+                }
+              }
             }
           ],
           "subpages": []
@@ -36,10 +87,10 @@
       "less-test": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -59,8 +110,8 @@
           },
           "body": [
             {
-              "name": "One",
               "access": "public",
+              "name": "One",
               "type": {
                 "type": "color",
                 "description": ""
@@ -96,9 +147,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Two",
               "description": "<p>A simple nav component, used to help with navigation</p>\n",
-              "access": "public",
               "markup": [
                 {
                   "id": "0",
@@ -130,15 +181,15 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Three",
               "description": "<p>A mixin to help with opacity fallbacks</p>\n",
-              "access": "public",
               "arg": [
                 {
+                  "name": "-",
                   "types": [
                     "number"
                   ],
-                  "name": "-",
                   "value": "",
                   "description": "<p>The opacity you to use, between 0.0 - 1.0</p>\n"
                 }

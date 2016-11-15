@@ -1,10 +1,10 @@
 {
   "header": {
+    "access": "public",
     "author": [
       "Author One",
       "Author Two"
     ],
-    "access": "public",
     "page": [
       "general"
     ],
@@ -27,11 +27,11 @@
   },
   "body": [
     {
+      "access": "public",
       "author": [
         "Author One",
         "Author Two"
       ],
-      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 5,
@@ -51,11 +51,11 @@
       "inline": []
     },
     {
+      "access": "public",
       "author": [
         "Author One",
         "Author Two"
       ],
-      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 8,
@@ -75,11 +75,11 @@
       "inline": []
     },
     {
+      "access": "public",
       "author": [
         "Author One",
         "Author Two"
       ],
-      "access": "public",
       "blockinfo": {
         "comment": {
           "start": 11,

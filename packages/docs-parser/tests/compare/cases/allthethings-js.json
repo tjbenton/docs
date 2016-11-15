@@ -6,7 +6,65 @@
       "body": [
         {
           "title": "Beards",
-          "href": "/components#beards"
+          "href": "/components/#beards",
+          "inline": [
+            {
+              "title": "constructor",
+              "href": "/components/#beards-constructor",
+              "blockinfo": {
+                "comment": {
+                  "start": 12,
+                  "end": 13,
+                  "type": "inline"
+                },
+                "code": {
+                  "start": 14,
+                  "end": 16
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/cases/allthethings-js.js",
+                  "start": 1,
+                  "end": 23
+                }
+              }
+            },
+            {
+              "title": "beard",
+              "href": "/components/#beards-beard",
+              "blockinfo": {
+                "comment": {
+                  "start": 18,
+                  "end": 19,
+                  "type": "inline"
+                },
+                "code": {
+                  "start": 20,
+                  "end": 22
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/cases/allthethings-js.js",
+                  "start": 1,
+                  "end": 23
+                }
+              }
+            }
+          ],
+          "blockinfo": {
+            "comment": {
+              "start": 8,
+              "end": 10,
+              "type": "body"
+            },
+            "code": {
+              "start": 11,
+              "end": 23
+            },
+            "file": {
+              "path": "docs/packages/docs-parser/tests/compare/cases/allthethings-js.js",
+              "start": 1,
+              "end": 23
+            }
+          }
         }
       ],
       "subpages": []
@@ -16,11 +74,11 @@
     "components": {
       "page": {
         "header": {
+          "access": "public",
           "name": "All the things test",
           "author": [
             "Tyler Benton"
           ],
-          "access": "public",
           "blockinfo": {
             "comment": {
               "start": 1,
@@ -40,9 +98,9 @@
         },
         "body": [
           {
+            "access": "public",
             "name": "Beards",
             "description": "<p>This is an awesome class about beards</p>\n",
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 8,
@@ -61,14 +119,14 @@
             },
             "inline": [
               {
-                "name": "constructor",
                 "access": "public",
+                "name": "constructor",
                 "arg": [
                   {
+                    "name": "options",
                     "types": [
                       "object"
                     ],
-                    "name": "options",
                     "value": "",
                     "description": ""
                   }
@@ -91,14 +149,14 @@
                 }
               },
               {
-                "name": "beard",
                 "access": "public",
+                "name": "beard",
                 "arg": [
                   {
+                    "name": "type",
                     "types": [
                       "string"
                     ],
-                    "name": "type",
                     "value": "'full beard'",
                     "description": "<p>The type of beard you&#39;re wanting to get</p>\n"
                   }

@@ -11,11 +11,45 @@
           "body": [
             {
               "title": "Base Styles",
-              "href": "/test/css-file#base-styles"
+              "href": "/test/css-file/#base-styles",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 6,
+                  "end": 12,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 13,
+                  "end": 17
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/css/test.css",
+                  "start": 1,
+                  "end": 31
+                }
+              }
             },
             {
               "title": "Input",
-              "href": "/test/css-file#input"
+              "href": "/test/css-file/#input",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 20,
+                  "end": 26,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 27,
+                  "end": 31
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/css/test.css",
+                  "start": 1,
+                  "end": 31
+                }
+              }
             }
           ],
           "subpages": []
@@ -32,10 +66,10 @@
       "css-file": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -55,9 +89,9 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "Base Styles",
               "description": "<ol>\n<li>Set default font family to sans-serif.</li>\n<li>Prevent iOS text size adjust after orientation change, without disabling\nuser zoom.</li>\n</ol>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -77,9 +111,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Input",
               "description": "<ol>\n<li>Address <code>appearance</code> set to <code>searchfield</code> in Safari 5 and Chrome.</li>\n<li>Address <code>box-sizing</code> set to <code>border-box</code> in Safari 5 and Chrome\n(include <code>-moz</code> to future-proof).</li>\n</ol>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 20,

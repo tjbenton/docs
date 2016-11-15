@@ -11,15 +11,66 @@
           "body": [
             {
               "title": "one",
-              "href": "/tests/c++-file#one"
+              "href": "/tests/c++-file/#one",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 6,
+                  "end": 7,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 8,
+                  "end": 32
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/c++/test.c",
+                  "start": 1,
+                  "end": 93
+                }
+              }
             },
             {
               "title": "Two",
-              "href": "/tests/c++-file#two"
+              "href": "/tests/c++-file/#two",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 35,
+                  "end": 40,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 41,
+                  "end": 66
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/c++/test.c",
+                  "start": 1,
+                  "end": 93
+                }
+              }
             },
             {
               "title": "Three",
-              "href": "/tests/c++-file#three"
+              "href": "/tests/c++-file/#three",
+              "inline": [],
+              "blockinfo": {
+                "comment": {
+                  "start": 68,
+                  "end": 70,
+                  "type": "body"
+                },
+                "code": {
+                  "start": 71,
+                  "end": 92
+                },
+                "file": {
+                  "path": "docs/packages/docs-parser/tests/compare/file-types/c++/test.c",
+                  "start": 1,
+                  "end": 93
+                }
+              }
             }
           ],
           "subpages": []
@@ -36,10 +87,10 @@
       "c++-file": {
         "page": {
           "header": {
+            "access": "public",
             "author": [
               "Tyler Benton"
             ],
-            "access": "public",
             "blockinfo": {
               "comment": {
                 "start": 1,
@@ -59,9 +110,9 @@
           },
           "body": [
             {
+              "access": "public",
               "name": "one",
               "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 6,
@@ -81,9 +132,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Two",
               "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque non fugit,\naspernatur! Quos consequatur libero, fugiat tempora maxime maiores quia\naspernatur praesentium voluptatum incidunt! Tempora rem aperiam\nconsectetur aut, fugiat.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 35,
@@ -103,9 +154,9 @@
               "inline": []
             },
             {
+              "access": "public",
               "name": "Three",
               "description": "<p>This is another normal multi-line comment.</p>\n",
-              "access": "public",
               "blockinfo": {
                 "comment": {
                   "start": 68,

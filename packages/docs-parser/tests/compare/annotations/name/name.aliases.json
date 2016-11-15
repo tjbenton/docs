@@ -2,8 +2,8 @@
   "header": {},
   "body": [
     {
-      "name": "Title",
       "access": "public",
+      "name": "Title",
       "blockinfo": {
         "comment": {
           "start": 1,
@@ -23,8 +23,8 @@
       "inline": []
     },
     {
-      "name": "Heading",
       "access": "public",
+      "name": "Heading",
       "blockinfo": {
         "comment": {
           "start": 3,
@@ -44,8 +44,8 @@
       "inline": []
     },
     {
-      "name": "Header",
       "access": "public",
+      "name": "Header",
       "blockinfo": {
         "comment": {
           "start": 5,
