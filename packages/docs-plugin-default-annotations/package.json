@@ -1,6 +1,6 @@
 {
   "name": "docs-plugin-default-annotations",
-  "version": "0.0.0-alpha-6.1",
+  "version": "0.0.1",
   "description": "Default annotations for docs",
   "repository": "https://github.com/tjbenton/docs/tree/master/packages/docs-plugin-default-annotations",
   "bugs": {
@@ -17,6 +17,6 @@
     "to-js": "0.0.6"
   },
   "devDependencies": {
-    "docs-parser": "^0.0.0-alpha-6.1"
+    "docs-parser": "^0.0.1"
   }
 }

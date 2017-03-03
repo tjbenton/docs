@@ -1,6 +1,6 @@
 {
   "name": "docs-helpers-test",
-  "version": "0.0.0-alpha-6.1",
+  "version": "0.0.1",
   "description": "**NOTE:** This is an internal docs module and may not work outside. Use at your own risk.",
   "repository": "https://github.com/tjbenton/docs/tree/master/packages/docs-helpers-test",
   "bugs": {
