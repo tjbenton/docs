@@ -118,8 +118,14 @@ export default class Docs {
     if (watch) {
       chokidar
         .watch(glob, { persistent: true, ignoreInitial: true })
-        .on('add', copy)
-        .on('change', copy)
+        .on('add', async (file) => {
+          await copy(file)
+          logger.log(file.replace(this.cwd, path.basename(this.cwd)), 'was added')
+        })
+        .on('change', async (file) => {
+          await copy(file)
+          logger.log(file.replace(this.cwd, path.basename(this.cwd)), 'was changed')
+        })
         .on('error', logger.error)
     }
 
