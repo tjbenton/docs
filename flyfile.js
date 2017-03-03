@@ -84,7 +84,7 @@ export async function watch() {
     this.watch(path.join('{scripts,tools,tests}', '**', '*.js'), 'baseTools'),
     this.watch(packages('public'), 'themeJs'),
     this.watch(packages('public', path.join('**', '*.styl')), 'themeStyles'),
-    this.watch(packages('public', '!(*.+(js|styl))'), 'themeRest'),
+    this.watch(path.join(base, '!(docs-core)', 'public', '**', '!(*.+(js|styl))'), 'themeRest'),
     // this.watch(packages('{app,src}'), 'test')
   ])
 }
