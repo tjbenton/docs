@@ -12,7 +12,7 @@ mixin annotations(type, token, parent)
     #{elem}(class="#{cls}")
       each data, name in token
         if name === 'inline'
-          - const parent = _.clone(token)
+          - var parent = _.clone(token)
           - delete parent.inline
           +annotations('inline', token.inline, parent)
         else
