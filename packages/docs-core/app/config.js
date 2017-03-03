@@ -23,7 +23,7 @@ export const default_options = {
   sort: [],
 
   // the theme to use
-  theme: '',
+  theme: 'default',
 
   // debugging levels
   debug: false,
@@ -42,10 +42,8 @@ export default function config(options = {}) { // eslint-disable-line
     })
   config_files[0] = config_files[0].docs || {}
 
-  const user_options = Object.assign(...config_files)
-
-  // merge the config file with passed options
-  options = to.extend(user_options, options)
+  // merge the config file with passed options and the default options
+  options = Object.assign({}, default_options, options, ...config_files)
 
   // ensure that the project_assets is an absolute
   if (options.project_assets && !path.isAbsolute(options.project_assets)) {
@@ -59,18 +57,11 @@ export default function config(options = {}) { // eslint-disable-line
 
   options = to.extend(options, getPlugins(options.plugins))
 
-  if (!options.theme) {
-    logger.error('You must specificy a theme')
-  } else {
-    const theme = getPlugin(options.theme, 'theme',
-      `docs-theme-${options.theme.replace('docs-theme-', '')}  could not be found try installing docs-theme-default`)
-    options = to.merge(options, theme)
-  }
+  const theme = getPlugin(options.theme, 'theme',
+  `docs-theme-${options.theme.replace('docs-theme-', '')}  could not be found try installing docs-theme-default`)
+  options = to.merge(options, theme)
 
   options.assets = to.unique(to.array(options.assets))
-
-  // merge options with default_options so there's a complete list of settings
-  options = to.extend(to.clone(default_options), options)
 
   options.assets.unshift(path.join(root, 'docs'))
 

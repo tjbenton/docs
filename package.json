@@ -40,7 +40,7 @@
     "globby": "^6.0.0",
     "icon-font-generator": "^1.0.4",
     "jsondiffpatch": "^0.2.4",
-    "lerna": "^2.0.0-beta.29",
+    "lerna": "2.0.0-beta.38",
     "power-assert": "^1.4.1",
     "recursive-readdir-sync": "~1.0.6",
     "rollup-plugin-babel": "^2.6.1",
