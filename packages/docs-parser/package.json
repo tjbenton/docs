@@ -1,6 +1,6 @@
 {
   "name": "docs-parser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Documentation parser, adapts to any language and will help you document all the things.",
   "repository": "https://github.com/tjbenton/docs/tree/master/packages/docs-parser",
   "bugs": {
@@ -30,7 +30,7 @@
     "chokidar": "^1.4.3",
     "clor": "^2.0.2",
     "commander": "^2.9.0",
-    "docs-helpers-logger": "^0.0.1",
+    "docs-helpers-logger": "^0.0.2",
     "fs-extra-promisify": "^0.0.2",
     "globby": "^4.0.0",
     "natural-sort": "~1.0.0",
@@ -77,6 +77,6 @@
     "comments"
   ],
   "devDependencies": {
-    "docs-plugin-default-annotations": "^0.0.1"
+    "docs-plugin-default-annotations": "^0.0.2"
   }
 }
